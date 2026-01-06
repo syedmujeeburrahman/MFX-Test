@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Sale Mobile Number',
-    'version': '18.0.1.0.0',
-    'summary': 'Add mobile number field to Sales Orders',
+    'name': 'Sale Mobile & Description',
+    'version': '18.0.1.1.0',
+    'summary': 'Add mobile number and description fields to Sales Quotations/Orders',
     'description': """
-        This module adds a mobile number field to Sales Orders.
-        The mobile number is automatically fetched from the customer
-        and can be manually edited on the sales order.
+        This module adds mobile number and description fields to Sales Quotations/Orders.
+        - Mobile number is automatically fetched from the customer
+        - Description field for additional notes about the quotation/order
+        Both fields can be manually edited on the sales order.
     """,
     'category': 'Sales/Sales',
     'author': 'DearERP',
