@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- Delete default CRM stages -->
+        <delete model="crm.stage" search="[('id', '!=', 0)]"/>
+
+        <!-- Custom Lead Qualification Stages -->
+
+        <!-- Stage 1: New Inquiry -->
+        <record id="stage_new_inquiry" model="crm.stage">
+            <field name="name">New Inquiry</field>
+            <field name="sequence">1</field>
+            <field name="is_won">False</field>
+            <field name="fold">False</field>
+        </record>
+
+        <!-- Stage 2: Contacted -->
+        <record id="stage_contacted" model="crm.stage">
+            <field name="name">Contacted</field>
+            <field name="sequence">2</field>
+            <field name="is_won">False</field>
+            <field name="fold">False</field>
+        </record>
+
+        <!-- Stage 3: Requirement Confirmed -->
+        <record id="stage_requirement_confirmed" model="crm.stage">
+            <field name="name">Requirement Confirmed</field>
+            <field name="sequence">3</field>
+            <field name="is_won">False</field>
+            <field name="fold">False</field>
+        </record>
+
+        <!-- Stage 4: Budget Approved -->
+        <record id="stage_budget_approved" model="crm.stage">
+            <field name="name">Budget Approved</field>
+            <field name="sequence">4</field>
+            <field name="is_won">False</field>
+            <field name="fold">False</field>
+        </record>
+
+        <!-- Stage 5: Decision Maker Engaged -->
+        <record id="stage_decision_maker_engaged" model="crm.stage">
+            <field name="name">Decision Maker Engaged</field>
+            <field name="sequence">5</field>
+            <field name="is_won">False</field>
+            <field name="fold">False</field>
+        </record>
+
+        <!-- Stage 6: Won -->
+        <record id="stage_won" model="crm.stage">
+            <field name="name">Won</field>
+            <field name="sequence">10</field>
+            <field name="is_won">True</field>
+            <field name="fold">True</field>
+        </record>
+
+        <!-- Stage 7: Lost -->
+        <record id="stage_lost" model="crm.stage">
+            <field name="name">Lost</field>
+            <field name="sequence">11</field>
+            <field name="is_won">False</field>
+            <field name="fold">True</field>
+        </record>
+
+    </data>
+</odoo>

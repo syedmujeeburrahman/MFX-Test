@@ -1,13 +1,18 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Sale Mobile & Description',
-    'version': '18.0.1.1.0',
-    'summary': 'Add mobile number and description fields to Sales Quotations/Orders',
+    'name': 'Sale & Purchase Mobile Number',
+    'version': '18.0.1.2.0',
+    'summary': 'Add mobile number field to Sales Quotations/Orders and RFQ/Purchase Orders',
     'description': """
-        This module adds mobile number and description fields to Sales Quotations/Orders.
-        - Mobile number is automatically fetched from the customer
-        - Description field for additional notes about the quotation/order
-        Both fields can be manually edited on the sales order.
+        This module adds mobile number and description fields to:
+        - Sales Quotations and Sales Orders
+        - Request for Quotations (RFQ) and Purchase Orders
+
+        Features:
+        - Mobile number is automatically fetched from the customer/vendor
+        - Description field for additional notes (on sales orders)
+        - Both fields can be manually edited
+        - Mobile field displayed in form and list views
     """,
     'category': 'Sales/Sales',
     'author': 'DearERP',
@@ -16,9 +21,11 @@
     'depends': [
         'sale',
         'sale_management',
+        'purchase',
     ],
     'data': [
         'views/sale_order_views.xml',
+        'views/purchase_order_views.xml',
     ],
     'installable': True,
     'application': False,

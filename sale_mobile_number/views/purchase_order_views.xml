@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Inherit Purchase Order Form View -->
+    <record id="purchase_order_form_inherit_mobile" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.mobile</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="mobile" widget="phone"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Inherit Purchase Order List View -->
+    <record id="purchase_order_list_inherit_mobile" model="ir.ui.view">
+        <field name="name">purchase.order.list.inherit.mobile</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="mobile" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
