@@ -1,45 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="1">
 
-    <!-- Deactivate default CRM stages -->
-    <record id="crm.stage_lead1" model="crm.stage">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="crm.stage_lead2" model="crm.stage">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="crm.stage_lead3" model="crm.stage">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="crm.stage_lead4" model="crm.stage">
-        <field name="active" eval="False"/>
-    </record>
+    <!--
+        Odoo 19: crm.stage has NO 'active' field.
+        Strategy: Rename the 4 default stages + add 2 new ones = 6 custom stages.
+        Default stages: New(1), Qualified(2), Proposition(3), Won(4)
+    -->
 
-    <!-- Stage 1: Prospect Identified -->
-    <record id="stage_prospect_identified" model="crm.stage">
+    <!-- Rename Stage 1: New → Prospect Identified -->
+    <record id="crm.stage_lead1" model="crm.stage">
         <field name="name">Prospect Identified</field>
         <field name="sequence">1</field>
         <field name="is_won" eval="False"/>
         <field name="fold" eval="False"/>
     </record>
 
-    <!-- Stage 2: Initial Discussion Completed -->
-    <record id="stage_initial_discussion" model="crm.stage">
+    <!-- Rename Stage 2: Qualified → Initial Discussion -->
+    <record id="crm.stage_lead2" model="crm.stage">
         <field name="name">Initial Discussion</field>
         <field name="sequence">2</field>
         <field name="is_won" eval="False"/>
         <field name="fold" eval="False"/>
     </record>
 
-    <!-- Stage 3: Technical Discussion / Requirement Analysis -->
-    <record id="stage_technical_discussion" model="crm.stage">
+    <!-- Rename Stage 3: Proposition → Technical Discussion -->
+    <record id="crm.stage_lead3" model="crm.stage">
         <field name="name">Technical Discussion</field>
         <field name="sequence">3</field>
         <field name="is_won" eval="False"/>
         <field name="fold" eval="False"/>
     </record>
 
-    <!-- Stage 4: Demo Completed -->
+    <!-- New Stage 4: Demo Completed (inserted before Won) -->
     <record id="stage_demo_completed" model="crm.stage">
         <field name="name">Demo Completed</field>
         <field name="sequence">4</field>
@@ -47,7 +39,7 @@
         <field name="fold" eval="False"/>
     </record>
 
-    <!-- Stage 5: Negotiation -->
+    <!-- New Stage 5: Negotiation -->
     <record id="stage_negotiation" model="crm.stage">
         <field name="name">Negotiation</field>
         <field name="sequence">5</field>
@@ -55,8 +47,8 @@
         <field name="fold" eval="False"/>
     </record>
 
-    <!-- Stage 6: Won -->
-    <record id="stage_won" model="crm.stage">
+    <!-- Rename Stage 4: Won → Won (keep as-is, update sequence) -->
+    <record id="crm.stage_lead4" model="crm.stage">
         <field name="name">Won</field>
         <field name="sequence">70</field>
         <field name="is_won" eval="True"/>
