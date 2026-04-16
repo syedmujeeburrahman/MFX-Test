@@ -8,6 +8,16 @@
         <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
         <field name="arch" type="xml">
 
+            <!-- Add Stage dropdown panel (searchpanel) on the left side -->
+            <xpath expr="//search" position="inside">
+                <searchpanel>
+                    <field name="stage_id" icon="fa-tasks" enable_counters="1"
+                           string="Stage"/>
+                    <field name="x_lead_type" icon="fa-fire" enable_counters="1"
+                           string="Lead Type" select="multi"/>
+                </searchpanel>
+            </xpath>
+
             <!-- Add Lead Type filters -->
             <xpath expr="//filter[@name='filter_won_status_won']" position="before">
                 <separator/>
@@ -52,6 +62,16 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
         <field name="arch" type="xml">
+
+            <!-- Add Stage dropdown panel for Leads view too -->
+            <xpath expr="//search" position="inside">
+                <searchpanel>
+                    <field name="stage_id" icon="fa-tasks" enable_counters="1"
+                           string="Stage"/>
+                    <field name="x_lead_type" icon="fa-fire" enable_counters="1"
+                           string="Lead Type" select="multi"/>
+                </searchpanel>
+            </xpath>
 
             <xpath expr="//group" position="inside">
                 <filter string="Lead Type" name="groupby_lead_type"
