@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Inherit Kanban View for Opportunities -->
+    <!-- Inherit default CRM Kanban View (for Pipeline) -->
     <record id="view_crm_lead_kanban_inherit" model="ir.ui.view">
         <field name="name">crm.lead.kanban.inherit.crm_lead_management</field>
         <field name="model">crm.lead</field>
@@ -21,6 +21,103 @@
                 </span>
             </xpath>
 
+        </field>
+    </record>
+
+    <!--
+        Custom Kanban View: NOT grouped by stage.
+        Cards spread across full width (horizontal + vertical).
+        Used in "Leads by Stage" action with searchpanel.
+    -->
+    <record id="view_crm_lead_kanban_by_stage" model="ir.ui.view">
+        <field name="name">crm.lead.kanban.by.stage</field>
+        <field name="model">crm.lead</field>
+        <field name="arch" type="xml">
+            <kanban class="o_crm_lead_kanban_by_stage" sample="1">
+                <field name="name"/>
+                <field name="contact_name"/>
+                <field name="partner_name"/>
+                <field name="email_from"/>
+                <field name="phone"/>
+                <field name="user_id"/>
+                <field name="stage_id"/>
+                <field name="x_lead_type"/>
+                <field name="x_next_followup_date"/>
+                <field name="expected_revenue"/>
+                <field name="priority"/>
+                <field name="tag_ids"/>
+                <field name="activity_ids"/>
+                <field name="activity_state"/>
+                <field name="color"/>
+                <field name="country_id"/>
+                <field name="city"/>
+                <field name="source_id"/>
+                <field name="function"/>
+                <t t-name="card">
+                    <div class="d-flex justify-content-between mb-1">
+                        <strong class="o_text_overflow">
+                            <field name="name"/>
+                        </strong>
+                        <field name="priority" widget="priority"/>
+                    </div>
+                    <div class="d-flex justify-content-between text-muted small mb-1">
+                        <span t-if="record.partner_name.value">
+                            <i class="fa fa-building-o me-1"/><field name="partner_name"/>
+                        </span>
+                        <span t-if="record.contact_name.value">
+                            <i class="fa fa-user me-1"/><field name="contact_name"/>
+                        </span>
+                    </div>
+                    <div t-if="record.function.value" class="text-muted small mb-1">
+                        <i class="fa fa-briefcase me-1"/><field name="function"/>
+                    </div>
+                    <div class="d-flex flex-wrap gap-1 mb-1">
+                        <span t-if="record.email_from.value" class="text-muted small">
+                            <i class="fa fa-envelope me-1"/><field name="email_from" widget="email"/>
+                        </span>
+                        <span t-if="record.phone.value" class="text-muted small">
+                            <i class="fa fa-phone me-1"/><field name="phone" widget="phone"/>
+                        </span>
+                    </div>
+                    <div t-if="record.city.value || record.country_id.value" class="text-muted small mb-1">
+                        <i class="fa fa-map-marker me-1"/>
+                        <span t-if="record.city.value"><field name="city"/></span>
+                        <span t-if="record.city.value and record.country_id.value">, </span>
+                        <span t-if="record.country_id.value"><field name="country_id"/></span>
+                    </div>
+                    <div t-if="record.source_id.value" class="text-muted small mb-1">
+                        <i class="fa fa-bullseye me-1"/>Source: <field name="source_id"/>
+                    </div>
+                    <div t-if="record.expected_revenue.raw_value" class="mb-1">
+                        <strong class="text-success">
+                            <field name="expected_revenue" widget="monetary"/>
+                        </strong>
+                    </div>
+                    <div t-if="record.x_next_followup_date.value" class="text-muted small mb-1">
+                        <i class="fa fa-calendar me-1"/>Follow-up: <field name="x_next_followup_date"/>
+                    </div>
+                    <div class="d-flex flex-wrap gap-1 mb-2">
+                        <field name="tag_ids" widget="many2many_tags" color_field="color"/>
+                    </div>
+                    <footer class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center gap-1">
+                            <span class="badge text-bg-secondary">
+                                <field name="stage_id"/>
+                            </span>
+                            <span t-if="record.x_lead_type.raw_value == 'hot'"
+                                  class="badge text-bg-danger">Hot</span>
+                            <span t-if="record.x_lead_type.raw_value == 'warm'"
+                                  class="badge text-bg-warning">Warm</span>
+                            <span t-if="record.x_lead_type.raw_value == 'cold'"
+                                  class="badge text-bg-info">Cold</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <field name="activity_ids" widget="kanban_activity"/>
+                            <field name="user_id" widget="many2one_avatar_user"/>
+                        </div>
+                    </footer>
+                </t>
+            </kanban>
         </field>
     </record>
 

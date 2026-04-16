@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Action: Leads by Stage — List view first so searchpanel stage dropdown works -->
+    <!--
+        Main Action: Leads by Stage
+        Opens in KANBAN (not grouped by stage) so cards fill the full area.
+        The searchpanel stage dropdown filters which leads appear.
+        Select a stage → only those leads display as cards across the full width.
+    -->
     <record id="crm_lead_action_by_stage" model="ir.actions.act_window">
         <field name="name">Leads by Stage</field>
         <field name="res_model">crm.lead</field>
-        <field name="view_mode">list,kanban,form,graph,pivot,calendar</field>
+        <field name="view_mode">kanban,list,form,graph,pivot,calendar</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
         <field name="search_view_id" ref="crm.view_crm_case_opportunities_filter"/>
@@ -13,8 +18,28 @@
             <p class="o_view_nocontent_smiling_face">
                 No leads found for the selected stage.
             </p>
-            <p>Use the stage panel on the left to filter leads by pipeline stage.</p>
+            <p>Select a stage from the left panel to view leads.</p>
         </field>
+    </record>
+
+    <!-- Wire the custom ungrouped kanban view to this action -->
+    <record id="crm_lead_action_by_stage_view_kanban" model="ir.actions.act_window.view">
+        <field name="act_window_id" ref="crm_lead_action_by_stage"/>
+        <field name="view_id" ref="view_crm_lead_kanban_by_stage"/>
+        <field name="view_mode">kanban</field>
+        <field name="sequence">0</field>
+    </record>
+
+    <record id="crm_lead_action_by_stage_view_list" model="ir.actions.act_window.view">
+        <field name="act_window_id" ref="crm_lead_action_by_stage"/>
+        <field name="view_mode">list</field>
+        <field name="sequence">1</field>
+    </record>
+
+    <record id="crm_lead_action_by_stage_view_form" model="ir.actions.act_window.view">
+        <field name="act_window_id" ref="crm_lead_action_by_stage"/>
+        <field name="view_mode">form</field>
+        <field name="sequence">2</field>
     </record>
 
     <!-- Menu: Leads by Stage under CRM Sales -->
@@ -24,7 +49,7 @@
               action="crm_lead_action_by_stage"
               sequence="5"/>
 
-    <!-- Dashboard Action: Leads by Stage (Pivot) -->
+    <!-- Dashboard Action: Pipeline Analysis (Pivot) -->
     <record id="crm_lead_report_action_pivot" model="ir.actions.act_window">
         <field name="name">Pipeline Analysis</field>
         <field name="res_model">crm.lead</field>
