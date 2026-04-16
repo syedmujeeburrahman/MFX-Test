@@ -18,6 +18,7 @@ export class CountryDropdown extends Component {
             selectedId: false,
             label: "Countries",
         });
+        this._currentGroupId = null;
         onWillStart(() => this._loadCountries());
     }
 
@@ -43,28 +44,40 @@ export class CountryDropdown extends Component {
     }
 
     selectCountry(country) {
+        const searchModel = this.env.searchModel;
+        if (!searchModel) {
+            return;
+        }
+        // Remove previous country filter if active
+        if (this._currentGroupId !== null) {
+            searchModel.deactivateGroup(this._currentGroupId);
+            this._currentGroupId = null;
+        }
+
         this.state.selectedId = country.id;
         this.state.label = country.name;
-        this._applyFilter(country.id, country.name);
+
+        // Create a new dynamic filter for the selected country.
+        // createNewFilters mutates the preFilter object, adding groupId & id.
+        const preFilter = {
+            description: country.name,
+            domain: `[("country_id", "=", ${country.id})]`,
+        };
+        searchModel.createNewFilters([preFilter]);
+        this._currentGroupId = preFilter.groupId;
     }
 
     clearFilter() {
-        this.state.selectedId = false;
-        this.state.label = "Countries";
-        this._applyFilter(false, "");
-    }
-
-    _applyFilter(countryId, label) {
         const searchModel = this.env.searchModel;
-        if (!searchModel || typeof searchModel.setDomainParts !== "function") {
+        if (!searchModel) {
             return;
         }
-        searchModel.setDomainParts({
-            countryDropdown: {
-                domain: countryId ? [["country_id", "=", countryId]] : [],
-                facetLabel: label || "",
-            },
-        });
+        if (this._currentGroupId !== null) {
+            searchModel.deactivateGroup(this._currentGroupId);
+            this._currentGroupId = null;
+        }
+        this.state.selectedId = false;
+        this.state.label = "Countries";
     }
 }
 
@@ -73,7 +86,7 @@ ControlPanel.components = Object.assign({}, ControlPanel.components, {
     CountryDropdown,
 });
 
-// Patch ControlPanel to determine visibility of CountryDropdown
+// Patch ControlPanel to determine when to show the dropdown
 patch(ControlPanel.prototype, {
     setup() {
         super.setup();
