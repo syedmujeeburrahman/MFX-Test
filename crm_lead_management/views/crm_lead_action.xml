@@ -2,11 +2,20 @@
 <odoo>
 
     <!--
-        Main Action: Leads by Stage
-        Opens in KANBAN (not grouped by stage) so cards fill the full area.
-        The searchpanel stage dropdown filters which leads appear.
-        Select a stage → only those leads display as cards across the full width.
+        Override the main CRM Pipeline action to use our custom ungrouped kanban.
+        This replaces the kanban view in the pipeline so when user selects a stage
+        from the searchpanel dropdown, only those leads show (no stage columns).
     -->
+
+    <!-- Override the existing kanban view binding in the main Pipeline action -->
+    <record id="crm.crm_lead_action_pipeline_view_kanban" model="ir.actions.act_window.view">
+        <field name="act_window_id" ref="crm.crm_lead_action_pipeline"/>
+        <field name="view_id" ref="view_crm_lead_kanban_by_stage"/>
+        <field name="view_mode">kanban</field>
+        <field name="sequence">0</field>
+    </record>
+
+    <!-- Also keep our separate Leads by Stage action -->
     <record id="crm_lead_action_by_stage" model="ir.actions.act_window">
         <field name="name">Leads by Stage</field>
         <field name="res_model">crm.lead</field>
@@ -22,7 +31,6 @@
         </field>
     </record>
 
-    <!-- Wire the custom ungrouped kanban view to this action -->
     <record id="crm_lead_action_by_stage_view_kanban" model="ir.actions.act_window.view">
         <field name="act_window_id" ref="crm_lead_action_by_stage"/>
         <field name="view_id" ref="view_crm_lead_kanban_by_stage"/>
