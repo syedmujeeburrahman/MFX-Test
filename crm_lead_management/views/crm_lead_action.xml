@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <!-- Action: Leads by Stage — List view first so searchpanel stage dropdown works -->
+    <record id="crm_lead_action_by_stage" model="ir.actions.act_window">
+        <field name="name">Leads by Stage</field>
+        <field name="res_model">crm.lead</field>
+        <field name="view_mode">list,kanban,form,graph,pivot,calendar</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="search_view_id" ref="crm.view_crm_case_opportunities_filter"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No leads found for the selected stage.
+            </p>
+            <p>Use the stage panel on the left to filter leads by pipeline stage.</p>
+        </field>
+    </record>
+
+    <!-- Menu: Leads by Stage under CRM Sales -->
+    <menuitem id="menu_crm_leads_by_stage"
+              name="Leads by Stage"
+              parent="crm.crm_menu_sales"
+              action="crm_lead_action_by_stage"
+              sequence="5"/>
+
     <!-- Dashboard Action: Leads by Stage (Pivot) -->
     <record id="crm_lead_report_action_pivot" model="ir.actions.act_window">
         <field name="name">Pipeline Analysis</field>
