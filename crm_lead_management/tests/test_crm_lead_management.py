@@ -8,17 +8,17 @@ class TestCrmLeadManagement(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        # Stages: 3 renamed from default CRM + 2 new custom + 1 kept (Won)
-        cls.stage_prospect = cls.env.ref('crm.stage_lead1')
-        cls.stage_discussion = cls.env.ref('crm.stage_lead2')
-        cls.stage_technical = cls.env.ref('crm.stage_lead3')
+        Stage = cls.env['crm.stage']
+        cls.stage_prospect = Stage.search([('name', '=', 'Prospect Identified')], limit=1)
+        cls.stage_discussion = Stage.search([('name', '=', 'Initial Discussion')], limit=1)
+        cls.stage_technical = Stage.search([('name', '=', 'Technical Discussion')], limit=1)
         cls.stage_demo = cls.env.ref(
             'crm_lead_management.stage_demo_completed'
         )
         cls.stage_negotiation = cls.env.ref(
             'crm_lead_management.stage_negotiation'
         )
-        cls.stage_won = cls.env.ref('crm.stage_lead4')
+        cls.stage_won = Stage.search([('name', '=', 'Won')], limit=1)
 
     def test_custom_stages_created(self):
         """Test that all 6 custom pipeline stages exist with correct names."""
