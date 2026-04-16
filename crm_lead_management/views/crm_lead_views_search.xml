@@ -9,7 +9,7 @@
         <field name="arch" type="xml">
 
             <!-- Add Lead Type filters -->
-            <xpath expr="//filter[@name='won']" position="before">
+            <xpath expr="//filter[@name='filter_won_status_won']" position="before">
                 <separator/>
                 <filter string="Hot Leads" name="filter_hot"
                         domain="[('x_lead_type', '=', 'hot')]"/>

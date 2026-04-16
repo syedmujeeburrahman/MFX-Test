@@ -22,19 +22,17 @@ class CrmLead(models.Model):
         help='Scheduled date for the next follow-up with this lead',
     )
 
-    @api.depends('x_lead_type')
-    def _compute_kanban_color(self):
+    def _get_lead_type_color(self):
+        """Return kanban color index based on lead type."""
         color_map = {
             'hot': 4,      # Red
             'warm': 2,     # Orange
             'cold': 5,     # Purple
         }
-        for lead in self:
-            lead.color = color_map.get(lead.x_lead_type, 0)
+        return color_map.get(self.x_lead_type, 0)
 
     def action_schedule_followup_activity(self):
         """Create a follow-up activity based on the next follow-up date."""
-        activity_type = self.env.ref('mail.mail_activity_data_todo', raise_if_not_found=False)
         for lead in self:
             if lead.x_next_followup_date:
                 existing = lead.activity_ids.filtered(

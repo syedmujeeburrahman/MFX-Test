@@ -45,7 +45,7 @@
     },
     'demo': [],
     'installable': True,
-    'application': False,
+    'application': True,
     'auto_install': False,
     'license': 'LGPL-3',
 }
