@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Inherit Kanban View for Opportunities -->
+    <record id="view_crm_lead_kanban_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.kanban.inherit.crm_lead_management</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_lead_kanban"/>
+        <field name="arch" type="xml">
+
+            <!-- Add x_lead_type field to kanban template -->
+            <xpath expr="//templates" position="before">
+                <field name="x_lead_type"/>
+                <field name="x_next_followup_date"/>
+            </xpath>
+
+            <!-- Add lead type badge and follow-up date inside the kanban card -->
+            <xpath expr="//div[hasclass('oe_kanban_bottom_left')]" position="inside">
+                <span class="ms-1">
+                    <span t-if="record.x_lead_type.raw_value == 'hot'"
+                          class="badge text-bg-danger">Hot</span>
+                    <span t-if="record.x_lead_type.raw_value == 'warm'"
+                          class="badge text-bg-warning">Warm</span>
+                    <span t-if="record.x_lead_type.raw_value == 'cold'"
+                          class="badge text-bg-info">Cold</span>
+                </span>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

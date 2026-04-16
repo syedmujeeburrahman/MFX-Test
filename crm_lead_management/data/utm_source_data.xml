@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <!-- Lead Sources -->
+    <record id="utm_source_linkedin" model="utm.source">
+        <field name="name">LinkedIn</field>
+    </record>
+
+    <record id="utm_source_cold_call" model="utm.source">
+        <field name="name">Cold Call</field>
+    </record>
+
+    <record id="utm_source_referral" model="utm.source">
+        <field name="name">Referral</field>
+    </record>
+
+    <record id="utm_source_website" model="utm.source">
+        <field name="name">Website Inquiry</field>
+    </record>
+
+    <record id="utm_source_trade_show" model="utm.source">
+        <field name="name">Trade Show</field>
+    </record>
+
+    <record id="utm_source_email_campaign" model="utm.source">
+        <field name="name">Email Campaign</field>
+    </record>
+
+    <record id="utm_source_social_media" model="utm.source">
+        <field name="name">Social Media</field>
+    </record>
+
+    <record id="utm_source_partner" model="utm.source">
+        <field name="name">Partner / Channel</field>
+    </record>
+
+</odoo>

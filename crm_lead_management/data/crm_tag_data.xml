@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <!-- CRM Tags for Lead Segmentation -->
+    <record id="tag_enterprise" model="crm.tag">
+        <field name="name">Enterprise</field>
+        <field name="color">1</field>
+    </record>
+
+    <record id="tag_sme" model="crm.tag">
+        <field name="name">SME</field>
+        <field name="color">2</field>
+    </record>
+
+    <record id="tag_startup" model="crm.tag">
+        <field name="name">Startup</field>
+        <field name="color">3</field>
+    </record>
+
+    <record id="tag_high_value" model="crm.tag">
+        <field name="name">High Value</field>
+        <field name="color">4</field>
+    </record>
+
+    <record id="tag_repeat_customer" model="crm.tag">
+        <field name="name">Repeat Customer</field>
+        <field name="color">5</field>
+    </record>
+
+    <record id="tag_decision_maker" model="crm.tag">
+        <field name="name">Decision Maker</field>
+        <field name="color">10</field>
+    </record>
+
+    <record id="tag_technical_buyer" model="crm.tag">
+        <field name="name">Technical Buyer</field>
+        <field name="color">8</field>
+    </record>
+
+    <record id="tag_urgent" model="crm.tag">
+        <field name="name">Urgent</field>
+        <field name="color">4</field>
+    </record>
+
+</odoo>

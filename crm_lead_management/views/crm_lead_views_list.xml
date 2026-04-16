@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Inherit Opportunity List View -->
+    <record id="crm_case_list_view_oppor_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.list.opportunity.inherit.crm_lead_management</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+
+            <!-- Add Lead Type column after contact_name -->
+            <xpath expr="//field[@name='contact_name']" position="after">
+                <field name="x_lead_type" widget="badge"
+                       decoration-danger="x_lead_type == 'hot'"
+                       decoration-warning="x_lead_type == 'warm'"
+                       decoration-info="x_lead_type == 'cold'"
+                       optional="show"/>
+            </xpath>
+
+            <!-- Add Next Follow-up Date -->
+            <xpath expr="//field[@name='activity_ids']" position="before">
+                <field name="x_next_followup_date" optional="show"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- Inherit Lead List View -->
+    <record id="crm_case_list_view_leads_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.list.lead.inherit.crm_lead_management</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='contact_name']" position="after">
+                <field name="x_lead_type" widget="badge"
+                       decoration-danger="x_lead_type == 'hot'"
+                       decoration-warning="x_lead_type == 'warm'"
+                       decoration-info="x_lead_type == 'cold'"
+                       optional="show"/>
+            </xpath>
+
+            <xpath expr="//field[@name='activity_ids']" position="before">
+                <field name="x_next_followup_date" optional="show"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

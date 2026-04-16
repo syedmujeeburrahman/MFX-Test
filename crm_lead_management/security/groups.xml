@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- We rely on standard CRM security groups (base.group_user, sales_team groups)
+         No additional custom groups needed as we extend crm.lead which already
+         has comprehensive security rules from the crm module -->
+
+</odoo>

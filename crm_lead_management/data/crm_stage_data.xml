@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <!-- Remove default stages by deactivating them -->
+    <function model="crm.stage" name="write">
+        <value eval="[
+            ref('crm.stage_lead1'),
+            ref('crm.stage_lead2'),
+            ref('crm.stage_lead3'),
+            ref('crm.stage_lead4'),
+        ]"/>
+        <value eval="{'active': False}"/>
+    </function>
+
+    <!-- Stage 1: Prospect Identified -->
+    <record id="stage_prospect_identified" model="crm.stage">
+        <field name="name">Prospect Identified</field>
+        <field name="sequence">1</field>
+        <field name="is_won">False</field>
+        <field name="fold">False</field>
+    </record>
+
+    <!-- Stage 2: Initial Discussion Completed -->
+    <record id="stage_initial_discussion" model="crm.stage">
+        <field name="name">Initial Discussion</field>
+        <field name="sequence">2</field>
+        <field name="is_won">False</field>
+        <field name="fold">False</field>
+    </record>
+
+    <!-- Stage 3: Technical Discussion / Requirement Analysis -->
+    <record id="stage_technical_discussion" model="crm.stage">
+        <field name="name">Technical Discussion</field>
+        <field name="sequence">3</field>
+        <field name="is_won">False</field>
+        <field name="fold">False</field>
+    </record>
+
+    <!-- Stage 4: Demo Completed -->
+    <record id="stage_demo_completed" model="crm.stage">
+        <field name="name">Demo Completed</field>
+        <field name="sequence">4</field>
+        <field name="is_won">False</field>
+        <field name="fold">False</field>
+    </record>
+
+    <!-- Stage 5: Negotiation -->
+    <record id="stage_negotiation" model="crm.stage">
+        <field name="name">Negotiation</field>
+        <field name="sequence">5</field>
+        <field name="is_won">False</field>
+        <field name="fold">False</field>
+    </record>
+
+    <!-- Stage 6: Won -->
+    <record id="stage_won" model="crm.stage">
+        <field name="name">Won</field>
+        <field name="sequence">70</field>
+        <field name="is_won">True</field>
+        <field name="fold">True</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,34 @@
+// CRM Lead Management - Kanban Color Coding for Lead Types
+.o_kanban_record {
+    // Hot lead - red left border accent
+    &.o_lead_type_hot {
+        border-inline-start: 3px solid #dc3545;
+    }
+    // Warm lead - orange left border accent
+    &.o_lead_type_warm {
+        border-inline-start: 3px solid #fd7e14;
+    }
+    // Cold lead - blue left border accent
+    &.o_lead_type_cold {
+        border-inline-start: 3px solid #0dcaf0;
+    }
+}
+
+// Badge styling adjustments for lead type
+.badge {
+    &.text-bg-danger {
+        font-weight: 600;
+    }
+    &.text-bg-warning {
+        font-weight: 600;
+    }
+    &.text-bg-info {
+        font-weight: 600;
+    }
+}
+
+// Follow-up overdue indicator
+.o_followup_overdue {
+    color: #dc3545;
+    font-weight: bold;
+}
