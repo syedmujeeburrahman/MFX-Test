@@ -13,11 +13,14 @@
                 <searchpanel>
                     <field name="stage_id" icon="fa-tasks" enable_counters="1"
                            string="Stage"/>
-                    <field name="country_id" icon="fa-globe" enable_counters="1"
-                           string="Country"/>
                     <field name="x_lead_type" icon="fa-fire" enable_counters="1"
                            string="Lead Type" select="multi"/>
                 </searchpanel>
+            </xpath>
+
+            <!-- Add Country as a searchable field in the search bar -->
+            <xpath expr="//filter[@name='filter_won_status_won']" position="before">
+                <field name="country_id" string="Country"/>
             </xpath>
 
             <!-- Add Lead Type filters -->
@@ -70,8 +73,6 @@
                 <searchpanel>
                     <field name="stage_id" icon="fa-tasks" enable_counters="1"
                            string="Stage"/>
-                    <field name="country_id" icon="fa-globe" enable_counters="1"
-                           string="Country"/>
                     <field name="x_lead_type" icon="fa-fire" enable_counters="1"
                            string="Lead Type" select="multi"/>
                 </searchpanel>

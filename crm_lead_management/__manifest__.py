@@ -42,6 +42,8 @@
     'assets': {
         'web.assets_backend': [
             'crm_lead_management/static/src/scss/lead_kanban.scss',
+            'crm_lead_management/static/src/js/country_dropdown.js',
+            'crm_lead_management/static/src/xml/country_dropdown.xml',
         ],
     },
     'demo': [],

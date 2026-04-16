@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <!-- Country Dropdown Component -->
+    <t t-name="crm_lead_management.CountryDropdown">
+        <div class="o_country_dropdown d-inline-flex align-items-center me-2">
+            <Dropdown menuClass="'o_country_dropdown_menu'">
+                <button class="btn dropdown-toggle d-flex align-items-center gap-1"
+                        t-att-class="state.selectedId ? 'btn-primary' : 'btn-outline-primary'">
+                    <i class="fa fa-globe"/>
+                    <span t-esc="state.label"/>
+                </button>
+                <t t-set-slot="content">
+                    <DropdownItem onSelected.bind="clearFilter">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fa fa-list-ul text-muted"/>
+                            <span class="fw-bold">All Countries</span>
+                        </div>
+                    </DropdownItem>
+                    <div class="dropdown-divider" role="separator"/>
+                    <t t-foreach="state.countries" t-as="country" t-key="country.id">
+                        <DropdownItem onSelected="() => this.selectCountry(country)">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="fa fa-flag-o"
+                                       t-att-class="state.selectedId === country.id ? 'text-primary' : 'text-muted'"/>
+                                    <span t-att-class="state.selectedId === country.id ? 'fw-bold text-primary' : ''"
+                                          t-esc="country.name"/>
+                                </div>
+                                <span class="badge rounded-pill ms-2"
+                                      t-att-class="state.selectedId === country.id ? 'bg-primary' : 'bg-secondary'"
+                                      t-esc="country.count"/>
+                            </div>
+                        </DropdownItem>
+                    </t>
+                    <t t-if="!state.countries.length">
+                        <DropdownItem>
+                            <span class="text-muted fst-italic">No countries found</span>
+                        </DropdownItem>
+                    </t>
+                </t>
+            </Dropdown>
+        </div>
+    </t>
+
+    <!-- Extend ControlPanel to add CountryDropdown beside the search bar -->
+    <t t-inherit="web.ControlPanel" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_cp_searchview')]" position="before">
+            <CountryDropdown t-if="showCountryDropdown"/>
+        </xpath>
+    </t>
+
+</templates>

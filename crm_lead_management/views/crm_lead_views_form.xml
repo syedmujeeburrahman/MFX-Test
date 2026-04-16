@@ -21,6 +21,12 @@
                 <field name="x_next_followup_date"/>
             </xpath>
 
+            <!-- Add Country field in the lead info section -->
+            <xpath expr="//field[@name='phone']" position="after">
+                <field name="country_id" placeholder="Country"
+                       options="{'no_create': True, 'no_open': True}"/>
+            </xpath>
+
         </field>
     </record>
 
