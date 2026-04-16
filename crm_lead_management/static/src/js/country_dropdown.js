@@ -17,6 +17,7 @@ export class CountryDropdown extends Component {
             countries: [],
             selectedId: false,
             label: "Countries",
+            isOpen: false,
         });
         this._currentGroupId = null;
         onWillStart(() => this._loadCountries());
@@ -24,39 +25,44 @@ export class CountryDropdown extends Component {
 
     async _loadCountries() {
         try {
-            // Use searchRead to fetch all leads with a country, then
-            // deduplicate client-side.  This is more reliable across
-            // Odoo versions than readGroup (field-name differences).
-            const leads = await this.orm.searchRead(
+            const groups = await this.orm.readGroup(
                 "crm.lead",
                 [["country_id", "!=", false]],
                 ["country_id"],
-                { limit: false }
+                ["country_id"]
             );
-            const countryMap = {};
-            for (const lead of leads) {
-                if (lead.country_id) {
-                    const [id, name] = lead.country_id;
-                    if (!countryMap[id]) {
-                        countryMap[id] = { id, name, count: 0 };
-                    }
-                    countryMap[id].count++;
+            const countries = [];
+            for (const g of groups) {
+                if (g.country_id) {
+                    countries.push({
+                        id: g.country_id[0],
+                        name: g.country_id[1],
+                        count: g.country_id_count || g.__count || 0,
+                    });
                 }
             }
-            this.state.countries = Object.values(countryMap).sort((a, b) =>
-                a.name.localeCompare(b.name)
-            );
+            countries.sort((a, b) => a.name.localeCompare(b.name));
+            this.state.countries = countries;
         } catch (e) {
             console.error("CountryDropdown: failed to load countries", e);
+            this.state.countries = [];
         }
     }
 
     /**
-     * Reload countries every time the dropdown is opened so that
-     * newly added / manually set countries on leads are reflected.
+     * Reload countries every time the dropdown opens so that
+     * newly added countries on leads are immediately visible.
      */
     async onBeforeOpen() {
         await this._loadCountries();
+    }
+
+    /**
+     * Track dropdown open/close state for arrow rotation.
+     * @param {boolean} isOpen
+     */
+    onDropdownStateChanged(isOpen) {
+        this.state.isOpen = isOpen;
     }
 
     selectCountry(country) {
@@ -64,17 +70,13 @@ export class CountryDropdown extends Component {
         if (!searchModel) {
             return;
         }
-        // Remove previous country filter if active
         if (this._currentGroupId !== null) {
             searchModel.deactivateGroup(this._currentGroupId);
             this._currentGroupId = null;
         }
-
         this.state.selectedId = country.id;
         this.state.label = country.name;
 
-        // Create a new dynamic filter for the selected country.
-        // createNewFilters mutates the preFilter object, adding groupId & id.
         const preFilter = {
             description: country.name,
             domain: `[("country_id", "=", ${country.id})]`,
