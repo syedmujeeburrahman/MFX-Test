@@ -43,6 +43,14 @@ export class CountryDropdown extends Component {
         }
     }
 
+    /**
+     * Reload countries every time the dropdown is opened so that
+     * newly added / manually set countries on leads are reflected.
+     */
+    async onBeforeOpen() {
+        await this._loadCountries();
+    }
+
     selectCountry(country) {
         const searchModel = this.env.searchModel;
         if (!searchModel) {

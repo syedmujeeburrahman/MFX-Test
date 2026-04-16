@@ -35,6 +35,8 @@
 
 // Country Dropdown Button Styling
 .o_country_dropdown {
+    margin-right: 8px;
+
     .btn {
         font-size: 0.875rem;
         padding: 0.25rem 0.75rem;
@@ -50,6 +52,19 @@
     .btn-outline-primary:hover {
         transform: translateY(-1px);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    // Arrow indicator: points right when closed, rotates down when open
+    .o_country_dropdown_arrow {
+        font-size: 0.65rem;
+        transition: transform 0.2s ease;
+        margin-left: 2px;
+    }
+
+    // When dropdown is open, rotate arrow to point downward
+    .o-dropdown.show .o_country_dropdown_arrow,
+    .o-dropdown--open .o_country_dropdown_arrow {
+        transform: rotate(90deg);
     }
 }
 
