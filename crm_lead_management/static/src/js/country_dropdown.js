@@ -25,11 +25,13 @@ export class CountryDropdown extends Component {
 
     async _loadCountries() {
         try {
-            const groups = await this.orm.readGroup(
+            // Use orm.call with positional args for maximum reliability.
+            // read_group(domain, fields, groupby) returns countries that
+            // have at least one lead associated with them.
+            const groups = await this.orm.call(
                 "crm.lead",
-                [["country_id", "!=", false]],
-                ["country_id"],
-                ["country_id"]
+                "read_group",
+                [[["country_id", "!=", false]], ["country_id"], ["country_id"]]
             );
             const countries = [];
             for (const g of groups) {
