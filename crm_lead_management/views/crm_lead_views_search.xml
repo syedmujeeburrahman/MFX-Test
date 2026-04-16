@@ -13,6 +13,8 @@
                 <searchpanel>
                     <field name="stage_id" icon="fa-tasks" enable_counters="1"
                            string="Stage"/>
+                    <field name="country_id" icon="fa-globe" enable_counters="1"
+                           string="Country"/>
                     <field name="x_lead_type" icon="fa-fire" enable_counters="1"
                            string="Lead Type" select="multi"/>
                 </searchpanel>
@@ -68,6 +70,8 @@
                 <searchpanel>
                     <field name="stage_id" icon="fa-tasks" enable_counters="1"
                            string="Stage"/>
+                    <field name="country_id" icon="fa-globe" enable_counters="1"
+                           string="Country"/>
                     <field name="x_lead_type" icon="fa-fire" enable_counters="1"
                            string="Lead Type" select="multi"/>
                 </searchpanel>
