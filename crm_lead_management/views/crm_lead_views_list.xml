@@ -40,7 +40,7 @@
                        optional="show"/>
             </xpath>
 
-            <xpath expr="//field[@name='activity_ids']" position="before">
+            <xpath expr="//field[@name='priority']" position="after">
                 <field name="x_next_followup_date" optional="show"/>
             </xpath>
 
