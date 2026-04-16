@@ -33,9 +33,13 @@
     font-weight: bold;
 }
 
+// Country Dropdown Wrapper - sits right after gear icon area
+.o_country_dropdown_wrapper {
+    margin-left: 6px;
+}
+
 // Country Dropdown Button Styling
 .o_country_dropdown {
-    margin-right: 8px;
 
     .btn {
         font-size: 0.875rem;

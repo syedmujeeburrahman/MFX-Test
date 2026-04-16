@@ -24,20 +24,28 @@ export class CountryDropdown extends Component {
 
     async _loadCountries() {
         try {
-            const groups = await this.orm.readGroup(
+            // Use searchRead to fetch all leads with a country, then
+            // deduplicate client-side.  This is more reliable across
+            // Odoo versions than readGroup (field-name differences).
+            const leads = await this.orm.searchRead(
                 "crm.lead",
                 [["country_id", "!=", false]],
                 ["country_id"],
-                ["country_id"]
+                { limit: false }
             );
-            this.state.countries = groups
-                .filter((g) => g.country_id)
-                .map((g) => ({
-                    id: g.country_id[0],
-                    name: g.country_id[1],
-                    count: g.country_id_count || g.__count || 0,
-                }))
-                .sort((a, b) => a.name.localeCompare(b.name));
+            const countryMap = {};
+            for (const lead of leads) {
+                if (lead.country_id) {
+                    const [id, name] = lead.country_id;
+                    if (!countryMap[id]) {
+                        countryMap[id] = { id, name, count: 0 };
+                    }
+                    countryMap[id].count++;
+                }
+            }
+            this.state.countries = Object.values(countryMap).sort((a, b) =>
+                a.name.localeCompare(b.name)
+            );
         } catch (e) {
             console.error("CountryDropdown: failed to load countries", e);
         }

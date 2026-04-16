@@ -44,10 +44,12 @@
         </div>
     </t>
 
-    <!-- Extend ControlPanel to add CountryDropdown next to the search/navigation area -->
+    <!-- Extend ControlPanel to add CountryDropdown right after the gear icon area -->
     <t t-inherit="web.ControlPanel" t-inherit-mode="extension">
-        <xpath expr="//div[hasclass('o_control_panel_navigation')]" position="inside">
-            <CountryDropdown t-if="showCountryDropdown"/>
+        <xpath expr="//div[hasclass('o_control_panel_actions')]" position="after">
+            <div class="o_country_dropdown_wrapper d-flex align-items-center order-2 order-lg-1">
+                <CountryDropdown t-if="showCountryDropdown"/>
+            </div>
         </xpath>
     </t>
 
