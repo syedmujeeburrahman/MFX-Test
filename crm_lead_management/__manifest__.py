@@ -32,6 +32,7 @@
         'data/utm_source_data.xml',
         'data/crm_tag_data.xml',
         'data/ir_cron_data.xml',
+        'data/crm_lead_demo_data.xml',
         'views/crm_lead_views_form.xml',
         'views/crm_lead_views_list.xml',
         'views/crm_lead_views_kanban.xml',

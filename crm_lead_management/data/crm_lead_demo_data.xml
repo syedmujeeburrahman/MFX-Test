@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="lead_demo_01" model="crm.lead">
+        <field name="name">Evozard Consulting Services Private  Limited Silver</field>
+        <field name="partner_name">Evozard Consulting Services Private  Limited Silver</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">8000168707</field>
+        <field name="description">Demo is done, he said will get back to me in 2 weeks
+2nd Update: Looking for colloboration, when client come, he will reachout to us with commission</field>
+        <field name="x_next_followup_date">2026-02-04</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_02" model="crm.lead">
+        <field name="name">HMRC INDUSTRY PRIVATE LIMITED</field>
+        <field name="partner_name">HMRC INDUSTRY PRIVATE LIMITED</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">1169320163</field>
+        <field name="description">2nd Update: He is going to office , than he will discuss with me, expecting a call on 4 PM</field>
+        <field name="x_next_followup_date">2026-03-23</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_03" model="crm.lead">
+        <field name="name">Variety IT</field>
+        <field name="partner_name">Variety IT</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">966 56 409 9728</field>
+        <field name="description">Update: Once he will test it out, than will move for starter plan</field>
+        <field name="x_next_followup_date">2026-03-03</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_04" model="crm.lead">
+        <field name="name">7Span Internet Private Limited Ready</field>
+        <field name="partner_name">7Span Internet Private Limited Ready</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">9099516826</field>
+        <field name="description">1st Update: Demo is done, will expect a reply after one week
+2nd Update: Call me in april 1st week, he will use free version than let me know</field>
+        <field name="x_next_followup_date">2026-03-23</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_05" model="crm.lead">
+        <field name="name">Sudheendra Walvekar</field>
+        <field name="partner_name">Sudheendra Walvekar</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">804092 6078</field>
+        <field name="website">https://www.primeminds.co/</field>
+        <field name="description">1st Update: 
+Demo is done, he will get back to me, and really impress
+2nd Update: He was outside now he is available he will talk to his team and then get back to me on next week.</field>
+        <field name="x_next_followup_date">2026-04-10</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_06" model="crm.lead">
+        <field name="name">Tenth Planet Technologies- India</field>
+        <field name="partner_name">Tenth Planet Technologies- India</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">9840302789</field>
+        <field name="description">1st Update: Demo is done , they will dicsuss and tell me 
+2nd Update: Busy, Not responding</field>
+        <field name="x_next_followup_date">2026-05-04</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_07" model="crm.lead">
+        <field name="name">Accurate Management System</field>
+        <field name="partner_name">Accurate Management System</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">59 473 6585</field>
+        <field name="description">1st Update: Demo is done , they will dicsuss and tell me 
+2nd Update: Planning to purchase the last plan in month of may</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_08" model="crm.lead">
+        <field name="name">Meeting with Ascetic Business Solution</field>
+        <field name="partner_name">Meeting with Ascetic Business Solution</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">94274 25799</field>
+        <field name="email_from">riken.bhorania@gmail.com</field>
+        <field name="description">1st Update: Demo is done , they will dicsuss and tell me 
+2nd Update: No Plan, if he req. he only call me</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_09" model="crm.lead">
+        <field name="name">CLOUDSCIENCE LABS PRIVATE LIMITED</field>
+        <field name="partner_name">CLOUDSCIENCE LABS PRIVATE LIMITED</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">92138 28808</field>
+        <field name="description">1st Update: He will get back to me after 3 days
+2nd Update:</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_10" model="crm.lead">
+        <field name="name">LINKS4ENGG INDIA PRIVATE LIMITED</field>
+        <field name="partner_name">LINKS4ENGG INDIA PRIVATE LIMITED</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">73068 89096</field>
+        <field name="description">1st Update: He Committed he will be purchase in the  same day</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_11" model="crm.lead">
+        <field name="name">Systems codes</field>
+        <field name="partner_name">Systems codes</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">54 312 3155</field>
+        <field name="description">Saudi prospect, said 3 days later he will purchase 
+2nd Update: After One week he will move to riyadh than he will purchase our plan</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_12" model="crm.lead">
+        <field name="name">SA PODIT Services LLP - DearERP Demo</field>
+        <field name="partner_name">SA PODIT Services LLP - DearERP Demo</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">9899584666</field>
+        <field name="description">Demo is done, he told us will get back to you after some days</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_13" model="crm.lead">
+        <field name="name">Arsalan Yasin - DearERP Demo</field>
+        <field name="partner_name">Arsalan Yasin - DearERP Demo</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">420 928 664</field>
+        <field name="description">Australian prospect , ready to purchase the agency,
+ waiting for subscription code</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_14" model="crm.lead">
+        <field name="name">Amer - Experts In Tech, Saudi arab</field>
+        <field name="partner_name">Amer - Experts In Tech, Saudi arab</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">535288851</field>
+        <field name="description">Demo is done, now he will come back after sometime</field>
+        <field name="x_next_followup_date">2026-04-06</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_15" model="crm.lead">
+        <field name="name">alligatorinfosoft</field>
+        <field name="partner_name">alligatorinfosoft</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">99220 09667</field>
+        <field name="description">He want again a demo with someone, than he will purchase, 
+on 8 he will be meeting I will call him Friday.</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_16" model="crm.lead">
+        <field name="name">Tatvamasilabs</field>
+        <field name="partner_name">Tatvamasilabs</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="description">Meeting is done they want one more meeting , as they were 
+don’t have time to porceed.</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_17" model="crm.lead">
+        <field name="name">Nimesh captivea</field>
+        <field name="partner_name">Nimesh captivea</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="description">He will be call me after 3 weeks</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_18" model="crm.lead">
+        <field name="name">QWY SOFTWARE PRIVATE LIMITED -  Sarat</field>
+        <field name="partner_name">QWY SOFTWARE PRIVATE LIMITED -  Sarat</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">79948 88797</field>
+        <field name="description">They will communicate with team and get back to us</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_19" model="crm.lead">
+        <field name="name">Therp BV (Netherlands)</field>
+        <field name="partner_name">Therp BV (Netherlands)</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">+31 (0) 20 3093093</field>
+        <field name="email_from">info@therp.nl</field>
+        <field name="website">https://therp.nl</field>
+        <field name="description">Demo is done, looks he is just exploring still he replied me he 
+will be connect after one week</field>
+        <field name="x_next_followup_date">2026-04-16</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_20" model="crm.lead">
+        <field name="name">PreComp (Malaysia) Sdn Bhd</field>
+        <field name="partner_name">PreComp (Malaysia) Sdn Bhd</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">+6016-725 6662</field>
+        <field name="email_from">info@precomp.com.my</field>
+        <field name="website">https://odoo2u.com</field>
+        <field name="description">Demo is done, they impresseve they will respond me after 2
+ weeks. As they have to ask to their CEO than will reply me</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_21" model="crm.lead">
+        <field name="name">New Horizons Cybersoft Ltd Ready</field>
+        <field name="partner_name">New Horizons Cybersoft Ltd Ready</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">93973 06732</field>
+        <field name="description">Details shared over the email , once he will go through he will
+contact us</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_22" model="crm.lead">
+        <field name="name">Synconics Technologies Pvt. Ltd.</field>
+        <field name="partner_name">Synconics Technologies Pvt. Ltd.</field>
+        <field name="website">https://www.synconics.com/</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">9426864274</field>
+        <field name="description">They given the feedback they are happay, they required one 
+more meeting, they will test free version than they will be 
+come , after 10 days when clients will get onboarded</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_23" model="crm.lead">
+        <field name="name">Galaxy Weblinks Limited. Ready</field>
+        <field name="partner_name">Galaxy Weblinks Limited. Ready</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">94065 82066</field>
+        <field name="description">This person told and did cross question told me we have AI, our
+starter plan is 20$ onky, seems he is not buy</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+    <record id="lead_demo_24" model="crm.lead">
+        <field name="name">Cloud Systems for Information Technology , KSA</field>
+        <field name="partner_name">Cloud Systems for Information Technology , KSA</field>
+        <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
+        <field name="type">opportunity</field>
+        <field name="phone">58 004 1917</field>
+        <field name="description">Demo done , tomorrow will get an update from prosp.</field>
+        <field name="x_next_followup_date">2026-04-13</field>
+        <field name="x_lead_type">warm</field>
+    </record>
+
+</odoo>
