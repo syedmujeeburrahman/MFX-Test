@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ============================================================ -->
+        <!-- GENERAL FAQs                                                 -->
+        <!-- ============================================================ -->
+        <record id="faq_what_is" model="dearerp.demo.faq">
+            <field name="name">What exactly is DearERP?</field>
+            <field name="sequence">1</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="category">general</field>
+            <field name="difficulty">easy</field>
+            <field name="answer"><![CDATA[
+                <p>DearERP is an AI-powered platform specifically designed for Odoo ERP customization and module development. It understands the Odoo framework deeply — including the ORM, view architecture, security model, and module lifecycle — and generates complete, production-ready custom modules from natural language descriptions.</p>
+            ]]></field>
+            <field name="suggested_response"><![CDATA[
+                <p>"DearERP is essentially your AI-powered Odoo development expert. Think of it as having a senior Odoo developer available 24/7 who can build complete custom modules in minutes instead of weeks. You describe what you need in plain English, and DearERP generates everything — the Python models, XML views, security rules, tests, and even the module manifest — all following Odoo best practices."</p>
+            ]]></field>
+        </record>
+
+        <record id="faq_how_different" model="dearerp.demo.faq">
+            <field name="name">How is DearERP different from ChatGPT or Copilot?</field>
+            <field name="sequence">2</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="category">comparison</field>
+            <field name="difficulty">medium</field>
+            <field name="answer"><![CDATA[
+                <p>While ChatGPT and Copilot are general-purpose AI tools, DearERP is <strong>purpose-built for Odoo</strong>. Key differences:</p>
+                <ul>
+                    <li><strong>Complete modules vs. code snippets</strong> — DearERP generates entire installable modules, not just code fragments</li>
+                    <li><strong>No hallucinated APIs</strong> — DearERP references actual Odoo source code to ensure accuracy</li>
+                    <li><strong>Version awareness</strong> — Generates code for the specific Odoo version you're using</li>
+                    <li><strong>Live instance connection</strong> — Understands your existing setup to avoid conflicts</li>
+                    <li><strong>Built-in validation</strong> — Catches errors before you deploy</li>
+                </ul>
+            ]]></field>
+        </record>
+
+        <record id="faq_replace_devs" model="dearerp.demo.faq">
+            <field name="name">Will DearERP replace our developers?</field>
+            <field name="sequence">3</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="category">general</field>
+            <field name="difficulty">hard</field>
+            <field name="answer"><![CDATA[
+                <p>No — DearERP is designed to <strong>augment and empower</strong> your development team, not replace them. It handles routine and repetitive coding tasks so your developers can focus on complex architecture decisions, business analysis, and strategic work.</p>
+                <p>Think of it as a force multiplier: a team of 3 developers with DearERP can deliver the output of a team of 10.</p>
+            ]]></field>
+            <field name="suggested_response"><![CDATA[
+                <p>"That's a great question, and I want to be clear: DearERP is a productivity tool, not a replacement for human expertise. Your developers will still make architectural decisions, review code, handle edge cases, and ensure business logic is correct. What DearERP does is eliminate the tedious boilerplate work — writing manifests, setting up security files, creating basic CRUD views — so your team spends time on the parts that actually need human judgment. We've seen teams become 5-10x more productive, which means they can take on more projects, not that they have fewer people."</p>
+            ]]></field>
+        </record>
+
+        <!-- ============================================================ -->
+        <!-- TECHNICAL FAQs                                               -->
+        <!-- ============================================================ -->
+        <record id="faq_code_quality" model="dearerp.demo.faq">
+            <field name="name">Is the generated code production-ready?</field>
+            <field name="sequence">4</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="category">technical</field>
+            <field name="difficulty">medium</field>
+            <field name="answer"><![CDATA[
+                <p>Yes. DearERP generates code that follows Odoo's official coding standards and best practices:</p>
+                <ul>
+                    <li>Proper module structure with all required files</li>
+                    <li>Complete security model (access rules, record rules, groups)</li>
+                    <li>Automated tests for validation</li>
+                    <li>Built-in validation catches issues before deployment</li>
+                    <li>Version-specific syntax and APIs</li>
+                </ul>
+                <p>We always recommend code review before production deployment, just as you would with any developer's code.</p>
+            ]]></field>
+        </record>
+
+        <record id="faq_versions" model="dearerp.demo.faq">
+            <field name="name">Which Odoo versions are supported?</field>
+            <field name="sequence">5</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="category">technical</field>
+            <field name="difficulty">easy</field>
+            <field name="answer"><![CDATA[
+                <p>DearERP supports <strong>Odoo versions 14 through 19</strong>, both Community and Enterprise editions. The platform automatically handles version-specific differences in syntax, APIs, view architecture, and OWL components.</p>
+            ]]></field>
+        </record>
+
+        <record id="faq_community_enterprise" model="dearerp.demo.faq">
+            <field name="name">Does it work with both Community and Enterprise?</field>
+            <field name="sequence">6</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="category">technical</field>
+            <field name="difficulty">easy</field>
+            <field name="answer"><![CDATA[
+                <p>Yes, DearERP works with both <strong>Odoo Community</strong> and <strong>Odoo Enterprise</strong> editions. When generating modules, it ensures compatibility with the target edition and handles edition-specific features appropriately.</p>
+            ]]></field>
+        </record>
+
+        <record id="faq_complex_logic" model="dearerp.demo.faq">
+            <field name="name">Can it handle complex business logic?</field>
+            <field name="sequence">7</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="category">technical</field>
+            <field name="difficulty">medium</field>
+            <field name="answer"><![CDATA[
+                <p>Absolutely. DearERP can handle:</p>
+                <ul>
+                    <li>Multi-level approval workflows</li>
+                    <li>Complex computed fields and constraints</li>
+                    <li>Scheduled actions and automation rules</li>
+                    <li>API integrations and webhooks</li>
+                    <li>Custom report engines</li>
+                    <li>Multi-company and multi-currency logic</li>
+                    <li>Advanced security with record-level rules</li>
+                </ul>
+                <p>For extremely complex requirements, DearERP breaks them into manageable components and builds each with proper integration.</p>
+            ]]></field>
+        </record>
+
+        <!-- ============================================================ -->
+        <!-- SECURITY FAQs                                                -->
+        <!-- ============================================================ -->
+        <record id="faq_data_safety" model="dearerp.demo.faq">
+            <field name="name">Is our data safe when connecting to our Odoo instance?</field>
+            <field name="sequence">8</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="category">security</field>
+            <field name="difficulty">hard</field>
+            <field name="answer"><![CDATA[
+                <p>Yes, your data is completely safe:</p>
+                <ul>
+                    <li><strong>Read-only access</strong> — DearERP only reads metadata (model definitions, field names, installed modules). It never reads your business data like customer records, invoices, or employee information.</li>
+                    <li><strong>No modifications</strong> — The connection is strictly read-only. DearERP cannot create, edit, or delete any records in your instance.</li>
+                    <li><strong>No data storage</strong> — Instance metadata is used in-session only and not stored permanently.</li>
+                </ul>
+            ]]></field>
+            <field name="suggested_response"><![CDATA[
+                <p>"Security is something we take very seriously. When DearERP connects to your Odoo instance, it operates in strictly read-only mode. It only looks at the structure of your system — things like what modules are installed, what models and fields exist — never your actual business data. It can't see your customers, invoices, or employee records. Think of it like reading the table of contents of a book without reading any of the chapters. And nothing is stored — it's used within the session and then discarded."</p>
+            ]]></field>
+        </record>
+
+        <record id="faq_code_ownership" model="dearerp.demo.faq">
+            <field name="name">Who owns the code that DearERP generates?</field>
+            <field name="sequence">9</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="category">security</field>
+            <field name="difficulty">medium</field>
+            <field name="answer"><![CDATA[
+                <p><strong>You own 100% of the generated code.</strong> All modules created by DearERP are yours to use, modify, distribute, and deploy without any restrictions or licensing fees. DearERP is a tool — just like an IDE or code editor — and everything you create with it belongs to you.</p>
+            ]]></field>
+        </record>
+
+        <!-- ============================================================ -->
+        <!-- PRICING FAQs                                                 -->
+        <!-- ============================================================ -->
+        <record id="faq_roi" model="dearerp.demo.faq">
+            <field name="name">What's the ROI of using DearERP?</field>
+            <field name="sequence">10</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="category">pricing</field>
+            <field name="difficulty">medium</field>
+            <field name="answer"><![CDATA[
+                <p>The ROI is significant and measurable:</p>
+                <ul>
+                    <li><strong>Time savings</strong> — 70-90% reduction in development time</li>
+                    <li><strong>Cost savings</strong> — Fewer developer hours per module = lower project costs</li>
+                    <li><strong>More projects</strong> — Your team can take on 3-5x more projects</li>
+                    <li><strong>Faster delivery</strong> — Impress clients with same-day prototypes</li>
+                    <li><strong>Fewer bugs</strong> — Validated, tested code means less time debugging</li>
+                </ul>
+                <p>For most Odoo partners, DearERP pays for itself within the first project.</p>
+            ]]></field>
+            <field name="suggested_response"><![CDATA[
+                <p>"Let me put it this way: if your developers spend an average of 40 hours building a custom module, DearERP can reduce that to 4-8 hours. At typical billing rates, that's thousands of dollars saved per module. Most of our customers tell us DearERP pays for itself with their very first project. Plus, the faster delivery time helps win more deals because clients love hearing 'we can have a prototype for you by tomorrow' instead of 'give us two weeks.'"</p>
+            ]]></field>
+        </record>
+
+        <record id="faq_free_trial" model="dearerp.demo.faq">
+            <field name="name">Is there a free trial available?</field>
+            <field name="sequence">11</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="category">pricing</field>
+            <field name="difficulty">easy</field>
+            <field name="answer"><![CDATA[
+                <p>Please contact our sales team for trial availability and demo sessions. We're happy to provide a hands-on demonstration of DearERP's capabilities tailored to your specific use case.</p>
+            ]]></field>
+        </record>
+
+        <!-- ============================================================ -->
+        <!-- IMPLEMENTATION FAQs                                          -->
+        <!-- ============================================================ -->
+        <record id="faq_get_started" model="dearerp.demo.faq">
+            <field name="name">How quickly can we get started?</field>
+            <field name="sequence">12</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="category">implementation</field>
+            <field name="difficulty">easy</field>
+            <field name="answer"><![CDATA[
+                <p>You can start using DearERP <strong>immediately</strong> after subscription activation. There's no lengthy setup process:</p>
+                <ul>
+                    <li>Account setup takes minutes</li>
+                    <li>Connect your Odoo instance with simple credentials</li>
+                    <li>Start generating modules right away</li>
+                    <li>Optional onboarding session available for Professional and Enterprise plans</li>
+                </ul>
+            ]]></field>
+        </record>
+
+        <record id="faq_learning_curve" model="dearerp.demo.faq">
+            <field name="name">Is there a steep learning curve?</field>
+            <field name="sequence">13</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="category">implementation</field>
+            <field name="difficulty">easy</field>
+            <field name="answer"><![CDATA[
+                <p>No. DearERP is designed to be intuitive:</p>
+                <ul>
+                    <li><strong>Natural language input</strong> — Describe what you need in plain English</li>
+                    <li><strong>CLI commands</strong> — Simple, well-documented commands for scaffolding and validation</li>
+                    <li><strong>No new language to learn</strong> — If you can describe a business requirement, you can use DearERP</li>
+                    <li><strong>Documentation &amp; support</strong> — Comprehensive guides and responsive support team</li>
+                </ul>
+                <p>Most users are productive within their first session.</p>
+            ]]></field>
+        </record>
+
+        <record id="faq_existing_modules" model="dearerp.demo.faq">
+            <field name="name">Can DearERP work with our existing custom modules?</field>
+            <field name="sequence">14</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="category">implementation</field>
+            <field name="difficulty">medium</field>
+            <field name="answer"><![CDATA[
+                <p>Yes. DearERP excels at extending existing modules:</p>
+                <ul>
+                    <li><strong>Inherit and extend</strong> — Create modules that inherit from your existing custom models</li>
+                    <li><strong>Instance-aware</strong> — When connected, it sees your custom models and fields</li>
+                    <li><strong>Non-destructive</strong> — Generated modules extend via inheritance, never modifying original code</li>
+                    <li><strong>Migration support</strong> — Can help migrate your existing modules to newer Odoo versions</li>
+                </ul>
+            ]]></field>
+        </record>
+
+        <record id="faq_too_good" model="dearerp.demo.faq">
+            <field name="name">This sounds too good to be true. What are the limitations?</field>
+            <field name="sequence">15</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="category">general</field>
+            <field name="difficulty">hard</field>
+            <field name="answer"><![CDATA[
+                <p>We believe in transparency. Here are honest considerations:</p>
+                <ul>
+                    <li><strong>Code review recommended</strong> — Like any tool, generated code should be reviewed before production use</li>
+                    <li><strong>Complex edge cases</strong> — Extremely niche or unusual requirements may need manual refinement</li>
+                    <li><strong>Not a replacement for architecture</strong> — DearERP generates code, but system architecture decisions still benefit from human expertise</li>
+                    <li><strong>Odoo-specific</strong> — DearERP is purpose-built for Odoo; it's not a general-purpose coding tool</li>
+                </ul>
+                <p>That said, for 90%+ of Odoo customization work, DearERP delivers exceptional results right out of the box.</p>
+            ]]></field>
+            <field name="suggested_response"><![CDATA[
+                <p>"I appreciate the healthy skepticism — it shows you're thorough. Let me be honest: DearERP is incredibly powerful for the vast majority of Odoo customization work, but it's not magic. We always recommend code review before production deployment, just like you'd review any developer's work. For very unusual edge cases, you might need to fine-tune the output. But for the bread-and-butter work — custom modules, views, reports, wizards, integrations — it consistently delivers production-quality results. The best way to see it is with a live demo on your actual use case. Want me to show you?"</p>
+            ]]></field>
+        </record>
+
+        <record id="faq_competitors_cheaper" model="dearerp.demo.faq">
+            <field name="name">Why should we pay for DearERP when ChatGPT is cheaper/free?</field>
+            <field name="sequence">16</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="category">comparison</field>
+            <field name="difficulty">hard</field>
+            <field name="answer"><![CDATA[
+                <p>While ChatGPT can write Python code, there's a significant difference in Odoo-specific output:</p>
+                <ul>
+                    <li><strong>ChatGPT gives code snippets</strong> — DearERP gives complete, installable modules</li>
+                    <li><strong>ChatGPT hallucinates Odoo APIs</strong> — DearERP references actual Odoo source code</li>
+                    <li><strong>ChatGPT loses context</strong> — DearERP maintains project context throughout</li>
+                    <li><strong>ChatGPT needs manual assembly</strong> — DearERP handles the entire workflow</li>
+                    <li><strong>Time cost</strong> — Hours spent fixing ChatGPT's Odoo mistakes often costs more than a DearERP subscription</li>
+                </ul>
+                <p>The real cost isn't the tool subscription — it's the developer time spent fixing incorrect code.</p>
+            ]]></field>
+            <field name="suggested_response"><![CDATA[
+                <p>"Great question. I've used ChatGPT for Odoo work myself, and here's what I found: it gives you pieces of code, but you spend hours assembling them, fixing incorrect APIs, adding missing files, and debugging. With DearERP, you get a complete, validated module ready to install. When you factor in the developer time saved, DearERP actually costs less than 'free' alternatives. It's like comparing Google Maps driving directions to having a professional driver — sure, you can get there yourself, but the professional gets you there faster, safer, and without wrong turns."</p>
+            ]]></field>
+        </record>
+
+    </data>
+</odoo>

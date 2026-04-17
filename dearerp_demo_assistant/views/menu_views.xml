@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ==================== TOP LEVEL MENU ==================== -->
+    <menuitem id="menu_demo_assistant_root"
+              name="Demo Assistant"
+              web_icon="dearerp_demo_assistant,static/description/icon.png"
+              sequence="1"/>
+
+    <!-- ==================== DASHBOARD MENU ==================== -->
+    <menuitem id="menu_demo_dashboard"
+              name="Dashboard"
+              parent="menu_demo_assistant_root"
+              action="action_demo_section"
+              sequence="1"/>
+
+    <!-- ==================== CONTENT MENU ==================== -->
+    <menuitem id="menu_demo_content"
+              name="Content"
+              parent="menu_demo_assistant_root"
+              sequence="10"/>
+
+    <menuitem id="menu_demo_sections"
+              name="All Sections"
+              parent="menu_demo_content"
+              action="action_demo_section"
+              sequence="1"/>
+
+    <menuitem id="menu_demo_items"
+              name="Content Items"
+              parent="menu_demo_content"
+              action="action_demo_item_list"
+              sequence="2"/>
+
+    <menuitem id="menu_demo_faqs"
+              name="FAQs &amp; Objections"
+              parent="menu_demo_content"
+              action="action_demo_faq_list"
+              sequence="3"/>
+</odoo>

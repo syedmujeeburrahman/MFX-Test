@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ==================== ITEM FORM VIEW ==================== -->
+    <record id="view_demo_item_form" model="ir.ui.view">
+        <field name="name">dearerp.demo.item.form</field>
+        <field name="model">dearerp.demo.item</field>
+        <field name="arch" type="xml">
+            <form string="Content Item">
+                <sheet>
+                    <widget name="web_ribbon" title="Highlighted" bg_color="text-bg-success"
+                            invisible="not highlight"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="Item Title..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="General">
+                            <field name="section_id"/>
+                            <field name="section_type"/>
+                            <field name="icon"/>
+                            <field name="sequence"/>
+                            <field name="highlight"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                        <group string="Display">
+                            <field name="badge_text"/>
+                            <field name="badge_color" invisible="not badge_text"/>
+                            <field name="color" widget="color_picker"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Content" name="content">
+                            <group>
+                                <field name="summary" placeholder="Brief summary for card display..."/>
+                            </group>
+                            <label for="content"/>
+                            <field name="content" placeholder="Write detailed content here..."/>
+                        </page>
+                        <page string="Comparison Details" name="comparison"
+                              invisible="section_type != 'comparison'">
+                            <group>
+                                <field name="tool_name"/>
+                                <field name="dearerp_advantage"/>
+                            </group>
+                        </page>
+                        <page string="Pricing Details" name="pricing"
+                              invisible="section_type != 'pricing'">
+                            <group>
+                                <field name="price"/>
+                                <field name="is_recommended"/>
+                            </group>
+                            <label for="plan_features"/>
+                            <field name="plan_features"
+                                   placeholder="List the features included in this plan..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ==================== ITEM LIST VIEW ==================== -->
+    <record id="view_demo_item_list" model="ir.ui.view">
+        <field name="name">dearerp.demo.item.list</field>
+        <field name="model">dearerp.demo.item</field>
+        <field name="arch" type="xml">
+            <list string="Content Items" default_order="sequence">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="section_id"/>
+                <field name="section_type"/>
+                <field name="icon"/>
+                <field name="summary"/>
+                <field name="highlight"/>
+                <field name="badge_text"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- ==================== ITEM KANBAN VIEW ==================== -->
+    <record id="view_demo_item_kanban" model="ir.ui.view">
+        <field name="name">dearerp.demo.item.kanban</field>
+        <field name="model">dearerp.demo.item</field>
+        <field name="arch" type="xml">
+            <kanban class="o_demo_item_kanban" default_order="sequence"
+                    records_draggable="false" group_create="false">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="icon"/>
+                <field name="summary"/>
+                <field name="highlight"/>
+                <field name="badge_text"/>
+                <field name="badge_color"/>
+                <field name="section_type"/>
+                <field name="color"/>
+                <field name="tool_name"/>
+                <field name="price"/>
+                <field name="is_recommended"/>
+                <templates>
+                    <t t-name="card" class="o_demo_item_card p-0">
+                        <!-- Recommended ribbon for pricing -->
+                        <div t-if="record.is_recommended.raw_value"
+                             class="o_demo_recommended_ribbon">RECOMMENDED</div>
+                        <div class="o_demo_item_card_body p-3">
+                            <div class="d-flex align-items-start gap-2 mb-2">
+                                <div class="o_demo_item_icon_wrap">
+                                    <i t-attf-class="fa #{record.icon.raw_value or 'fa-check-circle'} fa-lg"
+                                       style="color: #667eea;"/>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <strong class="o_demo_item_title">
+                                            <field name="name"/>
+                                        </strong>
+                                        <span t-if="record.badge_text.raw_value"
+                                              t-attf-class="badge rounded-pill text-bg-#{record.badge_color.raw_value || 'primary'} o_demo_item_badge">
+                                            <field name="badge_text"/>
+                                        </span>
+                                    </div>
+                                    <!-- Price for pricing items -->
+                                    <div t-if="record.price.raw_value"
+                                         class="o_demo_price_display mt-1">
+                                        <span class="h4 text-primary fw-bold mb-0">
+                                            <field name="price"/>
+                                        </span>
+                                    </div>
+                                    <!-- Tool name for comparison -->
+                                    <div t-if="record.tool_name.raw_value"
+                                         class="text-muted small mt-1">
+                                        <i class="fa fa-exchange me-1"/>vs <field name="tool_name"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="o_demo_item_summary text-muted small mb-0"
+                               t-if="record.summary.raw_value">
+                                <field name="summary"/>
+                            </p>
+                            <div t-if="record.highlight.raw_value"
+                                 class="o_demo_highlight_indicator mt-2">
+                                <i class="fa fa-star text-warning me-1"/> Key Highlight
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- ==================== ITEM SEARCH VIEW ==================== -->
+    <record id="view_demo_item_search" model="ir.ui.view">
+        <field name="name">dearerp.demo.item.search</field>
+        <field name="model">dearerp.demo.item</field>
+        <field name="arch" type="xml">
+            <search string="Search Content Items">
+                <field name="name"/>
+                <field name="section_id"/>
+                <field name="summary"/>
+                <filter name="filter_highlighted" string="Highlighted"
+                        domain="[('highlight','=',True)]"/>
+                <separator/>
+                <filter name="filter_features" string="Features"
+                        domain="[('section_type','=','features')]"/>
+                <filter name="filter_comparison" string="Comparison"
+                        domain="[('section_type','=','comparison')]"/>
+                <filter name="filter_pricing" string="Pricing"
+                        domain="[('section_type','=','pricing')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_section" string="Section"
+                            context="{'group_by': 'section_id'}"/>
+                    <filter name="group_by_type" string="Section Type"
+                            context="{'group_by': 'section_type'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- ==================== ITEM ACTIONS ==================== -->
+    <record id="action_demo_item_list" model="ir.actions.act_window">
+        <field name="name">Content Items</field>
+        <field name="res_model">dearerp.demo.item</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="search_view_id" ref="view_demo_item_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add your first content item
+            </p>
+            <p>
+                Add detailed content points for your demo sections.
+            </p>
+        </field>
+    </record>
+</odoo>
