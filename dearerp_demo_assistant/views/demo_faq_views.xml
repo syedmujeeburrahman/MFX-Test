@@ -5,7 +5,7 @@
         <field name="name">dearerp.demo.faq.form</field>
         <field name="model">dearerp.demo.faq</field>
         <field name="arch" type="xml">
-            <form string="FAQ">
+            <form>
                 <sheet>
                     <div class="oe_title">
                         <label for="name"/>
@@ -48,7 +48,7 @@
         <field name="name">dearerp.demo.faq.list</field>
         <field name="model">dearerp.demo.faq</field>
         <field name="arch" type="xml">
-            <list string="FAQs" default_order="sequence">
+            <list default_order="sequence">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="category"/>
@@ -105,7 +105,7 @@
         <field name="name">dearerp.demo.faq.search</field>
         <field name="model">dearerp.demo.faq</field>
         <field name="arch" type="xml">
-            <search string="Search FAQs">
+            <search>
                 <field name="name"/>
                 <field name="category"/>
                 <filter name="filter_easy" string="Easy"

@@ -5,7 +5,7 @@
         <field name="name">dearerp.demo.item.form</field>
         <field name="model">dearerp.demo.item</field>
         <field name="arch" type="xml">
-            <form string="Content Item">
+            <form>
                 <sheet>
                     <widget name="web_ribbon" title="Highlighted" bg_color="text-bg-success"
                             invisible="not highlight"/>
@@ -66,7 +66,7 @@
         <field name="name">dearerp.demo.item.list</field>
         <field name="model">dearerp.demo.item</field>
         <field name="arch" type="xml">
-            <list string="Content Items" default_order="sequence">
+            <list default_order="sequence">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="section_id"/>
@@ -153,10 +153,9 @@
         <field name="name">dearerp.demo.item.search</field>
         <field name="model">dearerp.demo.item</field>
         <field name="arch" type="xml">
-            <search string="Search Content Items">
+            <search>
                 <field name="name"/>
                 <field name="section_id"/>
-                <field name="summary"/>
                 <filter name="filter_highlighted" string="Highlighted"
                         domain="[('highlight','=',True)]"/>
                 <separator/>

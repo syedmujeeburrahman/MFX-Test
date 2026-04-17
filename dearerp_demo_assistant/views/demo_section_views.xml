@@ -5,7 +5,7 @@
         <field name="name">dearerp.demo.section.form</field>
         <field name="model">dearerp.demo.section</field>
         <field name="arch" type="xml">
-            <form string="Demo Section">
+            <form>
                 <header/>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
@@ -80,7 +80,7 @@
         <field name="name">dearerp.demo.section.list</field>
         <field name="model">dearerp.demo.section</field>
         <field name="arch" type="xml">
-            <list string="Demo Sections">
+            <list>
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="section_type"/>
@@ -147,7 +147,7 @@
         <field name="name">dearerp.demo.section.search</field>
         <field name="model">dearerp.demo.section</field>
         <field name="arch" type="xml">
-            <search string="Search Sections">
+            <search>
                 <field name="name"/>
                 <field name="section_type"/>
                 <filter name="filter_introduction" string="Introduction"
