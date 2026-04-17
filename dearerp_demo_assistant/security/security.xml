@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="0">
-        <!-- Module Category -->
-        <record id="module_category_dearerp_demo" model="ir.module.category">
-            <field name="name">DearERP Demo</field>
-            <field name="description">DearERP Demo Assistant Module</field>
-            <field name="sequence">100</field>
-        </record>
-
         <!-- User Group -->
         <record id="group_demo_user" model="res.groups">
             <field name="name">Demo Presenter</field>
-            <field name="category_id" ref="module_category_dearerp_demo"/>
             <field name="comment">Can view and present demo content</field>
         </record>
 
         <!-- Manager Group -->
         <record id="group_demo_manager" model="res.groups">
             <field name="name">Demo Manager</field>
-            <field name="category_id" ref="module_category_dearerp_demo"/>
             <field name="implied_ids" eval="[(4, ref('group_demo_user'))]"/>
             <field name="comment">Can create and manage demo content</field>
         </record>
