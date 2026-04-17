@@ -100,7 +100,7 @@
         <field name="name">dearerp.demo.faq.search</field>
         <field name="model">dearerp.demo.faq</field>
         <field name="arch" type="xml">
-            <search string="Search FAQs">
+            <search>
                 <field name="name"/>
                 <field name="category"/>
                 <filter name="filter_easy" string="Easy"
@@ -120,7 +120,7 @@
                         domain="[('category','=','security')]"/>
                 <filter name="filter_comparison_cat" string="Comparison"
                         domain="[('category','=','comparison')]"/>
-                <group expand="0" string="Group By">
+                <group expand="false" string="Group By">
                     <filter name="group_by_category" string="Category"
                             context="{'group_by': 'category'}"/>
                     <filter name="group_by_difficulty" string="Difficulty"

@@ -139,7 +139,7 @@
         <field name="name">dearerp.demo.section.search</field>
         <field name="model">dearerp.demo.section</field>
         <field name="arch" type="xml">
-            <search string="Search Sections">
+            <search>
                 <field name="name"/>
                 <field name="section_type"/>
                 <filter name="filter_introduction" string="Introduction"
@@ -154,7 +154,7 @@
                         domain="[('section_type','=','pricing')]"/>
                 <filter name="filter_faq" string="FAQs"
                         domain="[('section_type','=','faq')]"/>
-                <group expand="0" string="Group By">
+                <group expand="false" string="Group By">
                     <filter name="group_by_type" string="Section Type"
                             context="{'group_by': 'section_type'}"/>
                 </group>
