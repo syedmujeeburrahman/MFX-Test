@@ -20,18 +20,60 @@ export class CountryDropdown extends Component {
             isOpen: false,
         });
         this._currentGroupId = null;
+
+        // Subscribe to searchModel notifications so country counts
+        // update automatically when stage or other filters change.
+        const searchModel = this.env.searchModel;
+        if (searchModel) {
+            searchModel.addEventListener("update", () => this._loadCountries());
+        }
+
         onWillStart(() => this._loadCountries());
+    }
+
+    /**
+     * Build the active search domain from the searchModel,
+     * excluding any country_id filter that this dropdown itself created.
+     */
+    _getActiveDomain() {
+        const searchModel = this.env.searchModel;
+        if (!searchModel) {
+            return [];
+        }
+        // Get the full domain from the search model (includes searchpanel
+        // selections like stage_id, lead_type, plus any search bar filters).
+        let domain = [];
+        try {
+            domain = searchModel.domain || [];
+        } catch {
+            return [];
+        }
+        // Remove any country_id conditions that our own dropdown created,
+        // so we don't filter countries by themselves.
+        const filtered = [];
+        for (let i = 0; i < domain.length; i++) {
+            const clause = domain[i];
+            if (Array.isArray(clause) && clause.length === 3 && clause[0] === "country_id") {
+                continue;
+            }
+            filtered.push(clause);
+        }
+        return filtered;
     }
 
     async _loadCountries() {
         try {
-            // Use orm.call with positional args for maximum reliability.
-            // read_group(domain, fields, groupby) returns countries that
-            // have at least one lead associated with them.
+            // Combine the active search domain (stage, lead type, etc.)
+            // with the base country_id filter. This ensures counts are
+            // scoped to whatever filters the user has selected.
+            const activeDomain = this._getActiveDomain();
+            const baseDomain = [["country_id", "!=", false]];
+            const combinedDomain = [...activeDomain, ...baseDomain];
+
             const groups = await this.orm.call(
                 "crm.lead",
                 "read_group",
-                [[["country_id", "!=", false]], ["country_id"], ["country_id"]]
+                [combinedDomain, ["country_id"], ["country_id"]]
             );
             const countries = [];
             for (const g of groups) {
