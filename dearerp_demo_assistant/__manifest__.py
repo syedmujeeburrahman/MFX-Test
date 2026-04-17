@@ -25,9 +25,9 @@
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
-        'views/demo_section_views.xml',
         'views/demo_item_views.xml',
         'views/demo_faq_views.xml',
+        'views/demo_section_views.xml',
         'views/menu_views.xml',
         'data/section_data.xml',
         'data/item_data.xml',
