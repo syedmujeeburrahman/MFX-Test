@@ -139,25 +139,21 @@
         <field name="name">dearerp.demo.section.search</field>
         <field name="model">dearerp.demo.section</field>
         <field name="arch" type="xml">
-            <search>
+            <search string="Search Sections">
                 <field name="name"/>
                 <field name="section_type"/>
                 <filter name="filter_introduction" string="Introduction"
-                        domain="[('section_type','=','introduction')]"/>
+                        domain="[('section_type', '=', 'introduction')]"/>
                 <filter name="filter_features" string="Features"
-                        domain="[('section_type','=','features')]"/>
+                        domain="[('section_type', '=', 'features')]"/>
                 <filter name="filter_comparison" string="Comparison"
-                        domain="[('section_type','=','comparison')]"/>
+                        domain="[('section_type', '=', 'comparison')]"/>
                 <filter name="filter_use_cases" string="Use Cases"
-                        domain="[('section_type','=','use_cases')]"/>
+                        domain="[('section_type', '=', 'use_cases')]"/>
                 <filter name="filter_pricing" string="Pricing"
-                        domain="[('section_type','=','pricing')]"/>
+                        domain="[('section_type', '=', 'pricing')]"/>
                 <filter name="filter_faq" string="FAQs"
-                        domain="[('section_type','=','faq')]"/>
-                <group>
-                    <filter name="group_by_type" string="Section Type"
-                            context="{'group_by': 'section_type'}"/>
-                </group>
+                        domain="[('section_type', '=', 'faq')]"/>
             </search>
         </field>
     </record>

@@ -100,32 +100,25 @@
         <field name="name">dearerp.demo.faq.search</field>
         <field name="model">dearerp.demo.faq</field>
         <field name="arch" type="xml">
-            <search>
+            <search string="Search FAQs">
                 <field name="name"/>
                 <field name="category"/>
                 <filter name="filter_easy" string="Easy"
-                        domain="[('difficulty','=','easy')]"/>
+                        domain="[('difficulty', '=', 'easy')]"/>
                 <filter name="filter_medium" string="Moderate"
-                        domain="[('difficulty','=','medium')]"/>
+                        domain="[('difficulty', '=', 'medium')]"/>
                 <filter name="filter_hard" string="Tough"
-                        domain="[('difficulty','=','hard')]"/>
-                <separator/>
+                        domain="[('difficulty', '=', 'hard')]"/>
                 <filter name="filter_general" string="General"
-                        domain="[('category','=','general')]"/>
+                        domain="[('category', '=', 'general')]"/>
                 <filter name="filter_technical" string="Technical"
-                        domain="[('category','=','technical')]"/>
+                        domain="[('category', '=', 'technical')]"/>
                 <filter name="filter_pricing_cat" string="Pricing"
-                        domain="[('category','=','pricing')]"/>
+                        domain="[('category', '=', 'pricing')]"/>
                 <filter name="filter_security" string="Security"
-                        domain="[('category','=','security')]"/>
+                        domain="[('category', '=', 'security')]"/>
                 <filter name="filter_comparison_cat" string="Comparison"
-                        domain="[('category','=','comparison')]"/>
-                <group>
-                    <filter name="group_by_category" string="Category"
-                            context="{'group_by': 'category'}"/>
-                    <filter name="group_by_difficulty" string="Difficulty"
-                            context="{'group_by': 'difficulty'}"/>
-                </group>
+                        domain="[('category', '=', 'comparison')]"/>
             </search>
         </field>
     </record>
