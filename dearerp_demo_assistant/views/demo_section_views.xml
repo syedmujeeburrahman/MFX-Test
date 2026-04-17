@@ -154,7 +154,7 @@
                         domain="[('section_type','=','pricing')]"/>
                 <filter name="filter_faq" string="FAQs"
                         domain="[('section_type','=','faq')]"/>
-                <group expand="false" string="Group By">
+                <group>
                     <filter name="group_by_type" string="Section Type"
                             context="{'group_by': 'section_type'}"/>
                 </group>

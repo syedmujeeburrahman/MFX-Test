@@ -120,7 +120,7 @@
                         domain="[('category','=','security')]"/>
                 <filter name="filter_comparison_cat" string="Comparison"
                         domain="[('category','=','comparison')]"/>
-                <group expand="false" string="Group By">
+                <group>
                     <filter name="group_by_category" string="Category"
                             context="{'group_by': 'category'}"/>
                     <filter name="group_by_difficulty" string="Difficulty"
