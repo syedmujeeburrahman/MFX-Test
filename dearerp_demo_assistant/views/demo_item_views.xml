@@ -86,27 +86,15 @@
         <field name="arch" type="xml">
             <kanban class="o_demo_item_kanban" default_order="sequence"
                     records_draggable="false" group_create="false">
-                <field name="id"/>
-                <field name="name"/>
-                <field name="icon"/>
-                <field name="summary"/>
-                <field name="highlight"/>
-                <field name="badge_text"/>
-                <field name="badge_color"/>
-                <field name="section_type"/>
-                <field name="color"/>
-                <field name="tool_name"/>
-                <field name="price"/>
-                <field name="is_recommended"/>
                 <templates>
                     <t t-name="card" class="o_demo_item_card p-0">
                         <!-- Recommended ribbon for pricing -->
-                        <div t-if="record.is_recommended.raw_value"
+                        <div t-if="record.is_recommended.value"
                              class="o_demo_recommended_ribbon">RECOMMENDED</div>
                         <div class="o_demo_item_card_body p-3">
                             <div class="d-flex align-items-start gap-2 mb-2">
                                 <div class="o_demo_item_icon_wrap">
-                                    <i t-attf-class="fa #{record.icon.raw_value or 'fa-check-circle'} fa-lg"
+                                    <i t-attf-class="fa #{record.icon.value or 'fa-check-circle'} fa-lg"
                                        style="color: #667eea;"/>
                                 </div>
                                 <div class="flex-grow-1">
@@ -114,30 +102,30 @@
                                         <strong class="o_demo_item_title">
                                             <field name="name"/>
                                         </strong>
-                                        <span t-if="record.badge_text.raw_value"
-                                              t-attf-class="badge rounded-pill text-bg-#{record.badge_color.raw_value || 'primary'} o_demo_item_badge">
+                                        <span t-if="record.badge_text.value"
+                                              t-attf-class="badge rounded-pill text-bg-#{record.badge_color.value || 'primary'} o_demo_item_badge">
                                             <field name="badge_text"/>
                                         </span>
                                     </div>
                                     <!-- Price for pricing items -->
-                                    <div t-if="record.price.raw_value"
+                                    <div t-if="record.price.value"
                                          class="o_demo_price_display mt-1">
                                         <span class="h4 text-primary fw-bold mb-0">
                                             <field name="price"/>
                                         </span>
                                     </div>
                                     <!-- Tool name for comparison -->
-                                    <div t-if="record.tool_name.raw_value"
+                                    <div t-if="record.tool_name.value"
                                          class="text-muted small mt-1">
                                         <i class="fa fa-exchange me-1"/>vs <field name="tool_name"/>
                                     </div>
                                 </div>
                             </div>
                             <p class="o_demo_item_summary text-muted small mb-0"
-                               t-if="record.summary.raw_value">
+                               t-if="record.summary.value">
                                 <field name="summary"/>
                             </p>
-                            <div t-if="record.highlight.raw_value"
+                            <div t-if="record.highlight.value"
                                  class="o_demo_highlight_indicator mt-2">
                                 <i class="fa fa-star text-warning me-1"/> Key Highlight
                             </div>
@@ -153,9 +141,10 @@
         <field name="name">dearerp.demo.item.search</field>
         <field name="model">dearerp.demo.item</field>
         <field name="arch" type="xml">
-            <search>
+            <search string="Search Content Items">
                 <field name="name"/>
                 <field name="section_id"/>
+                <separator/>
                 <filter name="filter_highlighted" string="Highlighted"
                         domain="[('highlight','=',True)]"/>
                 <separator/>

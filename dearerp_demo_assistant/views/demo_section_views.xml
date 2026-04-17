@@ -98,19 +98,11 @@
         <field name="arch" type="xml">
             <kanban class="o_demo_section_kanban" default_order="sequence" sample="1"
                     records_draggable="false" group_create="false">
-                <field name="id"/>
-                <field name="name"/>
-                <field name="section_type"/>
-                <field name="icon"/>
-                <field name="color"/>
-                <field name="subtitle"/>
-                <field name="item_count"/>
-                <field name="faq_count"/>
                 <templates>
                     <t t-name="card" class="o_demo_card flex-row p-0">
                         <div class="o_demo_card_left d-flex align-items-center justify-content-center"
-                             t-attf-style="background: linear-gradient(135deg, #{['#667eea','#f093fb','#4facfe','#43e97b','#fa709a','#a18cd1'][record.color.raw_value % 6] or '#667eea'}, #{['#764ba2','#f5576c','#00f2fe','#38f9d7','#fee140','#fbc2eb'][record.color.raw_value % 6] or '#764ba2'});">
-                            <i t-attf-class="fa #{record.icon.raw_value or 'fa-star'} o_demo_card_icon"/>
+                             t-attf-style="background: linear-gradient(135deg, #{['#667eea','#f093fb','#4facfe','#43e97b','#fa709a','#a18cd1'][record.color.value % 6] or '#667eea'}, #{['#764ba2','#f5576c','#00f2fe','#38f9d7','#fee140','#fbc2eb'][record.color.value % 6] or '#764ba2'});">
+                            <i t-attf-class="fa #{record.icon.value or 'fa-star'} o_demo_card_icon"/>
                         </div>
                         <div class="o_demo_card_right flex-grow-1 p-3">
                             <div class="o_demo_card_header d-flex justify-content-between align-items-start mb-1">
@@ -118,7 +110,7 @@
                                     <field name="name"/>
                                 </h3>
                                 <span class="badge rounded-pill text-bg-primary o_demo_card_count">
-                                    <t t-if="record.section_type.raw_value == 'faq'">
+                                    <t t-if="record.section_type.value == 'faq'">
                                         <field name="faq_count"/> FAQs
                                     </t>
                                     <t t-else="">
@@ -131,7 +123,7 @@
                             </p>
                             <div class="o_demo_card_footer d-flex align-items-center gap-2">
                                 <span class="badge rounded-pill o_demo_type_badge"
-                                      t-attf-style="background: #{['#667eea','#f093fb','#4facfe','#43e97b','#fa709a','#a18cd1'][record.color.raw_value % 6] or '#667eea'}; color: white;">
+                                      t-attf-style="background: #{['#667eea','#f093fb','#4facfe','#43e97b','#fa709a','#a18cd1'][record.color.value % 6] or '#667eea'}; color: white;">
                                     <field name="section_type"/>
                                 </span>
                             </div>
@@ -147,7 +139,7 @@
         <field name="name">dearerp.demo.section.search</field>
         <field name="model">dearerp.demo.section</field>
         <field name="arch" type="xml">
-            <search>
+            <search string="Search Sections">
                 <field name="name"/>
                 <field name="section_type"/>
                 <filter name="filter_introduction" string="Introduction"

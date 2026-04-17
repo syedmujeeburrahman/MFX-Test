@@ -21,7 +21,7 @@ class DearerpDemoSection(models.Model):
                        help='Font Awesome icon class (e.g., fa-star, fa-rocket)')
     color = fields.Integer(string='Color Index', default=0)
     subtitle = fields.Char(string='Subtitle')
-    description = fields.Html(string='Section Overview', sanitize_style=True)
+    description = fields.Html(string='Section Overview')
     item_ids = fields.One2many('dearerp.demo.item', 'section_id', string='Content Items')
     faq_ids = fields.One2many('dearerp.demo.faq', 'section_id', string='FAQs')
     item_count = fields.Integer(string='Items', compute='_compute_item_count')

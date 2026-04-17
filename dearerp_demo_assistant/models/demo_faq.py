@@ -10,7 +10,7 @@ class DearerpDemoFaq(models.Model):
     sequence = fields.Integer(string='Sequence', default=10)
     section_id = fields.Many2one('dearerp.demo.section', string='Section',
                                   required=True, ondelete='cascade')
-    answer = fields.Html(string='Answer', sanitize_style=True, required=True)
+    answer = fields.Html(string='Answer', required=True)
     category = fields.Selection([
         ('general', 'General'),
         ('technical', 'Technical'),
