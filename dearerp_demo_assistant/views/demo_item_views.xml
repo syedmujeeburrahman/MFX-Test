@@ -141,17 +141,19 @@
         <field name="name">dearerp.demo.item.search</field>
         <field name="model">dearerp.demo.item</field>
         <field name="arch" type="xml">
-            <search string="Search Content Items">
+            <search>
                 <field name="name"/>
                 <field name="section_id"/>
+                <separator/>
                 <filter name="filter_highlighted" string="Highlighted"
                         domain="[('highlight', '=', True)]"/>
+                <separator/>
                 <filter name="filter_features" string="Features"
-                        domain="[('section_type', '=', 'features')]"/>
+                        domain="[('section_id.section_type', '=', 'features')]"/>
                 <filter name="filter_comparison" string="Comparison"
-                        domain="[('section_type', '=', 'comparison')]"/>
+                        domain="[('section_id.section_type', '=', 'comparison')]"/>
                 <filter name="filter_pricing" string="Pricing"
-                        domain="[('section_type', '=', 'pricing')]"/>
+                        domain="[('section_id.section_type', '=', 'pricing')]"/>
             </search>
         </field>
     </record>

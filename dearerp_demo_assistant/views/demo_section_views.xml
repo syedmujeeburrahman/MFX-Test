@@ -139,9 +139,10 @@
         <field name="name">dearerp.demo.section.search</field>
         <field name="model">dearerp.demo.section</field>
         <field name="arch" type="xml">
-            <search string="Search Sections">
+            <search>
                 <field name="name"/>
                 <field name="section_type"/>
+                <separator/>
                 <filter name="filter_introduction" string="Introduction"
                         domain="[('section_type', '=', 'introduction')]"/>
                 <filter name="filter_features" string="Features"

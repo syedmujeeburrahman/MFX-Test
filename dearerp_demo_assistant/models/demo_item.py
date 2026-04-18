@@ -1,14 +1,4 @@
-from odoo import models, fields, api
-
-
-SECTION_TYPE_SELECTION = [
-    ('introduction', 'Introduction'),
-    ('features', 'Features & Functionalities'),
-    ('comparison', 'AI Tool Comparison'),
-    ('use_cases', 'Complex Use Cases'),
-    ('pricing', 'Pricing & Plans'),
-    ('faq', 'FAQs & Objection Handling'),
-]
+from odoo import models, fields
 
 
 class DearerpDemoItem(models.Model):
@@ -21,9 +11,8 @@ class DearerpDemoItem(models.Model):
     section_id = fields.Many2one('dearerp.demo.section', string='Section',
                                   required=True, ondelete='cascade')
     section_type = fields.Selection(
-        selection=SECTION_TYPE_SELECTION,
+        related='section_id.section_type',
         string='Section Type',
-        compute='_compute_section_type',
         store=True,
     )
     icon = fields.Char(string='Icon Class', default='fa-check-circle',
@@ -58,7 +47,3 @@ class DearerpDemoItem(models.Model):
     active = fields.Boolean(default=True)
     color = fields.Integer(string='Color Index', default=0)
 
-    @api.depends('section_id.section_type')
-    def _compute_section_type(self):
-        for record in self:
-            record.section_type = record.section_id.section_type

@@ -100,15 +100,17 @@
         <field name="name">dearerp.demo.faq.search</field>
         <field name="model">dearerp.demo.faq</field>
         <field name="arch" type="xml">
-            <search string="Search FAQs">
+            <search>
                 <field name="name"/>
                 <field name="category"/>
+                <separator/>
                 <filter name="filter_easy" string="Easy"
                         domain="[('difficulty', '=', 'easy')]"/>
                 <filter name="filter_medium" string="Moderate"
                         domain="[('difficulty', '=', 'medium')]"/>
                 <filter name="filter_hard" string="Tough"
                         domain="[('difficulty', '=', 'hard')]"/>
+                <separator/>
                 <filter name="filter_general" string="General"
                         domain="[('category', '=', 'general')]"/>
                 <filter name="filter_technical" string="Technical"
