@@ -1,7 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_demo_section_user,dearerp.demo.section.user,model_dearerp_demo_section,group_demo_user,1,0,0,0
-access_demo_section_manager,dearerp.demo.section.manager,model_dearerp_demo_section,group_demo_manager,1,1,1,1
-access_demo_item_user,dearerp.demo.item.user,model_dearerp_demo_item,group_demo_user,1,0,0,0
-access_demo_item_manager,dearerp.demo.item.manager,model_dearerp_demo_item,group_demo_manager,1,1,1,1
-access_demo_faq_user,dearerp.demo.faq.user,model_dearerp_demo_faq,group_demo_user,1,0,0,0
-access_demo_faq_manager,dearerp.demo.faq.manager,model_dearerp_demo_faq,group_demo_manager,1,1,1,1
