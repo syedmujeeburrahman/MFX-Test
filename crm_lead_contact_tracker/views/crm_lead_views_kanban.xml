@@ -15,13 +15,16 @@
             <xpath expr="//templates" position="before">
                 <field name="x_is_contacted_today"/>
             </xpath>
-            <!-- Add contacted badge in the kanban card footer -->
-            <xpath expr="//field[@name='activity_ids' and @widget='kanban_activity']" position="after">
-                <span t-if="record.x_is_contacted_today.raw_value"
-                      class="badge text-bg-success o_contacted_badge ms-1"
-                      title="Contacted Today">
-                    <i class="fa fa-check-circle"/> Done
-                </span>
+            <!-- Add contacted status strip at the TOP of the kanban card -->
+            <xpath expr="//widget[@id='lost_ribbon']" position="before">
+                <div t-if="record.x_is_contacted_today.raw_value"
+                     class="o_contacted_top_strip o_contacted_strip_yes">
+                    <i class="fa fa-check-circle me-1"/>Contacted
+                </div>
+                <div t-else=""
+                     class="o_contacted_top_strip o_contacted_strip_no">
+                    <i class="fa fa-clock-o me-1"/>Not Contacted
+                </div>
             </xpath>
         </field>
     </record>
@@ -38,12 +41,16 @@
             <xpath expr="//templates" position="before">
                 <field name="x_is_contacted_today"/>
             </xpath>
-            <xpath expr="//field[@name='activity_ids' and @widget='kanban_activity']" position="after">
-                <span t-if="record.x_is_contacted_today.raw_value"
-                      class="badge text-bg-success o_contacted_badge ms-1"
-                      title="Contacted Today">
-                    <i class="fa fa-check-circle"/> Done
-                </span>
+            <!-- Add contacted status strip at the TOP of leads kanban card -->
+            <xpath expr="//t[@t-name='card']/field[@name='name']" position="before">
+                <div t-if="record.x_is_contacted_today.raw_value"
+                     class="o_contacted_top_strip o_contacted_strip_yes">
+                    <i class="fa fa-check-circle me-1"/>Contacted
+                </div>
+                <div t-else=""
+                     class="o_contacted_top_strip o_contacted_strip_no">
+                    <i class="fa fa-clock-o me-1"/>Not Contacted
+                </div>
             </xpath>
         </field>
     </record>

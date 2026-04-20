@@ -12,9 +12,9 @@ $contacted-border: #1e7e34;
 // ============================================================
 .o_crm_contact_tracker_kanban {
 
-    // Contacted card - green start border ribbon + subtle background
-    .o_kanban_record:has(.o_contacted_badge) {
-        border-inline-start: 5px solid $contacted-color !important;
+    // Contacted card - green start border + subtle background
+    .o_kanban_record:has(.o_contacted_strip_yes) {
+        border-inline-start: 4px solid $contacted-color !important;
         background: linear-gradient(135deg, $contacted-color-light 0%, #fff 40%) !important;
         box-shadow: 0 2px 8px $contacted-color-glow !important;
         transition: all 0.3s ease;
@@ -25,17 +25,29 @@ $contacted-border: #1e7e34;
         }
     }
 
-    // Contacted badge styling
-    .o_contacted_badge {
-        font-size: 0.75rem;
+    // Top strip - full-width status banner at top of each card
+    .o_contacted_top_strip {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px 12px;
+        margin: -8px -12px 8px -12px;
+        font-size: 0.72rem;
         font-weight: 700;
-        letter-spacing: 0.5px;
-        padding: 3px 8px;
-        border-radius: 12px;
-        animation: contactedPulse 2s ease-in-out 1;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        border-radius: 4px 4px 0 0;
 
-        .fa-check-circle {
-            margin-inline-end: 3px;
+        &.o_contacted_strip_yes {
+            background: linear-gradient(90deg, $contacted-color, #2ecc71);
+            color: #fff;
+            animation: contactedPulse 2s ease-in-out 1;
+        }
+
+        &.o_contacted_strip_no {
+            background: #f0f0f0;
+            color: #999;
+            border-bottom: 1px solid #e5e5e5;
         }
     }
 }
