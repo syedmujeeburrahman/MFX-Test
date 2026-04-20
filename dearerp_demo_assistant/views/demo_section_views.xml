@@ -7,6 +7,9 @@
         <field name="model">x_demo.section</field>
         <field name="arch" type="xml">
             <kanban class="o_demo_assistant_kanban" create="true" edit="false" default_order="sequence">
+                <field name="card_color"/>
+                <field name="icon_class"/>
+                <field name="subtitle"/>
                 <templates>
                     <t t-name="card" class="p-0 demo_card_wrapper">
                         <div class="demo_section_card" t-attf-style="background: #{record.card_color.raw_value || 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'};">

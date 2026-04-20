@@ -90,6 +90,14 @@
         <field name="model">x_demo.section.item</field>
         <field name="arch" type="xml">
             <kanban class="o_demo_item_kanban" default_order="sequence">
+                <field name="is_highlight"/>
+                <field name="is_popular"/>
+                <field name="icon_class"/>
+                <field name="section_type"/>
+                <field name="dearerp_rating"/>
+                <field name="competitor_rating"/>
+                <field name="content"/>
+                <field name="answer"/>
                 <templates>
                     <t t-name="card" class="p-0 demo_item_card_wrapper">
                         <div t-attf-class="demo_item_card #{record.is_highlight.raw_value ? 'demo_item_highlight' : ''} #{record.is_popular.raw_value ? 'demo_item_popular' : ''}">
