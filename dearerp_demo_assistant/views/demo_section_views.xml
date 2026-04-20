@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Kanban View - Main Dashboard -->
+    <record id="view_x_demo_section_kanban" model="ir.ui.view">
+        <field name="name">x_demo.section.kanban</field>
+        <field name="model">x_demo.section</field>
+        <field name="arch" type="xml">
+            <kanban class="o_demo_assistant_kanban" create="true" edit="false" default_order="sequence">
+                <field name="name"/>
+                <field name="section_type"/>
+                <field name="subtitle"/>
+                <field name="icon_class"/>
+                <field name="color"/>
+                <field name="card_color"/>
+                <field name="item_count"/>
+                <field name="description"/>
+                <templates>
+                    <t t-name="card" class="p-0 demo_card_wrapper">
+                        <div class="demo_section_card" t-attf-style="background: #{record.card_color.raw_value || 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'};">
+                            <div class="demo_card_icon_wrapper">
+                                <i t-attf-class="fa #{record.icon_class.raw_value || 'fa-star'} demo_card_icon"/>
+                            </div>
+                            <div class="demo_card_content">
+                                <h3 class="demo_card_title">
+                                    <field name="name"/>
+                                </h3>
+                                <p class="demo_card_subtitle" t-if="record.subtitle.raw_value">
+                                    <field name="subtitle"/>
+                                </p>
+                                <div class="demo_card_badge">
+                                    <span class="badge rounded-pill">
+                                        <field name="item_count"/> items
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="demo_card_arrow">
+                                <i class="fa fa-arrow-right"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Form View - Section Detail -->
+    <record id="view_x_demo_section_form" model="ir.ui.view">
+        <field name="name">x_demo.section.form</field>
+        <field name="model">x_demo.section</field>
+        <field name="arch" type="xml">
+            <form string="Demo Section" class="o_demo_section_form">
+                <header/>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(dearerp_demo_assistant.action_x_demo_section_item_by_section)d"
+                                type="action"
+                                class="oe_stat_button"
+                                icon="fa-list"
+                                context="{'default_section_id': active_id, 'search_default_section_id': active_id}">
+                            <field name="item_count" widget="statinfo" string="Items"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Highlight" bg_color="text-bg-success"
+                            invisible="section_type != 'introduction'"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="Section Title..."/>
+                        </h1>
+                        <field name="subtitle" placeholder="Subtitle or tagline..."/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="section_type"/>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="icon_class" placeholder="fa-rocket"/>
+                            <field name="color"/>
+                            <field name="card_color" placeholder="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Overview" name="overview">
+                            <field name="description" placeholder="Section overview and key talking points..."/>
+                        </page>
+                        <page string="Items" name="items">
+                            <field name="item_ids" context="{'default_section_id': active_id}">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="icon_class"/>
+                                    <field name="is_highlight"/>
+                                    <field name="faq_category"
+                                           column_invisible="parent.section_type != 'faq'"/>
+                                    <field name="competitor_name"
+                                           column_invisible="parent.section_type != 'comparison'"/>
+                                    <field name="plan_price"
+                                           column_invisible="parent.section_type != 'pricing'"/>
+                                    <field name="is_popular"
+                                           column_invisible="parent.section_type != 'pricing'"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List View -->
+    <record id="view_x_demo_section_list" model="ir.ui.view">
+        <field name="name">x_demo.section.list</field>
+        <field name="model">x_demo.section</field>
+        <field name="arch" type="xml">
+            <list default_order="sequence">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="section_type"/>
+                <field name="subtitle"/>
+                <field name="item_count"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_x_demo_section_search" model="ir.ui.view">
+        <field name="name">x_demo.section.search</field>
+        <field name="model">x_demo.section</field>
+        <field name="arch" type="xml">
+            <search string="Demo Sections">
+                <field name="name"/>
+                <field name="section_type"/>
+                <filter string="Introduction" name="filter_introduction"
+                        domain="[('section_type', '=', 'introduction')]"/>
+                <filter string="Features" name="filter_features"
+                        domain="[('section_type', '=', 'features')]"/>
+                <filter string="Comparisons" name="filter_comparison"
+                        domain="[('section_type', '=', 'comparison')]"/>
+                <filter string="Use Cases" name="filter_use_cases"
+                        domain="[('section_type', '=', 'use_cases')]"/>
+                <filter string="Pricing" name="filter_pricing"
+                        domain="[('section_type', '=', 'pricing')]"/>
+                <filter string="FAQs" name="filter_faq"
+                        domain="[('section_type', '=', 'faq')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Type" name="group_type"
+                            context="{'group_by': 'section_type'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_x_demo_section" model="ir.actions.act_window">
+        <field name="name">DearERP Demo Assistant</field>
+        <field name="res_model">x_demo.section</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first demo section
+            </p>
+            <p>
+                Build your interactive DearERP presentation with sections for
+                introduction, features, comparisons, use cases, pricing, and FAQs.
+            </p>
+        </field>
+    </record>
+
+</odoo>

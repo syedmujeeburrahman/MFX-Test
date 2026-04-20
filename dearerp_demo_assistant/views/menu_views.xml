@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Root Menu -->
+    <menuitem id="menu_dearerp_demo_root"
+              name="DearERP Demo"
+              web_icon="dearerp_demo_assistant,static/description/icon.png"
+              sequence="5"/>
+
+    <!-- Dashboard (Kanban) -->
+    <menuitem id="menu_dearerp_demo_dashboard"
+              name="Dashboard"
+              parent="menu_dearerp_demo_root"
+              action="action_x_demo_section"
+              sequence="10"/>
+
+    <!-- All Items -->
+    <menuitem id="menu_dearerp_demo_items"
+              name="All Items"
+              parent="menu_dearerp_demo_root"
+              action="action_x_demo_section_item_all"
+              sequence="20"/>
+
+</odoo>

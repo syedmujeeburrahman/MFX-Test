@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form View - Item Detail (Full Presentation View) -->
+    <record id="view_x_demo_section_item_form" model="ir.ui.view">
+        <field name="name">x_demo.section.item.form</field>
+        <field name="model">x_demo.section.item</field>
+        <field name="arch" type="xml">
+            <form string="Demo Item" class="o_demo_item_form">
+                <sheet>
+                    <widget name="web_ribbon" title="Key Point" bg_color="text-bg-warning"
+                            invisible="not is_highlight"/>
+                    <widget name="web_ribbon" title="Most Popular" bg_color="text-bg-success"
+                            invisible="not is_popular"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="Item title..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="section_id"/>
+                            <field name="section_type" invisible="1"/>
+                            <field name="sequence"/>
+                            <field name="icon_class" placeholder="fa-check-circle"/>
+                            <field name="is_highlight"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <!-- Comparison fields -->
+                            <field name="dearerp_rating"
+                                   invisible="section_type != 'comparison'"/>
+                            <field name="competitor_name"
+                                   invisible="section_type != 'comparison'"/>
+                            <field name="competitor_rating"
+                                   invisible="section_type != 'comparison'"/>
+                            <!-- Pricing fields -->
+                            <field name="plan_price"
+                                   invisible="section_type != 'pricing'"/>
+                            <field name="plan_period"
+                                   invisible="section_type != 'pricing'"/>
+                            <field name="is_popular"
+                                   invisible="section_type != 'pricing'"/>
+                            <!-- FAQ fields -->
+                            <field name="faq_category"
+                                   invisible="section_type != 'faq'"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Content" name="content">
+                            <field name="content" placeholder="Main content for this item..."/>
+                        </page>
+                        <page string="Answer" name="answer"
+                              invisible="section_type != 'faq'">
+                            <field name="answer" placeholder="Detailed answer for this FAQ..."/>
+                        </page>
+                        <page string="Plan Features" name="plan_features"
+                              invisible="section_type != 'pricing'">
+                            <field name="plan_features" placeholder="List features included in this plan..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List View -->
+    <record id="view_x_demo_section_item_list" model="ir.ui.view">
+        <field name="name">x_demo.section.item.list</field>
+        <field name="model">x_demo.section.item</field>
+        <field name="arch" type="xml">
+            <list default_order="sequence" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="section_id"/>
+                <field name="section_type" column_invisible="1"/>
+                <field name="name"/>
+                <field name="icon_class"/>
+                <field name="is_highlight"/>
+                <field name="faq_category"
+                       column_invisible="parent.section_type != 'faq'"/>
+                <field name="competitor_name"
+                       column_invisible="parent.section_type != 'comparison'"/>
+                <field name="plan_price"
+                       column_invisible="parent.section_type != 'pricing'"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Kanban View - Card-style for items -->
+    <record id="view_x_demo_section_item_kanban" model="ir.ui.view">
+        <field name="name">x_demo.section.item.kanban</field>
+        <field name="model">x_demo.section.item</field>
+        <field name="arch" type="xml">
+            <kanban class="o_demo_item_kanban" default_order="sequence">
+                <field name="name"/>
+                <field name="icon_class"/>
+                <field name="is_highlight"/>
+                <field name="section_type"/>
+                <field name="content"/>
+                <field name="answer"/>
+                <field name="competitor_name"/>
+                <field name="dearerp_rating"/>
+                <field name="competitor_rating"/>
+                <field name="plan_price"/>
+                <field name="plan_period"/>
+                <field name="is_popular"/>
+                <field name="faq_category"/>
+                <templates>
+                    <t t-name="card" class="p-0 demo_item_card_wrapper">
+                        <div t-attf-class="demo_item_card #{record.is_highlight.raw_value ? 'demo_item_highlight' : ''} #{record.is_popular.raw_value ? 'demo_item_popular' : ''}">
+                            <!-- Header with icon and title -->
+                            <div class="demo_item_header">
+                                <div class="demo_item_icon" t-if="record.icon_class.raw_value">
+                                    <i t-attf-class="fa #{record.icon_class.raw_value}"/>
+                                </div>
+                                <div class="demo_item_title_wrap">
+                                    <h4 class="demo_item_title"><field name="name"/></h4>
+                                    <span class="badge text-bg-warning" t-if="record.is_highlight.raw_value">Key Point</span>
+                                    <span class="badge text-bg-success" t-if="record.is_popular.raw_value">Most Popular</span>
+                                </div>
+                            </div>
+
+                            <!-- Comparison layout -->
+                            <div class="demo_comparison_row" t-if="record.section_type.raw_value == 'comparison'">
+                                <div class="demo_compare_col demo_dearerp_col">
+                                    <strong>DearERP</strong>
+                                    <span t-attf-class="demo_rating demo_rating_#{record.dearerp_rating.raw_value}">
+                                        <field name="dearerp_rating"/>
+                                    </span>
+                                </div>
+                                <div class="demo_compare_vs">VS</div>
+                                <div class="demo_compare_col demo_competitor_col">
+                                    <strong><field name="competitor_name"/></strong>
+                                    <span t-attf-class="demo_rating demo_rating_#{record.competitor_rating.raw_value}">
+                                        <field name="competitor_rating"/>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Pricing layout -->
+                            <div class="demo_pricing_display" t-if="record.section_type.raw_value == 'pricing'">
+                                <div class="demo_price">
+                                    <field name="plan_price"/>
+                                </div>
+                                <div class="demo_price_period">
+                                    <field name="plan_period"/>
+                                </div>
+                            </div>
+
+                            <!-- FAQ layout -->
+                            <div class="demo_faq_badge" t-if="record.section_type.raw_value == 'faq'">
+                                <span class="badge text-bg-info"><field name="faq_category"/></span>
+                            </div>
+
+                            <!-- Content preview -->
+                            <div class="demo_item_content_preview" t-if="record.content.raw_value">
+                                <field name="content"/>
+                            </div>
+
+                            <!-- FAQ answer preview -->
+                            <div class="demo_item_answer_preview" t-if="record.answer.raw_value">
+                                <div class="demo_answer_label">
+                                    <i class="fa fa-comment-o"/> Answer
+                                </div>
+                                <field name="answer"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_x_demo_section_item_search" model="ir.ui.view">
+        <field name="name">x_demo.section.item.search</field>
+        <field name="model">x_demo.section.item</field>
+        <field name="arch" type="xml">
+            <search string="Demo Items">
+                <field name="name"/>
+                <field name="section_id"/>
+                <field name="section_type"/>
+                <filter string="Key Points" name="filter_highlight"
+                        domain="[('is_highlight', '=', True)]"/>
+                <separator/>
+                <filter string="General FAQ" name="filter_faq_general"
+                        domain="[('faq_category', '=', 'general')]"/>
+                <filter string="Technical FAQ" name="filter_faq_technical"
+                        domain="[('faq_category', '=', 'technical')]"/>
+                <filter string="Objection Handling" name="filter_faq_objection"
+                        domain="[('faq_category', '=', 'objection')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Section" name="group_section"
+                            context="{'group_by': 'section_id'}"/>
+                    <filter string="Type" name="group_type"
+                            context="{'group_by': 'section_type'}"/>
+                    <filter string="FAQ Category" name="group_faq_category"
+                            context="{'group_by': 'faq_category'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action - Items by Section -->
+    <record id="action_x_demo_section_item_by_section" model="ir.actions.act_window">
+        <field name="name">Section Items</field>
+        <field name="res_model">x_demo.section.item</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="context">{'search_default_section_id': active_id}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add your first item to this section
+            </p>
+            <p>
+                Add content points, comparisons, FAQs, or pricing details
+                to build your demo presentation.
+            </p>
+        </field>
+    </record>
+
+    <!-- Action - All Items -->
+    <record id="action_x_demo_section_item_all" model="ir.actions.act_window">
+        <field name="name">All Demo Items</field>
+        <field name="res_model">x_demo.section.item</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="context">{'search_default_group_section': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No demo items yet
+            </p>
+        </field>
+    </record>
+
+</odoo>

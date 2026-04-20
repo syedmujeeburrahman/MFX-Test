@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ============================================================ -->
+        <!-- SECTION 1: Introduction -->
+        <!-- ============================================================ -->
+        <record id="section_introduction" model="x_demo.section">
+            <field name="name">Introduction to DearERP</field>
+            <field name="sequence">10</field>
+            <field name="section_type">introduction</field>
+            <field name="subtitle">Your AI-Powered Odoo Development Partner</field>
+            <field name="icon_class">fa-rocket</field>
+            <field name="color">4</field>
+            <field name="card_color">linear-gradient(135deg, #667eea 0%, #764ba2 100%)</field>
+            <field name="description" type="html">
+                <div>
+                    <p>DearERP is an AI-powered platform that revolutionizes how businesses build, customize, and deploy Odoo ERP solutions. It bridges the gap between complex Odoo development and business users, enabling rapid module creation, customization, and deployment without deep technical expertise.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_intro_1" model="x_demo.section.item">
+            <field name="name">What is DearERP?</field>
+            <field name="section_id" ref="section_introduction"/>
+            <field name="sequence">10</field>
+            <field name="icon_class">fa-info-circle</field>
+            <field name="is_highlight">True</field>
+            <field name="content" type="html">
+                <div>
+                    <p><strong>DearERP</strong> is an AI-driven Odoo development assistant that enables businesses to create custom Odoo modules through natural language conversations. Instead of writing code manually, you describe what you need, and DearERP builds it for you — complete with models, views, security rules, and tests.</p>
+                    <ul>
+                        <li>Conversational module development</li>
+                        <li>Full Odoo module generation with best practices</li>
+                        <li>Version-aware (supports Odoo 14-19)</li>
+                        <li>Built-in validation and testing</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_intro_2" model="x_demo.section.item">
+            <field name="name">Who is it for?</field>
+            <field name="section_id" ref="section_introduction"/>
+            <field name="sequence">20</field>
+            <field name="icon_class">fa-users</field>
+            <field name="content" type="html">
+                <div>
+                    <ul>
+                        <li><strong>Odoo Partners &amp; Implementors:</strong> Speed up custom module delivery by 10x</li>
+                        <li><strong>Business Consultants:</strong> Translate client requirements directly into working modules</li>
+                        <li><strong>IT Teams:</strong> Reduce dependency on specialized Odoo developers</li>
+                        <li><strong>Odoo Developers:</strong> Accelerate development, scaffolding, and boilerplate work</li>
+                        <li><strong>Small &amp; Medium Businesses:</strong> Get custom Odoo solutions without hiring a full dev team</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_intro_3" model="x_demo.section.item">
+            <field name="name">The Problem We Solve</field>
+            <field name="section_id" ref="section_introduction"/>
+            <field name="sequence">30</field>
+            <field name="icon_class">fa-exclamation-triangle</field>
+            <field name="is_highlight">True</field>
+            <field name="content" type="html">
+                <div>
+                    <p>Traditional Odoo customization is:</p>
+                    <ul>
+                        <li><strong>Expensive:</strong> Skilled Odoo developers charge $50-150/hour</li>
+                        <li><strong>Slow:</strong> Simple modules take days, complex ones take weeks</li>
+                        <li><strong>Error-prone:</strong> Manual coding leads to bugs, security gaps, and version incompatibilities</li>
+                        <li><strong>Hard to scale:</strong> Finding and retaining Odoo talent is difficult</li>
+                    </ul>
+                    <p><strong>DearERP eliminates these pain points</strong> by automating module creation with AI that understands Odoo inside and out.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_intro_4" model="x_demo.section.item">
+            <field name="name">Key Value Propositions</field>
+            <field name="section_id" ref="section_introduction"/>
+            <field name="sequence">40</field>
+            <field name="icon_class">fa-diamond</field>
+            <field name="content" type="html">
+                <div>
+                    <ul>
+                        <li><strong>10x Faster Development:</strong> What took days now takes minutes</li>
+                        <li><strong>Zero Odoo Expertise Needed:</strong> Describe requirements in plain English</li>
+                        <li><strong>Production-Ready Code:</strong> Generated modules follow Odoo best practices</li>
+                        <li><strong>Version Compatibility:</strong> Automatic handling of version-specific APIs</li>
+                        <li><strong>Built-in Quality:</strong> Auto-generated tests, security rules, and validation</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 2: Features & Functionalities -->
+        <!-- ============================================================ -->
+        <record id="section_features" model="x_demo.section">
+            <field name="name">Features &amp; Functionalities</field>
+            <field name="sequence">20</field>
+            <field name="section_type">features</field>
+            <field name="subtitle">Everything you need to build Odoo modules with AI</field>
+            <field name="icon_class">fa-cogs</field>
+            <field name="color">10</field>
+            <field name="card_color">linear-gradient(135deg, #f093fb 0%, #f5576c 100%)</field>
+            <field name="description" type="html">
+                <div>
+                    <p>DearERP provides a comprehensive suite of AI-powered tools designed specifically for Odoo module development, from scaffolding to validation to deployment.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_feat_1" model="x_demo.section.item">
+            <field name="name">AI-Powered Module Generation</field>
+            <field name="section_id" ref="section_features"/>
+            <field name="sequence">10</field>
+            <field name="icon_class">fa-magic</field>
+            <field name="is_highlight">True</field>
+            <field name="content" type="html">
+                <div>
+                    <p>Describe your module requirements in natural language and DearERP generates complete, production-ready Odoo modules including:</p>
+                    <ul>
+                        <li>Python models with proper ORM fields and methods</li>
+                        <li>XML views (form, list, kanban, search, pivot, graph)</li>
+                        <li>Security access rules and record rules</li>
+                        <li>Menu items and actions</li>
+                        <li>Demo/seed data</li>
+                        <li>Unit tests</li>
+                        <li>SCSS styling</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_feat_2" model="x_demo.section.item">
+            <field name="name">Multi-Version Support (Odoo 14-19)</field>
+            <field name="section_id" ref="section_features"/>
+            <field name="sequence">20</field>
+            <field name="icon_class">fa-code-fork</field>
+            <field name="content" type="html">
+                <div>
+                    <p>DearERP generates code compatible with the specific Odoo version you target:</p>
+                    <ul>
+                        <li>Handles API changes between versions automatically</li>
+                        <li>Uses version-appropriate view syntax (e.g. attrs vs invisible)</li>
+                        <li>Manages Bootstrap version differences (BS4 vs BS5)</li>
+                        <li>Migration checking between versions with auto-fix</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_feat_3" model="x_demo.section.item">
+            <field name="name">Module Archetypes</field>
+            <field name="section_id" ref="section_features"/>
+            <field name="sequence">30</field>
+            <field name="icon_class">fa-cubes</field>
+            <field name="content" type="html">
+                <div>
+                    <p>Pre-built module templates for common Odoo patterns:</p>
+                    <ul>
+                        <li><strong>Basic:</strong> Standard CRUD module</li>
+                        <li><strong>Wizard:</strong> Transient model with wizard UI</li>
+                        <li><strong>Report:</strong> QWeb PDF/HTML reports</li>
+                        <li><strong>Website:</strong> Website pages and controllers</li>
+                        <li><strong>Cron:</strong> Scheduled actions and automation</li>
+                        <li><strong>Inherit:</strong> Extend existing Odoo models</li>
+                        <li><strong>API:</strong> REST/JSON API endpoints</li>
+                        <li><strong>Widget:</strong> Custom OWL frontend components</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_feat_4" model="x_demo.section.item">
+            <field name="name">Smart Validation &amp; Auto-Fix</field>
+            <field name="section_id" ref="section_features"/>
+            <field name="sequence">40</field>
+            <field name="icon_class">fa-check-circle</field>
+            <field name="is_highlight">True</field>
+            <field name="content" type="html">
+                <div>
+                    <p>Built-in validation catches errors before deployment:</p>
+                    <ul>
+                        <li>XML syntax and structure validation</li>
+                        <li>Python code analysis for common Odoo pitfalls</li>
+                        <li>Security rule completeness checks</li>
+                        <li>Manifest dependency verification</li>
+                        <li><strong>Auto-fix mode:</strong> Automatically corrects breaking changes</li>
+                        <li>Live instance validation against running Odoo</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_feat_5" model="x_demo.section.item">
+            <field name="name">Live Odoo Instance Integration</field>
+            <field name="section_id" ref="section_features"/>
+            <field name="sequence">50</field>
+            <field name="icon_class">fa-plug</field>
+            <field name="content" type="html">
+                <div>
+                    <p>Connect to your running Odoo instance for context-aware development:</p>
+                    <ul>
+                        <li>Inspect existing models, fields, and views</li>
+                        <li>Understand installed modules and their structure</li>
+                        <li>Field resolution against live data</li>
+                        <li>Avoid creating duplicate fields — reuse existing ones</li>
+                        <li>Validate generated modules against live instance</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_feat_6" model="x_demo.section.item">
+            <field name="name">Mixin Support</field>
+            <field name="section_id" ref="section_features"/>
+            <field name="sequence">60</field>
+            <field name="icon_class">fa-puzzle-piece</field>
+            <field name="content" type="html">
+                <div>
+                    <p>Easily integrate Odoo mixins into your generated modules:</p>
+                    <ul>
+                        <li><strong>Mail:</strong> Chatter, messaging, activity tracking</li>
+                        <li><strong>Portal:</strong> Customer portal access</li>
+                        <li><strong>Image:</strong> Image handling and resizing</li>
+                        <li><strong>Rating:</strong> Customer satisfaction ratings</li>
+                        <li><strong>Website:</strong> Website published/unpublished management</li>
+                        <li><strong>Sequence:</strong> Auto-numbering sequences</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_feat_7" model="x_demo.section.item">
+            <field name="name">Field &amp; Model Intelligence</field>
+            <field name="section_id" ref="section_features"/>
+            <field name="sequence">70</field>
+            <field name="icon_class">fa-database</field>
+            <field name="content" type="html">
+                <div>
+                    <p>Deep understanding of Odoo's data model:</p>
+                    <ul>
+                        <li>Field lookup and comparison between versions</li>
+                        <li>Model relationship mapping</li>
+                        <li>Identifies deprecated fields and suggests alternatives</li>
+                        <li>Smart dependency tracking — never miss a required module</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_feat_8" model="x_demo.section.item">
+            <field name="name">Automated Testing</field>
+            <field name="section_id" ref="section_features"/>
+            <field name="sequence">80</field>
+            <field name="icon_class">fa-flask</field>
+            <field name="content" type="html">
+                <div>
+                    <p>Every generated module includes comprehensive tests:</p>
+                    <ul>
+                        <li>TransactionCase tests for model logic</li>
+                        <li>HttpCase tests for web controllers</li>
+                        <li>Access rights verification tests</li>
+                        <li>CRUD operation tests</li>
+                        <li>Business logic validation</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 3: Comparison with AI Tools -->
+        <!-- ============================================================ -->
+        <record id="section_comparison" model="x_demo.section">
+            <field name="name">DearERP vs Other AI Tools</field>
+            <field name="sequence">30</field>
+            <field name="section_type">comparison</field>
+            <field name="subtitle">See how DearERP outperforms generic AI solutions</field>
+            <field name="icon_class">fa-balance-scale</field>
+            <field name="color">3</field>
+            <field name="card_color">linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)</field>
+            <field name="description" type="html">
+                <div>
+                    <p>While generic AI tools can help with code generation, DearERP is purpose-built for Odoo — understanding its ORM, view architecture, security model, and version nuances that general tools miss.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_comp_1" model="x_demo.section.item">
+            <field name="name">Odoo Domain Expertise</field>
+            <field name="section_id" ref="section_comparison"/>
+            <field name="sequence">10</field>
+            <field name="icon_class">fa-graduation-cap</field>
+            <field name="is_highlight">True</field>
+            <field name="dearerp_rating">excellent</field>
+            <field name="competitor_name">Cursor / GitHub Copilot</field>
+            <field name="competitor_rating">limited</field>
+            <field name="content" type="html">
+                <div>
+                    <p><strong>DearERP:</strong> Deep understanding of Odoo ORM, view architecture, security model, inheritance patterns, and version-specific APIs. Trained specifically on Odoo best practices.</p>
+                    <p><strong>Cursor/Copilot:</strong> General-purpose code completion. Knows Python syntax but lacks Odoo-specific knowledge. Often generates incorrect field types, wrong view syntax, or missing security rules.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_comp_2" model="x_demo.section.item">
+            <field name="name">Complete Module Generation</field>
+            <field name="section_id" ref="section_comparison"/>
+            <field name="sequence">20</field>
+            <field name="icon_class">fa-sitemap</field>
+            <field name="dearerp_rating">excellent</field>
+            <field name="competitor_name">ChatGPT / Claude (standalone)</field>
+            <field name="competitor_rating">average</field>
+            <field name="content" type="html">
+                <div>
+                    <p><strong>DearERP:</strong> Generates complete, installable modules with all required files — models, views, security, menus, tests, manifest, and icon. Every file is properly linked and consistent.</p>
+                    <p><strong>ChatGPT/Claude standalone:</strong> Can generate individual code snippets but struggles with multi-file consistency, proper XML IDs, manifest dependencies, and security rules. Often requires significant manual assembly and debugging.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_comp_3" model="x_demo.section.item">
+            <field name="name">Version Compatibility</field>
+            <field name="section_id" ref="section_comparison"/>
+            <field name="sequence">30</field>
+            <field name="icon_class">fa-code-fork</field>
+            <field name="is_highlight">True</field>
+            <field name="dearerp_rating">excellent</field>
+            <field name="competitor_name">Odoo.sh AI</field>
+            <field name="competitor_rating">good</field>
+            <field name="content" type="html">
+                <div>
+                    <p><strong>DearERP:</strong> Supports Odoo 14 through 19 with automatic handling of breaking changes (deprecated views, attrs→invisible, Bootstrap 4→5). Migration checking and auto-fix between versions.</p>
+                    <p><strong>Odoo.sh AI:</strong> Limited to the specific Odoo.sh environment. Does not handle cross-version migration or provide auto-fix for version-specific breaking changes.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_comp_4" model="x_demo.section.item">
+            <field name="name">Live Instance Awareness</field>
+            <field name="section_id" ref="section_comparison"/>
+            <field name="sequence">40</field>
+            <field name="icon_class">fa-eye</field>
+            <field name="dearerp_rating">excellent</field>
+            <field name="competitor_name">Cursor / Copilot</field>
+            <field name="competitor_rating">none</field>
+            <field name="content" type="html">
+                <div>
+                    <p><strong>DearERP:</strong> Connects to your running Odoo instance to understand existing models, fields, installed modules, and configurations. Uses this context to generate accurate, compatible code.</p>
+                    <p><strong>Cursor/Copilot:</strong> No ability to connect to or understand a running Odoo instance. Works only with local file context, missing the full picture of the ERP system.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_comp_5" model="x_demo.section.item">
+            <field name="name">Built-in Validation</field>
+            <field name="section_id" ref="section_comparison"/>
+            <field name="sequence">50</field>
+            <field name="icon_class">fa-shield</field>
+            <field name="dearerp_rating">excellent</field>
+            <field name="competitor_name">All Generic AI Tools</field>
+            <field name="competitor_rating">none</field>
+            <field name="content" type="html">
+                <div>
+                    <p><strong>DearERP:</strong> Built-in module validation catches XML errors, missing security rules, incorrect field references, and version-specific issues before you deploy. Auto-fix mode corrects problems automatically.</p>
+                    <p><strong>Generic AI Tools:</strong> No Odoo-specific validation. Generated code may have syntax errors, missing dependencies, or security vulnerabilities that only surface during installation or runtime.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_comp_6" model="x_demo.section.item">
+            <field name="name">Workflow Automation</field>
+            <field name="section_id" ref="section_comparison"/>
+            <field name="sequence">60</field>
+            <field name="icon_class">fa-cog</field>
+            <field name="dearerp_rating">excellent</field>
+            <field name="competitor_name">Odoo Studio</field>
+            <field name="competitor_rating">good</field>
+            <field name="content" type="html">
+                <div>
+                    <p><strong>DearERP:</strong> Full code-level customization with no limitations. Can create complex business logic, custom OWL widgets, QWeb reports, website controllers, API endpoints, and scheduled actions — anything Odoo supports.</p>
+                    <p><strong>Odoo Studio:</strong> Limited to drag-and-drop customization. Cannot create custom Python logic, OWL widgets, or complex business rules. Struggles with advanced use cases and creates non-portable customizations.</p>
+                </div>
+            </field>
+        </record>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 4: Complex Use Cases -->
+        <!-- ============================================================ -->
+        <record id="section_use_cases" model="x_demo.section">
+            <field name="name">Complex Use Cases</field>
+            <field name="sequence">40</field>
+            <field name="section_type">use_cases</field>
+            <field name="subtitle">Real-world scenarios where DearERP excels</field>
+            <field name="icon_class">fa-trophy</field>
+            <field name="color">9</field>
+            <field name="card_color">linear-gradient(135deg, #fa709a 0%, #fee140 100%)</field>
+            <field name="description" type="html">
+                <div>
+                    <p>These are complex, real-world scenarios that typically require days of developer effort. DearERP handles them in minutes, generating complete, production-ready solutions.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_uc_1" model="x_demo.section.item">
+            <field name="name">Multi-Model Business Workflow</field>
+            <field name="section_id" ref="section_use_cases"/>
+            <field name="sequence">10</field>
+            <field name="icon_class">fa-random</field>
+            <field name="is_highlight">True</field>
+            <field name="content" type="html">
+                <div>
+                    <p><strong>Scenario:</strong> Build a complete approval workflow system with multi-level approvals, email notifications, and audit trail.</p>
+                    <p><strong>Traditional approach:</strong> 3-5 days of development, multiple iterations</p>
+                    <p><strong>With DearERP:</strong> Describe the workflow in natural language. DearERP generates the complete module with state machine, approval logic, mail integration, chatter tracking, and portal access — in minutes.</p>
+                    <p><strong>What's generated:</strong></p>
+                    <ul>
+                        <li>Request model with state workflow (draft → submitted → approved → done)</li>
+                        <li>Approval rules with multi-level hierarchy</li>
+                        <li>Email templates for each state transition</li>
+                        <li>Activity scheduling for approvers</li>
+                        <li>Kanban, list, and form views with state-based buttons</li>
+                        <li>Security groups (User, Manager, Admin)</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_uc_2" model="x_demo.section.item">
+            <field name="name">Custom Dashboard with Analytics</field>
+            <field name="section_id" ref="section_use_cases"/>
+            <field name="sequence">20</field>
+            <field name="icon_class">fa-bar-chart</field>
+            <field name="content" type="html">
+                <div>
+                    <p><strong>Scenario:</strong> Create an executive dashboard showing KPIs from sales, inventory, and accounting with drill-down capabilities.</p>
+                    <p><strong>Traditional approach:</strong> 1-2 weeks involving OWL component development, API integration, and complex SQL queries</p>
+                    <p><strong>With DearERP:</strong> Generates complete dashboard module with computed KPIs, pivot views, graph views, and kanban-based summary cards — with proper access controls.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_uc_3" model="x_demo.section.item">
+            <field name="name">Model Inheritance &amp; Extension</field>
+            <field name="section_id" ref="section_use_cases"/>
+            <field name="sequence">30</field>
+            <field name="icon_class">fa-code</field>
+            <field name="is_highlight">True</field>
+            <field name="content" type="html">
+                <div>
+                    <p><strong>Scenario:</strong> Extend Sale Order with custom fields, automated discount calculations, and approval requirements for orders above a threshold.</p>
+                    <p><strong>Traditional approach:</strong> 2-3 days, requires deep understanding of sale module internals</p>
+                    <p><strong>With DearERP:</strong> Connects to your Odoo instance, inspects the sale.order model, identifies existing fields, and generates a clean inheritance module that adds only what's needed — no duplicate fields, correct dependencies, and version-compatible views.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_uc_4" model="x_demo.section.item">
+            <field name="name">QWeb Reports with Custom Layout</field>
+            <field name="section_id" ref="section_use_cases"/>
+            <field name="sequence">40</field>
+            <field name="icon_class">fa-file-pdf-o</field>
+            <field name="content" type="html">
+                <div>
+                    <p><strong>Scenario:</strong> Create custom PDF reports with company branding, dynamic tables, calculated totals, and conditional sections.</p>
+                    <p><strong>Traditional approach:</strong> 1-2 days of QWeb template development and CSS styling</p>
+                    <p><strong>With DearERP:</strong> Generates complete report module with QWeb templates, report actions, paper formats, and print button integration — ready for production use.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_uc_5" model="x_demo.section.item">
+            <field name="name">REST API Endpoints</field>
+            <field name="section_id" ref="section_use_cases"/>
+            <field name="sequence">50</field>
+            <field name="icon_class">fa-exchange</field>
+            <field name="content" type="html">
+                <div>
+                    <p><strong>Scenario:</strong> Build REST API endpoints for mobile app integration with authentication, rate limiting, and proper error handling.</p>
+                    <p><strong>Traditional approach:</strong> 3-5 days, complex controller development</p>
+                    <p><strong>With DearERP:</strong> Generates API controllers with JSON serialization, authentication decorators, input validation, error handling, and documentation — following Odoo controller best practices.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_uc_6" model="x_demo.section.item">
+            <field name="name">Cross-Version Module Migration</field>
+            <field name="section_id" ref="section_use_cases"/>
+            <field name="sequence">60</field>
+            <field name="icon_class">fa-refresh</field>
+            <field name="content" type="html">
+                <div>
+                    <p><strong>Scenario:</strong> Migrate a custom module from Odoo 16 to Odoo 18 with all breaking changes handled.</p>
+                    <p><strong>Traditional approach:</strong> 2-5 days of manual code review and fixing</p>
+                    <p><strong>With DearERP:</strong> Run migration check to identify all breaking changes, then auto-fix to convert deprecated views, update Bootstrap classes, handle API changes, and ensure manifest compatibility — in seconds.</p>
+                </div>
+            </field>
+        </record>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 5: Pricing & Plans -->
+        <!-- ============================================================ -->
+        <record id="section_pricing" model="x_demo.section">
+            <field name="name">Pricing &amp; Plans</field>
+            <field name="sequence">50</field>
+            <field name="section_type">pricing</field>
+            <field name="subtitle">Flexible plans to match your needs</field>
+            <field name="icon_class">fa-tags</field>
+            <field name="color">5</field>
+            <field name="card_color">linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)</field>
+            <field name="description" type="html">
+                <div>
+                    <p>Choose the plan that fits your development needs. All plans include core module generation capabilities with varying levels of features and support.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_price_1" model="x_demo.section.item">
+            <field name="name">Starter Plan</field>
+            <field name="section_id" ref="section_pricing"/>
+            <field name="sequence">10</field>
+            <field name="icon_class">fa-paper-plane</field>
+            <field name="plan_price">$49</field>
+            <field name="plan_period">per month</field>
+            <field name="content" type="html">
+                <div>
+                    <p>Perfect for individual developers and small projects.</p>
+                </div>
+            </field>
+            <field name="plan_features" type="html">
+                <div>
+                    <ul>
+                        <li>Up to 5 module generations per month</li>
+                        <li>Basic module archetypes (basic, inherit)</li>
+                        <li>Support for Odoo 16-19</li>
+                        <li>Module validation</li>
+                        <li>Email support</li>
+                        <li>Community access</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_price_2" model="x_demo.section.item">
+            <field name="name">Professional Plan</field>
+            <field name="section_id" ref="section_pricing"/>
+            <field name="sequence">20</field>
+            <field name="icon_class">fa-briefcase</field>
+            <field name="plan_price">$149</field>
+            <field name="plan_period">per month</field>
+            <field name="is_popular">True</field>
+            <field name="is_highlight">True</field>
+            <field name="content" type="html">
+                <div>
+                    <p>Ideal for Odoo partners and implementation teams.</p>
+                </div>
+            </field>
+            <field name="plan_features" type="html">
+                <div>
+                    <ul>
+                        <li>Unlimited module generations</li>
+                        <li>All module archetypes</li>
+                        <li>Support for Odoo 14-19</li>
+                        <li>Module validation + auto-fix</li>
+                        <li>Live instance integration</li>
+                        <li>Migration checking</li>
+                        <li>Field &amp; model inspection</li>
+                        <li>Priority email support</li>
+                        <li>3 team seats included</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_price_3" model="x_demo.section.item">
+            <field name="name">Enterprise Plan</field>
+            <field name="section_id" ref="section_pricing"/>
+            <field name="sequence">30</field>
+            <field name="icon_class">fa-building</field>
+            <field name="plan_price">$399</field>
+            <field name="plan_period">per month</field>
+            <field name="content" type="html">
+                <div>
+                    <p>For large teams and organizations with advanced needs.</p>
+                </div>
+            </field>
+            <field name="plan_features" type="html">
+                <div>
+                    <ul>
+                        <li>Everything in Professional</li>
+                        <li>Unlimited team seats</li>
+                        <li>Custom module archetypes</li>
+                        <li>White-label module branding</li>
+                        <li>Dedicated account manager</li>
+                        <li>Phone + video support</li>
+                        <li>Custom training sessions</li>
+                        <li>SLA guarantee (99.9% uptime)</li>
+                        <li>On-premise deployment option</li>
+                        <li>API access for CI/CD integration</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_price_4" model="x_demo.section.item">
+            <field name="name">Custom / Enterprise+ Plan</field>
+            <field name="section_id" ref="section_pricing"/>
+            <field name="sequence">40</field>
+            <field name="icon_class">fa-star</field>
+            <field name="plan_price">Contact Us</field>
+            <field name="plan_period">custom pricing</field>
+            <field name="content" type="html">
+                <div>
+                    <p>Tailored solutions for enterprises with specific requirements.</p>
+                </div>
+            </field>
+            <field name="plan_features" type="html">
+                <div>
+                    <ul>
+                        <li>Everything in Enterprise</li>
+                        <li>Custom AI model fine-tuning</li>
+                        <li>Dedicated infrastructure</li>
+                        <li>Custom integrations</li>
+                        <li>Compliance &amp; security audits</li>
+                        <li>24/7 dedicated support</li>
+                        <li>Source code escrow</li>
+                        <li>Volume discounts for partners</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 6: FAQs & Objection Handling -->
+        <!-- ============================================================ -->
+        <record id="section_faq" model="x_demo.section">
+            <field name="name">FAQs &amp; Objection Handling</field>
+            <field name="sequence">60</field>
+            <field name="section_type">faq</field>
+            <field name="subtitle">Answers to common questions and concerns</field>
+            <field name="icon_class">fa-question-circle</field>
+            <field name="color">1</field>
+            <field name="card_color">linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)</field>
+            <field name="description" type="html">
+                <div>
+                    <p>Comprehensive answers to frequently asked questions and common objections from prospects. Use these to handle discussions confidently during demos.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_faq_1" model="x_demo.section.item">
+            <field name="name">Is the generated code production-ready?</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="sequence">10</field>
+            <field name="icon_class">fa-check</field>
+            <field name="is_highlight">True</field>
+            <field name="faq_category">general</field>
+            <field name="answer" type="html">
+                <div>
+                    <p><strong>Yes, absolutely.</strong> DearERP generates production-ready code that follows Odoo's official best practices and coding standards. Every module includes:</p>
+                    <ul>
+                        <li>Proper security access rules and record rules</li>
+                        <li>Comprehensive unit tests</li>
+                        <li>Version-compatible view definitions</li>
+                        <li>Correct manifest with all dependencies</li>
+                        <li>Clean, maintainable Python code following Odoo ORM conventions</li>
+                    </ul>
+                    <p>The code is validated before delivery, and you can run additional validation against your live instance for extra confidence.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_faq_2" model="x_demo.section.item">
+            <field name="name">Can it handle complex business logic?</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="sequence">20</field>
+            <field name="icon_class">fa-cogs</field>
+            <field name="faq_category">technical</field>
+            <field name="answer" type="html">
+                <div>
+                    <p><strong>Yes.</strong> DearERP can generate modules with complex business logic including:</p>
+                    <ul>
+                        <li>Multi-step approval workflows with state machines</li>
+                        <li>Computed fields with complex calculations</li>
+                        <li>Scheduled actions (cron jobs) for automation</li>
+                        <li>Custom constraints and validation rules</li>
+                        <li>Inter-model relationships and cascading operations</li>
+                        <li>API integrations with external services</li>
+                    </ul>
+                    <p>Simply describe your business requirements in detail, and DearERP translates them into proper Odoo implementations.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_faq_3" model="x_demo.section.item">
+            <field name="name">Will it replace our Odoo developers?</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="sequence">30</field>
+            <field name="icon_class">fa-users</field>
+            <field name="faq_category">objection</field>
+            <field name="is_highlight">True</field>
+            <field name="answer" type="html">
+                <div>
+                    <p><strong>DearERP augments developers, not replaces them.</strong> Think of it as a force multiplier:</p>
+                    <ul>
+                        <li>Developers focus on architecture and complex logic while DearERP handles boilerplate</li>
+                        <li>Junior developers become productive much faster</li>
+                        <li>Teams can take on more projects without increasing headcount</li>
+                        <li>Code review is still essential — DearERP generates the first draft, humans refine it</li>
+                    </ul>
+                    <p>Companies using DearERP report that their developers are <strong>3-5x more productive</strong>, not that they need fewer developers.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_faq_4" model="x_demo.section.item">
+            <field name="name">Is our data safe?</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="sequence">40</field>
+            <field name="icon_class">fa-lock</field>
+            <field name="faq_category">security</field>
+            <field name="answer" type="html">
+                <div>
+                    <p><strong>Yes, data security is our top priority.</strong></p>
+                    <ul>
+                        <li>DearERP connects to your Odoo instance in <strong>read-only mode</strong> — it never modifies your data</li>
+                        <li>All connections use encrypted HTTPS/TLS</li>
+                        <li>Your module code is generated locally and never stored on our servers</li>
+                        <li>Enterprise plan offers on-premise deployment for complete data control</li>
+                        <li>SOC 2 Type II compliance (Enterprise plan)</li>
+                    </ul>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_faq_5" model="x_demo.section.item">
+            <field name="name">Why not just use ChatGPT or Cursor?</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="sequence">50</field>
+            <field name="icon_class">fa-commenting</field>
+            <field name="faq_category">objection</field>
+            <field name="is_highlight">True</field>
+            <field name="answer" type="html">
+                <div>
+                    <p><strong>Generic AI tools lack Odoo-specific intelligence.</strong> Here's what happens when you use them:</p>
+                    <ul>
+                        <li>They generate code with wrong field types or deprecated APIs</li>
+                        <li>They miss security rules, leaving your system vulnerable</li>
+                        <li>They can't connect to your Odoo instance for context</li>
+                        <li>They don't understand version differences (Odoo 16 vs 18 vs 19)</li>
+                        <li>They produce individual files, not complete installable modules</li>
+                        <li>They have no validation — bugs surface only after deployment</li>
+                    </ul>
+                    <p><strong>DearERP saves 70-80% of the time</strong> you'd spend fixing generic AI output to make it actually work with Odoo.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_faq_6" model="x_demo.section.item">
+            <field name="name">What if the generated module needs changes?</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="sequence">60</field>
+            <field name="icon_class">fa-pencil</field>
+            <field name="faq_category">general</field>
+            <field name="answer" type="html">
+                <div>
+                    <p><strong>Modules are fully customizable.</strong> DearERP generates standard Odoo module code that you can:</p>
+                    <ul>
+                        <li>Edit directly in any IDE or text editor</li>
+                        <li>Ask DearERP to modify with follow-up instructions</li>
+                        <li>Extend with additional models, views, or logic</li>
+                        <li>Version control with Git like any other codebase</li>
+                    </ul>
+                    <p>There's no lock-in — the generated code is yours, follows Odoo standards, and can be maintained by any Odoo developer.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_faq_7" model="x_demo.section.item">
+            <field name="name">How does pricing compare to hiring developers?</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="sequence">70</field>
+            <field name="icon_class">fa-calculator</field>
+            <field name="faq_category">pricing</field>
+            <field name="answer" type="html">
+                <div>
+                    <p><strong>DearERP costs a fraction of traditional development:</strong></p>
+                    <ul>
+                        <li>Average Odoo developer: $50-150/hour</li>
+                        <li>Simple module (2 days): $800-2,400</li>
+                        <li>Complex module (1 week): $2,000-6,000</li>
+                        <li>DearERP Professional: $149/month for unlimited modules</li>
+                    </ul>
+                    <p><strong>ROI Example:</strong> If DearERP saves just 2 modules worth of development per month, you're saving $1,600-4,800 on the Professional plan — a <strong>10-30x return</strong> on your investment.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_faq_8" model="x_demo.section.item">
+            <field name="name">Do you support Odoo Enterprise edition?</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="sequence">80</field>
+            <field name="icon_class">fa-building</field>
+            <field name="faq_category">technical</field>
+            <field name="answer" type="html">
+                <div>
+                    <p><strong>Yes.</strong> DearERP works with both Odoo Community and Enterprise editions. When connected to your instance, it automatically detects which edition you're running and generates compatible code.</p>
+                    <p>For Enterprise-specific features (like studio fields, quality checks, or planning), DearERP understands the additional models and can generate modules that properly inherit from Enterprise models.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_faq_9" model="x_demo.section.item">
+            <field name="name">What about ongoing maintenance and upgrades?</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="sequence">90</field>
+            <field name="icon_class">fa-wrench</field>
+            <field name="faq_category">support</field>
+            <field name="answer" type="html">
+                <div>
+                    <p><strong>DearERP helps with maintenance too:</strong></p>
+                    <ul>
+                        <li><strong>Migration checking:</strong> Scan modules for version compatibility before upgrading</li>
+                        <li><strong>Auto-fix:</strong> Automatically update code for new Odoo versions</li>
+                        <li><strong>Continuous updates:</strong> DearERP keeps up with each new Odoo release</li>
+                        <li><strong>Bug fixing:</strong> Describe the issue and DearERP helps identify and fix it</li>
+                    </ul>
+                    <p>This means your custom modules stay compatible as you upgrade Odoo versions — no more expensive migration projects.</p>
+                </div>
+            </field>
+        </record>
+
+        <record id="item_faq_10" model="x_demo.section.item">
+            <field name="name">We already use Odoo Studio. Why do we need this?</field>
+            <field name="section_id" ref="section_faq"/>
+            <field name="sequence">100</field>
+            <field name="icon_class">fa-paint-brush</field>
+            <field name="faq_category">objection</field>
+            <field name="answer" type="html">
+                <div>
+                    <p><strong>Odoo Studio and DearERP serve different purposes:</strong></p>
+                    <ul>
+                        <li><strong>Studio:</strong> Great for simple field additions and basic view changes</li>
+                        <li><strong>DearERP:</strong> Handles everything Studio can't — custom logic, computed fields, workflows, reports, API integrations, automated actions, and complex business rules</li>
+                    </ul>
+                    <p>Also, Studio customizations are not portable between instances and can cause upgrade issues. DearERP generates clean, standard Odoo modules that are version-controlled, testable, and fully portable.</p>
+                </div>
+            </field>
+        </record>
+
+    </data>
+</odoo>
