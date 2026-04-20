@@ -7,22 +7,20 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
         <field name="arch" type="xml">
-            <!-- Add class to kanban for CSS targeting -->
-            <xpath expr="//kanban" position="attributes">
-                <attribute name="class">o_crm_contact_tracker_kanban</attribute>
-            </xpath>
             <!-- Add fields before templates so they're available in card -->
             <xpath expr="//templates" position="before">
                 <field name="x_is_contacted_today"/>
             </xpath>
-            <!-- Add contacted status strip at the TOP of the kanban card -->
+            <!-- Contacted badge: visible at the TOP of the kanban card -->
             <xpath expr="//widget[@id='lost_ribbon']" position="before">
-                <div t-if="record.x_is_contacted_today.raw_value"
-                     class="o_contacted_top_strip o_contacted_strip_yes">
+                <div class="o_contacted_strip o_contacted_yes d-flex align-items-center justify-content-center fw-bold py-1 mb-1"
+                     invisible="not x_is_contacted_today"
+                     style="background: #28a745; color: #fff; font-size: 0.73rem; letter-spacing: 0.5px; border-radius: 4px; text-transform: uppercase;">
                     <i class="fa fa-check-circle me-1"/>Contacted
                 </div>
-                <div t-else=""
-                     class="o_contacted_top_strip o_contacted_strip_no">
+                <div class="o_contacted_strip o_contacted_no d-flex align-items-center justify-content-center py-1 mb-1"
+                     invisible="x_is_contacted_today"
+                     style="background: #f0f0f0; color: #999; font-size: 0.73rem; letter-spacing: 0.5px; border-radius: 4px; text-transform: uppercase;">
                     <i class="fa fa-clock-o me-1"/>Not Contacted
                 </div>
             </xpath>
@@ -35,20 +33,19 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.view_crm_lead_kanban"/>
         <field name="arch" type="xml">
-            <xpath expr="//kanban" position="attributes">
-                <attribute name="class">o_crm_contact_tracker_kanban</attribute>
-            </xpath>
             <xpath expr="//templates" position="before">
                 <field name="x_is_contacted_today"/>
             </xpath>
-            <!-- Add contacted status strip at the TOP of leads kanban card -->
+            <!-- Contacted badge at the TOP of leads kanban card -->
             <xpath expr="//t[@t-name='card']/field[@name='name']" position="before">
-                <div t-if="record.x_is_contacted_today.raw_value"
-                     class="o_contacted_top_strip o_contacted_strip_yes">
+                <div class="o_contacted_strip o_contacted_yes d-flex align-items-center justify-content-center fw-bold py-1 mb-1"
+                     invisible="not x_is_contacted_today"
+                     style="background: #28a745; color: #fff; font-size: 0.73rem; letter-spacing: 0.5px; border-radius: 4px; text-transform: uppercase;">
                     <i class="fa fa-check-circle me-1"/>Contacted
                 </div>
-                <div t-else=""
-                     class="o_contacted_top_strip o_contacted_strip_no">
+                <div class="o_contacted_strip o_contacted_no d-flex align-items-center justify-content-center py-1 mb-1"
+                     invisible="x_is_contacted_today"
+                     style="background: #f0f0f0; color: #999; font-size: 0.73rem; letter-spacing: 0.5px; border-radius: 4px; text-transform: uppercase;">
                     <i class="fa fa-clock-o me-1"/>Not Contacted
                 </div>
             </xpath>

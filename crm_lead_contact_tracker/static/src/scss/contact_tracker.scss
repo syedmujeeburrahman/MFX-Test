@@ -10,45 +10,25 @@ $contacted-border: #1e7e34;
 // ============================================================
 // Kanban View - Contacted Lead Cards
 // ============================================================
-.o_crm_contact_tracker_kanban {
 
-    // Contacted card - green start border + subtle background
-    .o_kanban_record:has(.o_contacted_strip_yes) {
-        border-inline-start: 4px solid $contacted-color !important;
-        background: linear-gradient(135deg, $contacted-color-light 0%, #fff 40%) !important;
-        box-shadow: 0 2px 8px $contacted-color-glow !important;
-        transition: all 0.3s ease;
+// Contacted card - green left border + subtle background glow
+.o_kanban_record:has(.o_contacted_yes) {
+    border-inline-start: 4px solid $contacted-color !important;
+    background: linear-gradient(135deg, $contacted-color-light 0%, #fff 40%) !important;
+    box-shadow: 0 2px 8px $contacted-color-glow !important;
+    transition: all 0.3s ease;
 
-        &:hover {
-            box-shadow: 0 4px 16px $contacted-color-glow !important;
-            transform: translateY(-1px);
-        }
+    &:hover {
+        box-shadow: 0 4px 16px $contacted-color-glow !important;
+        transform: translateY(-1px);
     }
+}
 
-    // Top strip - full-width status banner at top of each card
-    .o_contacted_top_strip {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 4px 12px;
-        margin: -8px -12px 8px -12px;
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.6px;
-        text-transform: uppercase;
-        border-radius: 4px 4px 0 0;
-
-        &.o_contacted_strip_yes {
-            background: linear-gradient(90deg, $contacted-color, #2ecc71);
-            color: #fff;
-            animation: contactedPulse 2s ease-in-out 1;
-        }
-
-        &.o_contacted_strip_no {
-            background: #f0f0f0;
-            color: #999;
-            border-bottom: 1px solid #e5e5e5;
-        }
+// Contacted strip - enhanced styling (inline styles handle basics as fallback)
+.o_contacted_strip {
+    &.o_contacted_yes {
+        background: linear-gradient(90deg, $contacted-color, #2ecc71) !important;
+        animation: contactedPulse 2s ease-in-out 1;
     }
 }
 
