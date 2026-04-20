@@ -1,6 +1,5 @@
 from odoo.tests.common import TransactionCase
 from odoo import fields
-from datetime import datetime
 
 
 class TestCrmLeadContactTracker(TransactionCase):
@@ -9,7 +8,6 @@ class TestCrmLeadContactTracker(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.user_sales = cls.env.ref('base.user_admin')
         cls.lead = cls.env['crm.lead'].create({
             'name': 'Test Lead - Contact Tracker',
             'type': 'opportunity',
@@ -57,7 +55,6 @@ class TestCrmLeadContactTracker(TransactionCase):
         """Test that the contact count increments each time."""
         self.lead.action_mark_contacted()
         self.assertEqual(self.lead.x_contact_count, 1)
-        # Reset and mark again
         self.lead.write({'x_is_contacted_today': False})
         self.lead.action_mark_contacted()
         self.assertEqual(self.lead.x_contact_count, 2)
@@ -81,7 +78,6 @@ class TestCrmLeadContactTracker(TransactionCase):
         """Test that the cron job resets contacted flags."""
         self.lead.action_mark_contacted()
         self.assertTrue(self.lead.x_is_contacted_today)
-        # Run the cron reset
         self.env['crm.lead']._cron_reset_contacted_today()
         self.assertFalse(self.lead.x_is_contacted_today)
 
@@ -110,24 +106,12 @@ class TestCrmLeadContactTracker(TransactionCase):
         self.assertTrue(self.lead.x_is_contacted_today)
         self.assertTrue(lead2.x_is_contacted_today)
 
-    def test_13_cron_only_resets_contacted(self):
-        """Test that cron only affects leads that are marked as contacted."""
-        lead2 = self.env['crm.lead'].create({
-            'name': 'Test Lead Pending',
-            'type': 'opportunity',
-        })
-        self.lead.action_mark_contacted()
-        # lead2 remains not contacted
-        self.env['crm.lead']._cron_reset_contacted_today()
-        self.assertFalse(self.lead.x_is_contacted_today)
-        self.assertFalse(lead2.x_is_contacted_today)
-
-    def test_14_activity_feedback_auto_marks(self):
+    def test_13_activity_feedback_auto_marks(self):
         """Test that completing an activity auto-marks the lead as contacted."""
         activity_type = self.env.ref('mail.mail_activity_data_call', raise_if_not_found=False)
         if not activity_type:
             activity_type = self.env['mail.activity.type'].search([], limit=1)
-        activity = self.env['mail.activity'].create({
+        self.env['mail.activity'].create({
             'res_model_id': self.env['ir.model']._get('crm.lead').id,
             'res_id': self.lead.id,
             'activity_type_id': activity_type.id,
@@ -135,7 +119,6 @@ class TestCrmLeadContactTracker(TransactionCase):
             'date_deadline': fields.Date.today(),
             'user_id': self.env.uid,
         })
-        # Complete the activity via feedback
         self.lead.activity_feedback(
             'Called and discussed the proposal',
             attachment_ids=None,

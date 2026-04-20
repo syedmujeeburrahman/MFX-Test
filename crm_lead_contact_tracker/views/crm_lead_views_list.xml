@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Inherit crm.lead List View (Opportunities) -->
-    <record id="view_crm_lead_list_inherit_contact_tracker" model="ir.ui.view">
-        <field name="name">crm.lead.list.inherit.contact_tracker</field>
+    <!-- Inherit CRM Opportunity List View -->
+    <record id="view_crm_lead_list_opps_inherit_contact_tracker" model="ir.ui.view">
+        <field name="name">crm.lead.list.opps.inherit.contact_tracker</field>
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
         <field name="arch" type="xml">
-            <!-- Add decoration for contacted rows -->
+            <!-- Green row decoration for contacted leads -->
             <xpath expr="//list" position="attributes">
                 <attribute name="decoration-success">x_is_contacted_today == True</attribute>
             </xpath>
-            <!-- Add contacted status column -->
+            <!-- Add contacted columns after activity_ids -->
             <xpath expr="//field[@name='activity_ids']" position="after">
                 <field name="x_is_contacted_today" string="Contacted"
-                       widget="boolean_toggle"
-                       decoration-success="x_is_contacted_today == True"/>
+                       widget="boolean_toggle"/>
                 <field name="x_contacted_date" string="Contacted At"
                        widget="datetime" optional="hide"/>
             </xpath>
         </field>
     </record>
 
-    <!-- Inherit crm.lead List View (Leads) -->
+    <!-- Inherit CRM Leads List View -->
     <record id="view_crm_lead_list_leads_inherit_contact_tracker" model="ir.ui.view">
         <field name="name">crm.lead.list.leads.inherit.contact_tracker</field>
         <field name="model">crm.lead</field>
@@ -31,12 +30,9 @@
             <xpath expr="//list" position="attributes">
                 <attribute name="decoration-success">x_is_contacted_today == True</attribute>
             </xpath>
-            <xpath expr="//field[@name='activity_ids']" position="after">
+            <xpath expr="//field[@name='priority']" position="after">
                 <field name="x_is_contacted_today" string="Contacted"
-                       widget="boolean_toggle"
-                       decoration-success="x_is_contacted_today == True"/>
-                <field name="x_contacted_date" string="Contacted At"
-                       widget="datetime" optional="hide"/>
+                       widget="boolean_toggle"/>
             </xpath>
         </field>
     </record>

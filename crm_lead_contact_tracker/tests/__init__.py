@@ -1,1 +1,1 @@
-from . import test_crm_lead_contact_tracker
+from . import test_crm_lead_contact_tracker_record

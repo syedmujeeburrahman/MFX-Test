@@ -1,22 +1,18 @@
-// CRM Lead Contact Tracker - Enhanced Visual Indicators
+// CRM Lead Contact Tracker - Enhanced Visual Indicators (Odoo 19)
 // Provides prominent visual cues for contacted vs pending leads
 
-// ============================================================
 // Variables
-// ============================================================
 $contacted-color: #28a745;
 $contacted-color-light: #d4edda;
 $contacted-color-glow: rgba(40, 167, 69, 0.4);
 $contacted-border: #1e7e34;
-$pending-color: #dc3545;
-$pending-color-light: #f8d7da;
 
 // ============================================================
 // Kanban View - Contacted Lead Cards
 // ============================================================
 .o_crm_contact_tracker_kanban {
 
-    // Contacted card - green left border ribbon + subtle background
+    // Contacted card - green start border ribbon + subtle background
     .o_kanban_record:has(.o_contacted_badge) {
         border-inline-start: 5px solid $contacted-color !important;
         background: linear-gradient(135deg, $contacted-color-light 0%, #fff 40%) !important;
@@ -39,7 +35,7 @@ $pending-color-light: #f8d7da;
         animation: contactedPulse 2s ease-in-out 1;
 
         .fa-check-circle {
-            margin-right: 3px;
+            margin-inline-end: 3px;
         }
     }
 }
@@ -58,7 +54,7 @@ $pending-color-light: #f8d7da;
     .fa-check-circle {
         font-size: 1.2rem;
         color: $contacted-color;
-        margin-right: 6px;
+        margin-inline-end: 6px;
     }
 }
 
@@ -66,19 +62,10 @@ $pending-color-light: #f8d7da;
 // List View - Enhanced Row Highlighting
 // ============================================================
 .o_list_view {
-    // Success decoration rows get an enhanced style
     .o_data_row.text-success {
         background: $contacted-color-light !important;
         border-inline-start: 4px solid $contacted-color;
         font-weight: 500;
-
-        td:first-child::before {
-            content: '\f058'; // fa-check-circle
-            font-family: FontAwesome;
-            color: $contacted-color;
-            margin-right: 6px;
-            font-size: 1rem;
-        }
     }
 }
 

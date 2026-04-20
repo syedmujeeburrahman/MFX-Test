@@ -1,6 +1,6 @@
 {
     'name': 'CRM Lead Contact Tracker',
-    'version': '18.0.1.0.0',
+    'version': '19.0.1.0.0',
     'summary': 'Enhanced visual tracking for contacted CRM leads with daily reset and notifications',
     'description': """
         CRM Lead Contact Tracker

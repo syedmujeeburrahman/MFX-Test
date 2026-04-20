@@ -1,5 +1,4 @@
 from odoo import models, fields, api
-from datetime import date
 
 
 class CrmLead(models.Model):
@@ -53,12 +52,12 @@ class CrmLead(models.Model):
                     '</div>'
                 ) % (
                     self.env.user.name,
-                    (' - ' + lead.x_contacted_note) if lead.x_contacted_note else '',
+                    (' — ' + lead.x_contacted_note) if lead.x_contacted_note else '',
                 ),
                 message_type='notification',
                 subtype_xmlid='mail.mt_note',
             )
-            # Send a notification to the current user
+            # Send bus notification to the current user
             self.env['bus.bus']._sendone(
                 self.env.user.partner_id,
                 'simple_notification',
@@ -74,7 +73,7 @@ class CrmLead(models.Model):
             'tag': 'display_notification',
             'params': {
                 'title': 'Lead Contacted!',
-                'message': 'Lead has been marked as contacted. You can move on to the next one!',
+                'message': 'Lead marked as contacted. You can move on to the next one!',
                 'type': 'success',
                 'sticky': False,
                 'next': {'type': 'ir.actions.client', 'tag': 'soft_reload'},
@@ -109,12 +108,6 @@ class CrmLead(models.Model):
             },
         }
 
-    def _action_auto_mark_contacted(self):
-        """Called when an activity is completed to auto-mark the lead."""
-        for lead in self:
-            if not lead.x_is_contacted_today:
-                lead.action_mark_contacted()
-
     def activity_feedback(self, act_feedback, attachment_ids=None, subtype_xmlid=False):
         """Override to auto-mark lead as contacted when an activity is completed."""
         res = super().activity_feedback(
@@ -122,7 +115,10 @@ class CrmLead(models.Model):
             attachment_ids=attachment_ids,
             subtype_xmlid=subtype_xmlid,
         )
-        self._action_auto_mark_contacted()
+        # Auto-mark leads that haven't been contacted today
+        for lead in self:
+            if not lead.x_is_contacted_today:
+                lead.action_mark_contacted()
         return res
 
     @api.model
