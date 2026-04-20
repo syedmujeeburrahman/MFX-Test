@@ -122,7 +122,7 @@
         <field name="name">x_demo.section.search</field>
         <field name="model">x_demo.section</field>
         <field name="arch" type="xml">
-            <search>
+            <search string="Demo Sections">
                 <field name="name"/>
                 <field name="section_type"/>
                 <filter string="Introduction" name="filter_introduction"
@@ -137,7 +137,7 @@
                         domain="[('section_type', '=', 'pricing')]"/>
                 <filter string="FAQs" name="filter_faq"
                         domain="[('section_type', '=', 'faq')]"/>
-                <group expand="false" string="Group By">
+                <group name="group_by">
                     <filter string="Type" name="group_type"
                             context="{'group_by': 'section_type'}"/>
                 </group>
