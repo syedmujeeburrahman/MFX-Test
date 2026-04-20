@@ -73,16 +73,13 @@
             <list default_order="sequence" editable="bottom">
                 <field name="sequence" widget="handle"/>
                 <field name="section_id"/>
-                <field name="section_type" column_invisible="1"/>
+                <field name="section_type" column_invisible="True"/>
                 <field name="name"/>
                 <field name="icon_class"/>
                 <field name="is_highlight"/>
-                <field name="faq_category"
-                       column_invisible="parent.section_type != 'faq'"/>
-                <field name="competitor_name"
-                       column_invisible="parent.section_type != 'comparison'"/>
-                <field name="plan_price"
-                       column_invisible="parent.section_type != 'pricing'"/>
+                <field name="faq_category" optional="hide"/>
+                <field name="competitor_name" optional="hide"/>
+                <field name="plan_price" optional="hide"/>
             </list>
         </field>
     </record>
@@ -93,19 +90,6 @@
         <field name="model">x_demo.section.item</field>
         <field name="arch" type="xml">
             <kanban class="o_demo_item_kanban" default_order="sequence">
-                <field name="name"/>
-                <field name="icon_class"/>
-                <field name="is_highlight"/>
-                <field name="section_type"/>
-                <field name="content"/>
-                <field name="answer"/>
-                <field name="competitor_name"/>
-                <field name="dearerp_rating"/>
-                <field name="competitor_rating"/>
-                <field name="plan_price"/>
-                <field name="plan_period"/>
-                <field name="is_popular"/>
-                <field name="faq_category"/>
                 <templates>
                     <t t-name="card" class="p-0 demo_item_card_wrapper">
                         <div t-attf-class="demo_item_card #{record.is_highlight.raw_value ? 'demo_item_highlight' : ''} #{record.is_popular.raw_value ? 'demo_item_popular' : ''}">
@@ -177,7 +161,7 @@
         <field name="name">x_demo.section.item.search</field>
         <field name="model">x_demo.section.item</field>
         <field name="arch" type="xml">
-            <search string="Demo Items">
+            <search>
                 <field name="name"/>
                 <field name="section_id"/>
                 <field name="section_type"/>
@@ -190,7 +174,7 @@
                         domain="[('faq_category', '=', 'technical')]"/>
                 <filter string="Objection Handling" name="filter_faq_objection"
                         domain="[('faq_category', '=', 'objection')]"/>
-                <group expand="0" string="Group By">
+                <group expand="false" string="Group By">
                     <filter string="Section" name="group_section"
                             context="{'group_by': 'section_id'}"/>
                     <filter string="Type" name="group_type"

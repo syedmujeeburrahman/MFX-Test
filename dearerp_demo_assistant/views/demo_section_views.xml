@@ -7,14 +7,6 @@
         <field name="model">x_demo.section</field>
         <field name="arch" type="xml">
             <kanban class="o_demo_assistant_kanban" create="true" edit="false" default_order="sequence">
-                <field name="name"/>
-                <field name="section_type"/>
-                <field name="subtitle"/>
-                <field name="icon_class"/>
-                <field name="color"/>
-                <field name="card_color"/>
-                <field name="item_count"/>
-                <field name="description"/>
                 <templates>
                     <t t-name="card" class="p-0 demo_card_wrapper">
                         <div class="demo_section_card" t-attf-style="background: #{record.card_color.raw_value || 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'};">
@@ -130,7 +122,7 @@
         <field name="name">x_demo.section.search</field>
         <field name="model">x_demo.section</field>
         <field name="arch" type="xml">
-            <search string="Demo Sections">
+            <search>
                 <field name="name"/>
                 <field name="section_type"/>
                 <filter string="Introduction" name="filter_introduction"
@@ -145,7 +137,7 @@
                         domain="[('section_type', '=', 'pricing')]"/>
                 <filter string="FAQs" name="filter_faq"
                         domain="[('section_type', '=', 'faq')]"/>
-                <group expand="0" string="Group By">
+                <group expand="false" string="Group By">
                     <filter string="Type" name="group_type"
                             context="{'group_by': 'section_type'}"/>
                 </group>
