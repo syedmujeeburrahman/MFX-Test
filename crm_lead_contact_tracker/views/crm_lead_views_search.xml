@@ -8,7 +8,7 @@
         <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
         <field name="arch" type="xml">
             <!-- Add contact status filters after existing filters -->
-            <xpath expr="//filter[@name='won']" position="after">
+            <xpath expr="//filter[@name='filter_won_status_won']" position="after">
                 <separator/>
                 <filter string="Contacted Today" name="contacted_today"
                         domain="[('x_is_contacted_today', '=', True)]"/>
