@@ -1,0 +1,101 @@
+// CRM Lead Contact Tracker - Enhanced Visual Indicators
+// Provides prominent visual cues for contacted vs pending leads
+
+// ============================================================
+// Variables
+// ============================================================
+$contacted-color: #28a745;
+$contacted-color-light: #d4edda;
+$contacted-color-glow: rgba(40, 167, 69, 0.4);
+$contacted-border: #1e7e34;
+$pending-color: #dc3545;
+$pending-color-light: #f8d7da;
+
+// ============================================================
+// Kanban View - Contacted Lead Cards
+// ============================================================
+.o_crm_contact_tracker_kanban {
+
+    // Contacted card - green left border ribbon + subtle background
+    .o_kanban_record:has(.o_contacted_badge) {
+        border-inline-start: 5px solid $contacted-color !important;
+        background: linear-gradient(135deg, $contacted-color-light 0%, #fff 40%) !important;
+        box-shadow: 0 2px 8px $contacted-color-glow !important;
+        transition: all 0.3s ease;
+
+        &:hover {
+            box-shadow: 0 4px 16px $contacted-color-glow !important;
+            transform: translateY(-1px);
+        }
+    }
+
+    // Contacted badge styling
+    .o_contacted_badge {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        padding: 3px 8px;
+        border-radius: 12px;
+        animation: contactedPulse 2s ease-in-out 1;
+
+        .fa-check-circle {
+            margin-right: 3px;
+        }
+    }
+}
+
+// ============================================================
+// Form View - Contacted Banner
+// ============================================================
+.o_contacted_banner {
+    border: 2px solid $contacted-color !important;
+    background: linear-gradient(90deg, $contacted-color-light, #e8f5e9) !important;
+    border-radius: 8px;
+    padding: 12px 20px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+
+    .fa-check-circle {
+        font-size: 1.2rem;
+        color: $contacted-color;
+        margin-right: 6px;
+    }
+}
+
+// ============================================================
+// List View - Enhanced Row Highlighting
+// ============================================================
+.o_list_view {
+    // Success decoration rows get an enhanced style
+    .o_data_row.text-success {
+        background: $contacted-color-light !important;
+        border-inline-start: 4px solid $contacted-color;
+        font-weight: 500;
+
+        td:first-child::before {
+            content: '\f058'; // fa-check-circle
+            font-family: FontAwesome;
+            color: $contacted-color;
+            margin-right: 6px;
+            font-size: 1rem;
+        }
+    }
+}
+
+// ============================================================
+// Animations
+// ============================================================
+@keyframes contactedPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 $contacted-color-glow;
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 12px 4px $contacted-color-glow;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 $contacted-color-glow;
+    }
+}

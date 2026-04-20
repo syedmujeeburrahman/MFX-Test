@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Inherit crm.lead Form View -->
+    <record id="view_crm_lead_form_inherit_contact_tracker" model="ir.ui.view">
+        <field name="name">crm.lead.form.inherit.contact_tracker</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Contacted status banner at the top of the form -->
+            <xpath expr="//sheet" position="before">
+                <div class="alert alert-success text-center o_contacted_banner"
+                     invisible="not x_is_contacted_today"
+                     role="status">
+                    <strong>
+                        <i class="fa fa-check-circle"/> CONTACTED
+                    </strong>
+                    — This lead has been handled today by
+                    <field name="x_contacted_by" readonly="1" widget="many2one_avatar_user" class="d-inline"/>
+                    on <field name="x_contacted_date" readonly="1" widget="datetime" class="d-inline"/>
+                </div>
+            </xpath>
+
+            <!-- Mark as Contacted / Unmark buttons in the header -->
+            <xpath expr="//div[@name='button_box']" position="before">
+                <header>
+                    <button name="action_mark_contacted"
+                            type="object"
+                            string="✅ Mark as Contacted"
+                            class="btn-success"
+                            invisible="x_is_contacted_today"
+                            data-hotkey="shift+c"
+                            confirm="Mark this lead as contacted for today?"/>
+                    <button name="action_unmark_contacted"
+                            type="object"
+                            string="↩ Unmark Contacted"
+                            class="btn-secondary"
+                            invisible="not x_is_contacted_today"/>
+                </header>
+            </xpath>
+
+            <!-- Contact tracker stat button in button box -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button class="oe_stat_button" icon="fa-phone"
+                        name="action_mark_contacted" type="object"
+                        invisible="x_is_contacted_today">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_text text-danger fw-bold">Pending</span>
+                    </div>
+                </button>
+                <button class="oe_stat_button" icon="fa-check-circle"
+                        invisible="not x_is_contacted_today">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value text-success">
+                            <field name="x_contact_count"/>
+                        </span>
+                        <span class="o_stat_text text-success">Contacted</span>
+                    </div>
+                </button>
+            </xpath>
+
+            <!-- Contact note and info in a dedicated group -->
+            <xpath expr="//group[@name='lead_partner']" position="after">
+                <group string="Contact Tracking" name="contact_tracking">
+                    <group>
+                        <field name="x_contacted_note"
+                               placeholder="Add a note before marking as contacted..."
+                               invisible="x_is_contacted_today"/>
+                        <field name="x_contacted_date"
+                               invisible="not x_is_contacted_today"/>
+                    </group>
+                    <group>
+                        <field name="x_contacted_by"
+                               invisible="not x_is_contacted_today"/>
+                        <field name="x_contact_count"/>
+                    </group>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

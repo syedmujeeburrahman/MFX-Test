@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Inherit crm.lead Kanban View -->
+    <record id="view_crm_lead_kanban_inherit_contact_tracker" model="ir.ui.view">
+        <field name="name">crm.lead.kanban.inherit.contact_tracker</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="class">o_crm_contact_tracker_kanban</attribute>
+            </xpath>
+            <xpath expr="//templates" position="before">
+                <field name="x_is_contacted_today"/>
+                <field name="x_contacted_date"/>
+                <field name="x_contacted_by"/>
+            </xpath>
+            <xpath expr="//div[hasclass('oe_kanban_bottom_right')]" position="inside">
+                <span t-if="record.x_is_contacted_today.raw_value"
+                      class="badge text-bg-success o_contacted_badge ms-1"
+                      title="Contacted Today">
+                    <i class="fa fa-check-circle"/> Done
+                </span>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Inherit the opportunity kanban view as well -->
+    <record id="view_crm_opportunity_kanban_inherit_contact_tracker" model="ir.ui.view">
+        <field name="name">crm.opportunity.kanban.inherit.contact_tracker</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="class">o_crm_contact_tracker_kanban</attribute>
+            </xpath>
+            <xpath expr="//templates" position="before">
+                <field name="x_is_contacted_today"/>
+                <field name="x_contacted_date"/>
+                <field name="x_contacted_by"/>
+            </xpath>
+            <xpath expr="//div[hasclass('oe_kanban_bottom_right')]" position="inside">
+                <span t-if="record.x_is_contacted_today.raw_value"
+                      class="badge text-bg-success o_contacted_badge ms-1"
+                      title="Contacted Today">
+                    <i class="fa fa-check-circle"/> Done
+                </span>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

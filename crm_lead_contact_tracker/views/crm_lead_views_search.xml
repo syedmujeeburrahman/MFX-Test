@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Inherit crm.lead Search View -->
+    <record id="view_crm_lead_search_inherit_contact_tracker" model="ir.ui.view">
+        <field name="name">crm.lead.search.inherit.contact_tracker</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+        <field name="arch" type="xml">
+            <!-- Add filter for Contacted Today -->
+            <xpath expr="//filter[@name='myactivities']" position="after">
+                <separator/>
+                <filter string="Contacted Today" name="contacted_today"
+                        domain="[('x_is_contacted_today', '=', True)]"
+                        icon="fa-check-circle"/>
+                <filter string="Pending (Not Contacted)" name="pending_today"
+                        domain="[('x_is_contacted_today', '=', False)]"
+                        icon="fa-clock-o"/>
+                <filter string="Contacted This Week" name="contacted_this_week"
+                        domain="[('x_contacted_date', '>=', (context_today() - datetime.timedelta(days=context_today().weekday())).strftime('%%Y-%%m-%%d'))]"
+                        icon="fa-calendar-check-o"/>
+            </xpath>
+            <!-- Add group by Contacted Today -->
+            <xpath expr="//filter[@name='stage']" position="after">
+                <filter string="Contacted Status" name="group_contacted"
+                        context="{'group_by': 'x_is_contacted_today'}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

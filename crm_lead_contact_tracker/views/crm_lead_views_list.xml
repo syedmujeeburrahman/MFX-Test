@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Inherit crm.lead List View (Opportunities) -->
+    <record id="view_crm_lead_list_inherit_contact_tracker" model="ir.ui.view">
+        <field name="name">crm.lead.list.inherit.contact_tracker</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+            <!-- Add decoration for contacted rows -->
+            <xpath expr="//list" position="attributes">
+                <attribute name="decoration-success">x_is_contacted_today == True</attribute>
+            </xpath>
+            <!-- Add contacted status column -->
+            <xpath expr="//field[@name='activity_ids']" position="after">
+                <field name="x_is_contacted_today" string="Contacted"
+                       widget="boolean_toggle"
+                       decoration-success="x_is_contacted_today == True"/>
+                <field name="x_contacted_date" string="Contacted At"
+                       widget="datetime" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Inherit crm.lead List View (Leads) -->
+    <record id="view_crm_lead_list_leads_inherit_contact_tracker" model="ir.ui.view">
+        <field name="name">crm.lead.list.leads.inherit.contact_tracker</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="attributes">
+                <attribute name="decoration-success">x_is_contacted_today == True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='activity_ids']" position="after">
+                <field name="x_is_contacted_today" string="Contacted"
+                       widget="boolean_toggle"
+                       decoration-success="x_is_contacted_today == True"/>
+                <field name="x_contacted_date" string="Contacted At"
+                       widget="datetime" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
