@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- FORM VIEW: priority banner + toggle buttons in header + priority page -->
+    <record id="crm_lead_view_form_high_priority" model="ir.ui.view">
+        <field name="name">crm.lead.form.high.priority</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//header" position="inside">
+                <button name="action_mark_high_priority"
+                        string="Mark High Priority"
+                        type="object"
+                        class="btn-warning"
+                        icon="fa-star"
+                        invisible="x_is_high_priority"
+                        groups="sales_team.group_sale_salesman"/>
+                <button name="action_unmark_high_priority"
+                        string="Remove Priority"
+                        type="object"
+                        class="btn-secondary"
+                        icon="fa-star-o"
+                        invisible="not x_is_high_priority"
+                        groups="sales_team.group_sale_salesman"/>
+            </xpath>
+
+            <xpath expr="//sheet" position="before">
+                <div class="o_hp_banner alert alert-warning m-0 rounded-0 d-flex align-items-center"
+                     role="alert"
+                     invisible="not x_high_priority_effective">
+                    <i class="fa fa-star me-2 o_hp_banner_icon" aria-hidden="true"/>
+                    <div class="flex-grow-1">
+                        <strong invisible="not x_is_high_priority">HIGH PRIORITY LEAD</strong>
+                        <strong invisible="x_is_high_priority or not x_high_priority_auto">AUTO-FLAGGED PRIORITY</strong>
+                        <span class="ms-2" invisible="not x_high_priority_note">
+                            — <field name="x_high_priority_note" nolabel="1" readonly="1" class="oe_inline"/>
+                        </span>
+                        <span class="ms-2 text-muted small" invisible="not x_high_priority_set_on">
+                            Flagged <field name="x_high_priority_set_on" widget="relative" nolabel="1" class="oe_inline"/>
+                        </span>
+                    </div>
+                </div>
+            </xpath>
+
+            <xpath expr="//sheet" position="inside">
+                <widget name="web_ribbon"
+                        title="High Priority"
+                        bg_color="text-bg-warning"
+                        invisible="not x_is_high_priority"/>
+            </xpath>
+
+            <xpath expr="//field[@name='expected_revenue']" position="after">
+                <field name="x_is_high_priority" invisible="1"/>
+                <field name="x_high_priority_auto" invisible="1"/>
+                <field name="x_high_priority_effective" invisible="1"/>
+            </xpath>
+
+            <xpath expr="//notebook" position="inside">
+                <page string="Priority" name="high_priority_page">
+                    <group>
+                        <group string="Priority Status">
+                            <field name="x_is_high_priority"/>
+                            <field name="x_high_priority_reason"
+                                   invisible="not x_is_high_priority"
+                                   required="x_is_high_priority"/>
+                            <field name="x_high_priority_note"
+                                   invisible="not x_is_high_priority"
+                                   placeholder="e.g. CEO personally interested, competing bid from XYZ"/>
+                            <field name="x_high_priority_set_on" readonly="1"
+                                   invisible="not x_high_priority_set_on"/>
+                        </group>
+                        <group string="Automatic Detection">
+                            <field name="x_high_priority_auto" readonly="1"/>
+                            <div colspan="2" class="text-muted small">
+                                <p class="mb-1">Leads are auto-flagged when any of the following is true:</p>
+                                <ul class="mb-0">
+                                    <li>Expected revenue ≥ 10,000</li>
+                                    <li>Deadline within next 3 days</li>
+                                    <li>No logged activity for 14+ days</li>
+                                </ul>
+                            </div>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- LIST VIEW (Leads): decorations + priority badge column -->
+    <record id="crm_lead_view_tree_high_priority" model="ir.ui.view">
+        <field name="name">crm.lead.list.high.priority</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="attributes">
+                <attribute name="decoration-warning">x_high_priority_effective and not x_is_high_priority</attribute>
+                <attribute name="decoration-danger">x_is_high_priority</attribute>
+                <attribute name="decoration-bf">x_is_high_priority</attribute>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="x_is_high_priority" column_invisible="1"/>
+                <field name="x_high_priority_auto" column_invisible="1"/>
+                <field name="x_high_priority_effective" column_invisible="1"/>
+                <field name="x_high_priority_badge"
+                       string="Priority"
+                       widget="badge"
+                       decoration-warning="x_high_priority_badge == 'AUTO PRIORITY'"
+                       decoration-danger="x_high_priority_badge == 'HIGH PRIORITY'"
+                       optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- LIST VIEW (Opportunities): decorations + priority badge column -->
+    <record id="crm_opportunity_view_tree_high_priority" model="ir.ui.view">
+        <field name="name">crm.opportunity.list.high.priority</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="attributes">
+                <attribute name="decoration-warning">x_high_priority_effective and not x_is_high_priority</attribute>
+                <attribute name="decoration-danger">x_is_high_priority</attribute>
+                <attribute name="decoration-bf">x_is_high_priority</attribute>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="x_is_high_priority" column_invisible="1"/>
+                <field name="x_high_priority_auto" column_invisible="1"/>
+                <field name="x_high_priority_effective" column_invisible="1"/>
+                <field name="x_high_priority_badge"
+                       string="Priority"
+                       widget="badge"
+                       decoration-warning="x_high_priority_badge == 'AUTO PRIORITY'"
+                       decoration-danger="x_high_priority_badge == 'HIGH PRIORITY'"
+                       optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- KANBAN VIEW (Pipeline): ribbon + highlighted card -->
+    <record id="crm_lead_view_kanban_high_priority" model="ir.ui.view">
+        <field name="name">crm.lead.kanban.high.priority</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_lead_kanban"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//templates" position="before">
+                <field name="x_is_high_priority"/>
+                <field name="x_high_priority_auto"/>
+                <field name="x_high_priority_effective"/>
+                <field name="x_high_priority_reason"/>
+            </xpath>
+
+            <xpath expr="//t[@t-name='card']" position="inside">
+                <div class="o_hp_wrapper o_hp_wrapper_manual"
+                     t-if="record.x_is_high_priority.raw_value">
+                    <div class="o_hp_ribbon"><i class="fa fa-star me-1"/>HIGH PRIORITY</div>
+                </div>
+                <div class="o_hp_wrapper o_hp_wrapper_auto"
+                     t-if="!record.x_is_high_priority.raw_value and record.x_high_priority_auto.raw_value">
+                    <div class="o_hp_ribbon o_hp_ribbon_auto"><i class="fa fa-bolt me-1"/>AUTO PRIORITY</div>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- SEARCH VIEW (Leads): high-priority filter -->
+    <record id="crm_lead_view_search_high_priority" model="ir.ui.view">
+        <field name="name">crm.lead.search.high.priority</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <separator/>
+                <filter string="High Priority"
+                        name="filter_high_priority"
+                        domain="[('x_is_high_priority', '=', True)]"/>
+                <filter string="Auto-Flagged Priority"
+                        name="filter_high_priority_auto"
+                        domain="[('x_high_priority_auto', '=', True), ('x_is_high_priority', '=', False)]"/>
+                <filter string="All Priority (Manual + Auto)"
+                        name="filter_high_priority_any"
+                        domain="[('x_high_priority_effective', '=', True)]"/>
+                <separator/>
+                <filter string="Priority Reason"
+                        name="group_priority_reason"
+                        context="{'group_by': 'x_high_priority_reason'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- SEARCH VIEW (Opportunities): high-priority filter -->
+    <record id="crm_opportunity_view_search_high_priority" model="ir.ui.view">
+        <field name="name">crm.opportunity.search.high.priority</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <separator/>
+                <filter string="High Priority"
+                        name="filter_high_priority_opp"
+                        domain="[('x_is_high_priority', '=', True)]"/>
+                <filter string="Auto-Flagged Priority"
+                        name="filter_high_priority_auto_opp"
+                        domain="[('x_high_priority_auto', '=', True), ('x_is_high_priority', '=', False)]"/>
+                <filter string="All Priority (Manual + Auto)"
+                        name="filter_high_priority_any_opp"
+                        domain="[('x_high_priority_effective', '=', True)]"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
