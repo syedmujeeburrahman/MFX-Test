@@ -22,7 +22,7 @@
     'author': 'DearERP',
     'website': '',
     'category': 'Sales/CRM',
-    'depends': ['crm', 'sale_management', 'mail', 'bus'],
+    'depends': ['crm', 'sale_management', 'mail', 'bus', 'crm_lead_management'],
     'data': [
         'security/ir.model.access.csv',
         'data/ir_cron_data.xml',

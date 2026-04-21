@@ -52,4 +52,30 @@
         </field>
     </record>
 
+    <!-- Inherit Pipeline / Leads by Stage Kanban View (crm_lead_management custom view) -->
+    <record id="view_crm_lead_kanban_by_stage_inherit_contact_tracker" model="ir.ui.view">
+        <field name="name">crm.lead.kanban.by_stage.inherit.contact_tracker</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm_lead_management.view_crm_lead_kanban_by_stage"/>
+        <field name="arch" type="xml">
+            <!-- Add field declaration before card template -->
+            <xpath expr="//t[@t-name='card']" position="before">
+                <field name="x_is_contacted_today"/>
+            </xpath>
+            <!-- Contacted strip at the TOP of the Pipeline kanban card -->
+            <xpath expr="//t[@t-name='card']/div[1]" position="before">
+                <div class="o_contacted_strip o_contacted_yes d-flex align-items-center justify-content-center fw-bold py-1 mb-1"
+                     invisible="not x_is_contacted_today"
+                     style="background: #28a745; color: #fff; font-size: 0.73rem; letter-spacing: 0.5px; border-radius: 4px; text-transform: uppercase;">
+                    <i class="fa fa-check-circle me-1"/>Contacted
+                </div>
+                <div class="o_contacted_strip o_contacted_no d-flex align-items-center justify-content-center py-1 mb-1"
+                     invisible="x_is_contacted_today"
+                     style="background: #f0f0f0; color: #999; font-size: 0.73rem; letter-spacing: 0.5px; border-radius: 4px; text-transform: uppercase;">
+                    <i class="fa fa-clock-o me-1"/>Not Contacted
+                </div>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>
