@@ -1,6 +1,6 @@
 {
     'name': 'CRM Permanent Clients',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.1.0',
     'summary': 'Mark partners as permanent clients and track their issues & queries',
     'description': 'Adds a Permanent Clients category under CRM with a dedicated issue tracker per client.',
     'author': 'DearERP',
@@ -11,6 +11,7 @@
         'security/ir.model.access.csv',
         'views/res_partner_views.xml',
         'views/permanent_client_issue_views.xml',
+        'views/crm_lead_views.xml',
         'views/menus.xml',
     ],
     'installable': True,
