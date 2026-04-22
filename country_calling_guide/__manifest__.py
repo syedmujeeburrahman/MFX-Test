@@ -4,7 +4,7 @@
     'summary': 'Cold calling guide organized by IST time slots for 195 countries',
     'description': 'Organizes 195 countries by the best IST time to call, with local times, UTC offsets and notes.',
     'author': 'DearERP',
-    'category': 'Sales/CRM',
+    'category': 'Productivity',
     'license': 'LGPL-3',
     'depends': ['base'],
     'data': [
