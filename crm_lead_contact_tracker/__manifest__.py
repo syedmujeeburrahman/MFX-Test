@@ -1,7 +1,7 @@
 {
     'name': 'CRM Lead Contact Tracker',
-    'version': '19.0.1.0.0',
-    'summary': 'Enhanced visual tracking for contacted CRM leads with daily reset and notifications',
+    'version': '19.0.1.1.0',
+    'summary': 'Enhanced visual tracking for contacted CRM leads with permanent contacted status and notifications',
     'description': """
         CRM Lead Contact Tracker
         =========================
@@ -15,7 +15,7 @@
         - Success banner on form view for contacted leads
         - Desktop notification on marking a lead as contacted
         - Chatter audit trail for all contact actions
-        - Daily automatic reset via cron job
+        - Contacted status is permanent until manually unmarked
         - Search filters: Contacted Today, Pending, Contacted This Week
         - Contact counter to track total interactions
     """,

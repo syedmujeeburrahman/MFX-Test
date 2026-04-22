@@ -5,10 +5,11 @@ class CrmLead(models.Model):
     _inherit = 'crm.lead'
 
     x_is_contacted_today = fields.Boolean(
-        string='Contacted Today',
+        string='Contacted',
         default=False,
         tracking=True,
-        help='Indicates whether this lead has been contacted or handled today.',
+        help='Indicates whether this lead has been contacted. '
+             'Once set, it remains until explicitly unmarked by the user.',
     )
     x_contacted_date = fields.Datetime(
         string='Last Contacted On',
@@ -123,7 +124,7 @@ class CrmLead(models.Model):
 
     @api.model
     def _cron_reset_contacted_today(self):
-        """Daily cron job to reset the 'Contacted Today' flag for all leads."""
-        leads = self.search([('x_is_contacted_today', '=', True)])
-        if leads:
-            leads.write({'x_is_contacted_today': False})
+        """Deprecated: the contacted flag is now permanent. Kept as a no-op
+        so the (now disabled) cron record does not fail on existing installs
+        if it is ever re-enabled by mistake."""
+        return True
