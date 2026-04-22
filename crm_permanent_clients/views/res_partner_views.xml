@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Partner form: mark as permanent client + smart button -->
+    <record id="view_partner_form_permanent_client" model="ir.ui.view">
+        <field name="name">res.partner.form.permanent.client</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_client_issues"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-life-ring"
+                        invisible="not x_is_permanent_client">
+                    <field name="x_client_open_issue_count" widget="statinfo" string="Open Issues"/>
+                </button>
+            </xpath>
+            <xpath expr="//sheet" position="before">
+                <widget name="web_ribbon"
+                        title="Permanent Client"
+                        bg_color="text-bg-success"
+                        invisible="not x_is_permanent_client"/>
+            </xpath>
+            <xpath expr="//page[@name='sales_purchases']" position="after">
+                <page name="permanent_client" string="Permanent Client">
+                    <group>
+                        <group>
+                            <field name="x_is_permanent_client"/>
+                            <field name="x_permanent_since" invisible="not x_is_permanent_client"/>
+                        </group>
+                        <group>
+                            <field name="x_client_issue_count" invisible="not x_is_permanent_client"/>
+                            <field name="x_client_open_issue_count" invisible="not x_is_permanent_client"/>
+                        </group>
+                    </group>
+                    <group string="Support Notes" invisible="not x_is_permanent_client">
+                        <field name="x_client_notes" nolabel="1"/>
+                    </group>
+                    <group string="Issues &amp; Queries" invisible="not x_is_permanent_client">
+                        <field name="x_client_issue_ids" nolabel="1" context="{'default_partner_id': id}">
+                            <list>
+                                <field name="name"/>
+                                <field name="issue_type"/>
+                                <field name="priority" widget="priority"/>
+                                <field name="user_id"/>
+                                <field name="date_open"/>
+                                <field name="state" widget="badge"
+                                       decoration-info="state == 'new'"
+                                       decoration-warning="state in ('in_progress','waiting')"
+                                       decoration-success="state == 'resolved'"
+                                       decoration-muted="state == 'closed'"/>
+                            </list>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Fallback: inject the page even if sales_purchases is not present -->
+    <record id="view_partner_form_permanent_client_simple" model="ir.ui.view">
+        <field name="name">res.partner.form.permanent.client.simple</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="x_is_permanent_client"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- List view of permanent clients -->
+    <record id="view_partner_list_permanent_client" model="ir.ui.view">
+        <field name="name">res.partner.list.permanent.client</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <list string="Permanent Clients">
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="city"/>
+                <field name="country_id"/>
+                <field name="x_permanent_since"/>
+                <field name="x_client_open_issue_count" string="Open Issues"/>
+                <field name="x_client_issue_count" string="Total Issues"/>
+                <field name="user_id" string="Salesperson" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Kanban -->
+    <record id="view_partner_kanban_permanent_client" model="ir.ui.view">
+        <field name="name">res.partner.kanban.permanent.client</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="x_client_open_issue_count"/>
+                <field name="x_client_issue_count"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="oe_kanban_details p-2">
+                            <strong><field name="name"/></strong>
+                            <div t-if="record.email.raw_value"><i class="fa fa-envelope"/> <field name="email"/></div>
+                            <div t-if="record.phone.raw_value"><i class="fa fa-phone"/> <field name="phone"/></div>
+                            <div class="mt-2">
+                                <span class="badge text-bg-warning" t-if="record.x_client_open_issue_count.raw_value">
+                                    <field name="x_client_open_issue_count"/> Open
+                                </span>
+                                <span class="badge text-bg-secondary ms-1">
+                                    <field name="x_client_issue_count"/> Total
+                                </span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Search -->
+    <record id="view_partner_search_permanent_client" model="ir.ui.view">
+        <field name="name">res.partner.search.permanent.client</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <search string="Permanent Clients">
+                <field name="name" string="Client"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="country_id"/>
+                <filter name="has_open_issues" string="Has Open Issues"
+                        domain="[('x_client_open_issue_count','&gt;',0)]"/>
+                <filter name="no_open_issues" string="No Open Issues"
+                        domain="[('x_client_open_issue_count','=',0)]"/>
+                <group>
+                    <filter name="group_by_country" string="Country" context="{'group_by': 'country_id'}"/>
+                    <filter name="group_by_salesperson" string="Salesperson" context="{'group_by': 'user_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action: Permanent Clients -->
+    <record id="action_permanent_clients" model="ir.actions.act_window">
+        <field name="name">Permanent Clients</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,kanban,form</field>
+        <field name="domain">[('x_is_permanent_client', '=', True)]</field>
+        <field name="context">{'default_x_is_permanent_client': True, 'default_is_company': True}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('view_partner_list_permanent_client')}),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_partner_kanban_permanent_client')}),
+            (0, 0, {'view_mode': 'form'})]"/>
+        <field name="search_view_id" ref="view_partner_search_permanent_client"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No permanent clients yet</p>
+            <p>Mark a contact as <b>Permanent Client</b> from their contact form to start tracking their issues &amp; queries here.</p>
+        </field>
+    </record>
+
+</odoo>

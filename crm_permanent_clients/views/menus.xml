@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_permanent_clients_root"
+              name="Permanent Clients"
+              parent="crm.crm_menu_root"
+              sequence="50"/>
+
+    <menuitem id="menu_permanent_clients_list"
+              name="Clients"
+              parent="menu_permanent_clients_root"
+              action="action_permanent_clients"
+              sequence="10"/>
+
+    <menuitem id="menu_permanent_client_issues"
+              name="Issues &amp; Queries"
+              parent="menu_permanent_clients_root"
+              action="action_permanent_client_issues"
+              sequence="20"/>
+
+</odoo>
