@@ -133,9 +133,9 @@
                 <field name="phone"/>
                 <field name="country_id"/>
                 <filter name="has_open_issues" string="Has Open Issues"
-                        domain="[('x_client_open_issue_count','&gt;',0)]"/>
+                        domain="[('x_client_issue_ids.state','in',('new','in_progress','waiting'))]"/>
                 <filter name="no_open_issues" string="No Open Issues"
-                        domain="[('x_client_open_issue_count','=',0)]"/>
+                        domain="[('x_client_issue_ids.state','not in',('new','in_progress','waiting'))]"/>
                 <group>
                     <filter name="group_by_country" string="Country" context="{'group_by': 'country_id'}"/>
                     <filter name="group_by_salesperson" string="Salesperson" context="{'group_by': 'user_id'}"/>
