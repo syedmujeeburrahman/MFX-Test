@@ -1,0 +1,1758 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="ccg_001_marshall_islands" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">1</field>
+        <field name="x_erp_country_name">Marshall Islands</field>
+        <field name="x_erp_ist_call_group">6 AM</field>
+        <field name="x_erp_ist_sort_order">6.0</field>
+        <field name="x_erp_utc_offset">UTC+12</field>
+        <field name="x_erp_best_ist_time">5:30 AM – 9 AM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC+12)</field>
+    </record>
+    <record id="ccg_002_new_zealand" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">2</field>
+        <field name="x_erp_country_name">New Zealand</field>
+        <field name="x_erp_ist_call_group">6 AM</field>
+        <field name="x_erp_ist_sort_order">6.0</field>
+        <field name="x_erp_utc_offset">UTC+12</field>
+        <field name="x_erp_best_ist_time">5:30 AM – 9 AM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC+12)</field>
+    </record>
+    <record id="ccg_003_tuvalu" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">3</field>
+        <field name="x_erp_country_name">Tuvalu</field>
+        <field name="x_erp_ist_call_group">6 AM</field>
+        <field name="x_erp_ist_sort_order">6.0</field>
+        <field name="x_erp_utc_offset">UTC+12</field>
+        <field name="x_erp_best_ist_time">5:30 AM – 9 AM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC+12)</field>
+    </record>
+    <record id="ccg_004_tonga" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">4</field>
+        <field name="x_erp_country_name">Tonga</field>
+        <field name="x_erp_ist_call_group">6 AM</field>
+        <field name="x_erp_ist_sort_order">6.0</field>
+        <field name="x_erp_utc_offset">UTC+13</field>
+        <field name="x_erp_best_ist_time">5:30 AM – 9 AM IST</field>
+        <field name="x_erp_country_local_time">10 AM – 1:30 PM (UTC+13)</field>
+    </record>
+    <record id="ccg_005_samoa" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">5</field>
+        <field name="x_erp_country_name">Samoa</field>
+        <field name="x_erp_ist_call_group">6 AM</field>
+        <field name="x_erp_ist_sort_order">6.0</field>
+        <field name="x_erp_utc_offset">UTC+13</field>
+        <field name="x_erp_best_ist_time">5:30 AM – 9 AM IST</field>
+        <field name="x_erp_country_local_time">10 AM – 1:30 PM (UTC+13)</field>
+    </record>
+    <record id="ccg_006_nauru" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">6</field>
+        <field name="x_erp_country_name">Nauru</field>
+        <field name="x_erp_ist_call_group">6 AM</field>
+        <field name="x_erp_ist_sort_order">6.0</field>
+        <field name="x_erp_utc_offset">UTC+12</field>
+        <field name="x_erp_best_ist_time">5:30 AM – 9 AM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC+12)</field>
+    </record>
+    <record id="ccg_007_fiji" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">7</field>
+        <field name="x_erp_country_name">Fiji</field>
+        <field name="x_erp_ist_call_group">6 AM</field>
+        <field name="x_erp_ist_sort_order">6.0</field>
+        <field name="x_erp_utc_offset">UTC+12</field>
+        <field name="x_erp_best_ist_time">5:30 AM – 9 AM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC+12)</field>
+    </record>
+    <record id="ccg_008_kiribati" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">8</field>
+        <field name="x_erp_country_name">Kiribati</field>
+        <field name="x_erp_ist_call_group">6 AM</field>
+        <field name="x_erp_ist_sort_order">6.0</field>
+        <field name="x_erp_utc_offset">UTC+12</field>
+        <field name="x_erp_best_ist_time">5:30 AM – 9 AM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC+12)</field>
+    </record>
+    <record id="ccg_009_japan" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">9</field>
+        <field name="x_erp_country_name">Japan</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+9</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">10:30 AM – 2:30 PM (UTC+9)</field>
+    </record>
+    <record id="ccg_010_south_korea" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">10</field>
+        <field name="x_erp_country_name">South Korea</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+9</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">10:30 AM – 2:30 PM (UTC+9)</field>
+    </record>
+    <record id="ccg_011_taiwan" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">11</field>
+        <field name="x_erp_country_name">Taiwan</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+8</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">9:30 AM – 1:30 PM (UTC+8)</field>
+    </record>
+    <record id="ccg_012_solomon_islands" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">12</field>
+        <field name="x_erp_country_name">Solomon Islands</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+11</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">12:30 PM – 4:30 PM (UTC+11)</field>
+    </record>
+    <record id="ccg_013_brunei" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">13</field>
+        <field name="x_erp_country_name">Brunei</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+8</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">9:30 AM – 1:30 PM (UTC+8)</field>
+    </record>
+    <record id="ccg_014_papua_new_guinea" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">14</field>
+        <field name="x_erp_country_name">Papua New Guinea</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+10</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">11:30 AM – 3:30 PM (UTC+10)</field>
+    </record>
+    <record id="ccg_015_philippines" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">15</field>
+        <field name="x_erp_country_name">Philippines</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+8</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">9:30 AM – 1:30 PM (UTC+8)</field>
+    </record>
+    <record id="ccg_016_mongolia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">16</field>
+        <field name="x_erp_country_name">Mongolia</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+8</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">9:30 AM – 1:30 PM (UTC+8)</field>
+    </record>
+    <record id="ccg_017_malaysia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">17</field>
+        <field name="x_erp_country_name">Malaysia</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+8</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">9:30 AM – 1:30 PM (UTC+8)</field>
+    </record>
+    <record id="ccg_018_singapore" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">18</field>
+        <field name="x_erp_country_name">Singapore</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+8</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">9:30 AM – 1:30 PM (UTC+8)</field>
+    </record>
+    <record id="ccg_019_micronesia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">19</field>
+        <field name="x_erp_country_name">Micronesia</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+11</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">12:30 PM – 4:30 PM (UTC+11)</field>
+    </record>
+    <record id="ccg_020_north_korea" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">20</field>
+        <field name="x_erp_country_name">North Korea</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+9</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">10:30 AM – 2:30 PM (UTC+9)</field>
+    </record>
+    <record id="ccg_021_palau" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">21</field>
+        <field name="x_erp_country_name">Palau</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+9</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">10:30 AM – 2:30 PM (UTC+9)</field>
+    </record>
+    <record id="ccg_022_china" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">22</field>
+        <field name="x_erp_country_name">China</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+8</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">9:30 AM – 1:30 PM (UTC+8)</field>
+    </record>
+    <record id="ccg_023_australia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">23</field>
+        <field name="x_erp_country_name">Australia</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+10</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">11:30 AM – 3:30 PM (UTC+10)</field>
+    </record>
+    <record id="ccg_024_timor_leste" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">24</field>
+        <field name="x_erp_country_name">Timor-Leste</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+9</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">10:30 AM – 2:30 PM (UTC+9)</field>
+    </record>
+    <record id="ccg_025_vanuatu" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">25</field>
+        <field name="x_erp_country_name">Vanuatu</field>
+        <field name="x_erp_ist_call_group">7 AM</field>
+        <field name="x_erp_ist_sort_order">7.0</field>
+        <field name="x_erp_utc_offset">UTC+11</field>
+        <field name="x_erp_best_ist_time">7 AM – 11 AM IST</field>
+        <field name="x_erp_country_local_time">12:30 PM – 4:30 PM (UTC+11)</field>
+    </record>
+    <record id="ccg_026_indonesia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">26</field>
+        <field name="x_erp_country_name">Indonesia</field>
+        <field name="x_erp_ist_call_group">8 AM</field>
+        <field name="x_erp_ist_sort_order">8.0</field>
+        <field name="x_erp_utc_offset">UTC+7</field>
+        <field name="x_erp_best_ist_time">7:30 AM – 11:30 AM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+7)</field>
+    </record>
+    <record id="ccg_027_myanmar" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">27</field>
+        <field name="x_erp_country_name">Myanmar</field>
+        <field name="x_erp_ist_call_group">8 AM</field>
+        <field name="x_erp_ist_sort_order">8.0</field>
+        <field name="x_erp_utc_offset">UTC+6:30</field>
+        <field name="x_erp_best_ist_time">8 AM – 12 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+6:30)</field>
+    </record>
+    <record id="ccg_028_laos" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">28</field>
+        <field name="x_erp_country_name">Laos</field>
+        <field name="x_erp_ist_call_group">8 AM</field>
+        <field name="x_erp_ist_sort_order">8.0</field>
+        <field name="x_erp_utc_offset">UTC+7</field>
+        <field name="x_erp_best_ist_time">7:30 AM – 11:30 AM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+7)</field>
+    </record>
+    <record id="ccg_029_thailand" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">29</field>
+        <field name="x_erp_country_name">Thailand</field>
+        <field name="x_erp_ist_call_group">8 AM</field>
+        <field name="x_erp_ist_sort_order">8.0</field>
+        <field name="x_erp_utc_offset">UTC+7</field>
+        <field name="x_erp_best_ist_time">7:30 AM – 11:30 AM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+7)</field>
+    </record>
+    <record id="ccg_030_cambodia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">30</field>
+        <field name="x_erp_country_name">Cambodia</field>
+        <field name="x_erp_ist_call_group">8 AM</field>
+        <field name="x_erp_ist_sort_order">8.0</field>
+        <field name="x_erp_utc_offset">UTC+7</field>
+        <field name="x_erp_best_ist_time">7:30 AM – 11:30 AM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+7)</field>
+    </record>
+    <record id="ccg_031_vietnam" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">31</field>
+        <field name="x_erp_country_name">Vietnam</field>
+        <field name="x_erp_ist_call_group">8 AM</field>
+        <field name="x_erp_ist_sort_order">8.0</field>
+        <field name="x_erp_utc_offset">UTC+7</field>
+        <field name="x_erp_best_ist_time">7:30 AM – 11:30 AM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+7)</field>
+    </record>
+    <record id="ccg_032_india" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">32</field>
+        <field name="x_erp_country_name">India</field>
+        <field name="x_erp_ist_call_group">9 AM</field>
+        <field name="x_erp_ist_sort_order">9.0</field>
+        <field name="x_erp_utc_offset">UTC+5:30</field>
+        <field name="x_erp_best_ist_time">9 AM – 1 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+5:30)</field>
+    </record>
+    <record id="ccg_033_kyrgyzstan" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">33</field>
+        <field name="x_erp_country_name">Kyrgyzstan</field>
+        <field name="x_erp_ist_call_group">9 AM</field>
+        <field name="x_erp_ist_sort_order">9.0</field>
+        <field name="x_erp_utc_offset">UTC+6</field>
+        <field name="x_erp_best_ist_time">8:30 AM – 12:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+6)</field>
+    </record>
+    <record id="ccg_034_kazakhstan" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">34</field>
+        <field name="x_erp_country_name">Kazakhstan</field>
+        <field name="x_erp_ist_call_group">9 AM</field>
+        <field name="x_erp_ist_sort_order">9.0</field>
+        <field name="x_erp_utc_offset">UTC+6</field>
+        <field name="x_erp_best_ist_time">8:30 AM – 12:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+6)</field>
+    </record>
+    <record id="ccg_035_sri_lanka" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">35</field>
+        <field name="x_erp_country_name">Sri Lanka</field>
+        <field name="x_erp_ist_call_group">9 AM</field>
+        <field name="x_erp_ist_sort_order">9.0</field>
+        <field name="x_erp_utc_offset">UTC+5:30</field>
+        <field name="x_erp_best_ist_time">9 AM – 1 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+5:30)</field>
+    </record>
+    <record id="ccg_036_nepal" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">36</field>
+        <field name="x_erp_country_name">Nepal</field>
+        <field name="x_erp_ist_call_group">9 AM</field>
+        <field name="x_erp_ist_sort_order">9.0</field>
+        <field name="x_erp_utc_offset">UTC+5:45</field>
+        <field name="x_erp_best_ist_time">9 AM – 1 PM IST</field>
+        <field name="x_erp_country_local_time">9:15 AM – 1:15 PM (UTC+5:45)</field>
+    </record>
+    <record id="ccg_037_bangladesh" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">37</field>
+        <field name="x_erp_country_name">Bangladesh</field>
+        <field name="x_erp_ist_call_group">9 AM</field>
+        <field name="x_erp_ist_sort_order">9.0</field>
+        <field name="x_erp_utc_offset">UTC+6</field>
+        <field name="x_erp_best_ist_time">8:30 AM – 12:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+6)</field>
+    </record>
+    <record id="ccg_038_bhutan" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">38</field>
+        <field name="x_erp_country_name">Bhutan</field>
+        <field name="x_erp_ist_call_group">9 AM</field>
+        <field name="x_erp_ist_sort_order">9.0</field>
+        <field name="x_erp_utc_offset">UTC+6</field>
+        <field name="x_erp_best_ist_time">8:30 AM – 12:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+6)</field>
+    </record>
+    <record id="ccg_039_uzbekistan" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">39</field>
+        <field name="x_erp_country_name">Uzbekistan</field>
+        <field name="x_erp_ist_call_group">10 AM</field>
+        <field name="x_erp_ist_sort_order">10.0</field>
+        <field name="x_erp_utc_offset">UTC+5</field>
+        <field name="x_erp_best_ist_time">9:30 AM – 1:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+5)</field>
+    </record>
+    <record id="ccg_040_pakistan" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">40</field>
+        <field name="x_erp_country_name">Pakistan</field>
+        <field name="x_erp_ist_call_group">10 AM</field>
+        <field name="x_erp_ist_sort_order">10.0</field>
+        <field name="x_erp_utc_offset">UTC+5</field>
+        <field name="x_erp_best_ist_time">9:30 AM – 1:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+5)</field>
+    </record>
+    <record id="ccg_041_tajikistan" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">41</field>
+        <field name="x_erp_country_name">Tajikistan</field>
+        <field name="x_erp_ist_call_group">10 AM</field>
+        <field name="x_erp_ist_sort_order">10.0</field>
+        <field name="x_erp_utc_offset">UTC+5</field>
+        <field name="x_erp_best_ist_time">9:30 AM – 1:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+5)</field>
+    </record>
+    <record id="ccg_042_maldives" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">42</field>
+        <field name="x_erp_country_name">Maldives</field>
+        <field name="x_erp_ist_call_group">10 AM</field>
+        <field name="x_erp_ist_sort_order">10.0</field>
+        <field name="x_erp_utc_offset">UTC+5</field>
+        <field name="x_erp_best_ist_time">9:30 AM – 1:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+5)</field>
+    </record>
+    <record id="ccg_043_turkmenistan" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">43</field>
+        <field name="x_erp_country_name">Turkmenistan</field>
+        <field name="x_erp_ist_call_group">10 AM</field>
+        <field name="x_erp_ist_sort_order">10.0</field>
+        <field name="x_erp_utc_offset">UTC+5</field>
+        <field name="x_erp_best_ist_time">9:30 AM – 1:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+5)</field>
+    </record>
+    <record id="ccg_044_afghanistan" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">44</field>
+        <field name="x_erp_country_name">Afghanistan</field>
+        <field name="x_erp_ist_call_group">10 AM</field>
+        <field name="x_erp_ist_sort_order">10.0</field>
+        <field name="x_erp_utc_offset">UTC+4:30</field>
+        <field name="x_erp_best_ist_time">10 AM – 2 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+4:30)</field>
+    </record>
+    <record id="ccg_045_mauritius" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">45</field>
+        <field name="x_erp_country_name">Mauritius</field>
+        <field name="x_erp_ist_call_group">11 AM</field>
+        <field name="x_erp_ist_sort_order">11.0</field>
+        <field name="x_erp_utc_offset">UTC+4</field>
+        <field name="x_erp_best_ist_time">10:30 AM – 2:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+4)</field>
+    </record>
+    <record id="ccg_046_azerbaijan" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">46</field>
+        <field name="x_erp_country_name">Azerbaijan</field>
+        <field name="x_erp_ist_call_group">11 AM</field>
+        <field name="x_erp_ist_sort_order">11.0</field>
+        <field name="x_erp_utc_offset">UTC+4</field>
+        <field name="x_erp_best_ist_time">10:30 AM – 2:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+4)</field>
+    </record>
+    <record id="ccg_047_armenia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">47</field>
+        <field name="x_erp_country_name">Armenia</field>
+        <field name="x_erp_ist_call_group">11 AM</field>
+        <field name="x_erp_ist_sort_order">11.0</field>
+        <field name="x_erp_utc_offset">UTC+4</field>
+        <field name="x_erp_best_ist_time">10:30 AM – 2:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+4)</field>
+    </record>
+    <record id="ccg_048_iran" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">48</field>
+        <field name="x_erp_country_name">Iran</field>
+        <field name="x_erp_ist_call_group">11 AM</field>
+        <field name="x_erp_ist_sort_order">11.0</field>
+        <field name="x_erp_utc_offset">UTC+3:30</field>
+        <field name="x_erp_best_ist_time">11 AM – 3 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3:30)</field>
+    </record>
+    <record id="ccg_049_united_arab_emirates" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">49</field>
+        <field name="x_erp_country_name">United Arab Emirates</field>
+        <field name="x_erp_ist_call_group">11 AM</field>
+        <field name="x_erp_ist_sort_order">11.0</field>
+        <field name="x_erp_utc_offset">UTC+4</field>
+        <field name="x_erp_best_ist_time">10:30 AM – 2:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+4)</field>
+    </record>
+    <record id="ccg_050_oman" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">50</field>
+        <field name="x_erp_country_name">Oman</field>
+        <field name="x_erp_ist_call_group">11 AM</field>
+        <field name="x_erp_ist_sort_order">11.0</field>
+        <field name="x_erp_utc_offset">UTC+4</field>
+        <field name="x_erp_best_ist_time">10:30 AM – 2:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+4)</field>
+    </record>
+    <record id="ccg_051_seychelles" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">51</field>
+        <field name="x_erp_country_name">Seychelles</field>
+        <field name="x_erp_ist_call_group">11 AM</field>
+        <field name="x_erp_ist_sort_order">11.0</field>
+        <field name="x_erp_utc_offset">UTC+4</field>
+        <field name="x_erp_best_ist_time">10:30 AM – 2:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+4)</field>
+    </record>
+    <record id="ccg_052_georgia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">52</field>
+        <field name="x_erp_country_name">Georgia</field>
+        <field name="x_erp_ist_call_group">11 AM</field>
+        <field name="x_erp_ist_sort_order">11.0</field>
+        <field name="x_erp_utc_offset">UTC+4</field>
+        <field name="x_erp_best_ist_time">10:30 AM – 2:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+4)</field>
+    </record>
+    <record id="ccg_053_tanzania" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">53</field>
+        <field name="x_erp_country_name">Tanzania</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_054_turkey" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">54</field>
+        <field name="x_erp_country_name">Turkey</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_055_jordan" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">55</field>
+        <field name="x_erp_country_name">Jordan</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_056_iraq" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">56</field>
+        <field name="x_erp_country_name">Iraq</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_057_kuwait" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">57</field>
+        <field name="x_erp_country_name">Kuwait</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_058_madagascar" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">58</field>
+        <field name="x_erp_country_name">Madagascar</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_059_qatar" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">59</field>
+        <field name="x_erp_country_name">Qatar</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_060_djibouti" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">60</field>
+        <field name="x_erp_country_name">Djibouti</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_061_saudi_arabia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">61</field>
+        <field name="x_erp_country_name">Saudi Arabia</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_062_ethiopia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">62</field>
+        <field name="x_erp_country_name">Ethiopia</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_063_syria" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">63</field>
+        <field name="x_erp_country_name">Syria</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_064_somalia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">64</field>
+        <field name="x_erp_country_name">Somalia</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_065_russia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">65</field>
+        <field name="x_erp_country_name">Russia</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_066_sudan" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">66</field>
+        <field name="x_erp_country_name">Sudan</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_067_eritrea" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">67</field>
+        <field name="x_erp_country_name">Eritrea</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_068_uganda" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">68</field>
+        <field name="x_erp_country_name">Uganda</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_069_yemen" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">69</field>
+        <field name="x_erp_country_name">Yemen</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_070_bahrain" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">70</field>
+        <field name="x_erp_country_name">Bahrain</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_071_south_sudan" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">71</field>
+        <field name="x_erp_country_name">South Sudan</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_072_belarus" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">72</field>
+        <field name="x_erp_country_name">Belarus</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_073_kenya" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">73</field>
+        <field name="x_erp_country_name">Kenya</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_074_comoros" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">74</field>
+        <field name="x_erp_country_name">Comoros</field>
+        <field name="x_erp_ist_call_group">12 PM</field>
+        <field name="x_erp_ist_sort_order">12.0</field>
+        <field name="x_erp_utc_offset">UTC+3</field>
+        <field name="x_erp_best_ist_time">11:30 AM – 3:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+3)</field>
+    </record>
+    <record id="ccg_075_romania" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">75</field>
+        <field name="x_erp_country_name">Romania</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_076_bulgaria" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">76</field>
+        <field name="x_erp_country_name">Bulgaria</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_077_greece" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">77</field>
+        <field name="x_erp_country_name">Greece</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_078_finland" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">78</field>
+        <field name="x_erp_country_name">Finland</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_079_namibia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">79</field>
+        <field name="x_erp_country_name">Namibia</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_080_mozambique" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">80</field>
+        <field name="x_erp_country_name">Mozambique</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_081_south_africa" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">81</field>
+        <field name="x_erp_country_name">South Africa</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_082_cyprus" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">82</field>
+        <field name="x_erp_country_name">Cyprus</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_083_burundi" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">83</field>
+        <field name="x_erp_country_name">Burundi</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_084_botswana" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">84</field>
+        <field name="x_erp_country_name">Botswana</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_085_malawi" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">85</field>
+        <field name="x_erp_country_name">Malawi</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_086_palestine" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">86</field>
+        <field name="x_erp_country_name">Palestine</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_087_egypt" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">87</field>
+        <field name="x_erp_country_name">Egypt</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_088_estonia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">88</field>
+        <field name="x_erp_country_name">Estonia</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_089_moldova" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">89</field>
+        <field name="x_erp_country_name">Moldova</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_090_israel" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">90</field>
+        <field name="x_erp_country_name">Israel</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_091_lithuania" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">91</field>
+        <field name="x_erp_country_name">Lithuania</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_092_libya" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">92</field>
+        <field name="x_erp_country_name">Libya</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_093_lesotho" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">93</field>
+        <field name="x_erp_country_name">Lesotho</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_094_lebanon" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">94</field>
+        <field name="x_erp_country_name">Lebanon</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_095_latvia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">95</field>
+        <field name="x_erp_country_name">Latvia</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_096_eswatini" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">96</field>
+        <field name="x_erp_country_name">Eswatini</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_097_ukraine" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">97</field>
+        <field name="x_erp_country_name">Ukraine</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_098_zimbabwe" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">98</field>
+        <field name="x_erp_country_name">Zimbabwe</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_099_zambia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">99</field>
+        <field name="x_erp_country_name">Zambia</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_100_rwanda" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">100</field>
+        <field name="x_erp_country_name">Rwanda</field>
+        <field name="x_erp_ist_call_group">1 PM</field>
+        <field name="x_erp_ist_sort_order">13.0</field>
+        <field name="x_erp_utc_offset">UTC+2</field>
+        <field name="x_erp_best_ist_time">12:30 PM – 4:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+2)</field>
+    </record>
+    <record id="ccg_101_andorra" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">101</field>
+        <field name="x_erp_country_name">Andorra</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_102_tunisia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">102</field>
+        <field name="x_erp_country_name">Tunisia</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_103_equatorial_guinea" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">103</field>
+        <field name="x_erp_country_name">Equatorial Guinea</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_104_dr_congo" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">104</field>
+        <field name="x_erp_country_name">DR Congo</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_105_vatican_city" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">105</field>
+        <field name="x_erp_country_name">Vatican City</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_106_hungary" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">106</field>
+        <field name="x_erp_country_name">Hungary</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_107_italy" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">107</field>
+        <field name="x_erp_country_name">Italy</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_108_morocco" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">108</field>
+        <field name="x_erp_country_name">Morocco</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_109_montenegro" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">109</field>
+        <field name="x_erp_country_name">Montenegro</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_110_monaco" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">110</field>
+        <field name="x_erp_country_name">Monaco</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_111_austria" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">111</field>
+        <field name="x_erp_country_name">Austria</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_112_bosnia_and_herzegovina" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">112</field>
+        <field name="x_erp_country_name">Bosnia and Herzegovina</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_113_belgium" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">113</field>
+        <field name="x_erp_country_name">Belgium</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_114_benin" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">114</field>
+        <field name="x_erp_country_name">Benin</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_115_albania" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">115</field>
+        <field name="x_erp_country_name">Albania</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_116_algeria" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">116</field>
+        <field name="x_erp_country_name">Algeria</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_117_angola" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">117</field>
+        <field name="x_erp_country_name">Angola</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_118_poland" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">118</field>
+        <field name="x_erp_country_name">Poland</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_119_niger" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">119</field>
+        <field name="x_erp_country_name">Niger</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_120_nigeria" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">120</field>
+        <field name="x_erp_country_name">Nigeria</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_121_north_macedonia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">121</field>
+        <field name="x_erp_country_name">North Macedonia</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_122_norway" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">122</field>
+        <field name="x_erp_country_name">Norway</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_123_czech_republic" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">123</field>
+        <field name="x_erp_country_name">Czech Republic</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_124_denmark" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">124</field>
+        <field name="x_erp_country_name">Denmark</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_125_france" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">125</field>
+        <field name="x_erp_country_name">France</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_126_gabon" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">126</field>
+        <field name="x_erp_country_name">Gabon</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_127_san_marino" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">127</field>
+        <field name="x_erp_country_name">San Marino</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_128_slovakia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">128</field>
+        <field name="x_erp_country_name">Slovakia</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_129_germany" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">129</field>
+        <field name="x_erp_country_name">Germany</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_130_slovenia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">130</field>
+        <field name="x_erp_country_name">Slovenia</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_131_spain" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">131</field>
+        <field name="x_erp_country_name">Spain</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_132_sweden" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">132</field>
+        <field name="x_erp_country_name">Sweden</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_133_netherlands" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">133</field>
+        <field name="x_erp_country_name">Netherlands</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_134_switzerland" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">134</field>
+        <field name="x_erp_country_name">Switzerland</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_135_croatia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">135</field>
+        <field name="x_erp_country_name">Croatia</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_136_serbia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">136</field>
+        <field name="x_erp_country_name">Serbia</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_137_liechtenstein" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">137</field>
+        <field name="x_erp_country_name">Liechtenstein</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_138_luxembourg" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">138</field>
+        <field name="x_erp_country_name">Luxembourg</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_139_chad" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">139</field>
+        <field name="x_erp_country_name">Chad</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_140_central_african_republic" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">140</field>
+        <field name="x_erp_country_name">Central African Republic</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_141_malta" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">141</field>
+        <field name="x_erp_country_name">Malta</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_142_cameroon" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">142</field>
+        <field name="x_erp_country_name">Cameroon</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_143_congo" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">143</field>
+        <field name="x_erp_country_name">Congo</field>
+        <field name="x_erp_ist_call_group">2 PM</field>
+        <field name="x_erp_ist_sort_order">14.0</field>
+        <field name="x_erp_utc_offset">UTC+1</field>
+        <field name="x_erp_best_ist_time">1:30 PM – 5:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+1)</field>
+    </record>
+    <record id="ccg_144_mauritania" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">144</field>
+        <field name="x_erp_country_name">Mauritania</field>
+        <field name="x_erp_ist_call_group">3 PM</field>
+        <field name="x_erp_ist_sort_order">15.0</field>
+        <field name="x_erp_utc_offset">UTC+0</field>
+        <field name="x_erp_best_ist_time">2:30 PM – 6:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+0)</field>
+    </record>
+    <record id="ccg_145_burkina_faso" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">145</field>
+        <field name="x_erp_country_name">Burkina Faso</field>
+        <field name="x_erp_ist_call_group">3 PM</field>
+        <field name="x_erp_ist_sort_order">15.0</field>
+        <field name="x_erp_utc_offset">UTC+0</field>
+        <field name="x_erp_best_ist_time">2:30 PM – 6:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+0)</field>
+    </record>
+    <record id="ccg_146_sierra_leone" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">146</field>
+        <field name="x_erp_country_name">Sierra Leone</field>
+        <field name="x_erp_ist_call_group">3 PM</field>
+        <field name="x_erp_ist_sort_order">15.0</field>
+        <field name="x_erp_utc_offset">UTC+0</field>
+        <field name="x_erp_best_ist_time">2:30 PM – 6:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+0)</field>
+    </record>
+    <record id="ccg_147_portugal" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">147</field>
+        <field name="x_erp_country_name">Portugal</field>
+        <field name="x_erp_ist_call_group">3 PM</field>
+        <field name="x_erp_ist_sort_order">15.0</field>
+        <field name="x_erp_utc_offset">UTC+0</field>
+        <field name="x_erp_best_ist_time">2:30 PM – 6:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+0)</field>
+    </record>
+    <record id="ccg_148_gambia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">148</field>
+        <field name="x_erp_country_name">Gambia</field>
+        <field name="x_erp_ist_call_group">3 PM</field>
+        <field name="x_erp_ist_sort_order">15.0</field>
+        <field name="x_erp_utc_offset">UTC+0</field>
+        <field name="x_erp_best_ist_time">2:30 PM – 6:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+0)</field>
+    </record>
+    <record id="ccg_149_ghana" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">149</field>
+        <field name="x_erp_country_name">Ghana</field>
+        <field name="x_erp_ist_call_group">3 PM</field>
+        <field name="x_erp_ist_sort_order">15.0</field>
+        <field name="x_erp_utc_offset">UTC+0</field>
+        <field name="x_erp_best_ist_time">2:30 PM – 6:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+0)</field>
+    </record>
+    <record id="ccg_150_liberia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">150</field>
+        <field name="x_erp_country_name">Liberia</field>
+        <field name="x_erp_ist_call_group">3 PM</field>
+        <field name="x_erp_ist_sort_order">15.0</field>
+        <field name="x_erp_utc_offset">UTC+0</field>
+        <field name="x_erp_best_ist_time">2:30 PM – 6:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+0)</field>
+    </record>
+    <record id="ccg_151_mali" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">151</field>
+        <field name="x_erp_country_name">Mali</field>
+        <field name="x_erp_ist_call_group">3 PM</field>
+        <field name="x_erp_ist_sort_order">15.0</field>
+        <field name="x_erp_utc_offset">UTC+0</field>
+        <field name="x_erp_best_ist_time">2:30 PM – 6:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+0)</field>
+    </record>
+    <record id="ccg_152_togo" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">152</field>
+        <field name="x_erp_country_name">Togo</field>
+        <field name="x_erp_ist_call_group">3 PM</field>
+        <field name="x_erp_ist_sort_order">15.0</field>
+        <field name="x_erp_utc_offset">UTC+0</field>
+        <field name="x_erp_best_ist_time">2:30 PM – 6:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+0)</field>
+    </record>
+    <record id="ccg_153_guinea_bissau" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">153</field>
+        <field name="x_erp_country_name">Guinea-Bissau</field>
+        <field name="x_erp_ist_call_group">3 PM</field>
+        <field name="x_erp_ist_sort_order">15.0</field>
+        <field name="x_erp_utc_offset">UTC+0</field>
+        <field name="x_erp_best_ist_time">2:30 PM – 6:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+0)</field>
+    </record>
+    <record id="ccg_154_iceland" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">154</field>
+        <field name="x_erp_country_name">Iceland</field>
+        <field name="x_erp_ist_call_group">3 PM</field>
+        <field name="x_erp_ist_sort_order">15.0</field>
+        <field name="x_erp_utc_offset">UTC+0</field>
+        <field name="x_erp_best_ist_time">2:30 PM – 6:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+0)</field>
+    </record>
+    <record id="ccg_155_ireland" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">155</field>
+        <field name="x_erp_country_name">Ireland</field>
+        <field name="x_erp_ist_call_group">3 PM</field>
+        <field name="x_erp_ist_sort_order">15.0</field>
+        <field name="x_erp_utc_offset">UTC+0</field>
+        <field name="x_erp_best_ist_time">2:30 PM – 6:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+0)</field>
+    </record>
+    <record id="ccg_156_guinea" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">156</field>
+        <field name="x_erp_country_name">Guinea</field>
+        <field name="x_erp_ist_call_group">3 PM</field>
+        <field name="x_erp_ist_sort_order">15.0</field>
+        <field name="x_erp_utc_offset">UTC+0</field>
+        <field name="x_erp_best_ist_time">2:30 PM – 6:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+0)</field>
+    </record>
+    <record id="ccg_157_senegal" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">157</field>
+        <field name="x_erp_country_name">Senegal</field>
+        <field name="x_erp_ist_call_group">3 PM</field>
+        <field name="x_erp_ist_sort_order">15.0</field>
+        <field name="x_erp_utc_offset">UTC+0</field>
+        <field name="x_erp_best_ist_time">2:30 PM – 6:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+0)</field>
+    </record>
+    <record id="ccg_158_sao_tome_and_principe" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">158</field>
+        <field name="x_erp_country_name">Sao Tome and Principe</field>
+        <field name="x_erp_ist_call_group">3 PM</field>
+        <field name="x_erp_ist_sort_order">15.0</field>
+        <field name="x_erp_utc_offset">UTC+0</field>
+        <field name="x_erp_best_ist_time">2:30 PM – 6:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+0)</field>
+    </record>
+    <record id="ccg_159_united_kingdom" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">159</field>
+        <field name="x_erp_country_name">United Kingdom</field>
+        <field name="x_erp_ist_call_group">3 PM</field>
+        <field name="x_erp_ist_sort_order">15.0</field>
+        <field name="x_erp_utc_offset">UTC+0</field>
+        <field name="x_erp_best_ist_time">2:30 PM – 6:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC+0)</field>
+    </record>
+    <record id="ccg_160_cabo_verde" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">160</field>
+        <field name="x_erp_country_name">Cabo Verde</field>
+        <field name="x_erp_ist_call_group">4 PM</field>
+        <field name="x_erp_ist_sort_order">16.0</field>
+        <field name="x_erp_utc_offset">UTC-1</field>
+        <field name="x_erp_best_ist_time">3:30 PM – 7:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC-1)</field>
+    </record>
+    <record id="ccg_161_suriname" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">161</field>
+        <field name="x_erp_country_name">Suriname</field>
+        <field name="x_erp_ist_call_group">6 PM</field>
+        <field name="x_erp_ist_sort_order">18.0</field>
+        <field name="x_erp_utc_offset">UTC-3</field>
+        <field name="x_erp_best_ist_time">5:30 PM – 9:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC-3)</field>
+    </record>
+    <record id="ccg_162_chile" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">162</field>
+        <field name="x_erp_country_name">Chile</field>
+        <field name="x_erp_ist_call_group">6 PM</field>
+        <field name="x_erp_ist_sort_order">18.0</field>
+        <field name="x_erp_utc_offset">UTC-3</field>
+        <field name="x_erp_best_ist_time">5:30 PM – 9:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC-3)</field>
+    </record>
+    <record id="ccg_163_brazil" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">163</field>
+        <field name="x_erp_country_name">Brazil</field>
+        <field name="x_erp_ist_call_group">6 PM</field>
+        <field name="x_erp_ist_sort_order">18.0</field>
+        <field name="x_erp_utc_offset">UTC-3</field>
+        <field name="x_erp_best_ist_time">5:30 PM – 9:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC-3)</field>
+    </record>
+    <record id="ccg_164_argentina" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">164</field>
+        <field name="x_erp_country_name">Argentina</field>
+        <field name="x_erp_ist_call_group">6 PM</field>
+        <field name="x_erp_ist_sort_order">18.0</field>
+        <field name="x_erp_utc_offset">UTC-3</field>
+        <field name="x_erp_best_ist_time">5:30 PM – 9:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC-3)</field>
+    </record>
+    <record id="ccg_165_uruguay" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">165</field>
+        <field name="x_erp_country_name">Uruguay</field>
+        <field name="x_erp_ist_call_group">6 PM</field>
+        <field name="x_erp_ist_sort_order">18.0</field>
+        <field name="x_erp_utc_offset">UTC-3</field>
+        <field name="x_erp_best_ist_time">5:30 PM – 9:30 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 1 PM (UTC-3)</field>
+    </record>
+    <record id="ccg_166_saint_kitts_and_nevis" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">166</field>
+        <field name="x_erp_country_name">Saint Kitts and Nevis</field>
+        <field name="x_erp_ist_call_group">7 PM</field>
+        <field name="x_erp_ist_sort_order">19.0</field>
+        <field name="x_erp_utc_offset">UTC-4</field>
+        <field name="x_erp_best_ist_time">6:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC-4)</field>
+    </record>
+    <record id="ccg_167_grenada" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">167</field>
+        <field name="x_erp_country_name">Grenada</field>
+        <field name="x_erp_ist_call_group">7 PM</field>
+        <field name="x_erp_ist_sort_order">19.0</field>
+        <field name="x_erp_utc_offset">UTC-4</field>
+        <field name="x_erp_best_ist_time">6:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC-4)</field>
+    </record>
+    <record id="ccg_168_guyana" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">168</field>
+        <field name="x_erp_country_name">Guyana</field>
+        <field name="x_erp_ist_call_group">7 PM</field>
+        <field name="x_erp_ist_sort_order">19.0</field>
+        <field name="x_erp_utc_offset">UTC-4</field>
+        <field name="x_erp_best_ist_time">6:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC-4)</field>
+    </record>
+    <record id="ccg_169_antigua_and_barbuda" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">169</field>
+        <field name="x_erp_country_name">Antigua and Barbuda</field>
+        <field name="x_erp_ist_call_group">7 PM</field>
+        <field name="x_erp_ist_sort_order">19.0</field>
+        <field name="x_erp_utc_offset">UTC-4</field>
+        <field name="x_erp_best_ist_time">6:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC-4)</field>
+    </record>
+    <record id="ccg_170_barbados" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">170</field>
+        <field name="x_erp_country_name">Barbados</field>
+        <field name="x_erp_ist_call_group">7 PM</field>
+        <field name="x_erp_ist_sort_order">19.0</field>
+        <field name="x_erp_utc_offset">UTC-4</field>
+        <field name="x_erp_best_ist_time">6:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC-4)</field>
+    </record>
+    <record id="ccg_171_bolivia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">171</field>
+        <field name="x_erp_country_name">Bolivia</field>
+        <field name="x_erp_ist_call_group">7 PM</field>
+        <field name="x_erp_ist_sort_order">19.0</field>
+        <field name="x_erp_utc_offset">UTC-4</field>
+        <field name="x_erp_best_ist_time">6:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC-4)</field>
+    </record>
+    <record id="ccg_172_paraguay" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">172</field>
+        <field name="x_erp_country_name">Paraguay</field>
+        <field name="x_erp_ist_call_group">7 PM</field>
+        <field name="x_erp_ist_sort_order">19.0</field>
+        <field name="x_erp_utc_offset">UTC-4</field>
+        <field name="x_erp_best_ist_time">6:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC-4)</field>
+    </record>
+    <record id="ccg_173_trinidad_and_tobago" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">173</field>
+        <field name="x_erp_country_name">Trinidad and Tobago</field>
+        <field name="x_erp_ist_call_group">7 PM</field>
+        <field name="x_erp_ist_sort_order">19.0</field>
+        <field name="x_erp_utc_offset">UTC-4</field>
+        <field name="x_erp_best_ist_time">6:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC-4)</field>
+    </record>
+    <record id="ccg_174_dominica" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">174</field>
+        <field name="x_erp_country_name">Dominica</field>
+        <field name="x_erp_ist_call_group">7 PM</field>
+        <field name="x_erp_ist_sort_order">19.0</field>
+        <field name="x_erp_utc_offset">UTC-4</field>
+        <field name="x_erp_best_ist_time">6:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC-4)</field>
+    </record>
+    <record id="ccg_175_venezuela" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">175</field>
+        <field name="x_erp_country_name">Venezuela</field>
+        <field name="x_erp_ist_call_group">7 PM</field>
+        <field name="x_erp_ist_sort_order">19.0</field>
+        <field name="x_erp_utc_offset">UTC-4</field>
+        <field name="x_erp_best_ist_time">6:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC-4)</field>
+    </record>
+    <record id="ccg_176_saint_vincent" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">176</field>
+        <field name="x_erp_country_name">Saint Vincent</field>
+        <field name="x_erp_ist_call_group">7 PM</field>
+        <field name="x_erp_ist_sort_order">19.0</field>
+        <field name="x_erp_utc_offset">UTC-4</field>
+        <field name="x_erp_best_ist_time">6:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC-4)</field>
+    </record>
+    <record id="ccg_177_dominican_republic" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">177</field>
+        <field name="x_erp_country_name">Dominican Republic</field>
+        <field name="x_erp_ist_call_group">7 PM</field>
+        <field name="x_erp_ist_sort_order">19.0</field>
+        <field name="x_erp_utc_offset">UTC-4</field>
+        <field name="x_erp_best_ist_time">6:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC-4)</field>
+    </record>
+    <record id="ccg_178_saint_lucia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">178</field>
+        <field name="x_erp_country_name">Saint Lucia</field>
+        <field name="x_erp_ist_call_group">7 PM</field>
+        <field name="x_erp_ist_sort_order">19.0</field>
+        <field name="x_erp_utc_offset">UTC-4</field>
+        <field name="x_erp_best_ist_time">6:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 12:30 PM (UTC-4)</field>
+    </record>
+    <record id="ccg_179_panama" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">179</field>
+        <field name="x_erp_country_name">Panama</field>
+        <field name="x_erp_ist_call_group">8 PM</field>
+        <field name="x_erp_ist_sort_order">20.0</field>
+        <field name="x_erp_utc_offset">UTC-5</field>
+        <field name="x_erp_best_ist_time">7:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 11:30 AM (UTC-5)</field>
+    </record>
+    <record id="ccg_180_cuba" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">180</field>
+        <field name="x_erp_country_name">Cuba</field>
+        <field name="x_erp_ist_call_group">8 PM</field>
+        <field name="x_erp_ist_sort_order">20.0</field>
+        <field name="x_erp_utc_offset">UTC-5</field>
+        <field name="x_erp_best_ist_time">7:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 11:30 AM (UTC-5)</field>
+    </record>
+    <record id="ccg_181_haiti" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">181</field>
+        <field name="x_erp_country_name">Haiti</field>
+        <field name="x_erp_ist_call_group">8 PM</field>
+        <field name="x_erp_ist_sort_order">20.0</field>
+        <field name="x_erp_utc_offset">UTC-5</field>
+        <field name="x_erp_best_ist_time">7:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 11:30 AM (UTC-5)</field>
+    </record>
+    <record id="ccg_182_jamaica" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">182</field>
+        <field name="x_erp_country_name">Jamaica</field>
+        <field name="x_erp_ist_call_group">8 PM</field>
+        <field name="x_erp_ist_sort_order">20.0</field>
+        <field name="x_erp_utc_offset">UTC-5</field>
+        <field name="x_erp_best_ist_time">7:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 11:30 AM (UTC-5)</field>
+    </record>
+    <record id="ccg_183_united_states" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">183</field>
+        <field name="x_erp_country_name">United States</field>
+        <field name="x_erp_ist_call_group">8 PM</field>
+        <field name="x_erp_ist_sort_order">20.0</field>
+        <field name="x_erp_utc_offset">UTC-5</field>
+        <field name="x_erp_best_ist_time">7:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 11:30 AM (UTC-5)</field>
+    </record>
+    <record id="ccg_184_colombia" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">184</field>
+        <field name="x_erp_country_name">Colombia</field>
+        <field name="x_erp_ist_call_group">8 PM</field>
+        <field name="x_erp_ist_sort_order">20.0</field>
+        <field name="x_erp_utc_offset">UTC-5</field>
+        <field name="x_erp_best_ist_time">7:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 11:30 AM (UTC-5)</field>
+    </record>
+    <record id="ccg_185_bahamas" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">185</field>
+        <field name="x_erp_country_name">Bahamas</field>
+        <field name="x_erp_ist_call_group">8 PM</field>
+        <field name="x_erp_ist_sort_order">20.0</field>
+        <field name="x_erp_utc_offset">UTC-5</field>
+        <field name="x_erp_best_ist_time">7:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 11:30 AM (UTC-5)</field>
+    </record>
+    <record id="ccg_186_ecuador" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">186</field>
+        <field name="x_erp_country_name">Ecuador</field>
+        <field name="x_erp_ist_call_group">8 PM</field>
+        <field name="x_erp_ist_sort_order">20.0</field>
+        <field name="x_erp_utc_offset">UTC-5</field>
+        <field name="x_erp_best_ist_time">7:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 11:30 AM (UTC-5)</field>
+    </record>
+    <record id="ccg_187_canada" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">187</field>
+        <field name="x_erp_country_name">Canada</field>
+        <field name="x_erp_ist_call_group">8 PM</field>
+        <field name="x_erp_ist_sort_order">20.0</field>
+        <field name="x_erp_utc_offset">UTC-5</field>
+        <field name="x_erp_best_ist_time">7:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 11:30 AM (UTC-5)</field>
+    </record>
+    <record id="ccg_188_peru" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">188</field>
+        <field name="x_erp_country_name">Peru</field>
+        <field name="x_erp_ist_call_group">8 PM</field>
+        <field name="x_erp_ist_sort_order">20.0</field>
+        <field name="x_erp_utc_offset">UTC-5</field>
+        <field name="x_erp_best_ist_time">7:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 11:30 AM (UTC-5)</field>
+    </record>
+    <record id="ccg_189_guatemala" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">189</field>
+        <field name="x_erp_country_name">Guatemala</field>
+        <field name="x_erp_ist_call_group">9 PM</field>
+        <field name="x_erp_ist_sort_order">21.0</field>
+        <field name="x_erp_utc_offset">UTC-6</field>
+        <field name="x_erp_best_ist_time">8:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 10:30 AM (UTC-6)</field>
+    </record>
+    <record id="ccg_190_honduras" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">190</field>
+        <field name="x_erp_country_name">Honduras</field>
+        <field name="x_erp_ist_call_group">9 PM</field>
+        <field name="x_erp_ist_sort_order">21.0</field>
+        <field name="x_erp_utc_offset">UTC-6</field>
+        <field name="x_erp_best_ist_time">8:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 10:30 AM (UTC-6)</field>
+    </record>
+    <record id="ccg_191_costa_rica" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">191</field>
+        <field name="x_erp_country_name">Costa Rica</field>
+        <field name="x_erp_ist_call_group">9 PM</field>
+        <field name="x_erp_ist_sort_order">21.0</field>
+        <field name="x_erp_utc_offset">UTC-6</field>
+        <field name="x_erp_best_ist_time">8:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 10:30 AM (UTC-6)</field>
+    </record>
+    <record id="ccg_192_el_salvador" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">192</field>
+        <field name="x_erp_country_name">El Salvador</field>
+        <field name="x_erp_ist_call_group">9 PM</field>
+        <field name="x_erp_ist_sort_order">21.0</field>
+        <field name="x_erp_utc_offset">UTC-6</field>
+        <field name="x_erp_best_ist_time">8:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 10:30 AM (UTC-6)</field>
+    </record>
+    <record id="ccg_193_mexico" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">193</field>
+        <field name="x_erp_country_name">Mexico</field>
+        <field name="x_erp_ist_call_group">9 PM</field>
+        <field name="x_erp_ist_sort_order">21.0</field>
+        <field name="x_erp_utc_offset">UTC-6</field>
+        <field name="x_erp_best_ist_time">8:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 10:30 AM (UTC-6)</field>
+    </record>
+    <record id="ccg_194_nicaragua" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">194</field>
+        <field name="x_erp_country_name">Nicaragua</field>
+        <field name="x_erp_ist_call_group">9 PM</field>
+        <field name="x_erp_ist_sort_order">21.0</field>
+        <field name="x_erp_utc_offset">UTC-6</field>
+        <field name="x_erp_best_ist_time">8:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 10:30 AM (UTC-6)</field>
+    </record>
+    <record id="ccg_195_belize" model="x_erp.country_calling_guide">
+        <field name="x_erp_call_sequence">195</field>
+        <field name="x_erp_country_name">Belize</field>
+        <field name="x_erp_ist_call_group">9 PM</field>
+        <field name="x_erp_ist_sort_order">21.0</field>
+        <field name="x_erp_utc_offset">UTC-6</field>
+        <field name="x_erp_best_ist_time">8:30 PM – 10 PM IST</field>
+        <field name="x_erp_country_local_time">9 AM – 10:30 AM (UTC-6)</field>
+    </record>
+</odoo>

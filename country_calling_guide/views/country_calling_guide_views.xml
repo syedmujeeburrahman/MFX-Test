@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_country_calling_guide_list" model="ir.ui.view">
+        <field name="name">x_erp.country_calling_guide.list</field>
+        <field name="model">x_erp.country_calling_guide</field>
+        <field name="arch" type="xml">
+            <list string="Calling Guide" expand="1" default_order="x_erp_ist_sort_order asc, x_erp_call_sequence asc">
+                <field name="x_erp_call_sequence" string="No."/>
+                <field name="x_erp_ist_call_group" string="IST Slot"/>
+                <field name="x_erp_country_name" string="Country"/>
+                <field name="x_erp_utc_offset" string="UTC Offset"/>
+                <field name="x_erp_best_ist_time" string="Best IST Time"/>
+                <field name="x_erp_country_local_time" string="Country Local Time"/>
+                <field name="x_erp_calling_notes" string="Notes" optional="show"/>
+                <field name="x_erp_ist_sort_order" column_invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_country_calling_guide_form" model="ir.ui.view">
+        <field name="name">x_erp.country_calling_guide.form</field>
+        <field name="model">x_erp.country_calling_guide</field>
+        <field name="arch" type="xml">
+            <form string="Country Calling Guide">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="x_erp_country_name"/>
+                        <h1><field name="x_erp_country_name" placeholder="Country Name"/></h1>
+                    </div>
+                    <group>
+                        <group string="Country Details">
+                            <field name="x_erp_call_sequence"/>
+                            <field name="x_erp_utc_offset"/>
+                        </group>
+                        <group string="Calling Schedule (IST)">
+                            <field name="x_erp_ist_call_group"/>
+                            <field name="x_erp_best_ist_time"/>
+                            <field name="x_erp_country_local_time"/>
+                            <field name="x_erp_ist_sort_order" invisible="1"/>
+                        </group>
+                    </group>
+                    <group string="Notes">
+                        <field name="x_erp_calling_notes" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_country_calling_guide_search" model="ir.ui.view">
+        <field name="name">x_erp.country_calling_guide.search</field>
+        <field name="model">x_erp.country_calling_guide</field>
+        <field name="arch" type="xml">
+            <search string="Search Countries">
+                <field name="x_erp_country_name" string="Country"/>
+                <field name="x_erp_ist_call_group" string="IST Slot"/>
+                <field name="x_erp_utc_offset" string="UTC Offset"/>
+                <filter name="slot_00" string="12 AM" domain="[('x_erp_ist_sort_order','=',0.0)]"/>
+                <filter name="slot_01" string="1 AM" domain="[('x_erp_ist_sort_order','=',1.0)]"/>
+                <filter name="slot_02" string="2 AM" domain="[('x_erp_ist_sort_order','=',2.0)]"/>
+                <filter name="slot_03" string="3 AM" domain="[('x_erp_ist_sort_order','=',3.0)]"/>
+                <filter name="slot_04" string="4 AM" domain="[('x_erp_ist_sort_order','=',4.0)]"/>
+                <filter name="slot_05" string="5 AM" domain="[('x_erp_ist_sort_order','=',5.0)]"/>
+                <filter name="slot_06" string="6 AM" domain="[('x_erp_ist_sort_order','=',6.0)]"/>
+                <filter name="slot_07" string="7 AM" domain="[('x_erp_ist_sort_order','=',7.0)]"/>
+                <filter name="slot_08" string="8 AM" domain="[('x_erp_ist_sort_order','=',8.0)]"/>
+                <filter name="slot_09" string="9 AM" domain="[('x_erp_ist_sort_order','=',9.0)]"/>
+                <filter name="slot_10" string="10 AM" domain="[('x_erp_ist_sort_order','=',10.0)]"/>
+                <filter name="slot_11" string="11 AM" domain="[('x_erp_ist_sort_order','=',11.0)]"/>
+                <filter name="slot_12" string="12 PM" domain="[('x_erp_ist_sort_order','=',12.0)]"/>
+                <filter name="slot_13" string="1 PM" domain="[('x_erp_ist_sort_order','=',13.0)]"/>
+                <filter name="slot_14" string="2 PM" domain="[('x_erp_ist_sort_order','=',14.0)]"/>
+                <filter name="slot_15" string="3 PM" domain="[('x_erp_ist_sort_order','=',15.0)]"/>
+                <filter name="slot_16" string="4 PM" domain="[('x_erp_ist_sort_order','=',16.0)]"/>
+                <filter name="slot_17" string="5 PM" domain="[('x_erp_ist_sort_order','=',17.0)]"/>
+                <filter name="slot_18" string="6 PM" domain="[('x_erp_ist_sort_order','=',18.0)]"/>
+                <filter name="slot_19" string="7 PM" domain="[('x_erp_ist_sort_order','=',19.0)]"/>
+                <filter name="slot_20" string="8 PM" domain="[('x_erp_ist_sort_order','=',20.0)]"/>
+                <filter name="slot_21" string="9 PM" domain="[('x_erp_ist_sort_order','=',21.0)]"/>
+                <filter name="slot_22" string="10 PM" domain="[('x_erp_ist_sort_order','=',22.0)]"/>
+                <filter name="slot_23" string="11 PM" domain="[('x_erp_ist_sort_order','=',23.0)]"/>
+                <group>
+                    <filter name="group_by_ist_hour" string="IST Hour" context="{'group_by': 'x_erp_ist_call_group'}"/>
+                    <filter name="group_by_utc" string="UTC Offset" context="{'group_by': 'x_erp_utc_offset'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_country_calling_guide_all" model="ir.actions.act_window">
+        <field name="name">All Countries (195)</field>
+        <field name="res_model">x_erp.country_calling_guide</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{'order': 'x_erp_ist_sort_order asc, x_erp_call_sequence asc'}</field>
+        <field name="limit">200</field>
+    </record>
+
+    <record id="action_slot_00" model="ir.actions.act_window"><field name="name">12 AM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_00': 1}</field></record>
+    <record id="action_slot_01" model="ir.actions.act_window"><field name="name">1 AM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_01': 1}</field></record>
+    <record id="action_slot_02" model="ir.actions.act_window"><field name="name">2 AM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_02': 1}</field></record>
+    <record id="action_slot_03" model="ir.actions.act_window"><field name="name">3 AM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_03': 1}</field></record>
+    <record id="action_slot_04" model="ir.actions.act_window"><field name="name">4 AM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_04': 1}</field></record>
+    <record id="action_slot_05" model="ir.actions.act_window"><field name="name">5 AM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_05': 1}</field></record>
+    <record id="action_slot_06" model="ir.actions.act_window"><field name="name">6 AM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_06': 1}</field></record>
+    <record id="action_slot_07" model="ir.actions.act_window"><field name="name">7 AM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_07': 1}</field></record>
+    <record id="action_slot_08" model="ir.actions.act_window"><field name="name">8 AM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_08': 1}</field></record>
+    <record id="action_slot_09" model="ir.actions.act_window"><field name="name">9 AM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_09': 1}</field></record>
+    <record id="action_slot_10" model="ir.actions.act_window"><field name="name">10 AM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_10': 1}</field></record>
+    <record id="action_slot_11" model="ir.actions.act_window"><field name="name">11 AM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_11': 1}</field></record>
+    <record id="action_slot_12" model="ir.actions.act_window"><field name="name">12 PM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_12': 1}</field></record>
+    <record id="action_slot_13" model="ir.actions.act_window"><field name="name">1 PM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_13': 1}</field></record>
+    <record id="action_slot_14" model="ir.actions.act_window"><field name="name">2 PM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_14': 1}</field></record>
+    <record id="action_slot_15" model="ir.actions.act_window"><field name="name">3 PM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_15': 1}</field></record>
+    <record id="action_slot_16" model="ir.actions.act_window"><field name="name">4 PM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_16': 1}</field></record>
+    <record id="action_slot_17" model="ir.actions.act_window"><field name="name">5 PM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_17': 1}</field></record>
+    <record id="action_slot_18" model="ir.actions.act_window"><field name="name">6 PM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_18': 1}</field></record>
+    <record id="action_slot_19" model="ir.actions.act_window"><field name="name">7 PM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_19': 1}</field></record>
+    <record id="action_slot_20" model="ir.actions.act_window"><field name="name">8 PM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_20': 1}</field></record>
+    <record id="action_slot_21" model="ir.actions.act_window"><field name="name">9 PM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_21': 1}</field></record>
+    <record id="action_slot_22" model="ir.actions.act_window"><field name="name">10 PM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_22': 1}</field></record>
+    <record id="action_slot_23" model="ir.actions.act_window"><field name="name">11 PM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_23': 1}</field></record>
+
+</odoo>
