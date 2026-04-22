@@ -1,6 +1,6 @@
 {
     'name': '195 Countries Cold Calling Guide',
-    'version': '18.0.1.0.0',
+    'version': '19.0.1.0.0',
     'summary': 'Cold calling guide organized by IST time slots for 195 countries',
     'description': 'Organizes 195 countries by the best IST time to call, with local times, UTC offsets and notes.',
     'author': 'DearERP',
