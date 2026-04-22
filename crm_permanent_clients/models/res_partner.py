@@ -22,10 +22,12 @@ class ResPartner(models.Model):
     x_client_issue_count = fields.Integer(
         string='Issue Count',
         compute='_compute_x_client_issue_count',
+        store=True,
     )
     x_client_open_issue_count = fields.Integer(
         string='Open Issues',
         compute='_compute_x_client_issue_count',
+        store=True,
     )
 
     @api.depends('x_client_issue_ids', 'x_client_issue_ids.state')
