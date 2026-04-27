@@ -146,10 +146,10 @@
         <field name="arch" type="xml">
 
             <xpath expr="//templates" position="before">
-                <field name="x_is_high_priority"/>
-                <field name="x_high_priority_auto"/>
-                <field name="x_high_priority_effective"/>
-                <field name="x_high_priority_reason"/>
+                <field name="x_is_high_priority" widget="boolean"/>
+                <field name="x_high_priority_auto" widget="boolean"/>
+                <field name="x_high_priority_effective" widget="boolean"/>
+                <field name="x_high_priority_reason" widget="selection"/>
             </xpath>
 
             <xpath expr="//t[@t-name='card']" position="inside">

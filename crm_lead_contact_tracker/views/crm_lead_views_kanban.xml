@@ -9,7 +9,7 @@
         <field name="arch" type="xml">
             <!-- Add fields before templates so they're available in card -->
             <xpath expr="//templates" position="before">
-                <field name="x_is_contacted_today"/>
+                <field name="x_is_contacted_today" widget="boolean"/>
             </xpath>
             <!-- Contacted badge: visible at the TOP of the kanban card -->
             <xpath expr="//widget[@id='lost_ribbon']" position="before">
@@ -34,7 +34,7 @@
         <field name="inherit_id" ref="crm.view_crm_lead_kanban"/>
         <field name="arch" type="xml">
             <xpath expr="//templates" position="before">
-                <field name="x_is_contacted_today"/>
+                <field name="x_is_contacted_today" widget="boolean"/>
             </xpath>
             <!-- Contacted badge at the TOP of leads kanban card -->
             <xpath expr="//t[@t-name='card']/field[@name='name']" position="before">
@@ -60,7 +60,7 @@
         <field name="arch" type="xml">
             <!-- Add field declaration before card template -->
             <xpath expr="//t[@t-name='card']" position="before">
-                <field name="x_is_contacted_today"/>
+                <field name="x_is_contacted_today" widget="boolean"/>
             </xpath>
             <!-- Contacted strip at the TOP of the Pipeline kanban card -->
             <xpath expr="//t[@t-name='card']/div[1]" position="before">
