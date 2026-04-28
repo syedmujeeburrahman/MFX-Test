@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="partner_6" model="res.partner">
+        <field name="name">81 920 075</field>
+        <field name="type">contact</field>
+    </record>
+
+    <record id="partner_7" model="res.partner">
+        <field name="name">+90 507 818 20 00</field>
+        <field name="email">habbaba@broadmax.com.tr</field>
+        <field name="type">contact</field>
+    </record>
+
+    <record id="partner_8" model="res.partner">
+        <field name="name">7012945532</field>
+        <field name="email">arjukc@outlook.in</field>
+        <field name="country_id" ref="base.in"/>
+        <field name="type">contact</field>
+    </record>
+
+    <record id="partner_9" model="res.partner">
+        <field name="name">95113 52099</field>
+        <field name="country_id" ref="base.in"/>
+        <field name="type">contact</field>
+    </record>
+
+    <record id="partner_10" model="res.partner">
+        <field name="name">+971 52 165 1936</field>
+        <field name="email">wassim@al-jawad.ae</field>
+        <field name="type">contact</field>
+    </record>
+
+    <record id="partner_11" model="res.partner">
+        <field name="name">Arsalan Yasin - DearERP Demo</field>
+        <field name="phone">+61 420 928 664</field>
+        <field name="country_id" ref="base.au"/>
+        <field name="is_company" eval="True"/>
+        <field name="type">contact</field>
+    </record>
+
+    <record id="partner_13" model="res.partner">
+        <field name="name">Sudheendra Walvekar</field>
+        <field name="phone">+91 80 4092 6078</field>
+        <field name="website">https://www.primeminds.co/</field>
+        <field name="country_id" ref="base.in"/>
+        <field name="is_company" eval="True"/>
+        <field name="type">contact</field>
+    </record>
+
+    <record id="partner_15" model="res.partner">
+        <field name="name">+91 99589 25847</field>
+        <field name="type">contact</field>
+    </record>
+
+</odoo>
