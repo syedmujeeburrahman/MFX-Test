@@ -8,10 +8,9 @@
         <field name="inherit_id" ref="crm.view_crm_lead_kanban"/>
         <field name="arch" type="xml">
 
-            <!-- Declare x_lead_type at kanban level (with explicit widget to bypass
-                 the kanban arch parser's many2many type-check on field nodes). -->
+            <!-- Declare x_lead_type at kanban level so it's available in the card template. -->
             <xpath expr="//templates" position="before">
-                <field name="x_lead_type" widget="selection"/>
+                <field name="x_lead_type"/>
             </xpath>
 
             <!-- Add lead type badge in the card template, next to the priority widget. -->
