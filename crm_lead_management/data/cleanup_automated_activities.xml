@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!--
+            One-shot cleanup that runs on every module upgrade. It deletes
+            any mail.activity rows on crm.lead that were created by the
+            (now disabled) follow-up reminder and high-priority reminder
+            crons. After the first successful upgrade the call becomes a
+            no-op because no automated activities remain.
+        -->
+        <function model="crm.lead" name="_dearerp_cleanup_automated_activities"/>
+
+    </data>
+</odoo>

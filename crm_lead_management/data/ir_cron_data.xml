@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<odoo>
+    <data noupdate="0">
 
-    <!-- Cron: Daily Follow-up Reminder -->
-    <record id="ir_cron_followup_reminder" model="ir.cron">
-        <field name="name">CRM: Follow-up Reminder</field>
-        <field name="model_id" ref="crm.model_crm_lead"/>
-        <field name="state">code</field>
-        <field name="code">model._cron_followup_reminder()</field>
-        <field name="interval_number">1</field>
-        <field name="interval_type">days</field>
-        <field name="active">True</field>
-    </record>
+        <!--
+            Daily follow-up reminder cron has been disabled.
+            Follow-up activities are now created only on demand,
+            via the "Schedule Follow-up" button on the lead form.
+            The record is kept (deactivated + no-op) so existing
+            installs lose the scheduled job on module upgrade
+            without breaking external references to the XML id.
+        -->
+        <record id="ir_cron_followup_reminder" model="ir.cron">
+            <field name="name">CRM: Follow-up Reminder (DISABLED)</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="state">code</field>
+            <field name="code">pass</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="active" eval="False"/>
+        </record>
 
+    </data>
 </odoo>

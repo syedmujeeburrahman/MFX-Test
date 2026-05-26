@@ -13,7 +13,7 @@
         - Advanced filtering and search
         - Sales performance dashboard
         - Automated stage movement
-        - Follow-up reminders via activities
+        - On-demand follow-up activity scheduling (manual button only)
     """,
     'author': 'DearERP',
     'website': '',
@@ -32,6 +32,7 @@
         'data/utm_source_data.xml',
         'data/crm_tag_data.xml',
         'data/ir_cron_data.xml',
+        'data/cleanup_automated_activities.xml',
         'data/crm_lead_demo_data.xml',
         'views/crm_lead_views_form.xml',
         'views/crm_lead_views_list.xml',

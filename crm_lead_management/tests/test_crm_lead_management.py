@@ -94,53 +94,49 @@ class TestCrmLeadManagement(TransactionCase):
         })
         self.assertEqual(lead.x_next_followup_date, tomorrow)
 
-    def test_followup_activity_created_on_create(self):
-        """Test that activity is created when lead is created with follow-up date."""
+    def test_no_followup_activity_on_create(self):
+        """Setting a follow-up date on create must NOT auto-schedule an activity."""
         tomorrow = date.today() + timedelta(days=1)
         lead = self.env['crm.lead'].create({
-            'name': 'Activity Auto-Create Test',
+            'name': 'No Auto Activity On Create',
             'x_next_followup_date': tomorrow,
         })
-        activities = lead.activity_ids.filtered(
-            lambda a: a.summary == 'Follow-up'
+        self.assertFalse(
+            lead.activity_ids.filtered(lambda a: a.summary == 'Follow-up'),
+            "Activity must not be auto-created on lead creation",
         )
-        self.assertTrue(
-            activities,
-            "Follow-up activity should be created when lead has follow-up date",
-        )
-        self.assertEqual(activities[0].date_deadline, tomorrow)
 
-    def test_followup_activity_created_on_write(self):
-        """Test that activity is created when follow-up date is set via write."""
+    def test_no_followup_activity_on_write(self):
+        """Changing the follow-up date via write must NOT auto-schedule an activity."""
+        lead = self.env['crm.lead'].create({'name': 'No Auto Activity On Write'})
+        lead.write({'x_next_followup_date': date.today() + timedelta(days=7)})
+        self.assertFalse(
+            lead.activity_ids.filtered(lambda a: a.summary == 'Follow-up'),
+            "Activity must not be auto-created on write",
+        )
+
+    def test_manual_schedule_followup_activity(self):
+        """The manual button must create a single follow-up activity, idempotently."""
+        tomorrow = date.today() + timedelta(days=1)
         lead = self.env['crm.lead'].create({
-            'name': 'Activity Write Test',
+            'name': 'Manual Schedule Test',
+            'x_next_followup_date': tomorrow,
         })
         self.assertFalse(lead.activity_ids.filtered(
             lambda a: a.summary == 'Follow-up'
         ))
-        next_week = date.today() + timedelta(days=7)
-        lead.write({'x_next_followup_date': next_week})
+        lead.action_schedule_followup_activity()
         activities = lead.activity_ids.filtered(
             lambda a: a.summary == 'Follow-up'
         )
-        self.assertTrue(activities, "Follow-up activity should be created on write")
-
-    def test_no_duplicate_followup_activity(self):
-        """Test that duplicate follow-up activities are not created."""
-        tomorrow = date.today() + timedelta(days=1)
-        lead = self.env['crm.lead'].create({
-            'name': 'No Duplicate Activity Test',
-            'x_next_followup_date': tomorrow,
-        })
-        initial_count = len(lead.activity_ids.filtered(
-            lambda a: a.summary == 'Follow-up'
-        ))
-        # Trigger again
+        self.assertEqual(len(activities), 1)
+        self.assertEqual(activities[0].date_deadline, tomorrow)
+        # Idempotent — calling again must not duplicate
         lead.action_schedule_followup_activity()
-        final_count = len(lead.activity_ids.filtered(
-            lambda a: a.summary == 'Follow-up'
-        ))
-        self.assertEqual(initial_count, final_count, "Should not create duplicate activities")
+        self.assertEqual(
+            len(lead.activity_ids.filtered(lambda a: a.summary == 'Follow-up')),
+            1,
+        )
 
     def test_lead_with_full_data(self):
         """Test creating a lead with all custom and standard fields."""
@@ -163,24 +159,12 @@ class TestCrmLeadManagement(TransactionCase):
         self.assertEqual(lead.x_lead_type, 'hot')
         self.assertEqual(lead.stage_id, self.stage_prospect)
 
-    def test_cron_followup_reminder(self):
-        """Test the cron job for follow-up reminders."""
-        tomorrow = date.today() + timedelta(days=1)
-        lead = self.env['crm.lead'].create({
-            'name': 'Cron Reminder Test',
-            'x_next_followup_date': tomorrow,
-            'stage_id': self.stage_prospect.id,
-        })
-        # Clear existing activities
-        lead.activity_ids.filtered(
-            lambda a: a.summary == 'Follow-up'
-        ).unlink()
-        # Run cron
-        self.env['crm.lead']._cron_followup_reminder()
-        activities = lead.activity_ids.filtered(
-            lambda a: a.summary == 'Follow-up'
+    def test_followup_reminder_cron_removed(self):
+        """The automatic follow-up reminder cron method must no longer exist."""
+        self.assertFalse(
+            hasattr(self.env['crm.lead'], '_cron_followup_reminder'),
+            "Automatic follow-up reminder cron should be removed",
         )
-        self.assertTrue(activities, "Cron should create follow-up activity for upcoming leads")
 
     def test_utm_sources_created(self):
         """Test that UTM sources are created."""

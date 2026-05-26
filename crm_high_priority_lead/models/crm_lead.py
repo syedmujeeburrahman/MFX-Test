@@ -160,25 +160,3 @@ class CrmLead(models.Model):
         if 'x_is_high_priority' in vals and not vals.get('x_is_high_priority'):
             vals.setdefault('x_high_priority_set_on', False)
         return super().write(vals)
-
-    def _cron_high_priority_followup(self):
-        """Create a follow-up activity for every active high-priority lead missing one."""
-        leads = self.search([
-            ('x_high_priority_effective', '=', True),
-            ('active', '=', True),
-            ('stage_id.is_won', '=', False),
-        ])
-        today = fields.Date.today()
-        for lead in leads:
-            has_open = lead.activity_ids.filtered(
-                lambda a: a.summary == 'High-Priority Follow-up'
-            )
-            if has_open:
-                continue
-            lead.activity_schedule(
-                'mail.mail_activity_data_todo',
-                date_deadline=today,
-                summary='High-Priority Follow-up',
-                note='Automatic reminder: this lead is flagged as high priority.',
-                user_id=lead.user_id.id or self.env.uid,
-            )

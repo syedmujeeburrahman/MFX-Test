@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import api, models, fields
 
 
 class CrmLead(models.Model):
@@ -32,45 +32,39 @@ class CrmLead(models.Model):
         return color_map.get(self.x_lead_type, 0)
 
     def action_schedule_followup_activity(self):
-        """Create a follow-up activity based on the next follow-up date."""
+        """Manually create a follow-up activity based on the next follow-up date.
+
+        Triggered explicitly by the user from the form/list button — leads
+        never get an auto-scheduled activity from create/write or any cron.
+        """
         for lead in self:
-            if lead.x_next_followup_date:
-                existing = lead.activity_ids.filtered(
-                    lambda a: a.summary == 'Follow-up' and a.date_deadline == lead.x_next_followup_date
-                )
-                if not existing:
-                    lead.activity_schedule(
-                        'mail.mail_activity_data_todo',
-                        date_deadline=lead.x_next_followup_date,
-                        summary='Follow-up',
-                        note=f'Scheduled follow-up for lead: {lead.name}',
-                        user_id=lead.user_id.id or self.env.uid,
-                    )
+            if not lead.x_next_followup_date:
+                continue
+            existing = lead.activity_ids.filtered(
+                lambda a: a.summary == 'Follow-up' and a.date_deadline == lead.x_next_followup_date
+            )
+            if existing:
+                continue
+            lead.activity_schedule(
+                'mail.mail_activity_data_todo',
+                date_deadline=lead.x_next_followup_date,
+                summary='Follow-up',
+                note=f'Scheduled follow-up for lead: {lead.name}',
+                user_id=lead.user_id.id or self.env.uid,
+            )
 
-    @api.model_create_multi
-    def create(self, vals_list):
-        leads = super().create(vals_list)
-        for lead in leads:
-            if lead.x_next_followup_date:
-                lead.action_schedule_followup_activity()
-        return leads
+    @api.model
+    def _dearerp_cleanup_automated_activities(self):
+        """Delete every automated activity ever scheduled on a lead.
 
-    def write(self, vals):
-        res = super().write(vals)
-        if 'x_next_followup_date' in vals:
-            for lead in self:
-                if lead.x_next_followup_date:
-                    lead.action_schedule_followup_activity()
-        return res
-
-    def _cron_followup_reminder(self):
-        """Cron job to create activities for leads with upcoming follow-ups."""
-        tomorrow = fields.Date.add(fields.Date.today(), days=1)
-        leads = self.search([
-            ('x_next_followup_date', '<=', tomorrow),
-            ('x_next_followup_date', '>=', fields.Date.today()),
-            ('stage_id.is_won', '=', False),
-            ('active', '=', True),
-        ])
-        for lead in leads:
-            lead.action_schedule_followup_activity()
+        Why: legacy crons in this and the high-priority module used to
+        bulk-schedule follow-up activities daily. Those crons are now
+        disabled, but the activities they already created stayed on the
+        leads. This is called from a data file on every module upgrade so
+        the cleanup keeps running until no stale rows remain (subsequent
+        runs are no-ops).
+        """
+        self.env['mail.activity'].sudo().search([
+            ('res_model', '=', 'crm.lead'),
+            ('automated', '=', True),
+        ]).unlink()
