@@ -1,0 +1,47 @@
+lead_id,name,active,xmlid,create_date,write_date,stage,user,phone,activity_count,message_count
+280,Sudheendra Walvekar,True,crm_data_seed.lead_6,2026-05-26 12:24:25,2026-05-26 12:24:25,Demo Completed,OdooBot,+91 80 4092 6078,1,1
+220,Sudheendra Walvekar,True,crm_lead_management.lead_demo_05,2026-05-19 04:47:11,2026-05-27 07:12:04,Lost,Administrator,804092 6078,1,4
+276,Systems codes,True,crm_data_seed.lead_12,2026-05-26 12:24:25,2026-05-26 12:24:25,Demo Completed,OdooBot,54 312 3155,0,1
+223,Systems codes,True,crm_lead_management.lead_demo_11,2026-05-19 04:47:11,2026-05-26 12:26:26,Demo Completed,Administrator,54 312 3155,0,3
+174,"Amer - Experts In Tech, Saudi arab",True,crm_data_seed.lead_15,2026-04-28 10:55:27,2026-05-11 13:52:51,Demo Completed,OdooBot,+966 53 528 8851,1,7
+14,"Amer - Experts In Tech, Saudi arab",True,crm_lead_management.lead_demo_14,2026-04-28 10:00:46,2026-05-26 12:26:26,Demo Completed,Administrator,535288851,2,1
+173,alligatorinfosoft,True,crm_data_seed.lead_16,2026-04-28 10:55:27,2026-05-26 12:00:13,Demo Completed,OdooBot,+91 99220 09667,1,10
+273,alligatorinfosoft,True,crm_lead_management.lead_demo_15,2026-05-26 12:24:15,2026-05-26 12:26:26,Demo Completed,Administrator,99220 09667,0,1
+170,Variety IT,True,crm_data_seed.lead_4,2026-04-28 10:55:27,2026-05-11 11:22:23,Demo Completed,OdooBot,+966 56 409 9728,1,5
+218,Variety IT,True,crm_lead_management.lead_demo_03,2026-05-19 04:47:11,2026-05-26 12:26:26,Demo Completed,Administrator,966 56 409 9728,2,1
+168,Accurate Management System,True,crm_data_seed.lead_8,2026-04-28 10:55:27,2026-05-21 09:33:39,Demo Completed,OdooBot,+966 59 473 6585,1,8
+272,Accurate Management System,True,crm_lead_management.lead_demo_07,2026-05-26 12:24:15,2026-05-26 12:26:26,Demo Completed,Administrator,59 473 6585,0,1
+160,Tatvamasilabs,True,crm_data_seed.lead_17,2026-04-28 10:55:27,2026-05-26 12:01:18,Demo Completed,OdooBot,False,1,9
+249,Tatvamasilabs,True,crm_lead_management.lead_demo_16,2026-05-20 06:22:28,2026-05-26 12:26:26,Demo Completed,Administrator,False,0,1
+56,PreComp (Malaysia) Sdn Bhd,False,crm_data_seed.lead_21,2026-04-28 10:55:27,2026-04-28 11:51:02,Demo Completed,OdooBot,+60 16-725 6662,0,5
+229,PreComp (Malaysia) Sdn Bhd,True,crm_lead_management.lead_demo_20,2026-05-19 04:47:11,2026-05-26 12:26:26,Demo Completed,Administrator,+6016-725 6662,0,1
+53,QWY SOFTWARE PRIVATE LIMITED -  Sarat,True,crm_data_seed.lead_19,2026-04-28 10:55:27,2026-05-26 12:01:32,Demo Completed,OdooBot,+91 79948 88797,1,7
+250,QWY SOFTWARE PRIVATE LIMITED -  Sarat,True,crm_lead_management.lead_demo_18,2026-05-20 06:22:28,2026-05-26 12:26:26,Demo Completed,Administrator,79948 88797,0,1
+52,"Cloud Systems for Information Technology , KSA",True,crm_data_seed.lead_25,2026-04-28 10:55:27,2026-04-28 12:25:03,Demo Completed,OdooBot,+966 58 004 1917,1,3
+252,"Cloud Systems for Information Technology , KSA",True,crm_lead_management.lead_demo_24,2026-05-20 06:22:28,2026-05-26 12:26:26,Demo Completed,Administrator,58 004 1917,1,4
+45,Therp BV (Netherlands),True,crm_data_seed.lead_20,2026-04-28 10:55:27,2026-05-25 14:05:51,Lost,OdooBot,+31 20 309 3093,0,8
+274,Therp BV (Netherlands),True,crm_lead_management.lead_demo_19,2026-05-26 12:24:15,2026-05-26 12:26:26,Demo Completed,Administrator,+31 (0) 20 3093093,1,1
+279,7Span Internet Private Limited Ready,True,crm_data_seed.lead_5,2026-05-26 12:24:25,2026-05-26 12:24:25,Demo Completed,OdooBot,+91 90995 16826,1,1
+219,7Span Internet Private Limited Ready,True,crm_lead_management.lead_demo_04,2026-05-19 04:47:11,2026-05-26 12:26:26,Demo Completed,Administrator,9099516826,1,1
+248,Arsalan Yasin - DearERP Demo,True,crm_lead_management.lead_demo_13,2026-05-20 06:22:28,2026-05-26 12:26:26,Demo Completed,Administrator,420 928 664,0,1
+54,Arsalan Yasin - DearERP Demo,True,crm_data_seed.lead_14,2026-04-28 10:55:27,2026-04-28 10:55:27,Won,OdooBot,+61 420 928 664,0,1
+232,Galaxy Weblinks Limited. Ready,True,crm_lead_management.lead_demo_23,2026-05-19 04:47:11,2026-05-26 12:26:26,Demo Completed,Administrator,94065 82066,0,6
+188,Galaxy Weblinks Limited. Ready,False,crm_data_seed.lead_24,2026-04-28 10:55:27,2026-04-28 10:55:27,Demo Completed,OdooBot,94065 82066,0,1
+231,Synconics Technologies Pvt. Ltd.,True,crm_lead_management.lead_demo_22,2026-05-19 04:47:11,2026-05-26 12:26:26,Demo Completed,Administrator,9426864274,0,1
+25,Synconics Technologies Pvt. Ltd.,True,crm_data_seed.lead_23,2026-04-28 10:55:27,2026-05-26 12:17:15,Demo Completed,OdooBot,9426864274,1,13
+230,New Horizons Cybersoft Ltd Ready,True,crm_lead_management.lead_demo_21,2026-05-19 04:47:11,2026-05-26 12:26:26,Demo Completed,Administrator,93973 06732,0,3
+55,New Horizons Cybersoft Ltd Ready,True,crm_data_seed.lead_22,2026-04-28 10:55:27,2026-05-26 12:17:06,Lost,OdooBot,+91 93973 06732,1,6
+221,Tenth Planet Technologies- India,True,crm_lead_management.lead_demo_06,2026-05-19 04:47:11,2026-05-26 12:26:26,Demo Completed,Administrator,9840302789,1,3
+167,Tenth Planet Technologies- India,True,crm_data_seed.lead_7,2026-04-28 10:55:27,2026-05-26 12:16:08,Lost,OdooBot,+91 98403 02789,0,4
+217,HMRC INDUSTRY PRIVATE LIMITED,True,crm_lead_management.lead_demo_02,2026-05-19 04:47:11,2026-05-26 12:26:26,Demo Completed,Administrator,1169320163,1,4
+42,HMRC INDUSTRY PRIVATE LIMITED,False,crm_data_seed.lead_3,2026-04-28 10:55:27,2026-04-28 10:55:27,Demo Completed,OdooBot,+91 11 6932 0163,0,1
+187,Meeting with Ascetic Business Solution,False,crm_data_seed.lead_9,2026-04-28 10:55:27,2026-04-28 10:55:27,Demo Completed,OdooBot,+91 94274 25799,0,1
+8,Meeting with Ascetic Business Solution,True,crm_lead_management.lead_demo_08,2026-04-28 10:00:46,2026-05-26 12:26:26,Demo Completed,Administrator,94274 25799,1,5
+175,LINKS4ENGG INDIA PRIVATE LIMITED,True,crm_data_seed.lead_11,2026-04-28 10:55:27,2026-05-26 12:14:05,Lost,OdooBot,+91 73068 89096,1,5
+10,LINKS4ENGG INDIA PRIVATE LIMITED,True,crm_lead_management.lead_demo_10,2026-04-28 10:00:46,2026-05-26 12:26:26,Demo Completed,Administrator,73068 89096,0,3
+166,SA PODIT Services LLP - DearERP Demo,True,crm_data_seed.lead_13,2026-04-28 10:55:27,2026-05-26 12:16:55,Demo Completed,OdooBot,+91 98995 84666,1,5
+12,SA PODIT Services LLP - DearERP Demo,True,crm_lead_management.lead_demo_12,2026-04-28 10:00:46,2026-05-26 12:26:26,Demo Completed,Administrator,9899584666,1,4
+58,Evozard Consulting Services Private  Limited Silver,False,crm_data_seed.lead_2,2026-04-28 10:55:27,2026-04-28 10:55:27,Demo Completed,OdooBot,+91 80001 68707,0,1
+1,Evozard Consulting Services Private  Limited Silver,True,crm_lead_management.lead_demo_01,2026-04-28 10:00:46,2026-05-26 12:26:26,Demo Completed,Administrator,8000168707,2,5
+43,CLOUDSCIENCE LABS PRIVATE LIMITED,True,crm_data_seed.lead_10,2026-04-28 10:55:27,2026-05-12 10:59:52,Demo Completed,OdooBot,+91 92138 28808,1,3
+9,CLOUDSCIENCE LABS PRIVATE LIMITED,True,crm_lead_management.lead_demo_09,2026-04-28 10:00:46,2026-05-26 12:26:26,Demo Completed,Administrator,92138 28808,0,1
