@@ -4,6 +4,17 @@
     <menuitem id="menu_calling_guide_root" name="Calling Guide" sequence="80"/>
 
     <menuitem id="menu_calling_guide_all" name="All Countries (195)" parent="menu_calling_guide_root" action="action_country_calling_guide_all" sequence="1"/>
+    <menuitem id="menu_calling_guide_regions" name="Regions" parent="menu_calling_guide_root" sequence="2"/>
+
+    <menuitem id="menu_region_north_america" name="North America" parent="menu_calling_guide_regions" action="action_region_north_america" sequence="1"/>
+    <menuitem id="menu_region_latin_america" name="Latin America" parent="menu_calling_guide_regions" action="action_region_latin_america" sequence="2"/>
+    <menuitem id="menu_region_europe" name="Europe" parent="menu_calling_guide_regions" action="action_region_europe" sequence="3"/>
+    <menuitem id="menu_region_middle_east" name="Middle East" parent="menu_calling_guide_regions" action="action_region_middle_east" sequence="4"/>
+    <menuitem id="menu_region_africa" name="Africa" parent="menu_calling_guide_regions" action="action_region_africa" sequence="5"/>
+    <menuitem id="menu_region_south_asia" name="South Asia" parent="menu_calling_guide_regions" action="action_region_south_asia" sequence="6"/>
+    <menuitem id="menu_region_southeast_asia" name="Southeast Asia" parent="menu_calling_guide_regions" action="action_region_southeast_asia" sequence="7"/>
+    <menuitem id="menu_region_east_asia" name="East Asia" parent="menu_calling_guide_regions" action="action_region_east_asia" sequence="8"/>
+    <menuitem id="menu_region_oceania" name="Oceania" parent="menu_calling_guide_regions" action="action_region_oceania" sequence="9"/>
 
     <menuitem id="menu_slot_00" name="12 AM (—)" parent="menu_calling_guide_root" action="action_slot_00" sequence="10"/>
     <menuitem id="menu_slot_01" name="1 AM (—)" parent="menu_calling_guide_root" action="action_slot_01" sequence="11"/>
