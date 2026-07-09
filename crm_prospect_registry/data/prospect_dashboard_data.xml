@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="prospect_dashboard_main" model="x_erp.prospect_dashboard">
+        <field name="name">Prospect Registry Dashboard</field>
+    </record>
+</odoo>

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_prospect_list" model="ir.ui.view">
+        <field name="name">x_erp.prospect.list</field>
+        <field name="model">x_erp.prospect</field>
+        <field name="arch" type="xml">
+            <list string="Prospects"
+                  decoration-danger="status in ('lost','not_interested','do_not_contact','wrong_contact','duplicate')"
+                  decoration-warning="priority in ('high','hot','vip') or next_followup_date and next_followup_date &lt; context_today().strftime('%Y-%m-%d')"
+                  decoration-success="status in ('interested','highly_interested','customer')"
+                  decoration-info="status in ('demo_scheduled','proposal_sent','negotiation')">
+                <field name="name" string="Company"/>
+                <field name="contact_person" string="Contact"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="user_id" string="Salesperson" widget="many2one_avatar_user"/>
+                <field name="status" widget="badge"/>
+                <field name="priority" widget="badge"/>
+                <field name="number_of_calls" string="Calls"/>
+                <field name="number_of_emails" string="Emails"/>
+                <field name="total_meetings" string="Meetings"/>
+                <field name="next_followup_date" string="Follow-up Date"/>
+                <field name="last_contact_date" string="Last Contact"/>
+                <field name="country_id" string="Country"/>
+                <field name="industry"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_prospect_form" model="ir.ui.view">
+        <field name="name">x_erp.prospect.form</field>
+        <field name="model">x_erp.prospect</field>
+        <field name="arch" type="xml">
+            <form string="Prospect">
+                <header>
+                    <button name="action_convert_to_crm_lead" type="object" string="Convert to CRM Lead"
+                            class="btn-primary" invisible="lead_id"/>
+                    <button name="action_view_lead" type="object" string="Open CRM Lead"
+                            class="btn-secondary" invisible="not lead_id"/>
+                    <button name="action_check_duplicates" type="object" string="Check Duplicates"/>
+                    <button name="action_log_call" type="object" string="Log Call"/>
+                    <button name="action_log_email" type="object" string="Log Email"/>
+                    <button name="action_log_whatsapp" type="object" string="Log WhatsApp"/>
+                    <button name="action_schedule_followup" type="object" string="Schedule Follow-up"/>
+                    <field name="status" widget="statusbar"
+                           statusbar_visible="never_contacted,called,interested,demo_scheduled,proposal_sent,negotiation,customer,lost,not_interested,do_not_contact"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon"
+                            title="Duplicate"
+                            bg_color="text-bg-danger"
+                            invisible="not duplicate_detected"/>
+                    <widget name="web_ribbon"
+                            title="Do Not Contact"
+                            bg_color="text-bg-warning"
+                            invisible="status != 'do_not_contact'"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_duplicates"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-copy"
+                                invisible="duplicate_count == 0">
+                            <field name="duplicate_count" widget="statinfo" string="Duplicates"/>
+                        </button>
+                        <button name="action_view_activities"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-clock-o">
+                            <field name="activity_count" widget="statinfo" string="Activities"/>
+                        </button>
+                        <button name="action_view_lead"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-bullseye"
+                                invisible="not lead_id">
+                            <field name="lead_count" widget="statinfo" string="CRM Lead"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="Company name"/></h1>
+                    </div>
+                    <div class="alert alert-warning" role="alert" invisible="not duplicate_detected or duplicate_reviewed">
+                        <field name="duplicate_warning" nolabel="1" readonly="1"/>
+                    </div>
+                    <group>
+                        <group string="Company Information">
+                            <field name="company_logo" widget="image" class="oe_avatar"/>
+                            <field name="website" placeholder="https://example.com"/>
+                            <field name="industry"/>
+                            <field name="company_size"/>
+                            <field name="gst_number"/>
+                        </group>
+                        <group string="Sales Information">
+                            <field name="user_id" widget="many2one_avatar_user"/>
+                            <field name="lead_source_id"/>
+                            <field name="date_added"/>
+                            <field name="priority"/>
+                            <field name="call_result"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Contact">
+                            <field name="contact_person"/>
+                            <field name="designation"/>
+                            <field name="phone"/>
+                            <field name="mobile"/>
+                            <field name="email"/>
+                        </group>
+                        <group string="Address">
+                            <field name="country_id"/>
+                            <field name="state_id" domain="[('country_id', '=', country_id)]"/>
+                            <field name="city"/>
+                            <field name="street"/>
+                            <field name="street2"/>
+                            <field name="zip"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Social">
+                            <field name="linkedin"/>
+                            <field name="facebook"/>
+                            <field name="instagram"/>
+                        </group>
+                        <group string="Follow-up Metrics">
+                            <field name="first_contact_date"/>
+                            <field name="last_contact_date"/>
+                            <field name="last_activity_date"/>
+                            <field name="next_followup_date"/>
+                            <field name="number_of_calls"/>
+                            <field name="number_of_emails"/>
+                            <field name="number_of_whatsapp_messages"/>
+                            <field name="total_meetings"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Notes" name="notes">
+                            <field name="notes" nolabel="1"
+                                   placeholder="Called CEO. Currently using Odoo Enterprise. Looking for AI Copilot. Requested demo next Friday."/>
+                        </page>
+                        <page string="Products &amp; Tags" name="products_tags">
+                            <group>
+                                <field name="product_interest_ids" widget="many2many_tags"/>
+                                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                            </group>
+                        </page>
+                        <page string="Activity Timeline" name="timeline">
+                            <field name="timeline_activity_ids" context="{'default_prospect_id': id}">
+                                <list editable="bottom">
+                                    <field name="activity_datetime"/>
+                                    <field name="activity_type"/>
+                                    <field name="name"/>
+                                    <field name="call_result"/>
+                                    <field name="status_after"/>
+                                    <field name="next_followup_date"/>
+                                    <field name="user_id"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Attachments" name="attachments">
+                            <field name="attachment_ids" widget="many2many_binary" nolabel="1"/>
+                        </page>
+                        <page string="Duplicates" name="duplicates" invisible="duplicate_count == 0">
+                            <field name="duplicate_prospect_ids" readonly="1">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="user_id"/>
+                                    <field name="status"/>
+                                    <field name="last_contact_date"/>
+                                    <field name="phone"/>
+                                    <field name="email"/>
+                                    <field name="website"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Audit Log" name="audit_log">
+                            <field name="audit_log_ids" readonly="1">
+                                <list create="0" edit="0" delete="0">
+                                    <field name="change_date"/>
+                                    <field name="user_id"/>
+                                    <field name="action"/>
+                                    <field name="change_summary"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_prospect_kanban" model="ir.ui.view">
+        <field name="name">x_erp.prospect.kanban</field>
+        <field name="model">x_erp.prospect</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="status" class="o_kanban_small_column">
+                <field name="name"/>
+                <field name="contact_person"/>
+                <field name="phone"/>
+                <field name="status"/>
+                <field name="priority"/>
+                <field name="next_followup_date"/>
+                <field name="user_id"/>
+                <field name="last_activity_date"/>
+                <field name="duplicate_detected"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="p-2">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <strong><field name="name"/></strong>
+                                <span class="badge text-bg-danger" t-if="record.duplicate_detected.raw_value">Duplicate</span>
+                            </div>
+                            <div t-if="record.contact_person.raw_value" class="text-muted">
+                                <field name="contact_person"/>
+                            </div>
+                            <div t-if="record.phone.raw_value">
+                                <i class="fa fa-phone"/> <field name="phone"/>
+                            </div>
+                            <div class="mt-1">
+                                <span class="badge text-bg-secondary"><field name="status"/></span>
+                                <span class="badge text-bg-info ms-1"><field name="priority"/></span>
+                            </div>
+                            <div class="mt-1" t-if="record.next_followup_date.raw_value">
+                                <i class="fa fa-calendar"/> <field name="next_followup_date"/>
+                            </div>
+                            <div class="mt-1 text-muted">
+                                <field name="user_id" widget="many2one_avatar_user"/>
+                            </div>
+                            <div class="mt-1 text-muted" t-if="record.last_activity_date.raw_value">
+                                Last: <field name="last_activity_date"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_prospect_calendar" model="ir.ui.view">
+        <field name="name">x_erp.prospect.calendar</field>
+        <field name="model">x_erp.prospect</field>
+        <field name="arch" type="xml">
+            <calendar string="Prospect Follow-ups" mode="month" date_start="next_followup_date" color="user_id" event_limit="5">
+                <field name="name"/>
+                <field name="contact_person"/>
+                <field name="phone"/>
+                <field name="status"/>
+                <field name="priority"/>
+                <field name="user_id" filters="1" invisible="1"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="view_prospect_graph" model="ir.ui.view">
+        <field name="name">x_erp.prospect.graph</field>
+        <field name="model">x_erp.prospect</field>
+        <field name="arch" type="xml">
+            <graph string="Prospect Analysis" sample="1">
+                <field name="date_added" interval="month"/>
+                <field name="status"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_prospect_pivot" model="ir.ui.view">
+        <field name="name">x_erp.prospect.pivot</field>
+        <field name="model">x_erp.prospect</field>
+        <field name="arch" type="xml">
+            <pivot string="Prospect Analysis" sample="1">
+                <field name="date_added" interval="month" type="row"/>
+                <field name="status" type="col"/>
+                <field name="user_id" type="row"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_prospect_search" model="ir.ui.view">
+        <field name="name">x_erp.prospect.search</field>
+        <field name="model">x_erp.prospect</field>
+        <field name="arch" type="xml">
+            <search string="Search Prospects">
+                <field name="name" string="Global Search"
+                       filter_domain="['|','|','|','|','|','|','|','|','|','|','|','|','|','|',
+                           ('name','ilike',self),
+                           ('website','ilike',self),
+                           ('phone','ilike',self),
+                           ('mobile','ilike',self),
+                           ('email','ilike',self),
+                           ('linkedin','ilike',self),
+                           ('contact_person','ilike',self),
+                           ('city','ilike',self),
+                           ('country_id.name','ilike',self),
+                           ('user_id.name','ilike',self),
+                           ('industry','ilike',self),
+                           ('status','ilike',self),
+                           ('notes','ilike',self),
+                           ('tag_ids.name','ilike',self),
+                           ('product_interest_ids.name','ilike',self)]"/>
+                <field name="user_id"/>
+                <field name="status"/>
+                <field name="priority"/>
+                <field name="country_id"/>
+                <field name="industry"/>
+                <filter name="my_prospects" string="My Prospects" domain="[('user_id','=',uid)]"/>
+                <filter name="today_followup" string="Today's Follow-up" domain="[('next_followup_date','=',context_today().strftime('%Y-%m-%d'))]"/>
+                <filter name="interested" string="Interested" domain="[('status','in',('interested','highly_interested'))]"/>
+                <filter name="demo_scheduled" string="Demo Scheduled" domain="[('status','=','demo_scheduled')]"/>
+                <filter name="proposal_sent" string="Proposal Sent" domain="[('status','=','proposal_sent')]"/>
+                <filter name="negotiation" string="Negotiation" domain="[('status','=','negotiation')]"/>
+                <filter name="customer" string="Customer" domain="[('status','=','customer')]"/>
+                <filter name="lost" string="Lost" domain="[('status','=','lost')]"/>
+                <filter name="not_interested" string="Not Interested" domain="[('status','=','not_interested')]"/>
+                <filter name="do_not_contact" string="Do Not Contact" domain="[('status','=','do_not_contact')]"/>
+                <filter name="wrong_number" string="Wrong Number" domain="[('call_result','=','wrong_number')]"/>
+                <filter name="duplicate" string="Duplicate" domain="['|',('status','=','duplicate'),('duplicate_detected','=',True)]"/>
+                <filter name="high_priority" string="High Priority" domain="[('priority','in',('high','hot','vip'))]"/>
+                <filter name="hot_leads" string="Hot Leads" domain="[('priority','in',('hot','vip'))]"/>
+                <filter name="recently_added" string="Recently Added" domain="[('date_added','&gt;=',(context_today() - relativedelta(days=7)).strftime('%Y-%m-%d'))]"/>
+                <filter name="no_activity" string="No Activity" domain="['|',('last_activity_date','=',False),('last_activity_date','&lt;',(context_today() - relativedelta(days=30)).strftime('%Y-%m-%d'))]"/>
+                <separator/>
+                <group>
+                    <filter name="group_by_status" string="Status" context="{'group_by': 'status'}"/>
+                    <filter name="group_by_priority" string="Priority" context="{'group_by': 'priority'}"/>
+                    <filter name="group_by_salesperson" string="Salesperson" context="{'group_by': 'user_id'}"/>
+                    <filter name="group_by_country" string="Country" context="{'group_by': 'country_id'}"/>
+                    <filter name="group_by_industry" string="Industry" context="{'group_by': 'industry'}"/>
+                    <filter name="group_by_source" string="Lead Source" context="{'group_by': 'lead_source_id'}"/>
+                    <filter name="group_by_month" string="Month Added" context="{'group_by': 'date_added:month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_prospect_registry" model="ir.actions.act_window">
+        <field name="name">Prospect Registry</field>
+        <field name="res_model">x_erp.prospect</field>
+        <field name="view_mode">list,kanban,form,calendar,graph,pivot</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('view_prospect_list')}),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_prospect_kanban')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('view_prospect_form')}),
+            (0, 0, {'view_mode': 'calendar', 'view_id': ref('view_prospect_calendar')}),
+            (0, 0, {'view_mode': 'graph', 'view_id': ref('view_prospect_graph')}),
+            (0, 0, {'view_mode': 'pivot', 'view_id': ref('view_prospect_pivot')})]"/>
+        <field name="search_view_id" ref="view_prospect_search"/>
+        <field name="context">{'search_default_my_prospects': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add the first contacted company</p>
+            <p>Use this registry before calling or creating a CRM lead so rejected and duplicate companies are visible to the team.</p>
+        </field>
+    </record>
+
+    <record id="action_prospect_rejected" model="ir.actions.act_window">
+        <field name="name">Rejected / Do Not Call</field>
+        <field name="res_model">x_erp.prospect</field>
+        <field name="view_mode">list,kanban,form</field>
+        <field name="domain">[('status','in',('not_interested','lost','wrong_contact','do_not_contact','duplicate'))]</field>
+        <field name="search_view_id" ref="view_prospect_search"/>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('view_prospect_list')}),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_prospect_kanban')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('view_prospect_form')})]"/>
+    </record>
+
+    <record id="action_prospect_followups" model="ir.actions.act_window">
+        <field name="name">Today's Follow-ups</field>
+        <field name="res_model">x_erp.prospect</field>
+        <field name="view_mode">list,kanban,form,calendar</field>
+        <field name="search_view_id" ref="view_prospect_search"/>
+        <field name="context">{'search_default_today_followup': 1}</field>
+    </record>
+
+    <record id="action_prospect_analytics" model="ir.actions.act_window">
+        <field name="name">Prospect Analytics</field>
+        <field name="res_model">x_erp.prospect</field>
+        <field name="view_mode">graph,pivot,list</field>
+        <field name="search_view_id" ref="view_prospect_search"/>
+        <field name="context">{'search_default_group_by_month': 1}</field>
+    </record>
+
+</odoo>

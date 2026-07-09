@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_prospect_activity_list" model="ir.ui.view">
+        <field name="name">x_erp.prospect_activity.list</field>
+        <field name="model">x_erp.prospect_activity</field>
+        <field name="arch" type="xml">
+            <list string="Prospect Activity Timeline"
+                  decoration-info="activity_type in ('call','email','whatsapp')"
+                  decoration-warning="activity_type in ('followup','meeting','demo')"
+                  decoration-success="activity_type in ('proposal','conversion')"
+                  decoration-muted="activity_type in ('note','other')">
+                <field name="activity_datetime"/>
+                <field name="prospect_id"/>
+                <field name="activity_type" widget="badge"/>
+                <field name="name"/>
+                <field name="call_result" optional="show"/>
+                <field name="status_after" optional="hide"/>
+                <field name="next_followup_date"/>
+                <field name="user_id" widget="many2one_avatar_user"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_prospect_activity_form" model="ir.ui.view">
+        <field name="name">x_erp.prospect_activity.form</field>
+        <field name="model">x_erp.prospect_activity</field>
+        <field name="arch" type="xml">
+            <form string="Prospect Activity">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="Activity summary..."/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="prospect_id"/>
+                            <field name="activity_type"/>
+                            <field name="activity_datetime"/>
+                            <field name="user_id"/>
+                        </group>
+                        <group>
+                            <field name="call_result" invisible="activity_type != 'call'"/>
+                            <field name="status_after"/>
+                            <field name="next_followup_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Notes" name="notes">
+                            <field name="notes" nolabel="1" placeholder="Activity details..."/>
+                        </page>
+                        <page string="Attachments" name="attachments">
+                            <field name="attachment_ids" widget="many2many_binary" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_prospect_activity_kanban" model="ir.ui.view">
+        <field name="name">x_erp.prospect_activity.kanban</field>
+        <field name="model">x_erp.prospect_activity</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="activity_type">
+                <field name="name"/>
+                <field name="prospect_id"/>
+                <field name="activity_type"/>
+                <field name="activity_datetime"/>
+                <field name="user_id"/>
+                <field name="next_followup_date"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="p-2">
+                            <strong><field name="name"/></strong>
+                            <div class="text-muted"><field name="prospect_id"/></div>
+                            <div class="mt-1">
+                                <span class="badge text-bg-secondary"><field name="activity_type"/></span>
+                                <span class="ms-1"><field name="activity_datetime"/></span>
+                            </div>
+                            <div class="mt-1">
+                                <field name="user_id" widget="many2one_avatar_user"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_prospect_activity_calendar" model="ir.ui.view">
+        <field name="name">x_erp.prospect_activity.calendar</field>
+        <field name="model">x_erp.prospect_activity</field>
+        <field name="arch" type="xml">
+            <calendar string="Prospect Activities" mode="month" date_start="activity_datetime" color="user_id" event_limit="5">
+                <field name="name"/>
+                <field name="prospect_id"/>
+                <field name="activity_type"/>
+                <field name="user_id" filters="1" invisible="1"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="view_prospect_activity_search" model="ir.ui.view">
+        <field name="name">x_erp.prospect_activity.search</field>
+        <field name="model">x_erp.prospect_activity</field>
+        <field name="arch" type="xml">
+            <search string="Prospect Activities">
+                <field name="name"/>
+                <field name="prospect_id"/>
+                <field name="user_id"/>
+                <filter name="my_activities" string="My Activities" domain="[('user_id','=',uid)]"/>
+                <filter name="calls" string="Calls" domain="[('activity_type','=','call')]"/>
+                <filter name="emails" string="Emails" domain="[('activity_type','=','email')]"/>
+                <filter name="whatsapp" string="WhatsApp" domain="[('activity_type','=','whatsapp')]"/>
+                <filter name="meetings" string="Meetings" domain="[('activity_type','in',('meeting','demo'))]"/>
+                <filter name="followups" string="Follow-ups" domain="[('activity_type','=','followup')]"/>
+                <filter name="proposals" string="Proposals" domain="[('activity_type','=','proposal')]"/>
+                <group>
+                    <filter name="group_by_prospect" string="Prospect" context="{'group_by': 'prospect_id'}"/>
+                    <filter name="group_by_type" string="Activity Type" context="{'group_by': 'activity_type'}"/>
+                    <filter name="group_by_salesperson" string="Salesperson" context="{'group_by': 'user_id'}"/>
+                    <filter name="group_by_month" string="Month" context="{'group_by': 'activity_datetime:month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_prospect_activities" model="ir.actions.act_window">
+        <field name="name">Activity Timeline</field>
+        <field name="res_model">x_erp.prospect_activity</field>
+        <field name="view_mode">list,kanban,calendar,form</field>
+        <field name="search_view_id" ref="view_prospect_activity_search"/>
+        <field name="context">{'search_default_my_activities': 1}</field>
+    </record>
+
+</odoo>

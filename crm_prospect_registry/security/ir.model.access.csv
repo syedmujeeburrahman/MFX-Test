@@ -1,0 +1,19 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_x_erp_prospect_salesman,x_erp.prospect salesman,model_x_erp_prospect,sales_team.group_sale_salesman,1,1,1,0
+access_x_erp_prospect_manager,x_erp.prospect manager,model_x_erp_prospect,sales_team.group_sale_manager,1,1,1,1
+access_x_erp_prospect_admin,x_erp.prospect admin,model_x_erp_prospect,base.group_system,1,1,1,1
+access_x_erp_prospect_activity_salesman,x_erp.prospect.activity salesman,model_x_erp_prospect_activity,sales_team.group_sale_salesman,1,1,1,0
+access_x_erp_prospect_activity_manager,x_erp.prospect.activity manager,model_x_erp_prospect_activity,sales_team.group_sale_manager,1,1,1,1
+access_x_erp_prospect_activity_admin,x_erp.prospect.activity admin,model_x_erp_prospect_activity,base.group_system,1,1,1,1
+access_x_erp_prospect_product_salesman,x_erp.prospect.product salesman,model_x_erp_prospect_product,sales_team.group_sale_salesman,1,0,0,0
+access_x_erp_prospect_product_manager,x_erp.prospect.product manager,model_x_erp_prospect_product,sales_team.group_sale_manager,1,1,1,1
+access_x_erp_prospect_product_admin,x_erp.prospect.product admin,model_x_erp_prospect_product,base.group_system,1,1,1,1
+access_x_erp_prospect_audit_log_salesman,x_erp.prospect.audit.log salesman,model_x_erp_prospect_audit_log,sales_team.group_sale_salesman,1,0,0,0
+access_x_erp_prospect_audit_log_manager,x_erp.prospect.audit.log manager,model_x_erp_prospect_audit_log,sales_team.group_sale_manager,1,0,0,0
+access_x_erp_prospect_audit_log_admin,x_erp.prospect.audit.log admin,model_x_erp_prospect_audit_log,base.group_system,1,1,1,1
+access_x_erp_prospect_dashboard_salesman,x_erp.prospect.dashboard salesman,model_x_erp_prospect_dashboard,sales_team.group_sale_salesman,1,0,0,0
+access_x_erp_prospect_dashboard_manager,x_erp.prospect.dashboard manager,model_x_erp_prospect_dashboard,sales_team.group_sale_manager,1,1,1,1
+access_x_erp_prospect_dashboard_admin,x_erp.prospect.dashboard admin,model_x_erp_prospect_dashboard,base.group_system,1,1,1,1
+access_x_erp_prospect_duplicate_wizard_salesman,x_erp.prospect.duplicate.wizard salesman,model_x_erp_prospect_duplicate_wizard,sales_team.group_sale_salesman,1,1,1,1
+access_x_erp_prospect_duplicate_wizard_manager,x_erp.prospect.duplicate.wizard manager,model_x_erp_prospect_duplicate_wizard,sales_team.group_sale_manager,1,1,1,1
+access_x_erp_prospect_duplicate_wizard_admin,x_erp.prospect.duplicate.wizard admin,model_x_erp_prospect_duplicate_wizard,base.group_system,1,1,1,1

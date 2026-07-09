@@ -1,0 +1,61 @@
+PROSPECT_PRIORITY_SELECTION = [
+    ('low', 'Low'),
+    ('medium', 'Medium'),
+    ('high', 'High'),
+    ('hot', 'Hot'),
+    ('vip', 'VIP'),
+]
+
+PROSPECT_STATUS_SELECTION = [
+    ('never_contacted', 'Never Contacted'),
+    ('called', 'Called'),
+    ('interested', 'Interested'),
+    ('highly_interested', 'Highly Interested'),
+    ('demo_scheduled', 'Demo Scheduled'),
+    ('demo_completed', 'Demo Completed'),
+    ('proposal_sent', 'Proposal Sent'),
+    ('negotiation', 'Negotiation'),
+    ('customer', 'Customer'),
+    ('lost', 'Lost'),
+    ('not_interested', 'Not Interested'),
+    ('wrong_contact', 'Wrong Contact'),
+    ('duplicate', 'Duplicate'),
+    ('do_not_contact', 'Do Not Contact'),
+    ('already_using_odoo', 'Already Using Odoo'),
+    ('already_using_dearerp', 'Already Using DearERP'),
+    ('competitor_customer', 'Competitor Customer'),
+    ('call_back_later', 'Call Back Later'),
+]
+
+CALL_RESULT_SELECTION = [
+    ('connected', 'Connected'),
+    ('no_answer', 'No Answer'),
+    ('busy', 'Busy'),
+    ('call_declined', 'Call Declined'),
+    ('switched_off', 'Switched Off'),
+    ('voicemail', 'Voicemail'),
+    ('wrong_number', 'Wrong Number'),
+    ('receptionist', 'Receptionist'),
+    ('meeting_scheduled', 'Meeting Scheduled'),
+    ('requested_email', 'Requested Email'),
+    ('requested_whatsapp', 'Requested WhatsApp'),
+    ('requested_brochure', 'Requested Brochure'),
+    ('need_followup', 'Need Follow-up'),
+    ('rejected', 'Rejected'),
+    ('interested', 'Interested'),
+]
+
+PROSPECT_ACTIVITY_TYPE_SELECTION = [
+    ('call', 'Call'),
+    ('email', 'Email Sent'),
+    ('whatsapp', 'WhatsApp Sent'),
+    ('meeting', 'Meeting'),
+    ('followup', 'Follow-up'),
+    ('demo', 'Demo'),
+    ('proposal', 'Proposal Sent'),
+    ('note', 'Note'),
+    ('status_change', 'Status Change'),
+    ('conversion', 'CRM Conversion'),
+    ('duplicate', 'Duplicate Review'),
+    ('other', 'Other'),
+]
