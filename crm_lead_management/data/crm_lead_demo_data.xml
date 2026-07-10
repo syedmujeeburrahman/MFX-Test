@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="0">
+<!--
+    Demo leads used for client presentations.
 
-    <record id="lead_demo_01" model="crm.lead">
+    Loaded only when the database is created with demo data enabled
+    (referenced from the manifest's `demo` key, not `data`).
+
+    Records are marked noupdate=1 + forcecreate=False so that:
+      * existing demo records are never overwritten on module upgrade
+      * demo records the user deletes do NOT get re-created on upgrade
+-->
+<odoo noupdate="1">
+
+    <record id="lead_demo_01" model="crm.lead" forcecreate="False">
         <field name="name">Evozard Consulting Services Private  Limited Silver</field>
         <field name="partner_name">Evozard Consulting Services Private  Limited Silver</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -15,7 +25,7 @@
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_02" model="crm.lead">
+    <record id="lead_demo_02" model="crm.lead" forcecreate="False">
         <field name="name">HMRC INDUSTRY PRIVATE LIMITED</field>
         <field name="partner_name">HMRC INDUSTRY PRIVATE LIMITED</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -28,7 +38,7 @@
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_03" model="crm.lead">
+    <record id="lead_demo_03" model="crm.lead" forcecreate="False">
         <field name="name">Variety IT</field>
         <field name="partner_name">Variety IT</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -41,7 +51,7 @@
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_04" model="crm.lead">
+    <record id="lead_demo_04" model="crm.lead" forcecreate="False">
         <field name="name">7Span Internet Private Limited Ready</field>
         <field name="partner_name">7Span Internet Private Limited Ready</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -55,7 +65,7 @@
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_05" model="crm.lead">
+    <record id="lead_demo_05" model="crm.lead" forcecreate="False">
         <field name="name">Sudheendra Walvekar</field>
         <field name="partner_name">Sudheendra Walvekar</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -71,7 +81,7 @@ Demo is done, he will get back to me, and really impress
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_06" model="crm.lead">
+    <record id="lead_demo_06" model="crm.lead" forcecreate="False">
         <field name="name">Tenth Planet Technologies- India</field>
         <field name="partner_name">Tenth Planet Technologies- India</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -85,7 +95,7 @@ Demo is done, he will get back to me, and really impress
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_07" model="crm.lead">
+    <record id="lead_demo_07" model="crm.lead" forcecreate="False">
         <field name="name">Accurate Management System</field>
         <field name="partner_name">Accurate Management System</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -98,7 +108,7 @@ Demo is done, he will get back to me, and really impress
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_08" model="crm.lead">
+    <record id="lead_demo_08" model="crm.lead" forcecreate="False">
         <field name="name">Meeting with Ascetic Business Solution</field>
         <field name="partner_name">Meeting with Ascetic Business Solution</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -112,7 +122,7 @@ Demo is done, he will get back to me, and really impress
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_09" model="crm.lead">
+    <record id="lead_demo_09" model="crm.lead" forcecreate="False">
         <field name="name">CLOUDSCIENCE LABS PRIVATE LIMITED</field>
         <field name="partner_name">CLOUDSCIENCE LABS PRIVATE LIMITED</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -125,7 +135,7 @@ Demo is done, he will get back to me, and really impress
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_10" model="crm.lead">
+    <record id="lead_demo_10" model="crm.lead" forcecreate="False">
         <field name="name">LINKS4ENGG INDIA PRIVATE LIMITED</field>
         <field name="partner_name">LINKS4ENGG INDIA PRIVATE LIMITED</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -137,7 +147,7 @@ Demo is done, he will get back to me, and really impress
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_11" model="crm.lead">
+    <record id="lead_demo_11" model="crm.lead" forcecreate="False">
         <field name="name">Systems codes</field>
         <field name="partner_name">Systems codes</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -150,7 +160,7 @@ Demo is done, he will get back to me, and really impress
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_12" model="crm.lead">
+    <record id="lead_demo_12" model="crm.lead" forcecreate="False">
         <field name="name">SA PODIT Services LLP - DearERP Demo</field>
         <field name="partner_name">SA PODIT Services LLP - DearERP Demo</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -162,7 +172,7 @@ Demo is done, he will get back to me, and really impress
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_13" model="crm.lead">
+    <record id="lead_demo_13" model="crm.lead" forcecreate="False">
         <field name="name">Arsalan Yasin - DearERP Demo</field>
         <field name="partner_name">Arsalan Yasin - DearERP Demo</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -175,7 +185,7 @@ Demo is done, he will get back to me, and really impress
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_14" model="crm.lead">
+    <record id="lead_demo_14" model="crm.lead" forcecreate="False">
         <field name="name">Amer - Experts In Tech, Saudi arab</field>
         <field name="partner_name">Amer - Experts In Tech, Saudi arab</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -188,7 +198,7 @@ Demo is done, he will get back to me, and really impress
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_15" model="crm.lead">
+    <record id="lead_demo_15" model="crm.lead" forcecreate="False">
         <field name="name">alligatorinfosoft</field>
         <field name="partner_name">alligatorinfosoft</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -201,7 +211,7 @@ on 8 he will be meeting I will call him Friday.</field>
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_16" model="crm.lead">
+    <record id="lead_demo_16" model="crm.lead" forcecreate="False">
         <field name="name">Tatvamasilabs</field>
         <field name="partner_name">Tatvamasilabs</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -213,7 +223,7 @@ don’t have time to porceed.</field>
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_17" model="crm.lead">
+    <record id="lead_demo_17" model="crm.lead" forcecreate="False">
         <field name="name">Nimesh captivea</field>
         <field name="partner_name">Nimesh captivea</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -224,7 +234,7 @@ don’t have time to porceed.</field>
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_18" model="crm.lead">
+    <record id="lead_demo_18" model="crm.lead" forcecreate="False">
         <field name="name">QWY SOFTWARE PRIVATE LIMITED -  Sarat</field>
         <field name="partner_name">QWY SOFTWARE PRIVATE LIMITED -  Sarat</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -236,7 +246,7 @@ don’t have time to porceed.</field>
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_19" model="crm.lead">
+    <record id="lead_demo_19" model="crm.lead" forcecreate="False">
         <field name="name">Therp BV (Netherlands)</field>
         <field name="partner_name">Therp BV (Netherlands)</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -252,7 +262,7 @@ will be connect after one week</field>
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_20" model="crm.lead">
+    <record id="lead_demo_20" model="crm.lead" forcecreate="False">
         <field name="name">PreComp (Malaysia) Sdn Bhd</field>
         <field name="partner_name">PreComp (Malaysia) Sdn Bhd</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -267,7 +277,7 @@ will be connect after one week</field>
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_21" model="crm.lead">
+    <record id="lead_demo_21" model="crm.lead" forcecreate="False">
         <field name="name">New Horizons Cybersoft Ltd Ready</field>
         <field name="partner_name">New Horizons Cybersoft Ltd Ready</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -280,7 +290,7 @@ contact us</field>
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_22" model="crm.lead">
+    <record id="lead_demo_22" model="crm.lead" forcecreate="False">
         <field name="name">Synconics Technologies Pvt. Ltd.</field>
         <field name="partner_name">Synconics Technologies Pvt. Ltd.</field>
         <field name="website">https://www.synconics.com/</field>
@@ -295,7 +305,7 @@ come , after 10 days when clients will get onboarded</field>
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_23" model="crm.lead">
+    <record id="lead_demo_23" model="crm.lead" forcecreate="False">
         <field name="name">Galaxy Weblinks Limited. Ready</field>
         <field name="partner_name">Galaxy Weblinks Limited. Ready</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>
@@ -308,7 +318,7 @@ starter plan is 20$ onky, seems he is not buy</field>
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_demo_24" model="crm.lead">
+    <record id="lead_demo_24" model="crm.lead" forcecreate="False">
         <field name="name">Cloud Systems for Information Technology , KSA</field>
         <field name="partner_name">Cloud Systems for Information Technology , KSA</field>
         <field name="stage_id" ref="crm_lead_management.stage_demo_completed"/>

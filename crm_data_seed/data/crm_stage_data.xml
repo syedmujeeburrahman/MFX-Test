@@ -4,28 +4,28 @@
     <!-- Pipeline stages used in the legacy instance that are not part of the
          standard Odoo / crm_lead_management seed. -->
 
-    <record id="stage_prospect_identified" model="crm.stage">
+    <record id="stage_prospect_identified" model="crm.stage" forcecreate="False">
         <field name="name">Prospect Identified</field>
         <field name="sequence">1</field>
         <field name="is_won" eval="False"/>
         <field name="fold" eval="False"/>
     </record>
 
-    <record id="stage_initial_discussion" model="crm.stage">
+    <record id="stage_initial_discussion" model="crm.stage" forcecreate="False">
         <field name="name">Initial Discussion</field>
         <field name="sequence">2</field>
         <field name="is_won" eval="False"/>
         <field name="fold" eval="False"/>
     </record>
 
-    <record id="stage_technical_discussion" model="crm.stage">
+    <record id="stage_technical_discussion" model="crm.stage" forcecreate="False">
         <field name="name">Technical Discussion</field>
         <field name="sequence">3</field>
         <field name="is_won" eval="False"/>
         <field name="fold" eval="False"/>
     </record>
 
-    <record id="stage_no_response" model="crm.stage">
+    <record id="stage_no_response" model="crm.stage" forcecreate="False">
         <field name="name">No Response</field>
         <field name="sequence">90</field>
         <field name="is_won" eval="False"/>

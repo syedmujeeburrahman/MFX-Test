@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="1">
 
-    <record id="lead_23" model="crm.lead">
+    <record id="lead_23" model="crm.lead" forcecreate="False">
         <field name="name">Synconics Technologies Pvt. Ltd.</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -20,7 +20,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_162" model="crm.lead">
+    <record id="lead_162" model="crm.lead" forcecreate="False">
         <field name="name">Turkey Prospect - Drysharks Consulting  and trading LTD Silver</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -44,7 +44,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_157" model="crm.lead">
+    <record id="lead_157" model="crm.lead" forcecreate="False">
         <field name="name">Skytech Cyber Cloud - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -62,7 +62,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_179" model="crm.lead">
+    <record id="lead_179" model="crm.lead" forcecreate="False">
         <field name="name">Mahmoud Bakry - Egypt Prospect - Odoo Functional Consultant</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -77,7 +77,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_44" model="crm.lead">
+    <record id="lead_44" model="crm.lead" forcecreate="False">
         <field name="name">Apagen Solutions Pvt Ltd - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -94,7 +94,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_144" model="crm.lead">
+    <record id="lead_144" model="crm.lead" forcecreate="False">
         <field name="name">Metch Information Technology - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -111,7 +111,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_126" model="crm.lead">
+    <record id="lead_126" model="crm.lead" forcecreate="False">
         <field name="name">OzonLayer (بيان النظم لتقنية المعلومات) - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -127,7 +127,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_129" model="crm.lead">
+    <record id="lead_129" model="crm.lead" forcecreate="False">
         <field name="name">Encode - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -143,7 +143,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_145" model="crm.lead">
+    <record id="lead_145" model="crm.lead" forcecreate="False">
         <field name="name">Ace Star Tech Systems Integration Sdn. Bhd. - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -160,7 +160,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_130" model="crm.lead">
+    <record id="lead_130" model="crm.lead" forcecreate="False">
         <field name="name">WORKFORCER Management W.L.L - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -176,7 +176,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_149" model="crm.lead">
+    <record id="lead_149" model="crm.lead" forcecreate="False">
         <field name="name">Top Cliff Consultancy - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -193,7 +193,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_150" model="crm.lead">
+    <record id="lead_150" model="crm.lead" forcecreate="False">
         <field name="name">Rabeh Consulting Services and Trade - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -209,7 +209,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_152" model="crm.lead">
+    <record id="lead_152" model="crm.lead" forcecreate="False">
         <field name="name">Qunited Consulting Services - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -225,7 +225,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_154" model="crm.lead">
+    <record id="lead_154" model="crm.lead" forcecreate="False">
         <field name="name">iTeam (Intelligent Technology  Engineering &amp; Management) - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -242,7 +242,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_158" model="crm.lead">
+    <record id="lead_158" model="crm.lead" forcecreate="False">
         <field name="name">Wedoo - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -260,7 +260,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_160" model="crm.lead">
+    <record id="lead_160" model="crm.lead" forcecreate="False">
         <field name="name">Acsone SA/NV - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -277,7 +277,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_161" model="crm.lead">
+    <record id="lead_161" model="crm.lead" forcecreate="False">
         <field name="name">NextMove Business Solutions - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -293,7 +293,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_3" model="crm.lead">
+    <record id="lead_3" model="crm.lead" forcecreate="False">
         <field name="name">HMRC INDUSTRY PRIVATE LIMITED</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -312,7 +312,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_next_followup_date">2026-03-23</field>
     </record>
 
-    <record id="lead_10" model="crm.lead">
+    <record id="lead_10" model="crm.lead" forcecreate="False">
         <field name="name">CLOUDSCIENCE LABS PRIVATE LIMITED</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -329,7 +329,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_180" model="crm.lead">
+    <record id="lead_180" model="crm.lead" forcecreate="False">
         <field name="name">Vyshnav A R - Senior Odoo Developer | Odoo Techno Consultant</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -344,7 +344,7 @@ come , after 10 days when clients will get onboarded</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_20" model="crm.lead">
+    <record id="lead_20" model="crm.lead" forcecreate="False">
         <field name="name">Therp BV (Netherlands)</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -363,7 +363,7 @@ will be connect after one week</p>]]></field>
         <field name="x_next_followup_date">2026-04-16</field>
     </record>
 
-    <record id="lead_27" model="crm.lead">
+    <record id="lead_27" model="crm.lead" forcecreate="False">
         <field name="name">Himachal</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -377,7 +377,7 @@ will be connect after one week</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_28" model="crm.lead">
+    <record id="lead_28" model="crm.lead" forcecreate="False">
         <field name="name">NavyBits</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -392,7 +392,7 @@ will be connect after one week</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_29" model="crm.lead">
+    <record id="lead_29" model="crm.lead" forcecreate="False">
         <field name="name">Aspireal Technologies Pvt. Ltd. - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -411,7 +411,7 @@ stated people are in travel so I need time</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_30" model="crm.lead">
+    <record id="lead_30" model="crm.lead" forcecreate="False">
         <field name="name">Oodu Implementers Private Limited - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -430,7 +430,7 @@ waiting for their reply</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_33" model="crm.lead">
+    <record id="lead_33" model="crm.lead" forcecreate="False">
         <field name="name">Tatvamasi Labs - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -448,7 +448,7 @@ call so that I will conduct according to their time</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_34" model="crm.lead">
+    <record id="lead_34" model="crm.lead" forcecreate="False">
         <field name="name">Primacy Infotech Private Limited - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -465,7 +465,7 @@ call so that I will conduct according to their time</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_25" model="crm.lead">
+    <record id="lead_25" model="crm.lead" forcecreate="False">
         <field name="name">Cloud Systems for Information Technology , KSA</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -483,7 +483,7 @@ call so that I will conduct according to their time</p>]]></field>
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_19" model="crm.lead">
+    <record id="lead_19" model="crm.lead" forcecreate="False">
         <field name="name">QWY SOFTWARE PRIVATE LIMITED -  Sarat</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -505,7 +505,7 @@ call so that I will conduct according to their time</p>]]></field>
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_14" model="crm.lead">
+    <record id="lead_14" model="crm.lead" forcecreate="False">
         <field name="name">Arsalan Yasin - DearERP Demo</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -529,7 +529,7 @@ call so that I will conduct according to their time</p>]]></field>
         <field name="x_contacted_by" ref="base.user_admin"/>
     </record>
 
-    <record id="lead_22" model="crm.lead">
+    <record id="lead_22" model="crm.lead" forcecreate="False">
         <field name="name">New Horizons Cybersoft Ltd Ready</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -548,7 +548,7 @@ contact us</p>]]></field>
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_21" model="crm.lead">
+    <record id="lead_21" model="crm.lead" forcecreate="False">
         <field name="name">PreComp (Malaysia) Sdn Bhd</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -569,7 +569,7 @@ contact us</p>]]></field>
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_12" model="crm.lead">
+    <record id="lead_12" model="crm.lead" forcecreate="False">
         <field name="name">Systems codes</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -587,7 +587,7 @@ contact us</p>]]></field>
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_2" model="crm.lead">
+    <record id="lead_2" model="crm.lead" forcecreate="False">
         <field name="name">Evozard Consulting Services Private  Limited Silver</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -607,7 +607,7 @@ contact us</p>]]></field>
         <field name="x_next_followup_date">2026-02-04</field>
     </record>
 
-    <record id="lead_31" model="crm.lead">
+    <record id="lead_31" model="crm.lead" forcecreate="False">
         <field name="name">Prixgen Tech Solutions Private Limited - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -625,7 +625,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_35" model="crm.lead">
+    <record id="lead_35" model="crm.lead" forcecreate="False">
         <field name="name">Linescripts Softwares Pvt. Ltd. - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -642,7 +642,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_37" model="crm.lead">
+    <record id="lead_37" model="crm.lead" forcecreate="False">
         <field name="name">AGBE Technology Solutions Private  Limited - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -659,7 +659,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_38" model="crm.lead">
+    <record id="lead_38" model="crm.lead" forcecreate="False">
         <field name="name">SETU CONSULTING SERVICES PRIVATE  LIMITED - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -676,7 +676,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_39" model="crm.lead">
+    <record id="lead_39" model="crm.lead" forcecreate="False">
         <field name="name">SYGMETIV PRIVATE LIMITED - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -692,7 +692,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_40" model="crm.lead">
+    <record id="lead_40" model="crm.lead" forcecreate="False">
         <field name="name">Entrivis Tech Pvt Ltd - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -709,7 +709,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_42" model="crm.lead">
+    <record id="lead_42" model="crm.lead" forcecreate="False">
         <field name="name">DeckSpectra Technologies LLP - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -726,7 +726,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_43" model="crm.lead">
+    <record id="lead_43" model="crm.lead" forcecreate="False">
         <field name="name">Jupical Technologies Pvt. Ltd. - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -743,7 +743,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_45" model="crm.lead">
+    <record id="lead_45" model="crm.lead" forcecreate="False">
         <field name="name">PRASHANT DINDAYAL POPALI - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -760,7 +760,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_46" model="crm.lead">
+    <record id="lead_46" model="crm.lead" forcecreate="False">
         <field name="name">ASCENSIVE TECHNOLOGIES LLP - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -777,7 +777,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_50" model="crm.lead">
+    <record id="lead_50" model="crm.lead" forcecreate="False">
         <field name="name">SDK Infinity Technologies Pvt Ltd - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -794,7 +794,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_53" model="crm.lead">
+    <record id="lead_53" model="crm.lead" forcecreate="False">
         <field name="name">SA PODIT Services LLP - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -813,7 +813,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_54" model="crm.lead">
+    <record id="lead_54" model="crm.lead" forcecreate="False">
         <field name="name">Skyscend Business Solutions Pvt. Ltd. - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -832,7 +832,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_48" model="crm.lead">
+    <record id="lead_48" model="crm.lead" forcecreate="False">
         <field name="name">Mordant Business Solutions - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -851,7 +851,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_47" model="crm.lead">
+    <record id="lead_47" model="crm.lead" forcecreate="False">
         <field name="name">Kavi Software Technologies Pvt Ltd - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -872,7 +872,7 @@ Busy</p>]]></field>
         <field name="x_contacted_by" ref="base.user_admin"/>
     </record>
 
-    <record id="lead_62" model="crm.lead">
+    <record id="lead_62" model="crm.lead" forcecreate="False">
         <field name="name">FINABLE CONSULTING PRIVATE LIMITED - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -889,7 +889,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_63" model="crm.lead">
+    <record id="lead_63" model="crm.lead" forcecreate="False">
         <field name="name">Nioses Tech Private Limited - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -906,7 +906,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_64" model="crm.lead">
+    <record id="lead_64" model="crm.lead" forcecreate="False">
         <field name="name">SunArc Technologies - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -923,7 +923,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_65" model="crm.lead">
+    <record id="lead_65" model="crm.lead" forcecreate="False">
         <field name="name">Guru Enterprise Business Solutions - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -940,7 +940,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_66" model="crm.lead">
+    <record id="lead_66" model="crm.lead" forcecreate="False">
         <field name="name">Uncanny Consulting Services LLP - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -957,7 +957,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_67" model="crm.lead">
+    <record id="lead_67" model="crm.lead" forcecreate="False">
         <field name="name">Globalteckz - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -974,7 +974,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_68" model="crm.lead">
+    <record id="lead_68" model="crm.lead" forcecreate="False">
         <field name="name">INFINTOR SOLUTIONS LLP - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -991,7 +991,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_69" model="crm.lead">
+    <record id="lead_69" model="crm.lead" forcecreate="False">
         <field name="name">iFenSys InfoTech Private Limited - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1008,7 +1008,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_70" model="crm.lead">
+    <record id="lead_70" model="crm.lead" forcecreate="False">
         <field name="name">Heliconia Solutions Pvt. Ltd. - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1025,7 +1025,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_71" model="crm.lead">
+    <record id="lead_71" model="crm.lead" forcecreate="False">
         <field name="name">Shadail Technology Private Limited - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1042,7 +1042,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_72" model="crm.lead">
+    <record id="lead_72" model="crm.lead" forcecreate="False">
         <field name="name">TECHOSOFT SOLUTIONS (OPC) PRIVATE LIMITED - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1059,7 +1059,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_73" model="crm.lead">
+    <record id="lead_73" model="crm.lead" forcecreate="False">
         <field name="name">Veevee Infotech - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1076,7 +1076,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_74" model="crm.lead">
+    <record id="lead_74" model="crm.lead" forcecreate="False">
         <field name="name">Zen Software Solutions Private Limited - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1093,7 +1093,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_75" model="crm.lead">
+    <record id="lead_75" model="crm.lead" forcecreate="False">
         <field name="name">ABBLEZ TECHNOLOGIES AND ROBOTICS LLP - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1110,7 +1110,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_76" model="crm.lead">
+    <record id="lead_76" model="crm.lead" forcecreate="False">
         <field name="name">Icon TechSoft Pvt. Ltd. - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1127,7 +1127,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_77" model="crm.lead">
+    <record id="lead_77" model="crm.lead" forcecreate="False">
         <field name="name">Leofren Technologies - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1144,7 +1144,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_60" model="crm.lead">
+    <record id="lead_60" model="crm.lead" forcecreate="False">
         <field name="name">A1 Consulting (formerly Onnet Consulting) - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1161,7 +1161,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_58" model="crm.lead">
+    <record id="lead_58" model="crm.lead" forcecreate="False">
         <field name="name">CRYSTALDATA SOFTWARE SERVICES INDIA  PRIVATE LIMITED - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1182,7 +1182,7 @@ Busy</p>]]></field>
         <field name="x_contacted_by" ref="base.user_admin"/>
     </record>
 
-    <record id="lead_78" model="crm.lead">
+    <record id="lead_78" model="crm.lead" forcecreate="False">
         <field name="name">Aktiv Software Pvt. Ltd. - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1199,7 +1199,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_79" model="crm.lead">
+    <record id="lead_79" model="crm.lead" forcecreate="False">
         <field name="name">NAKSHATRA SALES &amp; SERVICES - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1216,7 +1216,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_80" model="crm.lead">
+    <record id="lead_80" model="crm.lead" forcecreate="False">
         <field name="name">Eternal Web Private Limited - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1233,7 +1233,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_81" model="crm.lead">
+    <record id="lead_81" model="crm.lead" forcecreate="False">
         <field name="name">NORX CLOUD - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1250,7 +1250,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_82" model="crm.lead">
+    <record id="lead_82" model="crm.lead" forcecreate="False">
         <field name="name">Absolin Software Solutions LLP - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1267,7 +1267,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_83" model="crm.lead">
+    <record id="lead_83" model="crm.lead" forcecreate="False">
         <field name="name">TECHVOOT SOLUTIONS - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1284,7 +1284,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_84" model="crm.lead">
+    <record id="lead_84" model="crm.lead" forcecreate="False">
         <field name="name">Auxintech Cloud Solutions Private Limited - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1301,7 +1301,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_85" model="crm.lead">
+    <record id="lead_85" model="crm.lead" forcecreate="False">
         <field name="name">Rasard Teknoloji - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1318,7 +1318,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_86" model="crm.lead">
+    <record id="lead_86" model="crm.lead" forcecreate="False">
         <field name="name">Drysharks Consulting  and trading LTD - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1335,7 +1335,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_87" model="crm.lead">
+    <record id="lead_87" model="crm.lead" forcecreate="False">
         <field name="name">Core One Ltd - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1352,7 +1352,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_89" model="crm.lead">
+    <record id="lead_89" model="crm.lead" forcecreate="False">
         <field name="name">Global Solutions - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1368,7 +1368,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_90" model="crm.lead">
+    <record id="lead_90" model="crm.lead" forcecreate="False">
         <field name="name">OdooTec أُودُوتِكْ - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1384,7 +1384,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_91" model="crm.lead">
+    <record id="lead_91" model="crm.lead" forcecreate="False">
         <field name="name">Intelligent Experts Technology (IET) - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1400,7 +1400,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_92" model="crm.lead">
+    <record id="lead_92" model="crm.lead" forcecreate="False">
         <field name="name">TeleNoc (هلكون لتقنية المعلومات) - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1416,7 +1416,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_93" model="crm.lead">
+    <record id="lead_93" model="crm.lead" forcecreate="False">
         <field name="name">Premium Tech - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1432,7 +1432,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_94" model="crm.lead">
+    <record id="lead_94" model="crm.lead" forcecreate="False">
         <field name="name">Prof Business - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1449,7 +1449,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_95" model="crm.lead">
+    <record id="lead_95" model="crm.lead" forcecreate="False">
         <field name="name">Intelldigit solutions - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1465,7 +1465,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_96" model="crm.lead">
+    <record id="lead_96" model="crm.lead" forcecreate="False">
         <field name="name">Peerless - KSA - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1482,7 +1482,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_97" model="crm.lead">
+    <record id="lead_97" model="crm.lead" forcecreate="False">
         <field name="name">Integrated Technology  Software Solution (ITSS) - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1498,7 +1498,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_98" model="crm.lead">
+    <record id="lead_98" model="crm.lead" forcecreate="False">
         <field name="name">NAQLAH Technologies - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1514,7 +1514,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_99" model="crm.lead">
+    <record id="lead_99" model="crm.lead" forcecreate="False">
         <field name="name">Upward Technologies - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1531,7 +1531,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_100" model="crm.lead">
+    <record id="lead_100" model="crm.lead" forcecreate="False">
         <field name="name">Ideal Lines Computer  Systems (iLines) - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1547,7 +1547,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_32" model="crm.lead">
+    <record id="lead_32" model="crm.lead" forcecreate="False">
         <field name="name">Technogeo Soft Solution Pvt. Ltd - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1564,7 +1564,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_101" model="crm.lead">
+    <record id="lead_101" model="crm.lead" forcecreate="False">
         <field name="name">Masa- الشركة العربية المتخصصة للإستشارات  وتقنية المعلومات - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1581,7 +1581,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_102" model="crm.lead">
+    <record id="lead_102" model="crm.lead" forcecreate="False">
         <field name="name">Centione Arabia - عرين الحلول لتقنية نظم المعلومات - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1597,7 +1597,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_134" model="crm.lead">
+    <record id="lead_134" model="crm.lead" forcecreate="False">
         <field name="name">Apps Square - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1613,7 +1613,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_106" model="crm.lead">
+    <record id="lead_106" model="crm.lead" forcecreate="False">
         <field name="name">Perfect-tech - KSA - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1629,7 +1629,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_115" model="crm.lead">
+    <record id="lead_115" model="crm.lead" forcecreate="False">
         <field name="name">Solution Founder - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1645,7 +1645,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_103" model="crm.lead">
+    <record id="lead_103" model="crm.lead" forcecreate="False">
         <field name="name">Era Group LTD. CO - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1661,7 +1661,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_104" model="crm.lead">
+    <record id="lead_104" model="crm.lead" forcecreate="False">
         <field name="name">Digital Harbor - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1678,7 +1678,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_105" model="crm.lead">
+    <record id="lead_105" model="crm.lead" forcecreate="False">
         <field name="name">Intiqaal Information Technology - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1694,7 +1694,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_108" model="crm.lead">
+    <record id="lead_108" model="crm.lead" forcecreate="False">
         <field name="name">iWesabe Technologies - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1711,7 +1711,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_110" model="crm.lead">
+    <record id="lead_110" model="crm.lead" forcecreate="False">
         <field name="name">Palmate Technologies - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1727,7 +1727,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_111" model="crm.lead">
+    <record id="lead_111" model="crm.lead" forcecreate="False">
         <field name="name">Future Skills Foundation  for Information Technology - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1743,7 +1743,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_113" model="crm.lead">
+    <record id="lead_113" model="crm.lead" forcecreate="False">
         <field name="name">Accounts Quality Company for Financial Consulting - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1760,7 +1760,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_114" model="crm.lead">
+    <record id="lead_114" model="crm.lead" forcecreate="False">
         <field name="name">Visions Info Tech - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1777,7 +1777,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_116" model="crm.lead">
+    <record id="lead_116" model="crm.lead" forcecreate="False">
         <field name="name">Business Horizons - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1793,7 +1793,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_117" model="crm.lead">
+    <record id="lead_117" model="crm.lead" forcecreate="False">
         <field name="name">Bsma Holding Company - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1809,7 +1809,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_107" model="crm.lead">
+    <record id="lead_107" model="crm.lead" forcecreate="False">
         <field name="name">INFORISE IT - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1825,7 +1825,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_135" model="crm.lead">
+    <record id="lead_135" model="crm.lead" forcecreate="False">
         <field name="name">Inspire HUB Saudi - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1842,7 +1842,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_109" model="crm.lead">
+    <record id="lead_109" model="crm.lead" forcecreate="False">
         <field name="name">Al Majal Tech - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1858,7 +1858,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_112" model="crm.lead">
+    <record id="lead_112" model="crm.lead" forcecreate="False">
         <field name="name">LAVA - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1875,7 +1875,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_136" model="crm.lead">
+    <record id="lead_136" model="crm.lead" forcecreate="False">
         <field name="name">Cloud Systems for Information Technology Co - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1891,7 +1891,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_118" model="crm.lead">
+    <record id="lead_118" model="crm.lead" forcecreate="False">
         <field name="name">Ruaa Alebtekar - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1907,7 +1907,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_119" model="crm.lead">
+    <record id="lead_119" model="crm.lead" forcecreate="False">
         <field name="name">Touch Business Solutions - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1923,7 +1923,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_120" model="crm.lead">
+    <record id="lead_120" model="crm.lead" forcecreate="False">
         <field name="name">NERVA - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1940,7 +1940,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_137" model="crm.lead">
+    <record id="lead_137" model="crm.lead" forcecreate="False">
         <field name="name">Raqmeyat IT solutions - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1956,7 +1956,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_124" model="crm.lead">
+    <record id="lead_124" model="crm.lead" forcecreate="False">
         <field name="name">Triosoft - KSA - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1972,7 +1972,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_127" model="crm.lead">
+    <record id="lead_127" model="crm.lead" forcecreate="False">
         <field name="name">Eco Tech Efad - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -1988,7 +1988,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_138" model="crm.lead">
+    <record id="lead_138" model="crm.lead" forcecreate="False">
         <field name="name">AMCL KSA - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2004,7 +2004,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_128" model="crm.lead">
+    <record id="lead_128" model="crm.lead" forcecreate="False">
         <field name="name">أبا الخيل لتقنية المعلومات - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2021,7 +2021,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_131" model="crm.lead">
+    <record id="lead_131" model="crm.lead" forcecreate="False">
         <field name="name">Complete Growth IT - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2038,7 +2038,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_139" model="crm.lead">
+    <record id="lead_139" model="crm.lead" forcecreate="False">
         <field name="name">Experts In Tech - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2054,7 +2054,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_132" model="crm.lead">
+    <record id="lead_132" model="crm.lead" forcecreate="False">
         <field name="name">Business Cube - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2070,7 +2070,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_140" model="crm.lead">
+    <record id="lead_140" model="crm.lead" forcecreate="False">
         <field name="name">Mega Trust Group - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2086,7 +2086,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_141" model="crm.lead">
+    <record id="lead_141" model="crm.lead" forcecreate="False">
         <field name="name">شركة افاق السبل لتقنية المعلومات / AFAQ AL SPL INFORMATION TECHNOLOGY CO - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2103,7 +2103,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_143" model="crm.lead">
+    <record id="lead_143" model="crm.lead" forcecreate="False">
         <field name="name">BI Solutions - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2119,7 +2119,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_146" model="crm.lead">
+    <record id="lead_146" model="crm.lead" forcecreate="False">
         <field name="name">INFORISE - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2135,7 +2135,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_147" model="crm.lead">
+    <record id="lead_147" model="crm.lead" forcecreate="False">
         <field name="name">Linkia for IT and Advertising and PR - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2151,7 +2151,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_148" model="crm.lead">
+    <record id="lead_148" model="crm.lead" forcecreate="False">
         <field name="name">Walnut Software Solutions Qatar - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2167,7 +2167,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_151" model="crm.lead">
+    <record id="lead_151" model="crm.lead" forcecreate="False">
         <field name="name">Costcut - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2183,7 +2183,7 @@ Busy</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_153" model="crm.lead">
+    <record id="lead_153" model="crm.lead" forcecreate="False">
         <field name="name">Taqat for Technology - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2201,7 +2201,7 @@ gmt+3 , qatar timing, Monday, 9 March</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_165" model="crm.lead">
+    <record id="lead_165" model="crm.lead" forcecreate="False">
         <field name="name">Muhammed Shamil - Odoo Funtional Consultant from UAE - Kerala</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2216,7 +2216,7 @@ gmt+3 , qatar timing, Monday, 9 March</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_133" model="crm.lead">
+    <record id="lead_133" model="crm.lead" forcecreate="False">
         <field name="name">I Value Solutions - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2232,7 +2232,7 @@ gmt+3 , qatar timing, Monday, 9 March</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_121" model="crm.lead">
+    <record id="lead_121" model="crm.lead" forcecreate="False">
         <field name="name">Facilitating Solutions - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2248,7 +2248,7 @@ gmt+3 , qatar timing, Monday, 9 March</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_122" model="crm.lead">
+    <record id="lead_122" model="crm.lead" forcecreate="False">
         <field name="name">مؤسسة قادة الشرق للتجارة - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2264,7 +2264,7 @@ gmt+3 , qatar timing, Monday, 9 March</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_142" model="crm.lead">
+    <record id="lead_142" model="crm.lead" forcecreate="False">
         <field name="name">Areen ALTamayuz Est. - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2281,7 +2281,7 @@ gmt+3 , qatar timing, Monday, 9 March</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_123" model="crm.lead">
+    <record id="lead_123" model="crm.lead" forcecreate="False">
         <field name="name">SMART SUPPORT INFORMATION TECHNOLOGY - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2297,7 +2297,7 @@ gmt+3 , qatar timing, Monday, 9 March</p>]]></field>
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_17" model="crm.lead">
+    <record id="lead_17" model="crm.lead" forcecreate="False">
         <field name="name">Tatvamasilabs</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -2322,7 +2322,7 @@ don’t have time to proceed.</li><li>&nbsp;When i communicated with him , he st
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_167" model="crm.lead">
+    <record id="lead_167" model="crm.lead" forcecreate="False">
         <field name="name">Arju Kc - Odoo Functional consultant</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2345,7 +2345,7 @@ don’t have time to proceed.</li><li>&nbsp;When i communicated with him , he st
         <field name="x_contacted_by" ref="base.user_admin"/>
     </record>
 
-    <record id="lead_36" model="crm.lead">
+    <record id="lead_36" model="crm.lead" forcecreate="False">
         <field name="name">Steigend IT Solutions - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2362,7 +2362,7 @@ don’t have time to proceed.</li><li>&nbsp;When i communicated with him , he st
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_41" model="crm.lead">
+    <record id="lead_41" model="crm.lead" forcecreate="False">
         <field name="name">BOTSPOT INFOWARE PRIVATE LIMITED - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2379,7 +2379,7 @@ don’t have time to proceed.</li><li>&nbsp;When i communicated with him , he st
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_125" model="crm.lead">
+    <record id="lead_125" model="crm.lead" forcecreate="False">
         <field name="name">Expedite Processing Administration Office - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2395,7 +2395,7 @@ don’t have time to proceed.</li><li>&nbsp;When i communicated with him , he st
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_176" model="crm.lead">
+    <record id="lead_176" model="crm.lead" forcecreate="False">
         <field name="name">Al Jawad Software House Gold</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2413,7 +2413,7 @@ don’t have time to proceed.</li><li>&nbsp;When i communicated with him , he st
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_13" model="crm.lead">
+    <record id="lead_13" model="crm.lead" forcecreate="False">
         <field name="name">SA PODIT Services LLP - DearERP Demo</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2433,7 +2433,7 @@ don’t have time to proceed.</li><li>&nbsp;When i communicated with him , he st
         <field name="x_contacted_by" ref="base.user_admin"/>
     </record>
 
-    <record id="lead_7" model="crm.lead">
+    <record id="lead_7" model="crm.lead" forcecreate="False">
         <field name="name">Tenth Planet Technologies- India</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2450,7 +2450,7 @@ don’t have time to proceed.</li><li>&nbsp;When i communicated with him , he st
         <field name="x_next_followup_date">2026-05-04</field>
     </record>
 
-    <record id="lead_8" model="crm.lead">
+    <record id="lead_8" model="crm.lead" forcecreate="False">
         <field name="name">Accurate Management System</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -2468,7 +2468,7 @@ don’t have time to proceed.</li><li>&nbsp;When i communicated with him , he st
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_5" model="crm.lead">
+    <record id="lead_5" model="crm.lead" forcecreate="False">
         <field name="name">7Span Internet Private Limited Ready</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2485,7 +2485,7 @@ don’t have time to proceed.</li><li>&nbsp;When i communicated with him , he st
         <field name="x_next_followup_date">2026-03-23</field>
     </record>
 
-    <record id="lead_4" model="crm.lead">
+    <record id="lead_4" model="crm.lead" forcecreate="False">
         <field name="name">Variety IT</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -2503,7 +2503,7 @@ don’t have time to proceed.</li><li>&nbsp;When i communicated with him , he st
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_6" model="crm.lead">
+    <record id="lead_6" model="crm.lead" forcecreate="False">
         <field name="name">Sudheendra Walvekar</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -2527,7 +2527,7 @@ Demo is done, he will get back to me, and really impress
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_59" model="crm.lead">
+    <record id="lead_59" model="crm.lead" forcecreate="False">
         <field name="name">Greytrix Business Solutions Pvt. Ltd. - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -2550,7 +2550,7 @@ Demo is done, he will get back to me, and really impress
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_16" model="crm.lead">
+    <record id="lead_16" model="crm.lead" forcecreate="False">
         <field name="name">alligatorinfosoft</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -2573,7 +2573,7 @@ on 8 he will be meeting I will call him Friday.</li><li>Now He is telling wanted
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_15" model="crm.lead">
+    <record id="lead_15" model="crm.lead" forcecreate="False">
         <field name="name">Amer - Experts In Tech, Saudi arab</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -2596,7 +2596,7 @@ on 8 he will be meeting I will call him Friday.</li><li>Now He is telling wanted
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_11" model="crm.lead">
+    <record id="lead_11" model="crm.lead" forcecreate="False">
         <field name="name">LINKS4ENGG INDIA PRIVATE LIMITED</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2612,7 +2612,7 @@ on 8 he will be meeting I will call him Friday.</li><li>Now He is telling wanted
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_156" model="crm.lead">
+    <record id="lead_156" model="crm.lead" forcecreate="False">
         <field name="name">Linkway Software Solutions - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2630,7 +2630,7 @@ on 8 he will be meeting I will call him Friday.</li><li>Now He is telling wanted
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_164" model="crm.lead">
+    <record id="lead_164" model="crm.lead" forcecreate="False">
         <field name="name">Indian Prospect - Rudra - Odoo Functional Consultant</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -2649,7 +2649,7 @@ on 8 he will be meeting I will call him Friday.</li><li>Now He is telling wanted
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_155" model="crm.lead">
+    <record id="lead_155" model="crm.lead" forcecreate="False">
         <field name="name">Centrics Business Solutions - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2667,7 +2667,7 @@ on 8 he will be meeting I will call him Friday.</li><li>Now He is telling wanted
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_88" model="crm.lead">
+    <record id="lead_88" model="crm.lead" forcecreate="False">
         <field name="name">Plus Tech Company - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2684,7 +2684,7 @@ on 8 he will be meeting I will call him Friday.</li><li>Now He is telling wanted
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_51" model="crm.lead">
+    <record id="lead_51" model="crm.lead" forcecreate="False">
         <field name="name">Kanak Infosystems LLP Silver - Nepal - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2701,7 +2701,7 @@ on 8 he will be meeting I will call him Friday.</li><li>Now He is telling wanted
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_61" model="crm.lead">
+    <record id="lead_61" model="crm.lead" forcecreate="False">
         <field name="name">Techgeum Private Limited - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2718,7 +2718,7 @@ on 8 he will be meeting I will call him Friday.</li><li>Now He is telling wanted
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_56" model="crm.lead">
+    <record id="lead_56" model="crm.lead" forcecreate="False">
         <field name="name">FEGNO TECHNOLOGIES LLP - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2735,7 +2735,7 @@ on 8 he will be meeting I will call him Friday.</li><li>Now He is telling wanted
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_49" model="crm.lead">
+    <record id="lead_49" model="crm.lead" forcecreate="False">
         <field name="name">7 dot 2 IT Consulting - Prospect</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2756,7 +2756,7 @@ on 8 he will be meeting I will call him Friday.</li><li>Now He is telling wanted
         <field name="x_contacted_by" ref="base.user_admin"/>
     </record>
 
-    <record id="lead_177" model="crm.lead">
+    <record id="lead_177" model="crm.lead" forcecreate="False">
         <field name="name">Manan Jouhary - Senior Odoo Functional Consultant</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -2773,7 +2773,7 @@ on 8 he will be meeting I will call him Friday.</li><li>Now He is telling wanted
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_178" model="crm.lead">
+    <record id="lead_178" model="crm.lead" forcecreate="False">
         <field name="name">Waseem Ahmed - Odoo Functional Consultant</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -2790,7 +2790,7 @@ on 8 he will be meeting I will call him Friday.</li><li>Now He is telling wanted
         <field name="x_high_priority_reason">other</field>
     </record>
 
-    <record id="lead_163" model="crm.lead">
+    <record id="lead_163" model="crm.lead" forcecreate="False">
         <field name="name">Assad Wazir - Neighbour Country</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2806,7 +2806,7 @@ on 8 he will be meeting I will call him Friday.</li><li>Now He is telling wanted
         <field name="x_lead_type">cold</field>
     </record>
 
-    <record id="lead_9" model="crm.lead">
+    <record id="lead_9" model="crm.lead" forcecreate="False">
         <field name="name">Meeting with Ascetic Business Solution</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2827,7 +2827,7 @@ on 8 he will be meeting I will call him Friday.</li><li>Now He is telling wanted
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_24" model="crm.lead">
+    <record id="lead_24" model="crm.lead" forcecreate="False">
         <field name="name">Galaxy Weblinks Limited. Ready</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>
@@ -2846,7 +2846,7 @@ starter plan is 20$ onky, seems he is not buy</p>]]></field>
         <field name="x_lead_type">warm</field>
     </record>
 
-    <record id="lead_168" model="crm.lead">
+    <record id="lead_168" model="crm.lead" forcecreate="False">
         <field name="name">Muhammad Shaban - Saudi - DeployClaw</field>
         <field name="type">opportunity</field>
         <field name="priority">3</field>
@@ -2867,7 +2867,7 @@ starter plan is 20$ onky, seems he is not buy</p>]]></field>
         <field name="x_is_high_priority" eval="True"/>
     </record>
 
-    <record id="lead_166" model="crm.lead">
+    <record id="lead_166" model="crm.lead" forcecreate="False">
         <field name="name">Ayisha Kabeer - Odoo Functional Consultant</field>
         <field name="type">opportunity</field>
         <field name="priority">0</field>

@@ -11,7 +11,6 @@
         * Visual indicators in Kanban (ribbon + border), List (row highlight + icon), and Form (banner)
         * Dedicated "High-Priority Leads" menu and smart filter
         * Auto-highlighting rules (stale leads, high-value deals, deadlines)
-        * Automatic follow-up activities for high-priority leads
         * Priority reason classification
         * Seamless integration with existing CRM pipeline
     """,
