@@ -1,0 +1,305 @@
+Jul 15, 2026
+
+
+
+Odoo ERP Demo | Dean
+Verstegen | Fox Cities
+Racquet Club
+Invited Syed Mujeebur Rahman Manikanta Gajula Saleha HR
+dean@foxcitiesracquetclub.com Sameer
+Attachments    Odoo ERP Demo | Dean Verstegen | Fox Cities Racquet Club
+Meeting records    Transcript   Recording
+
+
+
+
+Summary
+The session provided a comprehensive product demonstration and strategic review of
+business requirements for Odoo system implementation.​
+​
+System Configuration and Capabilities​
+The session demonstrated core modules including accounting, point of sale, and
+booking management. Automated workflows were shown to streamline invoicing and
+member versus non-member operations.​
+​
+Hosting and Technical Architecture​
+Participants reviewed hosting solutions and strategies for managing custom modules
+across system updates. The team emphasized utilizing existing documentation to
+minimize development costs.​
+​
+Project Scope and Strategy​
+A decision was made to review the 72-page business requirements document to
+finalize a cost projection. Discussions centered on choosing between hourly billing and
+fixed-price project models.
+
+
+
+
+Decisions
+Aligned
+   ●​ Hourly court rate setting The hourly rate for court bookings is established at
+      $28.
+
+   ●​ POS product availability configuration The point-of-sale system is
+      configured to default products as available for sale instead of requiring manual
+      selection.
+
+   ●​ Custom court dashboard implementation The system development scope
+      includes creating an interactive dashboard for court scheduling, modeled after
+      the client's current Excel spreadsheet.
+
+   ●​ Business Requirements Document revision postponed The Business
+      Requirements Document revision is set to be postponed to facilitate immediate
+      contract initiation.
+
+   ●​ Tentative pricing proposal preparation A tentative proposal consisting of a
+      ballpark estimate and hourly billing rates is set to be prepared for the client's
+      board.
+
+
+
+We've updated the Decisions section using your feedback.
+
+Let us know what you think: Helpful or Not Helpful
+
+
+
+
+Next steps
+     ​ [Sameer] Configure POS Defaults: Set products as available for the point of sale
+      system by default to ensure they are selectable during sales transactions.
+   ​ [Sameer] Design Website: Design a new company website within the Udo
+    platform to replace the existing site if requested.
+   ​ [Sameer] Share Pricing Data: Provide information on hourly packages and
+    associated costs to assist with decision-making.
+   ​ [Sameer] Draft Cost Document: Create an outline of licensing and hosting fees
+    for the board of directors to review.
+   ​ [Dean Verstegen] Send HD Images: Provide high-definition images of the
+    current court sheets to facilitate proper customization of the reservation
+    system.
+   ​ [Sameer, Syed Mujeebur Rahman] Send Pricing Estimate: Draft and send a
+    document containing the hourly billing rates and a ballpark project cost
+    estimate to Dean Verstegen.
+   ​ [Syed Mujeebur Rahman, Sameer] Analyze Scope: Review the documentation
+    regarding the project scope to facilitate a final estimation.
+
+
+
+
+Details
+ ●​ UDO Interface and Company Settings: Sameer introduces the UDO interface,
+    providing an overview of the dashboard, company details, and user
+    management settings (00:00:01).
+
+ ●​ System Initialization and Accounting Localization: Sameer explains the
+    email configuration and accounting settings. They have initialized the
+    accounting module with United States localization and USD as the currency,
+    noting that multiple currencies could be enabled if needed in the future
+    (00:01:06).
+
+ ●​ POS Session and Quality Control Configuration: Sameer creates a new
+    point-of-sale shop and discusses system configuration options, such as
+    rounding methods, margins, and cost tracking. They confirm that quality control
+    checks are unnecessary for the business because the two staff members act as
+    the quality assurance team (00:02:15).
+
+ ●​ Operational Settings and Calendar Sync: Sameer confirms that the business
+    does not utilize dropshipping. They explain that complex purchase order
+   approval workflows are not required due to the small team size and discuss
+   synchronizing Google or Outlook calendars with UDO for meeting management
+   (00:03:13).
+
+●​ Sales and Loyalty Program Overview: Sameer explains how to enable
+   margins, discounts, and loyalty programs. They confirm that gift cards and
+   coupons are managed within the loyalty module (00:04:30).
+
+●​ Court Configuration and Billing Logic: Sameer demonstrates the
+   configuration of multiple courts. They explain the difference between "court per
+   hour" billing and "per seat" bookings, setting up a sample court with a
+   four-player capacity and a $28 hourly rate (00:05:42).
+
+●​ Booking Dashboard Functionality: Sameer shows the booking dashboard,
+   where users can select dates, times, and specific equipment like ball machines.
+   The system allows for booking either a full court or individual seats (00:09:10).
+
+●​ Booking Management and Validation: Sameer explains the process for
+   starting and ending a play session. They have implemented a 15-minute buffer
+   validation to prevent users from starting bookings too early, ensuring accurate
+   tracking for audit purposes (00:11:36).
+
+●​ Non-Member Booking Limits: Sameer confirms that the system enforces a
+   limit of three bookings per year for non-members. They demonstrate that the
+   system provides real-time validation, blocking further reservations once this
+   threshold is reached (00:14:14).
+
+●​ Membership and Seasonal Rates: Sameer discusses membership plans and
+   seasonal rates. Dean Verstegen notes that their current website is outdated and
+   managed by an employee's spouse (00:16:11).
+
+●​ Website Hosting Costs: Dean Verstegen states they pay $12 per month for
+   website hosting. Sameer explains that UDO provides integrated website hosting
+   at no additional cost, which would allow them to consolidate their hosting
+   expenses (00:17:22).
+
+●​ Configuration of Seasonal Pricing: Sameer demonstrates how to set up
+   seasonal pricing, such as higher entry fees or rental rates during peak periods
+   like Christmas, which automatically adjust billing during the specified date
+   ranges (00:18:23).
+●​ Membership Plan Configuration: Sameer outlines the process for configuring
+   membership plans, including adult and family options. They detail how to set
+   pricing, such as a $250 adult membership, and enable pro-rated billing
+   (00:19:38).
+
+●​ Membership Management and Invoicing: Sameer demonstrates how to
+   manage members versus non-members. They show the workflow for enrolling a
+   member and generating an invoice, where the system automatically calculates
+   the pro-rated price based on the remaining days in the membership year
+   (00:21:55).
+
+●​ Payment Processing: Sameer explains that payments can be recorded directly
+   within the system. They note that invoice payment statuses update
+   automatically via scheduled actions (00:23:52).
+
+●​ Purchase Order Workflow: Sameer details the purchase module, showing how
+   to create quotations, select vendors, and track products. The system allows for
+   vendor negotiations before confirming an order (00:26:21).
+
+●​ Inventory and Forecast Reporting: Sameer demonstrates the inventory
+   reporting features, showing how to view free stock and forecasted inventory
+   based on incoming purchase orders (00:29:00).
+
+●​ POS Product Enablement: Sameer explains that products must be manually
+   enabled for point-of-sale use. They acknowledge a request from Dean
+   Verstegen to customize the system so that products are enabled for POS by
+   default in the future (00:29:58).
+
+●​ POS Transaction Workflow: Sameer demonstrates the point-of-sale interface,
+   including how to select products, use barcode scanners for automatic selection,
+   and process cash payments (00:32:03).
+
+●​ POS Closing and Cash Reconciliation: Sameer explains the register closing
+   process, which involves counting the cash on hand to reconcile against
+   system-calculated totals. The system generates reports on total sales for the
+   day upon closing (00:34:16).
+
+●​ Gift Card Generation and Usage: Sameer demonstrates how to generate gift
+   cards with specific values and unique codes. They explain that these can be
+   restricted to specific customers or set as anonymous, and that they can include
+   conditions like minimum purchase amounts (00:35:38).
+●​ Coupon and Discount Conditions: Sameer explains how to set specific rules
+   for coupons, such as limiting the number of uses or requiring a minimum
+   purchase amount (e.g., $100). They demonstrate that the system automatically
+   applies the discount once the cart value meets the set criteria (00:41:26).
+
+●​ Accounting and Bank Integration: Sameer demonstrates the accounting
+   menu, including managing invoices and bills. They explain that connecting a
+   bank account allows the system to fetch transactions automatically for
+   reconciliation (00:46:26).
+
+●​ Payment Provider Integration: Sameer shows how to configure payment
+   providers like PayPal, which allows the system to sync transactions and accept
+   online payments directly (00:49:07).
+
+●​ Chart of Accounts and Migration: Regarding migration from Sage, Sameer
+   explains that existing account codes can be edited or new accounts created in
+   UDO. They highlight that country-specific localization automatically configures
+   default taxes and journals (00:50:08).
+
+●​ Reporting and Communication Modules: Sameer showcases the reporting
+   tools, including trial balances and ledgers. They also introduce the "Discuss"
+   application, which facilitates internal team communication (00:52:23).
+
+●​ Custom Development Requests: Dean Verstegen identifies a need for a
+   custom court sheet dashboard. Sameer commits to building this feature after
+   onboarding, using provided layout examples (00:54:37).
+
+●​ Final Booking Cycle Demonstration: Sameer attempts to demonstrate the full
+   booking cycle, including capturing start and end times to finalize billing. Despite
+   technical interruptions due to internet connectivity, they confirm the workflow
+   for recording actual usage times (00:57:02).
+
+●​ Odoo Booking and Invoice Workflow: Sameer demonstrated the automated
+   invoice workflow within the Odoo system, which links bookings directly to
+   invoicing. The system is configured to handle specific rates, including a $5 ball
+   machine rental, a $10 non-member entry fee, and approximately $14 for hourly
+   court charges, resulting in a total invoice amount of $43 (00:59:10). This
+   integration automates the process and eliminates the need for manual entries in
+   the accounting tab (01:00:29).
+●​ Odoo Version Updates and Migration: Sameer highlighted that Odoo
+   releases new software versions annually and provides support for previous
+   versions for three to four years. This structure prevents the system from
+   becoming outdated. If a client decides to migrate to a newer version after
+   several years, Odoo partners are available to facilitate the database migration
+   process to ensure no data is lost (01:02:34).
+
+●​ Maintenance Costs for Custom Modules: Dean Verstegen expressed
+   concerns about potential recurring costs associated with updating
+   custom-developed modules, such as the court booking system, when new
+   Odoo versions are released (01:03:39). Sameer clarified that while there is no
+   requirement to update to the latest version, the team would charge lower rates
+   than other partners for future migrations because they developed the base
+   module and possess the necessary knowledge to upgrade it efficiently
+   (01:04:47).
+
+●​ Project Scope and Budget Constraints: Dean Verstegen noted that the
+   business requirements document (BRD) prepared for the project reached 72
+   pages, making it a larger project than initially anticipated. Dean expressed a
+   preference for keeping custom development to a minimum to control costs and
+   align with the existing infrastructure. Because this represents a significant
+   expense, Dean needs an outline of projected costs to present to the board of
+   directors (01:06:33) (01:20:08).
+
+●​ Hosting Solutions and Pricing: Sameer and Syed Mujeebur Rahman detailed
+   two hosting options: Odoo.sh and Deploy ERP (01:07:43) (01:09:54). For
+   Odoo.sh, 50 GB of server capacity costs approximately $811 per year, with an
+   additional $82 per month for a staging environment (01:08:41). Alternatively, the
+   Deploy ERP platform was presented as a more affordable solution, costing less
+   than half of Odoo.sh, with 20% discounts available for annual subscriptions
+   (01:09:54).
+
+●​ Engagement Models: Sameer outlined two ways to proceed: a fixed-price
+   project model or an hourly billing package (01:11:13). With hourly billing, the team
+   would handle configurations, training, and customizations as hours are
+   consumed, offering the client flexibility without requiring a fully defined initial
+   scope (01:12:18) (01:26:59).
+
+●​ BRD Sharing and Review: Dean Verstegen shared the extensive 72-page BRD
+   that documents current business workflows (01:20:08). Syed Mujeebur Rahman
+      and Sameer agreed to review this document to better understand the
+      requirements for CRM, membership management, and scheduling, confirming
+      that an updated version of the document is not required for them to initiate the
+      contract process (01:18:40) (01:22:00).
+
+   ●​ CRM and Customer Communication: Sameer clarified that while the demo
+      did not cover all areas, modules for inventory management, payroll, and
+      reporting could be configured (01:22:00). Regarding customer communication,
+      Sameer explained that email campaigns are free to implement, whereas text
+      messaging features would require purchasing credits from a third-party
+      provider (01:22:53). Dean identified the integration of the court sheets and
+      reservations with the billing system as the top priority (01:24:53).
+
+   ●​ Data Requirements: Sameer requested that Dean provide high-definition
+      images of the current paper-based court sheets to better understand the data
+      structure. This information will enable the team to customize the Odoo system
+      to accurately reflect existing operations (01:25:55).
+
+   ●​ Development Efficiency and Demo: Sameer emphasized that the demo
+      application was completed in approximately 16 business hours, showcasing the
+      efficiency of their development process, which incorporates AI to accelerate
+      workflows (01:26:59).
+
+   ●​ Finalizing Next Steps and Access: Sameer and Syed Mujeebur Rahman
+      provided Dean with the login credentials ("admin" for both username and
+      password) for the demo system to facilitate a presentation to the board of
+      directors (01:30:28) (01:32:59). The team committed to preparing a tentative
+      proposal, including a ballpark estimate and hourly billing rates, to be sent to
+      Dean within one or two days (01:34:14).
+
+
+
+
+You should review Gemini's notes to make sure they're accurate. Get tips and learn
+how Gemini takes notes
+How is the quality of these specific notes? Take a short survey to let us know your
+feedback, including how helpful the notes were for your needs.
+
