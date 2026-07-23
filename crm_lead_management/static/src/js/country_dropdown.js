@@ -149,9 +149,164 @@ export class CountryDropdown extends Component {
     }
 }
 
+export class LeadLevelDropdown extends Component {
+    static template = "crm_lead_management.LeadLevelDropdown";
+    static components = { Dropdown, DropdownItem };
+    static supportedModels = ["crm.lead"];
+    static leadLevels = [
+        {
+            value: "1",
+            name: "Level 1",
+            description: "Highest Priority / Serious Lead",
+            iconClass: "fa-exclamation-circle text-danger",
+        },
+        {
+            value: "2",
+            name: "Level 2",
+            description: "High Priority",
+            iconClass: "fa-arrow-up text-warning",
+        },
+        {
+            value: "3",
+            name: "Level 3",
+            description: "Medium Priority",
+            iconClass: "fa-minus text-info",
+        },
+        {
+            value: "4",
+            name: "Level 4",
+            description: "Low Priority",
+            iconClass: "fa-arrow-down text-muted",
+        },
+        {
+            value: "5",
+            name: "Level 5",
+            description: "Very Low Priority",
+            iconClass: "fa-angle-double-down text-muted",
+        },
+    ];
+
+    setup() {
+        this.orm = useService("orm");
+        this.state = useState({
+            levels: LeadLevelDropdown.leadLevels.map((level) => ({ ...level, count: 0 })),
+            selectedValue: false,
+            label: "Lead Levels",
+            isOpen: false,
+        });
+        this._currentGroupId = null;
+
+        const searchModel = this.env.searchModel;
+        if (searchModel) {
+            searchModel.addEventListener("update", () => this._loadLevels());
+        }
+
+        onWillStart(() => this._loadLevels());
+    }
+
+    _getActiveDomain() {
+        const searchModel = this.env.searchModel;
+        if (!searchModel) {
+            return [];
+        }
+        let domain = [];
+        try {
+            domain = searchModel.domain || [];
+        } catch {
+            return [];
+        }
+        const filtered = [];
+        for (let i = 0; i < domain.length; i++) {
+            const clause = domain[i];
+            if (Array.isArray(clause) && clause.length === 3 && clause[0] === "x_lead_level") {
+                continue;
+            }
+            filtered.push(clause);
+        }
+        return filtered;
+    }
+
+    async _loadLevels() {
+        const resModel = this.env.searchModel?.resModel;
+        if (!LeadLevelDropdown.supportedModels.includes(resModel)) {
+            this.state.levels = [];
+            return;
+        }
+        try {
+            const combinedDomain = [
+                ...this._getActiveDomain(),
+                ["x_lead_level", "!=", false],
+            ];
+            const groups = await this.orm.call(
+                resModel,
+                "read_group",
+                [combinedDomain, ["x_lead_level"], ["x_lead_level"]]
+            );
+            const counts = {};
+            for (const group of groups) {
+                if (group.x_lead_level) {
+                    counts[group.x_lead_level] = group.x_lead_level_count || group.__count || 0;
+                }
+            }
+            this.state.levels = LeadLevelDropdown.leadLevels.map((level) => ({
+                ...level,
+                count: counts[level.value] || 0,
+            }));
+        } catch (e) {
+            console.error("LeadLevelDropdown: failed to load lead levels", e);
+            this.state.levels = LeadLevelDropdown.leadLevels.map((level) => ({
+                ...level,
+                count: 0,
+            }));
+        }
+    }
+
+    async onBeforeOpen() {
+        await this._loadLevels();
+    }
+
+    onDropdownStateChanged(isOpen) {
+        this.state.isOpen = isOpen;
+    }
+
+    selectLevel(level) {
+        const searchModel = this.env.searchModel;
+        if (!searchModel) {
+            return;
+        }
+        if (this._currentGroupId !== null) {
+            searchModel.deactivateGroup(this._currentGroupId);
+            this._currentGroupId = null;
+        }
+        this.state.selectedValue = level.value;
+        this.state.label = level.name;
+
+        const preFilter = {
+            description: level.name,
+            domain: `[("x_lead_level", "=", "${level.value}")]`,
+        };
+        searchModel.createNewFilters([preFilter]);
+        this._currentGroupId = preFilter.groupId;
+    }
+
+    clearFilter() {
+        const searchModel = this.env.searchModel;
+        if (!searchModel) {
+            return;
+        }
+        if (this._currentGroupId !== null) {
+            searchModel.deactivateGroup(this._currentGroupId);
+            this._currentGroupId = null;
+        }
+        this.state.selectedValue = false;
+        this.state.label = "Lead Levels";
+    }
+}
+
 // Register CountryDropdown as a sub-component of ControlPanel
 ControlPanel.components = Object.assign({}, ControlPanel.components, {
     CountryDropdown,
+    LeadLevelDropdown,
 });
 
 // Patch ControlPanel to determine when to show the dropdown
@@ -159,5 +314,6 @@ patch(ControlPanel.prototype, {
     setup() {
         super.setup();
         this.showCountryDropdown = CountryDropdown.supportedModels.includes(this.env.searchModel?.resModel);
+        this.showLeadLevelDropdown = LeadLevelDropdown.supportedModels.includes(this.env.searchModel?.resModel);
     },
 });

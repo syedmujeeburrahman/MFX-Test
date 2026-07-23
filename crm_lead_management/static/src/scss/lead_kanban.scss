@@ -39,7 +39,8 @@
 }
 
 // Country Dropdown Button Styling
-.o_country_dropdown {
+.o_country_dropdown,
+.o_lead_level_dropdown {
     .btn {
         font-size: 0.875rem;
         padding: 0.25rem 0.75rem;
@@ -47,7 +48,8 @@
         white-space: nowrap;
         transition: all 0.2s ease;
 
-        .fa-globe {
+        .fa-globe,
+        .fa-signal {
             font-size: 0.9rem;
         }
     }
@@ -58,14 +60,16 @@
     }
 
     // Arrow indicator
-    .o_country_dropdown_arrow {
+    .o_country_dropdown_arrow,
+    .o_lead_level_dropdown_arrow {
         font-size: 0.65rem;
         margin-left: 2px;
         transition: transform 0.2s ease;
     }
 }
 
-.o_country_dropdown_menu {
+.o_country_dropdown_menu,
+.o_lead_level_dropdown_menu {
     min-width: 220px;
     max-height: 320px;
     overflow-y: auto;
