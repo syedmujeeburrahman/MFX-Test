@@ -97,6 +97,87 @@
         <field name="limit">200</field>
     </record>
 
+    <record id="action_region_north_america" model="ir.actions.act_window">
+        <field name="name">North America</field>
+        <field name="res_model">x_erp.country_calling_guide</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('x_erp_country_name', 'in', ['United States', 'Canada'])]</field>
+        <field name="context">{'order': 'x_erp_ist_sort_order asc, x_erp_call_sequence asc'}</field>
+        <field name="limit">200</field>
+    </record>
+
+    <record id="action_region_latin_america" model="ir.actions.act_window">
+        <field name="name">Latin America</field>
+        <field name="res_model">x_erp.country_calling_guide</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('x_erp_country_name', 'in', ['Suriname', 'Chile', 'Brazil', 'Argentina', 'Uruguay', 'Saint Kitts and Nevis', 'Grenada', 'Guyana', 'Antigua and Barbuda', 'Barbados', 'Bolivia', 'Paraguay', 'Trinidad and Tobago', 'Dominica', 'Venezuela', 'Saint Vincent', 'Dominican Republic', 'Saint Lucia', 'Panama', 'Cuba', 'Haiti', 'Jamaica', 'Colombia', 'Bahamas', 'Ecuador', 'Peru', 'Guatemala', 'Honduras', 'Costa Rica', 'El Salvador', 'Mexico', 'Nicaragua', 'Belize'])]</field>
+        <field name="context">{'order': 'x_erp_ist_sort_order asc, x_erp_call_sequence asc'}</field>
+        <field name="limit">200</field>
+    </record>
+
+    <record id="action_region_europe" model="ir.actions.act_window">
+        <field name="name">Europe</field>
+        <field name="res_model">x_erp.country_calling_guide</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('x_erp_country_name', 'in', ['Russia', 'Belarus', 'Romania', 'Bulgaria', 'Greece', 'Finland', 'Cyprus', 'Estonia', 'Moldova', 'Lithuania', 'Latvia', 'Ukraine', 'Andorra', 'Vatican City', 'Hungary', 'Italy', 'Montenegro', 'Monaco', 'Austria', 'Bosnia and Herzegovina', 'Belgium', 'Albania', 'Poland', 'North Macedonia', 'Norway', 'Czech Republic', 'Denmark', 'France', 'San Marino', 'Slovakia', 'Germany', 'Slovenia', 'Spain', 'Sweden', 'Netherlands', 'Switzerland', 'Croatia', 'Serbia', 'Liechtenstein', 'Luxembourg', 'Malta', 'Portugal', 'Iceland', 'Ireland', 'United Kingdom'])]</field>
+        <field name="context">{'order': 'x_erp_ist_sort_order asc, x_erp_call_sequence asc'}</field>
+        <field name="limit">200</field>
+    </record>
+
+    <record id="action_region_middle_east" model="ir.actions.act_window">
+        <field name="name">Middle East</field>
+        <field name="res_model">x_erp.country_calling_guide</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('x_erp_country_name', 'in', ['Azerbaijan', 'Armenia', 'Iran', 'United Arab Emirates', 'Oman', 'Georgia', 'Turkey', 'Jordan', 'Iraq', 'Kuwait', 'Qatar', 'Saudi Arabia', 'Syria', 'Yemen', 'Bahrain', 'Palestine', 'Israel', 'Lebanon'])]</field>
+        <field name="context">{'order': 'x_erp_ist_sort_order asc, x_erp_call_sequence asc'}</field>
+        <field name="limit">200</field>
+    </record>
+
+    <record id="action_region_africa" model="ir.actions.act_window">
+        <field name="name">Africa</field>
+        <field name="res_model">x_erp.country_calling_guide</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('x_erp_country_name', 'in', ['Mauritius', 'Seychelles', 'Tanzania', 'Madagascar', 'Djibouti', 'Ethiopia', 'Somalia', 'Sudan', 'Eritrea', 'Uganda', 'South Sudan', 'Kenya', 'Comoros', 'Namibia', 'Mozambique', 'South Africa', 'Burundi', 'Botswana', 'Malawi', 'Egypt', 'Libya', 'Lesotho', 'Eswatini', 'Zimbabwe', 'Zambia', 'Rwanda', 'Tunisia', 'Equatorial Guinea', 'DR Congo', 'Morocco', 'Benin', 'Algeria', 'Angola', 'Niger', 'Nigeria', 'Gabon', 'Chad', 'Central African Republic', 'Cameroon', 'Congo', 'Mauritania', 'Burkina Faso', 'Sierra Leone', 'Gambia', 'Ghana', 'Liberia', 'Mali', 'Togo', 'Guinea-Bissau', 'Guinea', 'Senegal', 'Sao Tome and Principe', 'Cabo Verde'])]</field>
+        <field name="context">{'order': 'x_erp_ist_sort_order asc, x_erp_call_sequence asc'}</field>
+        <field name="limit">200</field>
+    </record>
+
+    <record id="action_region_south_asia" model="ir.actions.act_window">
+        <field name="name">South Asia</field>
+        <field name="res_model">x_erp.country_calling_guide</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('x_erp_country_name', 'in', ['India', 'Kyrgyzstan', 'Kazakhstan', 'Sri Lanka', 'Nepal', 'Bangladesh', 'Bhutan', 'Uzbekistan', 'Pakistan', 'Tajikistan', 'Maldives', 'Turkmenistan', 'Afghanistan'])]</field>
+        <field name="context">{'order': 'x_erp_ist_sort_order asc, x_erp_call_sequence asc'}</field>
+        <field name="limit">200</field>
+    </record>
+
+    <record id="action_region_southeast_asia" model="ir.actions.act_window">
+        <field name="name">Southeast Asia</field>
+        <field name="res_model">x_erp.country_calling_guide</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('x_erp_country_name', 'in', ['Brunei', 'Philippines', 'Malaysia', 'Singapore', 'Timor-Leste', 'Indonesia', 'Myanmar', 'Laos', 'Thailand', 'Cambodia', 'Vietnam'])]</field>
+        <field name="context">{'order': 'x_erp_ist_sort_order asc, x_erp_call_sequence asc'}</field>
+        <field name="limit">200</field>
+    </record>
+
+    <record id="action_region_east_asia" model="ir.actions.act_window">
+        <field name="name">East Asia</field>
+        <field name="res_model">x_erp.country_calling_guide</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('x_erp_country_name', 'in', ['Japan', 'South Korea', 'Taiwan', 'Mongolia', 'North Korea', 'China'])]</field>
+        <field name="context">{'order': 'x_erp_ist_sort_order asc, x_erp_call_sequence asc'}</field>
+        <field name="limit">200</field>
+    </record>
+
+    <record id="action_region_oceania" model="ir.actions.act_window">
+        <field name="name">Oceania</field>
+        <field name="res_model">x_erp.country_calling_guide</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('x_erp_country_name', 'in', ['Marshall Islands', 'New Zealand', 'Tuvalu', 'Tonga', 'Samoa', 'Nauru', 'Fiji', 'Kiribati', 'Solomon Islands', 'Papua New Guinea', 'Micronesia', 'Palau', 'Australia', 'Vanuatu'])]</field>
+        <field name="context">{'order': 'x_erp_ist_sort_order asc, x_erp_call_sequence asc'}</field>
+        <field name="limit">200</field>
+    </record>
+
     <record id="action_slot_00" model="ir.actions.act_window"><field name="name">12 AM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_00': 1}</field></record>
     <record id="action_slot_01" model="ir.actions.act_window"><field name="name">1 AM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_01': 1}</field></record>
     <record id="action_slot_02" model="ir.actions.act_window"><field name="name">2 AM</field><field name="res_model">x_erp.country_calling_guide</field><field name="view_mode">list,form</field><field name="domain">[]</field><field name="context">{'search_default_slot_02': 1}</field></record>

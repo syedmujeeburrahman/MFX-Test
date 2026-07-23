@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_prospect_audit_log_list" model="ir.ui.view">
+        <field name="name">x_erp.prospect_audit_log.list</field>
+        <field name="model">x_erp.prospect_audit_log</field>
+        <field name="arch" type="xml">
+            <list string="Prospect Audit Logs" create="0" edit="0" delete="0">
+                <field name="change_date"/>
+                <field name="prospect_id"/>
+                <field name="prospect_name"/>
+                <field name="user_id"/>
+                <field name="action" widget="badge"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_prospect_audit_log_form" model="ir.ui.view">
+        <field name="name">x_erp.prospect_audit_log.form</field>
+        <field name="model">x_erp.prospect_audit_log</field>
+        <field name="arch" type="xml">
+            <form string="Prospect Audit Log" create="0" edit="0" delete="0">
+                <sheet>
+                    <group>
+                        <field name="change_date"/>
+                        <field name="prospect_id"/>
+                        <field name="prospect_name"/>
+                        <field name="user_id"/>
+                        <field name="action"/>
+                    </group>
+                    <group string="Changes">
+                        <field name="change_summary" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_prospect_audit_log_search" model="ir.ui.view">
+        <field name="name">x_erp.prospect_audit_log.search</field>
+        <field name="model">x_erp.prospect_audit_log</field>
+        <field name="arch" type="xml">
+            <search string="Prospect Audit Logs">
+                <field name="prospect_name"/>
+                <field name="prospect_id"/>
+                <field name="user_id"/>
+                <filter name="created" string="Created" domain="[('action','=','create')]"/>
+                <filter name="updated" string="Updated" domain="[('action','=','write')]"/>
+                <filter name="deleted" string="Deleted" domain="[('action','=','delete')]"/>
+                <filter name="converted" string="Converted" domain="[('action','=','convert')]"/>
+                <group>
+                    <filter name="group_by_user" string="User" context="{'group_by': 'user_id'}"/>
+                    <filter name="group_by_action" string="Action" context="{'group_by': 'action'}"/>
+                    <filter name="group_by_date" string="Date" context="{'group_by': 'change_date:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_prospect_audit_logs" model="ir.actions.act_window">
+        <field name="name">Audit Logs</field>
+        <field name="res_model">x_erp.prospect_audit_log</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_prospect_audit_log_search"/>
+    </record>
+
+</odoo>

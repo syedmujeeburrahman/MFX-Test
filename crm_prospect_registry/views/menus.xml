@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_prospect_registry_root"
+              name="Prospect Registry"
+              parent="crm.crm_menu_root"
+              sequence="55"/>
+
+    <menuitem id="menu_prospect_registry_prospects"
+              name="Add / Search Companies"
+              parent="menu_prospect_registry_root"
+              action="action_prospect_registry"
+              sequence="10"/>
+
+    <menuitem id="menu_prospect_registry_rejected"
+              name="Rejected / Do Not Call"
+              parent="menu_prospect_registry_root"
+              action="action_prospect_rejected"
+              sequence="20"/>
+
+    <menuitem id="menu_prospect_registry_followups"
+              name="Today's Follow-ups"
+              parent="menu_prospect_registry_root"
+              action="action_prospect_followups"
+              sequence="30"/>
+
+    <menuitem id="menu_prospect_registry_timeline"
+              name="Activity Timeline"
+              parent="menu_prospect_registry_root"
+              action="action_prospect_activities"
+              sequence="40"/>
+
+    <menuitem id="menu_prospect_registry_dashboard"
+              name="Dashboard"
+              parent="menu_prospect_registry_root"
+              action="action_prospect_dashboard"
+              sequence="50"
+              groups="sales_team.group_sale_manager,base.group_system"/>
+
+    <menuitem id="menu_prospect_registry_analytics"
+              name="Analytics"
+              parent="menu_prospect_registry_root"
+              action="action_prospect_analytics"
+              sequence="60"
+              groups="sales_team.group_sale_manager,base.group_system"/>
+
+    <menuitem id="menu_prospect_registry_configuration"
+              name="Configuration"
+              parent="menu_prospect_registry_root"
+              sequence="90"
+              groups="sales_team.group_sale_manager,base.group_system"/>
+
+    <menuitem id="menu_prospect_registry_products"
+              name="Products Interested"
+              parent="menu_prospect_registry_configuration"
+              action="action_prospect_products"
+              sequence="10"/>
+
+    <menuitem id="menu_prospect_registry_audit_logs"
+              name="Audit Logs"
+              parent="menu_prospect_registry_configuration"
+              action="action_prospect_audit_logs"
+              sequence="20"/>
+
+</odoo>

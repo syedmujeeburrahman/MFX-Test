@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_prospect_dashboard_form" model="ir.ui.view">
+        <field name="name">x_erp.prospect_dashboard.form</field>
+        <field name="model">x_erp.prospect_dashboard</field>
+        <field name="arch" type="xml">
+            <form string="Prospect Registry Dashboard" create="0" edit="0" delete="0">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_total_prospects" type="object" class="oe_stat_button" icon="fa-building">
+                            <field name="total_prospects" widget="statinfo" string="Total Prospects"/>
+                        </button>
+                        <button name="action_todays_followups" type="object" class="oe_stat_button" icon="fa-calendar-check-o">
+                            <field name="todays_followups" widget="statinfo" string="Today's Follow-ups"/>
+                        </button>
+                        <button name="action_interested" type="object" class="oe_stat_button" icon="fa-star">
+                            <field name="interested_count" widget="statinfo" string="Interested"/>
+                        </button>
+                        <button name="action_duplicates" type="object" class="oe_stat_button" icon="fa-copy">
+                            <field name="duplicate_count" widget="statinfo" string="Duplicates"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group string="Today's Work">
+                        <group>
+                            <field name="todays_calls"/>
+                            <field name="todays_followups"/>
+                            <field name="new_this_month_count"/>
+                        </group>
+                        <group>
+                            <field name="conversion_rate"/>
+                            <field name="won_count"/>
+                            <field name="lost_count"/>
+                        </group>
+                    </group>
+                    <group string="Pipeline Status">
+                        <group>
+                            <field name="interested_count"/>
+                            <field name="demo_scheduled_count"/>
+                            <field name="proposal_sent_count"/>
+                        </group>
+                        <group>
+                            <field name="do_not_contact_count"/>
+                            <field name="duplicate_count"/>
+                            <field name="total_prospects"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_prospect_dashboard" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">x_erp.prospect_dashboard</field>
+        <field name="view_mode">form</field>
+        <field name="res_id" ref="prospect_dashboard_main"/>
+    </record>
+
+</odoo>

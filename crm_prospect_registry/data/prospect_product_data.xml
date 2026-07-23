@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="prospect_product_crm" model="x_erp.prospect_product">
+        <field name="name">CRM</field>
+        <field name="sequence">10</field>
+    </record>
+    <record id="prospect_product_sales" model="x_erp.prospect_product">
+        <field name="name">Sales</field>
+        <field name="sequence">20</field>
+    </record>
+    <record id="prospect_product_purchase" model="x_erp.prospect_product">
+        <field name="name">Purchase</field>
+        <field name="sequence">30</field>
+    </record>
+    <record id="prospect_product_inventory" model="x_erp.prospect_product">
+        <field name="name">Inventory</field>
+        <field name="sequence">40</field>
+    </record>
+    <record id="prospect_product_accounting" model="x_erp.prospect_product">
+        <field name="name">Accounting</field>
+        <field name="sequence">50</field>
+    </record>
+    <record id="prospect_product_manufacturing" model="x_erp.prospect_product">
+        <field name="name">Manufacturing</field>
+        <field name="sequence">60</field>
+    </record>
+    <record id="prospect_product_pos" model="x_erp.prospect_product">
+        <field name="name">POS</field>
+        <field name="sequence">70</field>
+    </record>
+    <record id="prospect_product_hr" model="x_erp.prospect_product">
+        <field name="name">HR</field>
+        <field name="sequence">80</field>
+    </record>
+    <record id="prospect_product_payroll" model="x_erp.prospect_product">
+        <field name="name">Payroll</field>
+        <field name="sequence">90</field>
+    </record>
+    <record id="prospect_product_website" model="x_erp.prospect_product">
+        <field name="name">Website</field>
+        <field name="sequence">100</field>
+    </record>
+    <record id="prospect_product_ecommerce" model="x_erp.prospect_product">
+        <field name="name">eCommerce</field>
+        <field name="sequence">110</field>
+    </record>
+    <record id="prospect_product_ai_copilot" model="x_erp.prospect_product">
+        <field name="name">AI Copilot</field>
+        <field name="sequence">120</field>
+    </record>
+    <record id="prospect_product_custom_development" model="x_erp.prospect_product">
+        <field name="name">Custom Development</field>
+        <field name="sequence">130</field>
+    </record>
+    <record id="prospect_product_training" model="x_erp.prospect_product">
+        <field name="name">Training</field>
+        <field name="sequence">140</field>
+    </record>
+    <record id="prospect_product_implementation" model="x_erp.prospect_product">
+        <field name="name">Implementation</field>
+        <field name="sequence">150</field>
+    </record>
+    <record id="prospect_product_support" model="x_erp.prospect_product">
+        <field name="name">Support</field>
+        <field name="sequence">160</field>
+    </record>
+    <record id="prospect_product_migration" model="x_erp.prospect_product">
+        <field name="name">Migration</field>
+        <field name="sequence">170</field>
+    </record>
+    <record id="prospect_product_other" model="x_erp.prospect_product">
+        <field name="name">Other</field>
+        <field name="sequence">999</field>
+    </record>
+
+</odoo>

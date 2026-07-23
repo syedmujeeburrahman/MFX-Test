@@ -10,6 +10,7 @@ import { ControlPanel } from "@web/search/control_panel/control_panel";
 export class CountryDropdown extends Component {
     static template = "crm_lead_management.CountryDropdown";
     static components = { Dropdown, DropdownItem };
+    static supportedModels = ["crm.lead", "x_erp.prospect"];
 
     setup() {
         this.orm = useService("orm");
@@ -66,12 +67,17 @@ export class CountryDropdown extends Component {
             // Combine the active search domain (stage, lead type, etc.)
             // with the base country_id filter. This ensures counts are
             // scoped to whatever filters the user has selected.
+            const resModel = this.env.searchModel?.resModel;
+            if (!CountryDropdown.supportedModels.includes(resModel)) {
+                this.state.countries = [];
+                return;
+            }
             const activeDomain = this._getActiveDomain();
             const baseDomain = [["country_id", "!=", false]];
             const combinedDomain = [...activeDomain, ...baseDomain];
 
             const groups = await this.orm.call(
-                "crm.lead",
+                resModel,
                 "read_group",
                 [combinedDomain, ["country_id"], ["country_id"]]
             );
@@ -152,6 +158,6 @@ ControlPanel.components = Object.assign({}, ControlPanel.components, {
 patch(ControlPanel.prototype, {
     setup() {
         super.setup();
-        this.showCountryDropdown = this.env.searchModel?.resModel === "crm.lead";
+        this.showCountryDropdown = CountryDropdown.supportedModels.includes(this.env.searchModel?.resModel);
     },
 });
