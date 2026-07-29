@@ -7,154 +7,192 @@ import { useService } from "@web/core/utils/hooks";
 import { patch } from "@web/core/utils/patch";
 import { ControlPanel } from "@web/search/control_panel/control_panel";
 
+const FILTER_DEFINITIONS = [
+    {
+        key: "country",
+        field: "country_id",
+        label: "Countries",
+        allLabel: "All Countries",
+        icon: "fa-globe",
+        optionIcon: "fa-flag-o",
+        supportedModels: ["crm.lead", "x_erp.prospect"],
+    },
+    {
+        key: "lead_level",
+        field: "x_lead_type",
+        label: "Lead Level",
+        allLabel: "All Lead Levels",
+        icon: "fa-fire",
+        optionIcon: "fa-circle",
+        supportedModels: ["crm.lead"],
+        selectionLabels: {
+            hot: "Hot",
+            warm: "Warm",
+            cold: "Cold",
+        },
+    },
+    {
+        key: "erp",
+        field: "x_erp_system_id",
+        label: "ERP",
+        allLabel: "All ERP",
+        icon: "fa-cogs",
+        optionIcon: "fa-cog",
+        supportedModels: ["crm.lead"],
+    },
+    {
+        key: "contact_type",
+        field: "x_contact_type_id",
+        label: "Contact Type",
+        allLabel: "All Contact Types",
+        icon: "fa-address-card",
+        optionIcon: "fa-user-o",
+        supportedModels: ["crm.lead"],
+    },
+];
+
 export class CountryDropdown extends Component {
     static template = "crm_lead_management.CountryDropdown";
     static components = { Dropdown, DropdownItem };
-    static supportedModels = ["crm.lead", "x_erp.prospect"];
+    static supportedModels = [...new Set(FILTER_DEFINITIONS.flatMap((filter) => filter.supportedModels))];
 
     setup() {
         this.orm = useService("orm");
+        this.filters = FILTER_DEFINITIONS;
         this.state = useState({
-            countries: [],
-            selectedId: false,
-            label: "Countries",
-            isOpen: false,
+            options: {},
+            selectedIds: {},
+            labels: {},
+            open: {},
         });
-        this._currentGroupId = null;
+        this._currentGroupIds = {};
 
-        // Subscribe to searchModel notifications so country counts
-        // update automatically when stage or other filters change.
-        const searchModel = this.env.searchModel;
-        if (searchModel) {
-            searchModel.addEventListener("update", () => this._loadCountries());
+        for (const filter of this.filters) {
+            this.state.options[filter.key] = [];
+            this.state.selectedIds[filter.key] = false;
+            this.state.labels[filter.key] = filter.label;
+            this.state.open[filter.key] = false;
         }
 
-        onWillStart(() => this._loadCountries());
+        const searchModel = this.env.searchModel;
+        if (searchModel) {
+            searchModel.addEventListener("update", () => this._loadAllOptions());
+        }
+
+        onWillStart(() => this._loadAllOptions());
     }
 
-    /**
-     * Build the active search domain from the searchModel,
-     * excluding any country_id filter that this dropdown itself created.
-     */
-    _getActiveDomain() {
+    _isFilterSupported(filter) {
+        return filter.supportedModels.includes(this.env.searchModel?.resModel);
+    }
+
+    _visibleFilters() {
+        return this.filters.filter((filter) => this._isFilterSupported(filter));
+    }
+
+    _getActiveDomain(excludedField) {
         const searchModel = this.env.searchModel;
         if (!searchModel) {
             return [];
         }
-        // Get the full domain from the search model (includes searchpanel
-        // selections like stage_id, lead_type, plus any search bar filters).
         let domain = [];
         try {
             domain = searchModel.domain || [];
         } catch {
             return [];
         }
-        // Remove any country_id conditions that our own dropdown created,
-        // so we don't filter countries by themselves.
-        const filtered = [];
-        for (let i = 0; i < domain.length; i++) {
-            const clause = domain[i];
-            if (Array.isArray(clause) && clause.length === 3 && clause[0] === "country_id") {
-                continue;
-            }
-            filtered.push(clause);
-        }
-        return filtered;
+        return domain.filter((clause) => {
+            return !(Array.isArray(clause) && clause.length === 3 && clause[0] === excludedField);
+        });
     }
 
-    async _loadCountries() {
+    async _loadAllOptions() {
+        await Promise.all(this._visibleFilters().map((filter) => this._loadOptions(filter)));
+    }
+
+    async _loadOptions(filter) {
         try {
-            // Combine the active search domain (stage, lead type, etc.)
-            // with the base country_id filter. This ensures counts are
-            // scoped to whatever filters the user has selected.
             const resModel = this.env.searchModel?.resModel;
-            if (!CountryDropdown.supportedModels.includes(resModel)) {
-                this.state.countries = [];
+            if (!this._isFilterSupported(filter)) {
+                this.state.options[filter.key] = [];
                 return;
             }
-            const activeDomain = this._getActiveDomain();
-            const baseDomain = [["country_id", "!=", false]];
-            const combinedDomain = [...activeDomain, ...baseDomain];
 
+            const activeDomain = this._getActiveDomain(filter.field);
+            const combinedDomain = [...activeDomain, [filter.field, "!=", false]];
             const groups = await this.orm.call(
                 resModel,
                 "read_group",
-                [combinedDomain, ["country_id"], ["country_id"]]
+                [combinedDomain, [filter.field], [filter.field]]
             );
-            const countries = [];
-            for (const g of groups) {
-                if (g.country_id) {
-                    countries.push({
-                        id: g.country_id[0],
-                        name: g.country_id[1],
-                        count: g.country_id_count || g.__count || 0,
-                    });
+            const options = [];
+            for (const group of groups) {
+                const rawValue = group[filter.field];
+                if (!rawValue) {
+                    continue;
                 }
+                const isMany2one = Array.isArray(rawValue);
+                const value = isMany2one ? rawValue[0] : rawValue;
+                const name = isMany2one ? rawValue[1] : (filter.selectionLabels?.[rawValue] || rawValue);
+                options.push({
+                    value,
+                    name,
+                    count: group[`${filter.field}_count`] || group.__count || 0,
+                });
             }
-            countries.sort((a, b) => a.name.localeCompare(b.name));
-            this.state.countries = countries;
-        } catch (e) {
-            console.error("CountryDropdown: failed to load countries", e);
-            this.state.countries = [];
+            options.sort((a, b) => a.name.localeCompare(b.name));
+            this.state.options[filter.key] = options;
+        } catch (error) {
+            console.error(`LeadFilterDropdown: failed to load ${filter.field}`, error);
+            this.state.options[filter.key] = [];
         }
     }
 
-    /**
-     * Reload countries every time the dropdown opens so that
-     * newly added countries on leads are immediately visible.
-     */
-    async onBeforeOpen() {
-        await this._loadCountries();
+    async onBeforeOpen(filter) {
+        await this._loadOptions(filter);
     }
 
-    /**
-     * Track dropdown open/close state for arrow rotation.
-     * @param {boolean} isOpen
-     */
-    onDropdownStateChanged(isOpen) {
-        this.state.isOpen = isOpen;
+    onDropdownStateChanged(filter, isOpen) {
+        this.state.open[filter.key] = isOpen;
     }
 
-    selectCountry(country) {
+    selectOption(filter, option) {
         const searchModel = this.env.searchModel;
         if (!searchModel) {
             return;
         }
-        if (this._currentGroupId !== null) {
-            searchModel.deactivateGroup(this._currentGroupId);
-            this._currentGroupId = null;
-        }
-        this.state.selectedId = country.id;
-        this.state.label = country.name;
+        this.clearFilter(filter);
+
+        this.state.selectedIds[filter.key] = option.value;
+        this.state.labels[filter.key] = option.name;
 
         const preFilter = {
-            description: country.name,
-            domain: `[("country_id", "=", ${country.id})]`,
+            description: `${filter.label}: ${option.name}`,
+            domain: `[("${filter.field}", "=", ${JSON.stringify(option.value)})]`,
         };
         searchModel.createNewFilters([preFilter]);
-        this._currentGroupId = preFilter.groupId;
+        this._currentGroupIds[filter.key] = preFilter.groupId;
     }
 
-    clearFilter() {
+    clearFilter(filter) {
         const searchModel = this.env.searchModel;
         if (!searchModel) {
             return;
         }
-        if (this._currentGroupId !== null) {
-            searchModel.deactivateGroup(this._currentGroupId);
-            this._currentGroupId = null;
+        const groupId = this._currentGroupIds[filter.key];
+        if (groupId !== undefined && groupId !== null) {
+            searchModel.deactivateGroup(groupId);
+            this._currentGroupIds[filter.key] = null;
         }
-        this.state.selectedId = false;
-        this.state.label = "Countries";
+        this.state.selectedIds[filter.key] = false;
+        this.state.labels[filter.key] = filter.label;
     }
 }
 
-// Register CountryDropdown as a sub-component of ControlPanel
 ControlPanel.components = Object.assign({}, ControlPanel.components, {
     CountryDropdown,
 });
 
-// Patch ControlPanel to determine when to show the dropdown
 patch(ControlPanel.prototype, {
     setup() {
         super.setup();

@@ -15,11 +15,26 @@
                        decoration-warning="x_lead_type == 'warm'"
                        decoration-info="x_lead_type == 'cold'"
                        optional="show"/>
+                <field name="x_erp_system_id" optional="show"/>
+                <field name="x_contact_type_id" optional="show"/>
             </xpath>
 
             <!-- Add Next Follow-up Date -->
             <xpath expr="//field[@name='activity_ids']" position="before">
                 <field name="x_next_followup_date" optional="show"/>
+                <field name="date_automation_last" string="Last Activity" optional="show"/>
+            </xpath>
+
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="optional">show</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='country_id']" position="attributes">
+                <attribute name="optional">show</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='stage_id']" position="attributes">
+                <attribute name="string">Lead Status</attribute>
             </xpath>
 
         </field>
@@ -38,10 +53,18 @@
                        decoration-warning="x_lead_type == 'warm'"
                        decoration-info="x_lead_type == 'cold'"
                        optional="show"/>
+                <field name="x_erp_system_id" optional="show"/>
+                <field name="x_contact_type_id" optional="show"/>
             </xpath>
 
             <xpath expr="//field[@name='priority']" position="after">
+                <field name="stage_id" string="Lead Status" optional="show"/>
                 <field name="x_next_followup_date" optional="show"/>
+                <field name="date_automation_last" string="Last Activity" optional="show"/>
+            </xpath>
+
+            <xpath expr="//field[@name='partner_name']" position="attributes">
+                <attribute name="optional">show</attribute>
             </xpath>
 
         </field>

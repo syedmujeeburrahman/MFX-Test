@@ -1,1 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_crm_erp_system_salesman,crm_erp_system_salesman,model_x_erp_crm_erp_system,sales_team.group_sale_salesman,1,0,0,0
+access_crm_erp_system_manager,crm_erp_system_manager,model_x_erp_crm_erp_system,sales_team.group_sale_manager,1,1,1,1
+access_crm_erp_system_admin,crm_erp_system_admin,model_x_erp_crm_erp_system,base.group_system,1,1,1,1
+access_crm_contact_type_salesman,crm_contact_type_salesman,model_x_erp_crm_contact_type,sales_team.group_sale_salesman,1,0,0,0
+access_crm_contact_type_manager,crm_contact_type_manager,model_x_erp_crm_contact_type,sales_team.group_sale_manager,1,1,1,1
+access_crm_contact_type_admin,crm_contact_type_admin,model_x_erp_crm_contact_type,base.group_system,1,1,1,1

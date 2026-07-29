@@ -1,6 +1,6 @@
 {
     'name': 'CRM Lead Management',
-    'version': '19.0.1.3.3',
+    'version': '19.0.1.4.0',
     'summary': 'Enhanced CRM lead management with custom pipeline stages, lead classification, and advanced tracking',
     'description': """
         CRM Lead Management
@@ -31,8 +31,11 @@
         'data/crm_stage_data.xml',
         'data/utm_source_data.xml',
         'data/crm_tag_data.xml',
+        'data/crm_erp_system_data.xml',
+        'data/crm_contact_type_data.xml',
         'data/ir_cron_data.xml',
         'data/cleanup_automated_activities.xml',
+        'views/crm_lead_filter_config_views.xml',
         'views/crm_lead_views_form.xml',
         'views/crm_lead_views_list.xml',
         'views/crm_lead_views_kanban.xml',

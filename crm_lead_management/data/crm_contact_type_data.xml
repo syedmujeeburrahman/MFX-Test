@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="crm_contact_type_partner" model="x_erp.crm_contact_type">
+        <field name="name">Partner</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="crm_contact_type_customer_user" model="x_erp.crm_contact_type">
+        <field name="name">Customer/User</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="crm_contact_type_developer" model="x_erp.crm_contact_type">
+        <field name="name">Developer</field>
+        <field name="sequence">30</field>
+    </record>
+
+    <record id="crm_contact_type_functional_consultant" model="x_erp.crm_contact_type">
+        <field name="name">Functional Consultant (FC)</field>
+        <field name="sequence">40</field>
+    </record>
+
+    <record id="crm_contact_type_technical_consultant" model="x_erp.crm_contact_type">
+        <field name="name">Technical Consultant</field>
+        <field name="sequence">50</field>
+    </record>
+
+    <record id="crm_contact_type_business_owner" model="x_erp.crm_contact_type">
+        <field name="name">Business Owner</field>
+        <field name="sequence">60</field>
+    </record>
+
+    <record id="crm_contact_type_ceo" model="x_erp.crm_contact_type">
+        <field name="name">CEO</field>
+        <field name="sequence">70</field>
+    </record>
+
+    <record id="crm_contact_type_cto" model="x_erp.crm_contact_type">
+        <field name="name">CTO</field>
+        <field name="sequence">80</field>
+    </record>
+
+    <record id="crm_contact_type_erp_consultant" model="x_erp.crm_contact_type">
+        <field name="name">ERP Consultant</field>
+        <field name="sequence">90</field>
+    </record>
+
+    <record id="crm_contact_type_freelancer" model="x_erp.crm_contact_type">
+        <field name="name">Freelancer</field>
+        <field name="sequence">100</field>
+    </record>
+
+    <record id="crm_contact_type_implementation_partner" model="x_erp.crm_contact_type">
+        <field name="name">Implementation Partner</field>
+        <field name="sequence">110</field>
+    </record>
+
+</odoo>

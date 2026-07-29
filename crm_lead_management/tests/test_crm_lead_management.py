@@ -153,11 +153,15 @@ class TestCrmLeadManagement(TransactionCase):
             'description': 'Interested in enterprise plan',
             'priority': '2',
             'stage_id': self.stage_prospect.id,
+            'x_erp_system_id': self.env.ref('crm_lead_management.crm_erp_system_odoo').id,
+            'x_contact_type_id': self.env.ref('crm_lead_management.crm_contact_type_cto').id,
         })
         self.assertTrue(lead.exists())
         self.assertEqual(lead.contact_name, 'John Doe')
         self.assertEqual(lead.x_lead_type, 'hot')
         self.assertEqual(lead.stage_id, self.stage_prospect)
+        self.assertEqual(lead.x_erp_system_id.name, 'Odoo')
+        self.assertEqual(lead.x_contact_type_id.name, 'CTO')
 
     def test_followup_reminder_cron_removed(self):
         """The automatic follow-up reminder cron method must no longer exist."""
@@ -191,4 +195,34 @@ class TestCrmLeadManagement(TransactionCase):
             self.assertTrue(
                 tag,
                 f"CRM tag '{tag_name}' should exist",
+            )
+
+    def test_erp_systems_created(self):
+        """Test that configurable ERP filter options are created."""
+        for erp_name in ['Odoo', 'Zoho', 'ERPNext']:
+            erp = self.env['x_erp.crm_erp_system'].search([('name', '=', erp_name)])
+            self.assertTrue(erp, f"ERP system '{erp_name}' should exist")
+
+    def test_contact_types_created(self):
+        """Test that configurable contact type filter options are created."""
+        contact_types = [
+            'Partner',
+            'Customer/User',
+            'Developer',
+            'Functional Consultant (FC)',
+            'Technical Consultant',
+            'Business Owner',
+            'CEO',
+            'CTO',
+            'ERP Consultant',
+            'Freelancer',
+            'Implementation Partner',
+        ]
+        for contact_type_name in contact_types:
+            contact_type = self.env['x_erp.crm_contact_type'].search([
+                ('name', '=', contact_type_name),
+            ])
+            self.assertTrue(
+                contact_type,
+                f"Contact type '{contact_type_name}' should exist",
             )

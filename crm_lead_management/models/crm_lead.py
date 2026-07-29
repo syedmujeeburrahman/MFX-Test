@@ -21,6 +21,20 @@ class CrmLead(models.Model):
         tracking=True,
         help='Scheduled date for the next follow-up with this lead',
     )
+    x_erp_system_id = fields.Many2one(
+        'x_erp.crm_erp_system',
+        string='ERP',
+        tracking=True,
+        index=True,
+        help='ERP ecosystem associated with this lead.',
+    )
+    x_contact_type_id = fields.Many2one(
+        'x_erp.crm_contact_type',
+        string='Contact Type',
+        tracking=True,
+        index=True,
+        help='Professional role or contact category for this lead.',
+    )
 
     def _get_lead_type_color(self):
         """Return kanban color index based on lead type."""
