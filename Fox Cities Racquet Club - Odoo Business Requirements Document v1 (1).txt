@@ -1,0 +1,4538 @@
+Business Requirements Document
+Fox Cities Racquet Club (Odoo) Implementation
+Prepared by Dean Verstegen for Odoo Development Team
+Version 1.0
+
+Fox Cities Racquet Club
+Appleton, WI
+
+1
+
+Table of Contents
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+
+1. Executive Summary
+2. Business Objectives
+3. Current Challenges
+4. Current State Business Practices
+5. Scope
+6. User Roles
+7. Functional Requirements
+8. Non-Functional Requirements
+9. Data Migration
+10. Acceptance Criteria
+Appendix
+
+1. Executive Summary
+Purpose
+This Business Requirements Document (BRD) defines the operational, functional, and
+technical requirements for implementing an integrated Enterprise Resource Planning (ERP)
+system for an indoor tennis facility using the Odoo platform. The objective of this project is
+to replace multiple disconnected software applications and manual business processes with
+a single, fully integrated solution that manages all major aspects of operations at Fox Cities
+Racquet Club (FCRC).
+The completed system will serve as the central operating platform for the organization,
+providing a single source of truth for customer information, court scheduling, financial
+transactions, inventory, employee management, and operational reporting. Every
+department within the club will utilize the same database and business processes,
+eliminating duplicate data entry, reducing administrative workload, improving reporting
+accuracy, and enhancing the overall member experience.
+Business Vision
+Fox Cities Racquet Club seeks to operate with the efficiency and professionalism of a
+modern service organization while maintaining the personalized experience expected by its
+members. Technology should simplify daily operations rather than create additional
+administrative work.
+The new ERP system will enable staff to perform all customer-facing and administrative
+functions from a unified interface. Whether a customer is booking a court, registering for an
+activity, purchasing merchandise, paying membership dues, or enrolling in a league, every
+transaction should be recorded within a single integrated system.
+
+2
+
+The organization also seeks to provide management with real-time visibility into business
+performance through comprehensive dashboards, financial reporting, and operational
+analytics.
+Project Objectives
+The implementation will pursue the following primary objectives:
+•
+
+Establish a single centralized database for all customers, members, employees,
+vendors, products, and financial information.
+
+•
+
+Provide electronic court scheduling for members, staff, tennis professionals, and
+league administrators.
+
+•
+
+Automate recurring membership billing and customer invoicing.
+
+•
+
+Integrate retail sales, inventory management, purchasing, and accounting into one
+workflow.
+
+•
+
+Eliminate duplicate data entry across departments.
+
+•
+
+Improve financial reporting through integrated accounting and real-time
+transaction posting.
+
+•
+
+Streamline payroll processing and employee management.
+
+•
+
+Improve customer service by providing staff with immediate access to necessary
+customer information.
+
+•
+
+Increase operational efficiency through workflow automation and standardized
+business processes.
+
+•
+
+Support future organizational needs without requiring replacement of core software
+systems.
+
+Scope of the ERP Solution
+The ERP implementation is expected to encompass all major operational functions of the
+facility, including but not limited to:
+•
+
+Customer Relationship Management (CRM)
+
+•
+
+Membership Management
+
+•
+
+Court Scheduling and Reservations
+
+•
+
+Private Lessons and Clinics
+
+•
+
+League Scheduling and Administration
+3
+
+•
+
+Point of Sale (POS)
+
+•
+
+Retail Inventory Management
+
+•
+
+Purchasing and Vendor Management
+
+•
+
+Accounts Receivable
+
+•
+
+Accounts Payable
+
+•
+
+General Ledger
+
+•
+
+Payroll and Human Resources
+
+•
+
+Reporting and Business Analytics
+
+•
+
+Electronic Document Storage
+
+•
+
+Customer Communications
+
+Each module shall operate as part of a single integrated ecosystem, allowing information
+entered in one area of the system to be immediately available throughout the organization.
+Guiding Principles
+The implementation should adhere to the following guiding principles throughout the
+project:
+Single Source of Truth
+Customer information, financial records, inventory quantities, and scheduling
+information shall exist only once within the system. Duplicate records and
+redundant data entry should be eliminated wherever possible.
+Integration Before Customization
+Whenever practical, standard Odoo functionality should be configured before
+custom development is considered. Customizations should be reserved for
+operational requirements that cannot reasonably be achieved through configuration
+or existing modules.
+Operational Simplicity
+The system should simplify daily workflows for employees. Common tasks
+performed by front desk staff, instructors, and managers should require minimal
+clicks and minimal training.
+Financial Accuracy
+
+4
+
+Every financial transaction should flow automatically into the accounting system
+without requiring duplicate entry or manual reconciliation. Sales, memberships,
+invoices, payroll, inventory purchases, and vendor payments should generate
+appropriate accounting entries automatically.
+Scalability
+The solution should support future expansion, including additional courts (e.g.,
+tennis courts that double as pickleball courts), employees, programs, memberships
+types, and retail offerings without requiring fundamental redesign. The possibility
+of online court reservation functionality should also be taken into account.
+Security
+Users should have access only to the information necessary to perform their
+responsibilities. Financial information, payroll records, and sensitive customer data
+shall be protected through role-based permissions (e.g., Front Desk staff will need
+access to Scheduling and Point of Sale, but not Accounting module).
+Data Integrity
+Business rules should prevent invalid transactions, scheduling conflicts, duplicate
+customer records, inaccurate inventory counts, and incomplete financial
+transactions whenever possible.
+Definition of Project Success
+The project will be considered successful when the new ERP system enables employees to
+conduct daily operations entirely within the integrated platform while improving efficiency,
+reducing administrative effort, and increasing the accuracy of operational and financial
+information.
+Upon completion, management should have real-time visibility into every significant aspect
+of club operations, including court utilization, memberships, customer activity, retail sales,
+inventory levels, financial performance, and overall business health.
+The completed system should serve as the organization's primary operational platform for
+the next decade and provide a flexible foundation for continued growth, process
+improvement, and future technology integration.
+
+2. Business Objectives
+Overview
+
+5
+
+The implementation of the Odoo Enterprise Resource Planning (ERP) system is intended to
+improve every major operational area of FCRC through automation, integration, and
+standardization of business processes. The primary objective is not simply to replace
+existing software, but to create a unified operating platform that increases efficiency,
+improves customer service, strengthens financial controls, and provides management with
+accurate, real-time information for decision-making.
+The business objectives outlined below establish the desired outcomes of the project and
+provide a framework for measuring the overall success of the implementation.
+
+Business Objective 1: Establish a Single Source of Truth
+The organization shall maintain one centralized database for all customers, members,
+employees, vendors, products, courts, financial transactions, and operational data.
+Information entered into the system shall be immediately available to authorized users
+across all departments without requiring duplicate entry or synchronization between
+separate software applications.
+Expected outcomes include:
+•
+
+Elimination of duplicate customer records.
+
+•
+
+Consistent customer information across all departments.
+
+•
+
+Reduced administrative effort.
+
+•
+
+Improved reporting accuracy.
+
+•
+
+Simplified employee training.
+
+Business Objective 2: Improve Customer Experience
+The system shall provide a seamless and professional experience for members, guests, and
+program participants throughout every interaction with the club.
+Customers should experience:
+•
+
+Real time account activity/balance access
+
+•
+
+More accurate billing.
+
+•
+
+Quicker payment processing.
+
+•
+
+Clear communication regarding schedules and account activity.
+6
+
+Employees should be able to answer customer questions using a single customer profile
+without switching between multiple software systems.
+
+Business Objective 3: Automate Administrative Processes
+Routine administrative activities should be automated whenever practical to reduce manual
+effort and minimize the potential for human error.
+Examples include:
+•
+
+Membership renewals.
+
+•
+
+Recurring billing.
+
+•
+
+Court Schedule creation and updating
+
+•
+
+Invoice generation.
+
+•
+
+Payment reminders.
+
+•
+
+Financial posting.
+
+•
+
+Payroll calculations.
+
+Automation should reduce repetitive administrative work while increasing consistency and
+accuracy.
+
+Business Objective 4: Improve Operational Efficiency
+Daily operations should require fewer manual steps and less employee time while
+maintaining high levels of customer service.
+Operational improvements include:
+•
+
+Faster court reservations.
+
+•
+
+Retail product entry and tracking
+
+•
+
+Real-time inventory updates.
+
+•
+
+Faster, more accurate Point of Sale process (e.g., barcode scanner)
+
+•
+
+Automated financial posting.
+
+•
+
+Reduced paperwork.
+
+•
+
+Improved communication between departments.
+7
+
+Staff members should spend more time serving customers and less time performing
+administrative tasks.
+
+Business Objective 5: Strengthen Financial Management
+All revenue and expense activity shall be recorded within the ERP system, allowing financial
+information to be available in real time.
+Management should have immediate visibility into:
+•
+
+Revenue by department.
+
+•
+
+Membership income.
+
+•
+
+Lesson revenue.
+
+•
+
+League revenue.
+
+•
+
+Retail sales.
+
+•
+
+Accounts receivable.
+
+•
+
+Accounts payable.
+
+•
+
+Cash flow.
+
+•
+
+Profitability.
+
+•
+
+Budget performance.
+
+Financial reporting should no longer depend upon manual consolidation from multiple
+software systems.
+
+Business Objective 6: Improve Inventory Accuracy
+Retail merchandise, tennis supplies, office supplies, maintenance inventory, and
+consumable products shall be managed within a centralized inventory system.
+The ERP shall provide:
+•
+
+Accurate inventory counts.
+
+•
+
+Automatic inventory adjustments following sales.
+
+•
+
+Vendor history.
+
+•
+
+Inventory valuation.
+8
+
+•
+
+Low-stock notifications.
+
+Inventory accuracy should improve purchasing decisions while reducing stock shortages
+and excess inventory.
+
+Business Objective 7: Enhance Scheduling and Facility Utilization
+Court scheduling should maximize facility usage while maintaining fairness among
+members and supporting all club programming.
+The scheduling system shall:
+•
+
+Prevent scheduling conflicts.
+
+•
+
+Support member booking rules (if/when online booking is implemented)
+
+•
+
+Manage leagues, lessons, tournaments, and events.
+
+•
+
+Track court utilization (identifying hours of private lessons, group lessons, league
+court time, open court time, etc).
+
+•
+
+Support recurring reservations.
+
+•
+
+Provide waiting lists when courts or private lessons are unavailable.
+
+Management should have visibility into court usage patterns to support future
+programming and operational decisions.
+
+Business Objective 8: Support Organizational Growth
+The ERP platform should provide a scalable foundation capable of supporting future
+business growth without requiring replacement of core business systems.
+The solution should accommodate:
+•
+
+New instructional programs.
+
+•
+
+Expanded memberships.
+
+•
+
+Additional employees.
+
+•
+
+New retail products.
+
+•
+
+Expanded reporting requirements.
+
+9
+
+Key Performance Indicators (KPIs)
+The following KPIs shall be used to evaluate the success of the ERP implementation.
+These metrics should be measured prior to implementation to establish a baseline and
+reviewed at 90 days, 6 months, and 12 months following system go-live.
+KPI
+
+Target
+
+Business Value
+
+Duplicate customer
+records
+
+Zero active duplicates
+
+Ensures customer satisfaction and
+reporting accuracy.
+
+Customer check-in
+time
+
+Less than 30 seconds
+
+Improves customer experience and
+reduces front desk congestion.
+
+Court reservation
+transaction time
+
+Less than 60 seconds
+
+Increases operational efficiency and
+member satisfaction.
+
+POS transaction time
+
+Average of less than 45
+seconds
+
+Improves retail service and reduces
+wait times.
+
+Membership renewal
+processing
+
+100% automated
+
+Eliminates manual invoicing and
+reduces administrative work.
+
+Billing accuracy
+
+Greater than 99.5%
+
+Reduces billing disputes and
+improves customer confidence.
+
+Inventory accuracy
+
+Greater than 98%
+
+Improves purchasing decisions and
+reduces inventory shrinkage.
+
+Month-end financial
+close
+
+Completed within 5
+business days
+
+Provides timely financial information
+for management.
+
+Accounts receivable
+aging
+
+Reduce invoices over 60
+days by 50%
+
+Improves cash flow and reduces
+collection efforts.
+
+Payroll processing time
+
+Reduce processing time by
+at least 50%
+
+Improves administrative efficiency
+and reduces payroll errors.
+
+Court utilization
+
+Increase annual utilization
+by 10–15%
+
+Maximizes use of club assets and
+increases revenue opportunities.
+
+Administrative data
+entry
+
+Reduce manual entry by at
+least 75%
+
+Frees staff for higher-value customer
+service activities.
+
+10
+
+Reporting availability
+
+Real-time dashboards
+available at all times
+
+Enables faster operational and
+financial decision-making.
+
+Customer account
+lookup
+
+Less than 25 seconds
+
+Improves front desk responsiveness.
+
+System availability
+
+99.9% uptime during
+business hours
+
+Ensures reliable daily operations.
+
+User adoption
+
+95% of staff actively using
+the ERP within 90 days
+
+Confirms successful implementation
+and training.
+
+Continuous Improvement
+The ERP system should not be viewed as a one-time implementation but as a long-term
+operational platform that evolves alongside the organization's needs.
+Following implementation, management should establish a quarterly review process to
+evaluate KPI performance, identify opportunities for process improvement, prioritize future
+enhancements, and ensure that the system continues to support the strategic goals of the
+organization.
+Future software enhancements should be prioritized based on measurable business value,
+improvements to customer experience, operational efficiency, financial performance, and
+staff productivity.
+
+3. Current Challenges
+Overview
+Fox Cities Racquet Club currently utilizes a combination of independent software
+applications, manual processes, spreadsheets, and paper-based workflows to manage daily
+operations. While these systems have supported the organization over time, they require
+significant manual intervention, duplicate data entry, and reconciliation across
+departments.
+These disconnected processes increase administrative workload, reduce operational
+efficiency, and limit management's ability to make timely, data-driven decisions. The
+purpose of this ERP implementation is to eliminate these inefficiencies by creating a fully
+integrated business management platform.
+
+11
+
+The following business challenges (BC) have been identified as primary drivers for this
+project.
+
+BC-001: Disconnected Software Systems
+The club currently relies on multiple software applications and manual processes to
+perform daily operations. Customer information, scheduling, accounting, point of sale,
+inventory, payroll, and reporting often exist in separate systems that do not share data
+automatically.
+As a result, staff frequently enter the same information multiple times, increasing both labor
+costs and the likelihood of data inconsistencies.
+Business Impact
+•
+
+Duplicate data entry.
+
+•
+
+Increased administrative workload.
+
+•
+
+Greater opportunity for human error.
+
+•
+
+Delayed access to accurate information.
+
+•
+
+Higher training requirements for employees.
+
+Desired Outcome
+A single integrated ERP platform where information entered once is immediately available
+throughout the organization.
+
+BC-002: Duplicate/Inaccessible Customer Data
+Customer information is often maintained in multiple locations throughout the organization
+or in many cases is unavailable to employees needing access. Changes to addresses, phone
+numbers, email addresses, family relationships, or membership status are often unavailable
+to staff members due to disparate methods of collection/storage or the lack of a shared
+electronic platform.
+This increases the likelihood of conflicting information and reduces confidence in customer
+records.
+Business Impact
+•
+
+Inconsistent customer information.
+
+•
+
+Incorrect billing information (membership class, etc).
+12
+
+•
+
+Communication errors.
+
+•
+
+Reduced customer service quality.
+
+Desired Outcome
+One centralized customer record serving as the authoritative source of customer
+information for every department.
+
+BC-003: Manual Financial Reconciliation
+Financial transactions generated by different systems require manual reconciliation before
+financial statements can be prepared.
+Retail sales, membership revenue, lessons, leagues, inventory purchases, and payroll
+frequently require additional manual journal entries or spreadsheet manipulation.
+Business Impact
+•
+
+Time-consuming daily reports and month-end closing.
+
+•
+
+Increased data entry and accounting workload.
+
+•
+
+Greater potential for financial errors.
+
+•
+
+Delayed customer billing and financial reporting.
+
+Desired Outcome
+Automatic financial posting from operational transactions into the general ledger with
+minimal manual intervention.
+
+BC-004: Limited Reporting Capabilities
+Because operational data exists in multiple systems, management reporting often requires
+manual compilation from several sources.
+Generating reports on membership trends, court utilization, tennis revenue streams, retail
+performance, or customer activity can require exporting data into spreadsheets for analysis.
+Business Impact
+•
+
+Delayed management reporting.
+
+•
+
+Limited operational visibility.
+
+13
+
+•
+
+Inconsistent report formats.
+
+•
+
+Difficulty identifying business trends.
+
+•
+
+Slower decision-making.
+
+Desired Outcome
+Real-time dashboards and standardized reports generated directly from the ERP system.
+
+BC-005: Labor-Intensive Point of Sale Operations
+The current retail sales process requires excessive manual effort and does not fully
+integrate with inventory management or accounting.
+Staff may need to manually enter product information, pricing, discounts, or payment
+details, increasing transaction time and the potential for error.
+Business Impact
+•
+
+Longer customer wait times.
+
+•
+
+Greater opportunity for pricing and inventory errors.
+
+•
+
+Manual reconciliation of sales activity.
+
+•
+
+Reduced operational efficiency.
+
+Desired Outcome
+A modern point-of-sale system utilizing barcode scanning, automated pricing, integrated
+payment processing, and immediate inventory updates.
+
+BC-006: Inefficient Inventory Management
+Inventory quantities are updated manually or through disconnected processes, making it
+time consuming for the Pro Shop Manager to manage retail stock.
+Receiving merchandise, adjusting inventory, and tracking product movement require
+significant staff effort and often depend upon manual recordkeeping.
+Business Impact
+•
+
+Inventory discrepancies.
+
+•
+
+Time-consuming physical counts.
+14
+
+•
+
+Inefficient purchasing decisions.
+
+Desired Outcome
+Real-time inventory management integrated with purchasing, point of sale, vendor
+management, and accounting.
+
+BC-007: Paper-Based Customer Statements
+Monthly customer account statements are currently generated, printed, folded, stuffed into
+envelopes, and mailed.
+This process requires considerable staff time and incurs recurring costs for paper, printing
+supplies, postage, and mailing labor.
+Business Impact
+•
+
+High administrative costs.
+
+•
+
+Delayed customer communication.
+
+•
+
+Increased paper consumption.
+
+•
+
+Manual processing effort.
+
+•
+
+Slower payment collection.
+
+Desired Outcome
+Electronic statements delivered automatically by email, with customers able to view
+invoices, payments, and account balances through an online customer portal.
+
+BC-008: Paper Court Schedules and Manual Reservation Management
+Court reservations are managed using printed schedules or manual scheduling processes
+that require staff intervention to update availability.
+Schedule changes, cancellations, and modifications may require multiple updates
+throughout the day and can increase the possibility of scheduling conflicts.
+Business Impact
+•
+
+Increased schedule creation workload and payroll cost.
+
+•
+
+Expense of materials (Paper sheets, stickers, etc)
+
+15
+
+•
+
+Time consuming court utilization data collection.
+
+•
+
+Delays in availability of future court schedules
+
+Desired Outcome
+A real-time electronic court scheduling system supporting online reservations, recurring
+bookings, automated conflict prevention, waitlists, and facility utilization reporting.
+
+BC-009: Limited Visibility into Business Performance
+Management lacks immediate access to key operational metrics necessary to monitor the
+health of the organization.
+Important information—including daily revenue, membership trends, retail performance,
+court utilization, instructor productivity, outstanding receivables, and inventory
+valuation—often requires manual preparation before it can be reviewed.
+Business Impact
+•
+
+Delayed strategic decision-making.
+
+•
+
+Limitations in operational oversight.
+
+•
+
+Difficulty identifying emerging trends.
+
+Desired Outcome
+Executive dashboards providing real-time operational, financial, and customer performance
+metrics.
+
+BC-010: Manual Membership Administration
+Membership renewals, billing adjustments, status changes, and member communications
+require significant manual effort.
+Business rules governing member privileges, discounts, guest access, and billing cycles are
+difficult to manage consistently across disconnected systems.
+Business Impact
+•
+
+Administrative inefficiency.
+
+•
+
+Decreased flexibility in membership paradigms (e.g., monthly vs annual billings)
+
+•
+
+Membership adjustment delays.
+16
+
+•
+
+Increased customer service inquiries.
+
+Desired Outcome
+Automated membership management with configurable billing rules, renewal workflows,
+member privileges, and integrated customer communications.
+
+BC-011: Limited Process Standardization
+Many operational procedures depend upon employee experience and institutional
+knowledge rather than standardized workflows.
+As staff members change roles or leave the organization, consistency and efficiency can be
+affected.
+Business Impact
+•
+
+Longer employee onboarding.
+
+•
+
+Inconsistent customer experiences.
+
+•
+
+Increased dependency on key personnel.
+
+•
+
+Difficulty documenting procedures.
+
+Desired Outcome
+Standardized workflows embedded within the ERP system that promote consistency,
+improve training, and reduce reliance on undocumented processes.
+BC-012: Fragmented Customer Communications
+Customer communications are currently managed through multiple independent channels
+and systems. Emails, text messages, account statements, lesson reminders, league
+announcements, membership renewals, promotional campaigns, and operational
+notifications are often created and distributed separately, requiring staff to maintain
+multiple contact lists and communication workflows.
+As customer information changes, communication lists may not remain synchronized,
+increasing the likelihood that members receive outdated, duplicate, or inconsistent
+information. Staff must also spend considerable time determining which customers should
+receive specific communications.
+Business Impact
+•
+
+Duplicate or inconsistent customer communications.
+
+•
+
+Time-consuming maintenance of email and contact lists.
+17
+
+•
+
+Increased likelihood of sending information to incorrect recipients.
+
+•
+
+Difficulty targeting communications to specific customer groups.
+
+•
+
+Limited ability to track communication history and customer engagement.
+
+•
+
+Reduced effectiveness of marketing and member outreach.
+
+Desired Outcome
+The ERP shall maintain a centralized communication platform that utilizes customer
+information already stored within the system. Staff should be able to generate targeted
+communications based upon membership type, program participation, league enrollment,
+instructor assignment, customer status, or other predefined criteria.
+The system should maintain a complete communication history within each customer
+profile and support automated notifications for invoices, payment confirmations,
+reservation confirmations, lesson reminders, cancellations, membership renewals, and
+other routine business events.
+
+BC-013: Decentralized Document Management
+Important business documents are currently stored in multiple physical and electronic
+locations, making retrieval difficult and increasing the risk of lost or outdated information.
+Examples include:
+•
+
+Membership agreements.
+
+•
+
+Liability waivers.
+
+•
+
+Employment documentation.
+
+•
+
+Vendor contracts.
+
+•
+
+Incident reports.
+
+•
+
+Equipment warranties.
+
+•
+
+Maintenance records.
+
+Staff frequently spend unnecessary time locating documents, and there is no consistent
+method for associating documentation with the related customer, employee, vendor,
+invoice, or transaction.
+Business Impact
+•
+
+Time-consuming document retrieval.
+18
+
+•
+
+Duplicate document storage.
+
+•
+
+Increased paper usage.
+
+•
+
+Difficulty verifying historical information.
+
+•
+
+Greater risk of misplaced or outdated documents.
+
+•
+
+Inconsistent document retention practices.
+
+Desired Outcome
+The ERP shall provide centralized electronic document management with the ability to
+attach documents directly to customer records, employee files, vendors, invoices, purchase
+orders, inventory items, maintenance requests, and other operational records.
+Documents should be searchable, securely stored, and accessible based upon user
+permissions while maintaining appropriate document retention and version control.
+
+BC-014: Dependence on Paper-Based Forms and Manual Workflows
+Numerous operational processes continue to rely on printed forms, handwritten approvals,
+and manual routing of documents between departments.
+Examples include:
+•
+
+Membership applications.
+
+•
+
+Liability waivers.
+
+•
+
+Lesson registration forms.
+
+•
+
+Refund requests.
+
+•
+
+Purchase approvals.
+
+•
+
+Employee onboarding documents.
+
+•
+
+Incident reports.
+
+•
+
+Vacation requests.
+
+•
+
+Internal authorization forms.
+
+Paper-based workflows increase processing time, require manual filing, and make it
+difficult to monitor the status of requests.
+Business Impact
+19
+
+•
+
+Increased administrative labor.
+
+•
+
+Slower approval processes.
+
+•
+
+Greater opportunity for lost or incomplete paperwork.
+
+•
+
+Duplicate data entry.
+
+•
+
+Increased printing and storage costs.
+
+•
+
+Difficulty tracking request status.
+
+Desired Outcome
+Business workflows should be digitized whenever practical through electronic forms,
+automated approvals, document routing, electronic signatures where appropriate, and realtime workflow tracking.
+Employees should be able to submit requests electronically, while managers should have
+visibility into pending approvals and completed transactions through the ERP system.
+
+BC-015: Dependence on Institutional Knowledge
+Many daily operating procedures rely heavily upon the experience and knowledge of longtenured employees rather than documented, standardized business processes.
+Critical operational knowledge—including billing procedures, scheduling practices,
+membership exceptions, reporting methods, inventory processes, and financial
+workflows—may reside primarily with a small number of individuals.
+As staffing changes occur, this dependence creates operational risk and increases the time
+required to train new employees.
+Business Impact
+•
+
+Longer onboarding and training periods.
+
+•
+
+Inconsistent execution of business processes.
+
+•
+
+Reduced operational continuity during staff turnover.
+
+•
+
+Increased dependency on key personnel.
+
+•
+
+Difficulty documenting and improving workflows.
+
+•
+
+Greater risk of service disruptions.
+
+Desired Outcome
+20
+
+Business processes should be standardized and embedded within the ERP system through
+configurable workflows, documented procedures, role-based permissions, automated
+business rules, and standardized reporting.
+The organization should be able to train new employees using documented system
+processes rather than relying primarily on informal knowledge transfer, ensuring
+consistency, continuity, and long-term operational resilience.
+
+4. Current State Business Process Overview
+Purpose
+This section documents the primary business processes (BP) currently used to operate the
+facility. The objective is to provide the Odoo implementation team with a clear
+understanding of how work is currently performed at FCRC, where information originates,
+how departments interact, and where inefficiencies exist. The following are broad
+descriptions of how we meet our basic business functions:
+Function
+
+Current System
+
+Retail sales transaction (POS)
+
+Manual product/service write-up and price calculation
+
+Financial posting
+
+Sage Accounting software
+
+Inventory tracking
+
+Sage Software with manual counting
+
+Electronic payment processing
+
+Dajavoo P1 Desktop POS Terminal
+
+Customer transaction documentation
+
+Carbon copy receipts
+
+The descriptions contained below specifically delineate the FCRC's current operating
+models ("As-Is" state). These processes will serve as the basis for designing future-state
+workflows within the Odoo ERP system.
+Each business process identifies the primary participants, major activities, current
+challenges, and opportunities for improvement through system integration and automation.
+
+BP-001: Member Registration and Account Creation
+Purpose
+To establish a new customer account, create membership records when applicable, collect
+required documentation, and enable the customer to participate in club activities.
+21
+
+Primary Participants
+•
+
+Prospective Member
+
+•
+
+Front Desk Staff
+
+•
+
+General Manager
+
+Current Process
+A prospective member visits the club or calls by telephone with a membership inquiry.
+Front desk staff manually collect customer information including contact information,
+household members, membership type, and other required details.
+Membership applications are completed using paper forms or separate electronic
+documents. Liability waivers are currently NOT collected.
+Customer information is entered into Sage accounting software when their account is
+created in our system. Sage serves as the primary source of information, with paper
+membership application forms sometimes available as back-up.
+Membership billing information is limited to the contact information (name, address, phone
+number) provided on the membership application. Payment information is NOT collected.
+Once complete, the customer becomes eligible to reserve courts, register for programs, and
+make purchases, most often through an in-house charge account that is billed early the
+following month.
+Current Challenges
+•
+
+Customer information is often unavailable to desk staff.
+
+•
+
+Paper forms require manual filing.
+
+•
+
+Customer records may become duplicated.
+
+•
+
+Historical documents are stored separately from customer records.
+
+Opportunities for Improvement
+The ERP should create a single customer profile containing all personal information,
+membership details, family relationships, billing information, signed documents,
+communication history, and activity records.
+Membership activation, billing setup, and customer communications should occur
+automatically through standardized workflows. Contact information (but not payment
+information if collected) should be available to desk staff.
+
+22
+
+BP-002: Membership Billing and Account Maintenance
+Purpose
+To maintain active memberships, process recurring billing, manage account changes, and
+ensure customers remain in good standing.
+Primary Participants
+•
+
+Front Desk Staff
+
+•
+
+Accounting Staff
+
+•
+
+General Manager
+
+Current Process
+Membership billing is processed according to annual billing cycles, with the membership
+year running from September 1 through the following August. Members joining during that
+12-month period are billed on a pro-rated basis (e.g., a member joining in January would be
+charged for an 8-month membership).
+Memberships are automatically renewed for the following membership year at the end of
+July via hand-written invoices Endnote i. Members who wish to cancel then have the cost of the
+next year’s membership credited back to their account (again, via a hand-written invoice).
+Customer statements are printed and hand delivered or mailed each month.
+Payments received through cash, check, or credit card are manually applied to customer
+accounts.
+Staff investigate billing discrepancies as they arise.
+Current Challenges
+•
+
+Manual review of recurring billing.
+
+•
+
+Printed monthly statements.
+
+•
+
+Manual payment application.
+
+•
+
+Delayed account updates.
+
+•
+
+Administrative effort associated with billing corrections.
+
+Opportunities for Improvement
+Recurring memberships should invoice automatically.
+Electronic statements should replace printed statements.
+23
+
+Online payment options should automatically update customer accounts.
+Membership status should update in real time.
+
+BP-003: Court Reservations and Scheduling
+Purpose
+To manage court availability in an efficient, cost-effective manner that is easy to understand
+and modify for desk staff.
+Primary Participants
+•
+
+Members
+
+•
+
+Front Desk Staff
+
+•
+
+Tennis Professionals
+
+•
+
+General Manager
+
+Current Process
+Court reservations are primarily managed through paper-based court sheets Endnote ii and
+manual scheduling procedures.
+Reservations are accepted in person or by telephone.
+Front desk employees manually review court availability before assigning courts.
+Schedule changes require additional manual updates.
+Lesson schedules, league schedules, maintenance closures, tournaments, and member
+reservations must all be coordinated manually.
+Staff monitor reservation conflicts throughout the day.
+Current Challenges
+•
+
+Paper-based schedules.
+
+•
+
+Significant manual scheduling effort.
+
+•
+
+Limited reporting on court utilization.
+
+•
+
+Tedious hand-written invoicing of on-court activities
+
+Opportunities for Improvement
+
+24
+
+An electronic scheduling platform should provide direct invoicing of court time and lessons,
+real-time court availability, conflict prevention, recurring reservations, instructor
+scheduling, and comprehensive court utilization reporting. Online reservations are a
+functionality we are also entertaining for the future.
+BP-004: Front Desk Customer Service
+Purpose
+To provide efficient, accurate, and professional customer service while serving as the
+central point of contact for members, guests, prospective customers, and tennis
+professionals.
+Primary Participants
+•
+
+Front Desk Staff
+
+•
+
+Members
+
+•
+
+Guests
+
+•
+
+Tennis Professionals
+
+•
+
+General Manager
+
+Current Process
+The front desk serves as the operational hub of the facility and is responsible for handling a
+wide variety of customer requests throughout the day.
+Typical responsibilities include:
+•
+
+Greeting members and guests.
+
+•
+
+Checking customers into the facility.
+
+•
+
+Sending players to their assigned courts.
+
+•
+
+Booking and modifying court reservations.
+
+•
+
+Registering customers for lessons, clinics, leagues, and special events.
+
+•
+
+Processing membership applications.
+
+•
+
+Accepting payments on customer accounts.
+
+•
+
+Selling retail merchandise.
+
+•
+
+Answering telephone inquiries.
+
+25
+
+•
+
+Responding to questions regarding memberships, billing, and programming.
+
+•
+
+Communicating schedule changes to members and instructors.
+
+To complete these tasks, employees reference paper court sheets, printed league schedules,
+hard copies of customer statements, and manual records.
+Current Challenges
+•
+
+Employees frequently don’t have access to relevant information to answer customer
+questions (program/event sign-up, account balance information, etc).
+
+•
+
+Routine transactions require unnecessary manual steps.
+
+•
+
+Staff spend valuable time searching for customer information.
+
+•
+
+Customer wait times increase during busy periods.
+
+•
+
+Training new employees is more difficult due to a reliance on institutional
+knowledge of operations
+
+Opportunities for Improvement
+The ERP should provide front desk staff with a single customer workspace containing all
+information necessary to serve the customer.
+From one screen, staff should be able to:
+•
+
+Check customers into the facility.
+
+•
+
+View customer information.
+
+•
+
+Charge members/customers for court time and lessons
+
+•
+
+Reserve courts.
+
+•
+
+Register customers for programs.
+
+•
+
+Process payments.
+
+•
+
+View account balances.
+
+•
+
+Review purchase history.
+
+•
+
+Access signed waivers.
+
+•
+
+Update customer information.
+
+•
+
+View communication history.
+
+26
+
+The objective is to complete the majority of customer interactions without leaving a single
+application.
+
+BP-005: Retail Sales (Point of Sale)
+Purpose
+To process retail sales efficiently while maintaining accurate inventory records, financial
+reporting, and customer purchase history.
+Primary Participants
+•
+
+Front Desk Staff
+
+•
+
+Members
+
+•
+
+Guests
+
+•
+
+Manager/Accounting Staff
+
+Current Process
+Retail merchandise including racquets, apparel, grips, strings, accessories, clothing, and
+other products are sold through the front desk.
+Employees manually write up paper and carbon copy invoices, recording product and price
+information, calculate discounts and taxes, and when necessary, accept payment, and issue
+receipts.
+Inventory adjustments may occur separately from the sales transaction and accounting
+entries often require reconciliation with financial records.
+Returns, exchanges, and gift certificates also require additional manual processing.
+Current Challenges
+•
+
+Product entry is labor intensive.
+
+•
+
+Errors can and do occur regularly in both product identification and pricing
+
+•
+
+Inventory updates do not occur in real time.
+
+•
+
+Pricing changes require manual maintenance.
+
+•
+
+Returns and exchanges involve additional administrative effort.
+
+Opportunities for Improvement
+
+27
+
+The ERP should provide a modern point-of-sale solution that supports:
+•
+
+Barcode scanning.
+
+•
+
+Integrated account billing and/or payment processing.
+
+•
+
+Automatic member pricing.
+
+•
+
+Gift cards and store credit.
+
+•
+
+Returns and exchanges.
+
+•
+
+Real-time inventory updates.
+
+•
+
+Automatic accounting entries.
+
+•
+
+Customer purchase history.
+
+•
+
+Sales reporting by product, category, employee, and time period.
+
+Retail transactions should automatically update inventory quantities, customer purchase
+history, and financial records without requiring duplicate entry.
+
+BP-006: Inventory Receiving and Management
+Purpose
+To maintain accurate inventory records while ensuring retail merchandise and operational
+supplies are available when needed.
+Primary Participants
+•
+
+Front Desk Staff
+
+•
+
+General Manager
+
+•
+
+Pro Shop Manager
+
+•
+
+Vendors
+
+Current Process
+Inventory is ordered from multiple vendors and received by club staff.
+Pro Shop Manager manually verify received merchandise against packing slips and invoices
+before updating inventory records.
+Periodic physical inventory counts are performed to identify discrepancies.
+
+28
+
+Inventory adjustments are laborious time consuming.
+Current Challenges
+•
+
+Inventory records are updated manually.
+
+•
+
+Receiving inventory (especially new products) requires complicated manual
+computer entry
+
+•
+
+Inventory discrepancies may not be identified.
+
+•
+
+Physical inventory counts are time consuming.
+
+•
+
+Laborious inventory adjustment process.
+
+Opportunities for Improvement
+The ERP should provide integrated inventory management supporting:
+•
+
+Barcode scanning.
+
+•
+
+Purchase order receiving.
+
+•
+
+Multiple inventory categories.
+
+•
+
+Inventory valuation.
+
+•
+
+Historical purchasing analysis.
+
+Inventory quantities should update automatically following purchases, retail sales,
+adjustments, and transfers.
+
+BP-007: Purchasing and Vendor Management
+Purpose
+To procure merchandise, supplies, equipment, and services necessary for club operations
+while maintaining financial control and positive vendor relationships.
+Primary Participants
+•
+
+General Manager
+
+•
+
+Pro Shop Manager
+
+•
+
+Vendors
+
+Current Process
+
+29
+
+Inventory needs are identified through manual observation, physical inventory counts,
+employee requests (leaving a physical note), or scheduled purchasing activities (such as
+vendor program orders).
+For retail orders, the Pro Shop manager place the order with the vendor (usually via online
+portal). Pro Shop Manager receives a notification of shipment and/or the vendor’s invoice.
+Upon receipt, shipments are verified against vendor invoices before being entered into
+inventory records and accounting systems.
+Vendor invoices are reviewed separately before payment is processed.
+Historical purchasing information, vendor pricing, and purchasing trends may not be
+readily available when making purchasing decisions.
+Current Challenges
+•
+
+Paper-dependent, manual process for receiving product from and sending payment
+to vendors
+
+Opportunities for Improvement
+The ERP should provide a centralized purchasing system that supports:
+•
+
+Automatic inventory updates.
+
+•
+
+Accounts payable integration.
+
+•
+
+Aging of vendor bills to ensure timely payment.
+
+The purchasing process should provide management with complete visibility into
+purchasing activity and vendor payment while reducing manual effort and improving
+inventory planning.
+BP-010: Accounts Receivable
+Purpose
+To accurately bill customers for memberships, court reservations, lessons, clinics, leagues,
+retail purchases, and other services while ensuring timely collection of payments and
+maintaining accurate customer account balances.
+Primary Participants
+•
+
+Front Desk Staff
+
+•
+
+General Manager/Accounting Staff
+
+•
+
+Members and Guests
+30
+
+Current Process
+Customer charges are generated from multiple operational activities, including recurring
+membership dues, court reservations, instructional programs, league participation, retail
+purchases, stringing services, locker rentals, and miscellaneous fees.
+Charges originate from hand-written paper invoices and require manual entry into
+customer accounts in Sage software. Payments are accepted through a variety of channels,
+including cash, checks, credit/debit cards, and electronic payments, and are manually
+applied to outstanding balances.
+Customer account statements are generated, printed, and mailed on a monthly basis. The
+General Manager and Accounting Staff monitor overdue balances, respond to billing
+inquiries, process account adjustments, and collect outstanding receivables.
+The General Manager reviews accounts receivable reports to identify delinquent accounts
+and determine appropriate collection actions.
+Current Challenges
+•
+
+Manual invoice generation and payment application.
+
+•
+
+Printed customer statements.
+
+•
+
+Manual account adjustments.
+
+•
+
+Time-consuming collections process.
+
+•
+
+Limited real-time visibility into customer balances.
+
+Opportunities for Improvement
+The ERP should automatically generate invoices from all billable activities performed
+throughout the organization.
+Customer payments should immediately update account balances, financial records, and
+customer histories regardless of payment method.
+The system should provide:
+•
+
+Automated recurring invoices.
+
+•
+
+Electronic statements.
+
+•
+
+Online payment capabilities.
+
+•
+
+Automated payment reminders.
+
+•
+
+Real-time customer balances.
+31
+
+•
+
+Accounts receivable aging reports.
+
+•
+
+Collection management tools.
+
+•
+
+Complete transaction histories.
+
+Financial reporting should always reflect current receivable balances without requiring
+manual reconciliation.
+
+BP-011: Accounts Payable
+Purpose
+To accurately manage vendor invoices, process payments, maintain vendor records, and
+ensure timely payment of organizational obligations.
+Primary Participants
+•
+
+General Manager/Accounting Staff
+
+•
+
+Pro Shop Manager
+
+•
+
+Vendors
+
+Current Process
+Vendor invoices are received through mail, email, or with delivered merchandise.
+General Manager and Pro Shop Manager manually verify invoices against packing slips and
+receiving documentation before entering invoice information into the accounting system.
+Invoices are scheduled for payment according to vendor terms and available cash flow.
+Checks are prepared and issued and accounting records are updated to reflect payment
+activity.
+Current Challenges
+•
+
+Manual invoice entry.
+
+•
+
+Manual verification of purchase documentation.
+
+•
+
+Increased administrative effort during payment processing.
+
+Opportunities for Improvement
+The ERP should integrate purchasing, receiving, inventory, and accounts payable into one
+continuous workflow.
+32
+
+The system should support:
+•
+
+Electronic invoice capture.
+
+•
+
+Automated invoice approval workflows.
+
+•
+
+Three-way matching of purchase orders, receiving records, and vendor invoices.
+
+•
+
+Scheduled payment processing.
+
+•
+
+Electronic payments.
+
+•
+
+Vendor aging reports.
+
+BP-012: Payroll Processing
+Purpose
+To accurately compensate employees while maintaining compliance with payroll
+regulations, tracking labor costs, and supporting efficient workforce management.
+Primary Participants
+•
+
+General Manager
+
+•
+
+Employees
+
+•
+
+Tennis Professionals
+
+Current Process
+Hourly employee (Desk Staff, Tennis Professionals) work hours are calculated from paper
+time sheets. Commission-based pay (e.g., Pro Shop manager) is calculated manually as a
+percentage of sales.
+The General Manager verifies employee time, calculates compensation, reviews deductions,
+prepares payroll, and distributes employee checks semi-monthly.
+Payroll information is then recorded within the accounting system and labor costs are
+allocated to appropriate departments.
+Employee records, payroll history, benefit information, and tax documentation may be
+maintained separately.
+Current Challenges
+•
+
+Manual collection of payroll information.
+
+33
+
+•
+
+Multiple sources for employee time and compensation.
+
+•
+
+Manual payroll verification.
+
+Opportunities for Improvement
+The ERP should integrate employee records, scheduling, payroll, accounting, and
+departmental reporting.
+The system should support:
+•
+
+Salaried, commission-based, and hourly employees.
+
+•
+
+Tennis professional compensation structures (Private, private groups, public
+groups)
+
+•
+
+Payroll deductions.
+
+•
+
+Vacation and sick leave tracking.
+
+•
+
+Labor cost allocation.
+
+•
+
+Payroll reporting.
+
+•
+
+Electronic pay statements and direct deposit.
+
+•
+
+Payroll history.
+
+•
+
+Automatic financial posting.
+
+Management should have real-time visibility into payroll expense by department, program,
+and reporting period.
+
+BP-013: Financial Reporting
+Purpose
+To provide accurate, timely, and meaningful financial information supporting operational
+management, budgeting, strategic planning, and organizational governance.
+Primary Participants
+•
+
+General Manager
+
+•
+
+Board of Directors
+
+•
+
+Pro Shop Manager
+
+Current Process
+34
+
+Financial reports are prepared by collecting information from accounting records,
+operational systems, spreadsheets, and manually compiled reports.
+Departmental revenue and expenses are reviewed to evaluate organizational performance.
+Operational reports such as court utilization, membership trends, lesson participation,.
+Monthly financial reporting often requires significant reconciliation and manual
+preparation.
+Current Challenges
+•
+
+Financial information originates from multiple systems.
+
+•
+
+Significant spreadsheet manipulation.
+
+•
+
+Delayed report preparation.
+
+•
+
+Limited operational dashboards.
+
+•
+
+Difficulty combining operational and financial information.
+
+•
+
+Time-consuming month-end closing.
+
+•
+
+Limited forecasting capability.
+
+Opportunities for Improvement
+The ERP should provide real-time financial reporting integrated with operational data.
+Management should have immediate access to:
+•
+
+Profit and Loss Statements.
+
+•
+
+Balance Sheets.
+
+•
+
+Cash Flow Statements.
+
+•
+
+Budget versus Actual reports.
+
+•
+
+Revenue by department.
+
+•
+
+Membership performance.
+
+•
+
+Retail sales analysis.
+
+•
+
+Court utilization statistics.
+
+•
+
+Program profitability.
+
+•
+
+Payroll expense.
+35
+
+•
+
+Accounts receivable.
+
+•
+
+Accounts payable.
+
+•
+
+Executive dashboards.
+
+•
+
+Custom financial reports.
+
+Reports should be generated directly from live business data without requiring manual
+consolidation.
+
+BP-014: Customer Communications
+Purpose
+To communicate effectively with members, guests, prospective customers, employees, and
+program participants while maintaining consistent messaging and strengthening customer
+relationships.
+Primary Participants
+•
+
+Front Desk Staff
+
+•
+
+General Manager
+
+•
+
+Tennis Professionals
+
+•
+
+Members and Guests
+
+Current Process
+Customer communications are generated through a variety of methods including email,
+telephone, printed statements, printed notices, text messages, social media, and verbal
+communication.
+Distribution lists are often maintained separately from customer records and require
+manual updates when customer information changes.
+Routine communications such as lesson reminders, court reservation confirmations,
+membership renewals, billing notices, league announcements, weather cancellations, and
+promotional campaigns are prepared independently and distributed through separate tools.
+Staff have limited ability to view a complete history of communications sent to individual
+customers.
+Current Challenges
+•
+
+Multiple communication platforms.
+36
+
+•
+
+Separate contact lists.
+
+•
+
+Manual maintenance of distribution groups.
+
+•
+
+Duplicate communications.
+
+•
+
+Inconsistent messaging.
+
+•
+
+Limited communication history.
+
+•
+
+Difficulty targeting specific customer segments.
+
+•
+
+Significant staff time devoted to routine notifications.
+
+Opportunities for Improvement
+The ERP should provide a centralized communication platform integrated directly with
+customer records.
+The system should support:
+•
+
+Automated email notifications.
+
+•
+
+SMS/text messaging.
+
+•
+
+Reservation confirmations.
+
+•
+
+Lesson reminders.
+
+•
+
+Membership renewal notices.
+
+•
+
+Billing notifications.
+
+•
+
+Event announcements.
+
+•
+
+Marketing campaigns.
+
+•
+
+Customer segmentation.
+
+•
+
+Communication templates.
+
+•
+
+Communication history.
+
+•
+
+Delivery tracking.
+
+•
+
+Customer communication preferences.
+
+Employees should be able to initiate communications directly from customer, program,
+membership, league, or reservation records without maintaining separate mailing lists.
+
+37
+
+Routine notifications should be generated automatically based upon business events,
+reducing administrative effort while improving consistency and customer service.
+
+5. Scope
+Purpose
+This section defines the scope of the ERP implementation project and establishes the
+guiding principles that will govern solution design, software configuration, custom
+development, and future system maintenance.
+The objective of this implementation is to deploy an integrated business management
+solution that supports the operational needs of the indoor tennis facility while minimizing
+implementation cost, project complexity, and long-term maintenance requirements.
+
+Project Philosophy
+The organization has selected Odoo because of its comprehensive suite of integrated
+business applications and its ability to support multiple operational functions from a single
+platform.
+The preferred implementation approach is to maximize the use of standard Odoo
+functionality through configuration before considering custom software development.
+Customizations should only be recommended when a documented business requirement
+cannot be reasonably satisfied through:
+•
+
+Standard Odoo applications
+
+•
+
+Native Odoo configuration options
+
+•
+
+Approved Odoo Studio customizations
+
+•
+
+Existing supported Odoo modules
+
+The organization recognizes that excessive customization increases implementation cost,
+testing effort, future maintenance requirements, software upgrade complexity, and overall
+project risk.
+Accordingly, every proposed customization should demonstrate clear business value that
+outweighs these additional costs.
+
+Configuration-First Principle
+38
+
+The implementation team shall follow the principles below throughout the project:
+Configure Before Customizing
+Whenever practical, business processes should be adapted to standard Odoo functionality
+rather than modifying core application behavior.
+Minimize Custom Code
+Custom development should be limited to requirements that provide significant operational
+value and cannot be achieved through standard configuration.
+Preserve Upgradeability
+Solution design should prioritize compatibility with future Odoo upgrades.
+Custom modules should avoid modifying core Odoo code whenever possible.
+Favor Standard Business Practices
+Where appropriate, existing business processes may be refined or standardized to align
+with proven ERP practices rather than reproducing inefficient legacy workflows.
+Reduce Total Cost of Ownership
+Implementation decisions should consider not only initial development cost but also longterm maintenance, support, training, documentation, and future enhancements.
+
+In Scope
+The ERP implementation shall include the following functional areas:
+Customer Relationship Management (CRM)
+•
+
+Customer records
+
+•
+
+Family relationships
+
+•
+
+Contact management
+
+•
+
+Customer history
+
+•
+
+Customer communications
+
+•
+
+Document storage
+
+Membership Management
+•
+
+Membership types
+39
+
+•
+
+Billing (annual/monthly)
+
+•
+
+Automatic renewals
+
+•
+
+Member privileges
+
+•
+
+Guest management
+
+•
+
+Membership reporting
+
+Court Scheduling
+•
+
+Court reservations
+
+•
+
+Recurring reservations
+
+•
+
+Court availability
+
+•
+
+Instructor scheduling
+
+•
+
+Waitlists
+
+•
+
+Court utilization reporting
+
+Programs and Instruction
+•
+
+Private lessons
+
+•
+
+Group lessons
+
+•
+
+Clinics
+
+•
+
+Junior programs
+
+•
+
+Adult programs
+
+•
+
+Attendance tracking
+
+•
+
+Instructor assignments
+
+Point of Sale
+•
+
+Retail sales
+
+•
+
+Barcode scanning
+
+•
+
+Member pricing
+
+•
+
+Gift cards
+
+•
+
+Returns
+40
+
+•
+
+Integrated payment processing
+
+Inventory Management
+•
+
+Retail inventory
+
+•
+
+Teaching supplies
+
+•
+
+Office supplies
+
+•
+
+Maintenance inventory
+
+•
+
+Purchasing
+
+•
+
+Receiving
+
+•
+
+Inventory valuation
+
+Purchasing
+•
+
+Vendor management
+
+•
+
+Purchase requisitions
+
+•
+
+Purchase orders
+
+•
+
+Receiving
+
+•
+
+Vendor invoices
+
+Accounting
+•
+
+General Ledger
+
+•
+
+Accounts Receivable
+
+•
+
+Accounts Payable
+
+•
+
+Bank Reconciliation
+
+•
+
+Budget reporting
+
+•
+
+Financial statements
+
+Payroll
+•
+
+Employee records
+
+•
+
+Payroll processing
+
+•
+
+Leave management
+41
+
+•
+
+Payroll reporting
+
+Reporting
+•
+
+Executive dashboards
+
+•
+
+Financial reporting
+
+•
+
+Court utilization
+
+•
+
+Membership statistics
+
+•
+
+Instructor productivity
+
+•
+
+Inventory reporting
+
+•
+
+Operational analytics
+
+Out of Scope
+Unless specifically approved through formal change management, the following items are
+outside the scope of this implementation:
+•
+
+Website redesign or redevelopment
+
+•
+
+Public website content management
+
+•
+
+Mobile application development beyond standard Odoo functionality
+
+•
+
+Building automation systems
+
+•
+
+Telephone system replacement
+
+•
+
+Custom software unrelated to documented business requirements
+
+Additional functionality requested after project approval shall be evaluated separately for
+cost, schedule impact, and implementation priority.
+
+Customization Guidelines
+All requested customizations should be evaluated using the following decision hierarchy:
+Level 1 – Standard Odoo Functionality (Preferred)
+Requirement is satisfied using standard Odoo applications with little or no configuration.
+Level 2 – Configuration
+42
+
+Requirement is satisfied through configuration of existing Odoo functionality without
+software development.
+Level 3 – Odoo Studio
+Requirement is satisfied using Odoo Studio, custom fields, views, reports, or workflow
+configuration without modifying application logic.
+Level 4 – Community or Certified Module
+Requirement is satisfied using a well-supported third-party module that is actively
+maintained and compatible with the selected Odoo version.
+Level 5 – Custom Development (Last Resort)
+Custom software development should only be performed when all previous options have
+been evaluated and determined to be insufficient.
+Each proposed customization should include:
+•
+
+Business justification
+
+•
+
+Functional requirement(s) addressed
+
+•
+
+Estimated development effort
+
+•
+
+Estimated implementation cost
+
+•
+
+Future maintenance considerations
+
+•
+
+Upgrade impact
+
+•
+
+Testing requirements
+
+Implementation Priorities
+The implementation should prioritize delivery of core operational functionality before
+secondary enhancements.
+Phase 1 – Core Operations
+•
+
+CRM
+
+•
+
+Membership Management
+
+•
+
+Court Scheduling
+
+•
+
+POS
+43
+
+•
+
+Inventory
+
+•
+
+Accounts Receivable
+
+•
+
+Customer Billing
+
+Phase 2 – Financial Management
+•
+
+Purchasing
+
+•
+
+Accounts Payable
+
+•
+
+General Ledger
+
+•
+
+Payroll
+
+•
+
+Financial Reporting
+
+Phase 3 – Operational Enhancements
+•
+
+Advanced reporting
+
+•
+
+Workflow automation
+
+•
+
+Executive dashboards
+
+•
+
+Customer communications
+
+•
+
+Document management
+
+•
+
+Business intelligence
+
+•
+
+Additional approved customizations
+
+Project Success Criteria
+The implementation shall be considered successful when:
+•
+
+Staff can perform daily operations using a single integrated ERP platform.
+
+•
+
+Duplicate data entry has been substantially eliminated.
+
+•
+
+Financial transactions flow automatically between operational modules and
+accounting.
+
+•
+
+Manual reconciliation has been significantly reduced.
+
+•
+
+Standard Odoo functionality has been utilized wherever practical.
+
+44
+
+•
+
+Custom development has been limited to documented business requirements that
+provide measurable operational value.
+
+•
+
+The system remains maintainable, upgradeable, and scalable for future
+organizational growth.
+
+The completed ERP solution should provide a sustainable operational platform that
+supports the organization's needs for many years while minimizing future maintenance
+costs and reducing dependence on custom software.
+
+6. User Roles
+Purpose
+This section defines the primary user roles that will interact with the ERP system and
+establishes the security principles governing access to business information.
+The ERP system shall provide role-based security, ensuring that employees have access
+only to the information and functions necessary to perform their assigned responsibilities.
+User permissions should be configurable, allowing management to assign multiple roles to
+an employee when operational needs require cross-functional responsibilities.
+The implementation should follow the Principle of Least Privilege, granting the minimum
+level of system access necessary for each role while protecting sensitive financial, payroll,
+and customer information.
+
+Security Principles
+The ERP implementation shall adhere to the following security principles:
+•
+
+Role-based access control (RBAC) shall govern access to all system functions.
+
+•
+
+Users shall only view, edit, approve, or delete information appropriate to their
+assigned responsibilities.
+
+•
+
+Approval workflows shall be enforced for designated financial and administrative
+activities.
+
+•
+
+Sensitive information, including payroll and financial records, shall be restricted to
+authorized personnel.
+
+•
+
+User permissions shall be centrally administered by the General Manager or
+designated system administrator.
+
+45
+
+•
+
+Employees may be assigned multiple security roles when operational
+responsibilities require broader access.
+
+User Role 1 – General Manager
+Role Summary
+The General Manager serves as the primary administrator of the ERP system and is
+responsible for overseeing all operational, financial, and administrative functions for FCRC.
+This role requires unrestricted visibility across all operational departments and authority to
+approve financial transactions, modify system configuration (where appropriate), and
+access executive reporting.
+The General Manager is expected to use the ERP as the primary management tool for
+monitoring club performance, managing staff, supporting customer service, and making
+strategic business decisions.
+Primary Responsibilities
+•
+
+Customer relationship management
+
+•
+
+Membership administration
+
+•
+
+Court scheduling oversight
+
+•
+
+Program management
+
+•
+
+Retail operations
+
+•
+
+Inventory management
+
+•
+
+Purchasing
+
+•
+
+Accounts Receivable
+
+•
+
+Accounts Payable
+
+•
+
+Payroll oversight
+
+•
+
+Financial reporting
+
+•
+
+Executive dashboards
+
+•
+
+Employee management
+
+•
+
+Vendor management
+
+46
+
+•
+
+Document management
+
+•
+
+System administration
+
+•
+
+Workflow approvals
+
+Required Permissions
+The General Manager shall have permission to:
+•
+
+Create, modify, and archive customer records.
+
+•
+
+Create and modify membership types.
+
+•
+
+Override reservation restrictions when necessary.
+
+•
+
+Approve refunds, credits, and account adjustments.
+
+•
+
+Approve purchase orders and vendor invoices.
+
+•
+
+Access all accounting functions.
+
+•
+
+View and approve payroll.
+
+•
+
+Manage inventory.
+
+•
+
+Create and modify reports.
+
+•
+
+Configure workflow approvals.
+
+•
+
+Manage employee permissions.
+
+•
+
+View all operational dashboards.
+
+•
+
+Export business data when authorized.
+
+Approval Authority
+The General Manager shall serve as the final approval authority for:
+•
+
+Purchase approvals.
+
+•
+
+Vendor payments.
+
+•
+
+Payroll adjustments.
+
+•
+
+Customer account credits.
+
+•
+
+Inventory write-offs.
+
+•
+
+Membership exceptions.
+47
+
+•
+
+Major pricing changes.
+
+•
+
+User permission changes.
+
+User Role 2 – Pro Shop Manager / Accounting Assistant
+Role Summary
+The Pro Shop Manager / Accounting Assistant serves as the primary operational and
+financial support role within the organization.
+This position manages daily retail operations while supporting accounting, purchasing,
+inventory management, customer billing, and administrative functions.
+This role requires broad operational access but should have limited authority to approve
+high-value financial transactions or modify system configuration.
+Primary Responsibilities
+•
+
+Retail sales
+
+•
+
+Inventory management
+
+•
+
+Merchandise receiving
+
+•
+
+Purchase order preparation
+
+•
+
+Vendor communication
+
+•
+
+Customer billing
+
+•
+
+Accounts Receivable support
+
+•
+
+Accounts Payable processing
+
+•
+
+Bank deposit preparation
+
+•
+
+Membership account maintenance
+
+•
+
+Customer service support
+
+•
+
+Financial reporting assistance
+
+Required Permissions
+The Pro Shop Manager / Accounting Assistant shall have permission to:
+•
+
+Process retail sales.
+
+48
+
+•
+
+Receive inventory.
+
+•
+
+Enter vendor invoices.
+
+•
+
+Process customer payments.
+
+•
+
+Generate customer invoices.
+
+•
+
+View inventory reports.
+
+•
+
+Adjust inventory with appropriate documentation.
+
+•
+
+Process customer returns.
+
+•
+
+Manage customer accounts.
+
+•
+
+View accounting reports appropriate to assigned responsibilities.
+
+•
+
+Generate operational reports.
+
+Restricted Functions
+This role shall not have authority to:
+•
+
+Finalize payroll.
+
+•
+
+Modify payroll records.
+
+•
+
+Change accounting configuration.
+
+•
+
+Delete financial transactions.
+
+•
+
+Modify user permissions.
+
+•
+
+Override security settings.
+
+•
+
+Approve high-value vendor payments beyond established approval thresholds.
+
+User Role 3 – Front Desk / Point of Sale
+Role Summary
+The Front Desk / Point of Sale role supports daily customer-facing operations and serves as
+the primary point of contact for members and guests.
+Employees assigned this role require fast, intuitive access to customer information while
+maintaining limited access to financial and administrative functions.
+
+49
+
+The system interface should prioritize speed, simplicity, and ease of use to support efficient
+customer service during busy operating hours.
+Primary Responsibilities
+•
+
+Customer check-in
+
+•
+
+Court reservations
+
+•
+
+Lesson registration
+
+•
+
+League registration
+
+•
+
+Membership inquiries
+
+•
+
+Retail sales
+
+•
+
+Payment processing
+
+•
+
+Gift card sales
+
+•
+
+Customer account updates
+
+•
+
+Telephone support
+
+•
+
+Daily customer communications
+
+Required Permissions
+The Front Desk / Point of Sale role shall have permission to:
+•
+
+Search customer records.
+
+•
+
+Create new customer accounts.
+
+•
+
+Update customer contact information.
+
+•
+
+Reserve courts.
+
+•
+
+Register customers for programs.
+
+•
+
+Process retail sales.
+
+•
+
+Accept customer payments.
+
+•
+
+View customer account balances.
+
+•
+
+Apply approved discounts.
+
+•
+
+Issue receipts.
+
+50
+
+•
+
+Print or email invoices.
+
+•
+
+Access customer waivers and required documentation.
+
+•
+
+Record customer notes.
+
+Restricted Functions
+This role shall not have authority to:
+•
+
+Access payroll information.
+
+•
+
+Modify accounting records.
+
+•
+
+Approve purchase orders.
+
+•
+
+Process vendor payments.
+
+•
+
+View confidential financial reports.
+
+•
+
+Delete customer transactions.
+
+•
+
+Change pricing policies.
+
+•
+
+Modify inventory valuation.
+
+•
+
+Change security permissions.
+
+•
+
+Access executive dashboards beyond operational metrics.
+
+Temporary Role Assignments
+The ERP shall support temporary assignment of additional security roles when operational
+needs require employees to perform responsibilities outside their normal job functions.
+Examples include:
+•
+
+General Manager covering front desk operations.
+
+•
+
+Pro Shop Manager assisting with accounting.
+
+•
+
+Front Desk staff assisting with inventory counts.
+
+Temporary role assignments should maintain complete audit histories and expire
+automatically when no longer required.
+
+Role-Based Dashboards
+51
+
+Each user role should be presented with a dashboard tailored to its operational
+responsibilities.
+General Manager Dashboard
+•
+
+Daily revenue
+
+•
+
+Membership statistics
+
+•
+
+Court utilization
+
+•
+
+Accounts Receivable aging
+
+•
+
+Accounts Payable
+
+•
+
+Cash position
+
+•
+
+Payroll summary
+
+•
+
+Inventory alerts
+
+•
+
+Executive KPIs
+
+•
+
+Operational notifications
+
+Pro Shop Manager / Accounting Assistant Dashboard
+•
+
+Daily sales
+
+•
+
+Inventory alerts
+
+•
+
+Purchase orders awaiting receipt
+
+•
+
+Vendor invoices pending processing
+
+•
+
+Customer balances
+
+•
+
+Accounts Receivable summary
+
+•
+
+Low inventory notifications
+
+Front Desk / Point of Sale Dashboard
+•
+
+Court schedule
+
+•
+
+Customer check-ins
+
+•
+
+Upcoming reservations
+
+•
+
+Daily POS transactions
+
+52
+
+•
+
+Lesson registrations
+
+•
+
+Customer alerts
+
+•
+
+Membership expirations
+
+•
+
+Outstanding customer tasks
+
+Future Expansion
+The ERP security model should be designed to accommodate future user roles without
+significant redesign.
+Potential future roles may include:
+•
+
+Tennis Professionals
+
+•
+
+Director of Racquet Sports
+
+•
+
+Board Members (read-only reporting)
+
+•
+
+External Accountant
+
+•
+
+Seasonal Employees
+
+The implementation should allow additional roles to be configured through standard Odoo
+security groups whenever possible, minimizing the need for custom development.
+
+7. Functional Requirements
+CRM & Memberships
+BR-CRM-001
+When a new customer account is created, the system shall verify that duplicate
+customer records do not already exist.
+BR-CRM-002
+Changes to customer contact information shall immediately update all modules
+utilizing customer data.
+BR-CRM-003
+All customer interactions—including reservations, purchases, invoices, payments,
+lessons, leagues, and communications—shall become part of the customer's
+permanent history.
+53
+
+BR-CRM-004
+Customer records shall never be deleted. Inactive customers shall be archived while
+preserving historical transactions.
+BR-CRM-005
+Customer documents (waivers, contracts, correspondence, etc.) shall automatically
+become part of the customer's electronic record.
+BR-CRM-006
+Recurring memberships shall generate invoices automatically according to the
+established billing schedule.
+
+Business Requirements: Maintain a single customer record including memberships,
+family links, waivers, balances, reservations, purchases, communications.
+User Story: As a front desk employee, I want to find a customer in seconds so I can
+serve them quickly.
+Acceptance Criteria: Customer search <2 seconds; duplicate detection; complete
+history.
+
+Court Scheduling
+BR-COURT-001
+The system shall prevent double-booking of courts.
+BR-COURT-002
+Reservation rules shall be enforced automatically based upon membership type,
+booking windows, and club policies.
+BR-COURT-003
+Canceled reservations shall immediately return courts to available inventory.
+BR-COURT-004
+When a court becomes available, waitlisted customers may be automatically notified
+according to configurable club rules.
+BR-COURT-005
+Court closures due to maintenance, weather, or special events shall automatically
+remove affected availability.
+54
+
+BR-COURT-006
+Reservations shall automatically appear on instructor schedules, customer schedules,
+and management reports.
+
+Business Requirements: Electronic reservations, recurring bookings,
+online/member/front desk booking, waiting lists, maintenance blocks.
+User Story: As a member, I want to reserve a court online based on my privileges.
+Acceptance Criteria: No double bookings; booking rules enforced.
+
+Point of Sale
+BR-POS-001
+Barcode scanning shall automatically identify products and pricing.
+BR-POS-002
+Member pricing and discounts shall be applied automatically when applicable.
+BR-POS-003
+Completed sales shall immediately update inventory quantities.
+BR-POS-004
+Completed sales shall automatically create accounting entries.
+BR-POS-005
+Returns and exchanges shall automatically reverse inventory and financial transactions
+while preserving complete audit history.
+BR-POS-006
+Customer purchase history shall update immediately following each completed
+transaction.
+
+Business Requirements: Barcode scanning, real-time inventory updates, returns, gift
+cards.
+User Story: As cashier I scan items instead of typing.
+
+55
+
+Acceptance Criteria: Inventory updates immediately
+
+Inventory
+BR-INV-001
+Receiving inventory shall automatically update available stock.
+BR-INV-002
+Inventory adjustments shall require documentation and maintain a complete audit
+trail.
+BR-INV-003
+Inventory valuation shall update continuously based upon purchases, sales, and
+adjustments.
+BR-INV-004
+Physical inventory counts shall reconcile inventory discrepancies while preserving
+historical records.
+BR-INV-005
+Receipt of inventory shall update inventory records before vendor invoices are
+approved for payment.
+BR-INV-006
+Vendor invoices shall be matched against purchase orders and receiving records
+before payment.
+
+Accounting & Payroll
+BR-ACC-001
+All billable customer activities shall automatically generate customer charges.
+BR-ACC-002
+Customer payments shall immediately update customer balances and accounting
+records.
+BR-ACC-003
+Electronic statements shall be generated according to the club's billing schedule.
+BR-ACC-004
+56
+
+Past-due accounts shall receive automated reminders according to configurable
+collection policies.
+BR-ACC-005
+Customer credits, write-offs, and adjustments shall require appropriate authorization.
+BR-ACC-006
+Vendor invoices shall follow configurable approval workflows before payment.
+BR-ACC-007
+Scheduled payments shall be generated according to vendor payment terms.
+BR-ACC-008
+Vendor payments shall automatically update accounting records.
+BR-ACC-009
+Duplicate vendor invoices shall be detected before payment processing.
+BR-ACC-010
+Employee compensation shall be calculated automatically based upon approved
+payroll rules.
+BR-ACC-011
+Employee leave balances shall update automatically following payroll processing.
+BR-ACC-012
+Payroll expenses shall automatically post to the General Ledger.
+BR-ACC-013
+Payroll adjustments shall require managerial authorization and maintain complete
+audit history.
+
+Business Requirements: AR/AP, GL, bank recs, payroll, commissions.
+User Story: As accountant I close month-end without reentry.
+
+57
+
+Acceptance Criteria: Financial reports reconcile.
+
+8. Non-Functional Requirements
+Purpose
+This section defines the non-functional requirements for the ERP implementation. Unlike
+the functional requirements, which describe what the system must do, these requirements
+define the expected performance, reliability, usability, security, maintainability, and
+operational characteristics of the solution.
+All proposed solutions shall satisfy these requirements unless otherwise approved by the
+organization.
+
+NFR-001: Availability
+Objective
+The ERP shall be available whenever the club is conducting normal business.
+Requirements
+•
+
+Target system availability shall be 99.9% during business hours, excluding
+scheduled maintenance.
+
+•
+
+Planned maintenance should occur outside normal operating hours whenever
+practical.
+
+•
+
+Users shall receive advance notification of scheduled outages.
+
+•
+
+Unexpected outages shall be communicated promptly to designated administrators.
+
+NFR-002: Scalability
+Objective
+The solution shall support future organizational growth without significant redesign.
+Requirements
+The system shall support future expansion including:
+•
+
+Additional tennis courts
+
+•
+
+New membership types
+58
+
+•
+
+Additional retail inventory
+
+•
+
+Increased customer volume
+
+•
+
+Additional employees
+
+•
+
+Expanded instructional programs
+
+•
+
+Additional user roles
+
+•
+
+Increased reporting requirements
+
+The implementation should minimize architectural changes as the organization grows.
+
+NFR-003: Reliability and Data Integrity
+Objective
+Business information shall remain accurate, complete, and consistent.
+Requirements
+•
+
+Transactions shall either complete successfully or roll back completely.
+
+•
+
+Duplicate customer records shall be minimized through validation.
+
+•
+
+Financial transactions shall remain balanced.
+
+•
+
+Inventory quantities shall remain synchronized with purchasing and sales.
+
+•
+
+Reservation conflicts shall be prevented automatically.
+
+•
+
+Audit trails shall preserve transaction history.
+
+NFR-004: Security
+Objective
+The ERP shall protect sensitive business and customer information through appropriate
+security controls.
+Requirements
+•
+
+Role-based security shall govern system access.
+
+•
+
+Employees shall access only information necessary for their responsibilities.
+
+59
+
+•
+
+Password policies shall follow current industry best practices.
+
+•
+
+Sensitive financial and payroll information shall be restricted.
+
+•
+
+User sessions shall automatically expire after a configurable period of inactivity.
+
+•
+
+Failed login attempts shall be logged.
+
+•
+
+Administrative activities shall be fully auditable.
+
+NFR-005: Auditability
+Objective
+The organization shall maintain complete accountability for significant business
+transactions.
+Requirements
+The system shall record:
+•
+
+User performing the action
+
+•
+
+Date and time
+
+•
+
+Original values
+
+•
+
+Modified values
+
+•
+
+Approval history
+
+•
+
+Transaction notes where applicable
+
+Historical information shall remain available for reporting and audit purposes.
+
+NFR-006: Usability
+Objective
+The ERP shall be intuitive and require minimal employee training.
+Requirements
+•
+
+Common tasks should require the fewest practical number of user interactions.
+
+•
+
+Navigation should remain consistent throughout the system.
+
+60
+
+•
+
+Users should have personalized dashboards appropriate to their role.
+
+•
+
+Frequently used functions should be easily accessible.
+
+•
+
+Error messages should clearly explain corrective actions.
+
+•
+
+The user interface should support efficient operation during busy customer service
+periods.
+
+NFR-007: Maintainability
+Objective
+The ERP shall be maintainable with minimal ongoing custom development.
+Requirements
+•
+
+Standard Odoo functionality shall be used whenever practical.
+
+•
+
+Configuration shall be preferred over customization.
+
+•
+
+Custom modules shall be documented.
+
+•
+
+Future software upgrades should require minimal redevelopment.
+
+•
+
+Business rules shall be configurable whenever possible.
+
+•
+
+Administrative settings should be manageable without programming knowledge.
+
+NFR-008: Reporting
+Objective
+Management shall have timely access to accurate operational and financial information.
+Requirements
+The system shall provide:
+•
+
+Real-time dashboards
+
+•
+
+Export to Excel and PDF
+
+•
+
+Configurable filters
+
+•
+
+Saved report templates
+
+61
+
+•
+
+Scheduled report distribution
+
+•
+
+Drill-down capability from summary reports to supporting transactions
+
+NFR-009: Backup and Disaster Recovery
+Objective
+Business data shall be protected against accidental loss or system failure.
+Requirements
+•
+
+Automated backups shall occur daily at a minimum.
+
+•
+
+Backup integrity shall be verified regularly.
+
+•
+
+Recovery procedures shall be documented and tested.
+
+•
+
+Historical backups shall be retained according to the organization's data retention
+policy.
+
+•
+
+Critical business data shall be recoverable following hardware or software failure.
+
+NFR-010: Integration
+Objective
+All operational modules shall function as a single integrated business platform.
+Requirements
+Information entered into one module shall automatically update related modules without
+duplicate data entry.
+Examples include:
+•
+
+POS transactions updating accounting and inventory.
+
+•
+
+Membership renewals updating customer status.
+
+•
+
+Payroll updating the General Ledger.
+
+•
+
+Purchase receipts updating inventory.
+
+•
+
+Customer payments updating Accounts Receivable.
+
+62
+
+NFR-011: Documentation
+Objective
+The implementation shall include sufficient documentation to support ongoing operations.
+Requirements
+The implementation partner shall provide:
+•
+
+System configuration documentation.
+
+•
+
+Customization documentation.
+
+•
+
+Workflow documentation.
+
+•
+
+Security role documentation.
+
+•
+
+Data migration documentation.
+
+•
+
+Administrator reference guides.
+
+•
+
+End-user training materials.
+
+•
+
+Technical documentation for custom modules.
+
+NFR-012: Testing and Quality Assurance
+Objective
+The completed solution shall be thoroughly tested prior to production deployment.
+Requirements
+Testing shall include:
+•
+
+Unit Testing
+
+•
+
+Integration Testing
+
+•
+
+Data Migration Validation
+
+•
+
+User Acceptance Testing (UAT)
+
+•
+
+Performance Testing
+
+•
+
+Security Testing
+
+•
+
+Regression Testing (for customizations)
+63
+
+No production deployment shall occur until all critical defects have been resolved or
+accepted by the organization.
+
+NFR-013: Support and Upgradeability
+Objective
+The ERP shall remain supportable throughout its operational life.
+Requirements
+•
+
+The implementation should preserve compatibility with future supported Odoo
+releases.
+
+•
+
+Customizations shall avoid modifying core Odoo code whenever practical.
+
+•
+
+The implementation partner shall identify any third-party modules and describe
+their maintenance requirements.
+
+•
+
+A documented process shall exist for applying updates, testing changes, and
+deploying new Odoo versions with minimal disruption to operations.
+
+Acceptance Criteria
+The implementation shall satisfy all non-functional requirements before final project
+acceptance.
+
+9. Data Migration
+Purpose
+The successful implementation of the ERP system depends upon the accurate migration of
+business data from existing systems into Odoo. The purpose of this section is to define the
+organization's expectations regarding data conversion, validation, reconciliation, and
+historical data retention.
+The primary objective of the data migration process is to provide a complete, accurate, and
+reliable foundation for daily operations while minimizing implementation risk and
+maintaining financial continuity.
+The implementation partner shall develop a detailed Data Migration Plan based upon these
+business requirements and identify any assumptions, risks, or limitations prior to beginning
+the migration process.
+64
+
+Migration Philosophy
+The organization recognizes that not all historical data provides equal business value.
+Rather than migrating every historical transaction from legacy systems, the implementation
+should prioritize:
+•
+
+Accurate master data.
+
+•
+
+Complete active operational records.
+
+•
+
+Financial continuity.
+
+•
+
+Historical reporting capability.
+
+•
+
+Minimized implementation complexity.
+
+•
+
+Reduced project risk.
+
+Where practical, historical detail that is not required for ongoing operations may remain
+accessible within the legacy Sage 50 system or through archived reports.
+
+Source Systems
+At the time of implementation, business information is maintained in multiple locations,
+including but not limited to:
+Source
+System
+
+Primary Data
+
+Sage 50
+
+General Ledger, Accounts Receivable, Accounts Payable, Vendor Records,
+Customer Records, Inventory, Payroll (if applicable), Financial History
+
+Spreadsheets Membership information, leagues, reports, miscellaneous operational data
+Paper
+Records
+
+Membership applications, contracts, historical documentation
+
+The implementation partner shall review all source systems and recommend the most
+effective migration approach for each data source.
+
+Data to be Migrated
+
+65
+
+Customer Records
+The following customer information shall be migrated whenever available:
+•
+
+Customer name
+
+•
+
+Household relationships
+
+•
+
+Mailing address
+
+•
+
+Telephone numbers
+
+•
+
+Email addresses
+
+•
+
+Membership status
+
+•
+
+Membership history (current status at minimum)
+
+•
+
+Customer account balances
+
+Duplicate customer records shall be identified and resolved prior to migration.
+
+Vendor Records
+Vendor information shall include:
+•
+
+Vendor names
+
+•
+
+Addresses
+
+•
+
+Contact information
+
+•
+
+Payment terms
+
+•
+
+Vendor categories
+
+•
+
+Tax information
+
+•
+
+Outstanding balances
+
+•
+
+Active vendor status
+
+Inventory
+Inventory migration shall include:
+•
+
+Product descriptions
+66
+
+•
+
+SKU numbers
+
+•
+
+Product categories
+
+•
+
+Vendor associations
+
+•
+
+Unit costs
+
+•
+
+Retail prices
+
+•
+
+Quantity on hand
+
+•
+
+Inventory valuation
+
+•
+
+Tax categories
+
+Inactive or obsolete inventory should be reviewed prior to migration.
+
+Membership Information
+The migration shall include:
+•
+
+Active memberships
+
+•
+
+Membership types
+
+•
+
+Renewal dates
+
+•
+
+Billing schedules
+
+•
+
+Member privileges
+
+•
+
+Household memberships
+
+•
+
+Membership status
+
+Historical memberships may be archived unless otherwise required.
+
+Accounts Receivable
+The migration shall include:
+•
+
+Outstanding customer invoices
+
+•
+
+Customer credits
+
+•
+
+Customer deposits
+67
+
+•
+
+Customer account balances
+
+•
+
+Aging information
+
+Historical paid invoices may remain in Sage 50 for reference.
+
+Accounts Payable
+The migration shall include:
+•
+
+Outstanding vendor invoices
+
+•
+
+Vendor credits
+
+•
+
+Scheduled payments
+
+•
+
+Vendor balances
+
+Historical paid invoices may remain within the legacy accounting system.
+
+General Ledger
+The implementation shall establish opening balances that reconcile to the organization's
+Sage 50 financial records as of the agreed-upon conversion date.
+The migration shall include:
+•
+
+Chart of Accounts
+
+•
+
+Beginning balances
+
+•
+
+Fiscal year configuration
+
+•
+
+Cost centers or departments (if applicable)
+
+•
+
+Budget information (if applicable)
+
+The organization does not expect every historical accounting transaction to be migrated
+unless specifically identified during project planning.
+
+Employee Information
+Employee records should include:
+•
+
+Employee demographics
+68
+
+•
+
+Employment status
+
+•
+
+Compensation information
+
+•
+
+Tax withholding information
+
+•
+
+Payroll history required for current-year reporting
+
+•
+
+Security roles
+
+Data Cleansing
+Prior to migration, the organization expects a comprehensive review of existing data.
+The implementation partner shall identify:
+•
+
+Duplicate customer records.
+
+•
+
+Inactive customer accounts.
+
+•
+
+Obsolete inventory items.
+
+•
+
+Duplicate vendors.
+
+•
+
+Invalid addresses.
+
+•
+
+Missing contact information.
+
+•
+
+Invalid product records.
+
+•
+
+Inconsistent naming conventions.
+
+The organization shall review and approve all proposed data cleansing activities before
+migration begins.
+
+Data Validation
+Following migration, the implementation partner shall validate migrated information to
+ensure completeness and accuracy.
+Validation shall include, at a minimum:
+•
+
+Customer record counts.
+
+•
+
+Vendor record counts.
+
+•
+
+Inventory quantities.
+69
+
+•
+
+Customer balances.
+
+•
+
+Vendor balances.
+
+•
+
+General Ledger balances.
+
+•
+
+Membership counts.
+
+•
+
+Employee records.
+
+Any discrepancies shall be documented and resolved prior to production deployment.
+
+Financial Reconciliation
+Financial integrity is a critical success factor for this implementation.
+The implementation partner shall demonstrate that:
+•
+
+Beginning General Ledger balances reconcile to Sage 50.
+
+•
+
+Accounts Receivable balances reconcile.
+
+•
+
+Accounts Payable balances reconcile.
+
+•
+
+Inventory valuation reconciles.
+
+•
+
+Bank balances reconcile.
+
+•
+
+Outstanding customer balances reconcile.
+
+•
+
+Outstanding vendor balances reconcile.
+
+The General Manager and designated accounting personnel shall review and approve
+financial reconciliation before production use.
+
+Cutover Strategy
+The implementation partner shall develop a detailed cutover plan that minimizes
+disruption to club operations.
+The plan shall include:
+•
+
+Final data extraction schedule.
+
+•
+
+System freeze period.
+
+•
+
+Final migration activities.
+70
+
+•
+
+Validation procedures.
+
+•
+
+User acceptance testing.
+
+•
+
+Go-live checklist.
+
+•
+
+Contingency procedures.
+
+•
+
+Rollback strategy (if required).
+
+•
+
+Post-implementation support plan.
+
+The preferred implementation approach is to perform the final migration during a period of
+lower business activity whenever practical.
+
+Data Migration Acceptance Criteria
+The data migration shall be considered complete when all of the following conditions have
+been satisfied:
+•
+
+All approved master data has been successfully migrated.
+
+•
+
+All required operational data has been successfully migrated.
+
+•
+
+Financial opening balances reconcile to Sage 50.
+
+•
+
+Active customer accounts are accurate.
+
+•
+
+Inventory quantities and valuation are verified.
+
+•
+
+Outstanding receivables and payables reconcile.
+
+•
+
+Future court reservations and program registrations are complete.
+
+•
+
+Security roles have been assigned correctly.
+
+•
+
+Sample transaction testing confirms accurate operation of the new ERP.
+
+•
+
+The General Manager has approved the migration results.
+
+No production go-live shall occur until all critical data validation issues have been resolved
+or formally accepted by the organization.
+
+71
+
+10. Overall Acceptance Criteria
+System passes UAT, financial reconciliation, scheduling validation, POS testing, and 30-day
+stabilization.
+
+Appendix
+Future versions should include workflow diagrams, entity relationship diagrams, screen
+mockups, and detailed field definitions.
+
+i Hand written invoices
+
+ii Paper court sheets
+
+72
+
+

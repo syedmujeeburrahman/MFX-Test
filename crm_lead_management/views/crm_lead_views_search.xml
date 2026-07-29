@@ -25,8 +25,12 @@
             <!-- Add segmentation fields in the search bar -->
             <xpath expr="//filter[@name='filter_won_status_won']" position="before">
                 <field name="country_id" string="Country"/>
+<<<<<<< HEAD
                 <field name="x_erp_system_id" string="ERP"/>
                 <field name="x_contact_type_id" string="Contact Type"/>
+=======
+                <field name="x_lead_level" string="Lead Level"/>
+>>>>>>> b16288161f1e74aedca0f3c3df96e232163bed62
             </xpath>
 
             <!-- Add Lead Type filters -->
@@ -38,6 +42,17 @@
                         domain="[('x_lead_type', '=', 'warm')]"/>
                 <filter string="Cold Leads" name="filter_cold"
                         domain="[('x_lead_type', '=', 'cold')]"/>
+                <separator/>
+                <filter string="Level 1" name="filter_lead_level_1"
+                        domain="[('x_lead_level', '=', '1')]"/>
+                <filter string="Level 2" name="filter_lead_level_2"
+                        domain="[('x_lead_level', '=', '2')]"/>
+                <filter string="Level 3" name="filter_lead_level_3"
+                        domain="[('x_lead_level', '=', '3')]"/>
+                <filter string="Level 4" name="filter_lead_level_4"
+                        domain="[('x_lead_level', '=', '4')]"/>
+                <filter string="Level 5" name="filter_lead_level_5"
+                        domain="[('x_lead_level', '=', '5')]"/>
                 <separator/>
                 <filter string="Follow-up Today" name="filter_followup_today"
                         domain="[('x_next_followup_date', '=', context_today().strftime('%Y-%m-%d'))]"/>
@@ -52,10 +67,15 @@
             <xpath expr="//group" position="inside">
                 <filter string="Lead Type" name="groupby_lead_type"
                         context="{'group_by': 'x_lead_type'}"/>
+<<<<<<< HEAD
                 <filter string="ERP" name="groupby_erp_system"
                         context="{'group_by': 'x_erp_system_id'}"/>
                 <filter string="Contact Type" name="groupby_contact_type"
                         context="{'group_by': 'x_contact_type_id'}"/>
+=======
+                <filter string="Lead Level" name="groupby_lead_level"
+                        context="{'group_by': 'x_lead_level'}"/>
+>>>>>>> b16288161f1e74aedca0f3c3df96e232163bed62
                 <filter string="Next Follow-up" name="groupby_followup"
                         context="{'group_by': 'x_next_followup_date'}"/>
                 <filter string="Country" name="groupby_country"
@@ -92,19 +112,44 @@
                 </searchpanel>
             </xpath>
 
+<<<<<<< HEAD
             <xpath expr="//search" position="inside">
                 <field name="country_id" string="Country"/>
                 <field name="x_erp_system_id" string="ERP"/>
                 <field name="x_contact_type_id" string="Contact Type"/>
+=======
+            <xpath expr="//field[@name='country_id']" position="after">
+                <field name="x_lead_level" string="Lead Level"/>
+            </xpath>
+
+            <xpath expr="//filter[@name='assigned_to_me']" position="before">
+                <separator/>
+                <filter string="Level 1" name="filter_lead_level_1"
+                        domain="[('x_lead_level', '=', '1')]"/>
+                <filter string="Level 2" name="filter_lead_level_2"
+                        domain="[('x_lead_level', '=', '2')]"/>
+                <filter string="Level 3" name="filter_lead_level_3"
+                        domain="[('x_lead_level', '=', '3')]"/>
+                <filter string="Level 4" name="filter_lead_level_4"
+                        domain="[('x_lead_level', '=', '4')]"/>
+                <filter string="Level 5" name="filter_lead_level_5"
+                        domain="[('x_lead_level', '=', '5')]"/>
+                <separator/>
+>>>>>>> b16288161f1e74aedca0f3c3df96e232163bed62
             </xpath>
 
             <xpath expr="//group" position="inside">
                 <filter string="Lead Type" name="groupby_lead_type"
                         context="{'group_by': 'x_lead_type'}"/>
+<<<<<<< HEAD
                 <filter string="ERP" name="groupby_erp_system"
                         context="{'group_by': 'x_erp_system_id'}"/>
                 <filter string="Contact Type" name="groupby_contact_type"
                         context="{'group_by': 'x_contact_type_id'}"/>
+=======
+                <filter string="Lead Level" name="groupby_lead_level"
+                        context="{'group_by': 'x_lead_level'}"/>
+>>>>>>> b16288161f1e74aedca0f3c3df96e232163bed62
                 <filter string="Next Follow-up" name="groupby_followup"
                         context="{'group_by': 'x_next_followup_date'}"/>
                 <filter string="Country" name="groupby_country"

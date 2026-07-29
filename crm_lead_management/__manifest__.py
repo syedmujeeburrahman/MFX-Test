@@ -35,7 +35,11 @@
         'data/crm_contact_type_data.xml',
         'data/ir_cron_data.xml',
         'data/cleanup_automated_activities.xml',
+<<<<<<< HEAD
         'views/crm_lead_filter_config_views.xml',
+=======
+        'data/ir_filters_data.xml',
+>>>>>>> b16288161f1e74aedca0f3c3df96e232163bed62
         'views/crm_lead_views_form.xml',
         'views/crm_lead_views_list.xml',
         'views/crm_lead_views_kanban.xml',

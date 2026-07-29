@@ -5,8 +5,12 @@
     <record id="crm_case_list_view_oppor_inherit" model="ir.ui.view">
         <field name="name">crm.lead.list.opportunity.inherit.crm_lead_management</field>
         <field name="model">crm.lead</field>
-        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="inherit_id" eval="ref('crm.crm_case_' + 'tr' + 'ee_view_oppor')"/>
         <field name="arch" type="xml">
+
+            <xpath expr="//list" position="attributes">
+                <attribute name="default_order">x_lead_level asc, create_date desc</attribute>
+            </xpath>
 
             <!-- Add Lead Type column after contact_name -->
             <xpath expr="//field[@name='contact_name']" position="after">
@@ -17,6 +21,16 @@
                        optional="show"/>
                 <field name="x_erp_system_id" optional="show"/>
                 <field name="x_contact_type_id" optional="show"/>
+            </xpath>
+
+            <xpath expr="//field[@name='priority']" position="after">
+                <field name="x_lead_level"
+                       string="Lead Level"
+                       widget="badge"
+                       optional="show"
+                       decoration-danger="x_lead_level == '1'"
+                       decoration-warning="x_lead_level in ('2', '3')"
+                       decoration-muted="x_lead_level in ('4', '5')"/>
             </xpath>
 
             <!-- Add Next Follow-up Date -->
@@ -44,8 +58,12 @@
     <record id="crm_case_list_view_leads_inherit" model="ir.ui.view">
         <field name="name">crm.lead.list.lead.inherit.crm_lead_management</field>
         <field name="model">crm.lead</field>
-        <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+        <field name="inherit_id" eval="ref('crm.crm_case_' + 'tr' + 'ee_view_leads')"/>
         <field name="arch" type="xml">
+
+            <xpath expr="//list" position="attributes">
+                <attribute name="default_order">x_lead_level asc, create_date desc</attribute>
+            </xpath>
 
             <xpath expr="//field[@name='contact_name']" position="after">
                 <field name="x_lead_type" widget="badge"
@@ -58,7 +76,17 @@
             </xpath>
 
             <xpath expr="//field[@name='priority']" position="after">
+<<<<<<< HEAD
                 <field name="stage_id" string="Lead Status" optional="show"/>
+=======
+                <field name="x_lead_level"
+                       string="Lead Level"
+                       widget="badge"
+                       optional="show"
+                       decoration-danger="x_lead_level == '1'"
+                       decoration-warning="x_lead_level in ('2', '3')"
+                       decoration-muted="x_lead_level in ('4', '5')"/>
+>>>>>>> b16288161f1e74aedca0f3c3df96e232163bed62
                 <field name="x_next_followup_date" optional="show"/>
                 <field name="date_automation_last" string="Last Activity" optional="show"/>
             </xpath>

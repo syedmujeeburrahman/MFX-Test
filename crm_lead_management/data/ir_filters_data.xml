@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="filter_todays_priority_leads" model="ir.filters">
+        <field name="name">Today's Priority Leads</field>
+        <field name="model_id">crm.lead</field>
+        <field name="domain">[('x_lead_level', '=', '1')]</field>
+        <field name="context">{}</field>
+        <field name="sort">["x_lead_level", "create_date desc"]</field>
+        <field name="is_default" eval="False"/>
+    </record>
+
+</odoo>

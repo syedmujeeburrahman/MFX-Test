@@ -1,0 +1,1641 @@
+Fox Cities Racquet Club - Odoo
+
+BRD and Scope of Work
+
+Document date: 2026-07-17
+
+Prepared for: Fox Cities Racquet Club
+
+Prepared by: DearERP
+
+System scope: Odoo club operations, custom court booking, memberships, retail
+
+inventory, sales, purchase, accounting, POS, barcode, and CRM
+
+
+
+
+1. Executive Summary
+
+Fox Cities Racquet Club requires an Odoo-based operating system to manage indoor
+
+court reservations, player/member handling, club memberships, court billing, retail
+
+inventory, point-of-sale operations, purchase replenishment, sales, accounting, and
+
+customer pipeline activities.
+
+
+The core custom module prepared for this business is FCRC Court Seat Booking . It
+
+provides a booking dashboard, court configuration, seat/time availability, membership-
+
+aware billing, non-member entry fee logic, ball machine rental billing, booking lifecycle
+
+tracking, reminders, no-show handling, membership invoicing, and booking analysis.
+
+
+This BRD extends that custom module into a wider implementation scope covering:
+
+
+    Accounting
+
+    Sales
+
+    Purchase
+
+    Point of Sale
+
+    Barcode
+    Inventory
+
+    CRM
+
+    Products and retail stock
+
+    Membership and court booking operations
+
+
+
+
+2. Business Objectives
+
+The implementation should help the club:
+
+
+    Manage court availability by date, time, court, and seat capacity.
+
+    Support both person/hour and court/hour billing policies.
+
+    Track members and non-members clearly from the contact record.
+
+    Invoice court bookings, memberships, non-member fees, and ball machine
+
+    rentals.
+
+    Prevent invalid booking operations such as past booking, early court start, double
+
+    booking, and over-capacity booking.
+
+    Track operational exceptions such as potential no-shows, late starts, and courts
+
+    not ended on time.
+
+    Maintain demo-ready stock for racquets, strings, balls, hats, and accessories.
+
+    Sell club retail products through Sales and POS.
+
+    Purchase and replenish retail inventory.
+
+    Use barcode scanning for product lookup and inventory/POS workflows.
+
+    Track prospects for memberships, lessons, events, and corporate/group
+
+    opportunities in CRM.
+
+    Provide accounting visibility for invoices, payments, revenue, and receivables.
+
+
+
+
+3. Current Custom Module Overview
+Custom module: fcrc_court_seat_booking
+
+Functional name: FCRC Court Seat Booking
+
+Category: Services
+
+Core dependencies: Base, Accounting, Product, Web, Mail
+
+
+
+3.1 Main Custom Objects
+
+
+  Object             Purpose
+
+
+                     Stores court configuration, seat capacity, billing policy, hourly
+  Court
+                     rate, and availability setup.
+
+
+                     Stores booking header, court, scheduled time, actual play
+  Court Booking
+                     time, booking state, invoice, pricing, and audit information.
+
+
+                     Stores players assigned to the booking and their membership
+  Booking Line
+                     status at booking time.
+
+
+  Court Season       Stores date-based rate setup, non-member entry fee, and ball
+
+  Rate               machine hourly rate.
+
+
+  Membership         Stores annual membership period and non-member booking
+
+  Year               limits.
+
+
+  Membership         Stores named membership plans, pricing, duration, proration
+
+  Plan               policy, and linked invoice product.
+
+
+  Membership
+                     Stores purchased membership coverage for a contact.
+  Line
+
+
+  Booking
+                     SQL-backed reporting model for pivot, graph, and list analysis.
+  Report
+  Object               Purpose
+
+
+  Booking              Support quick booking, extension, cancellation, and
+
+  Wizards              membership invoicing.
+
+
+
+
+4. Court Booking Requirements
+
+4.1 Court Configuration
+
+Each court must support:
+
+
+    Court name and code.
+
+    Court type, such as indoor or outdoor.
+
+    Player seat capacity.
+
+    Billing basis:
+
+        Person / Hour
+
+        Court / Hour
+
+
+    Hourly rate.
+
+    Active/inactive status.
+
+    Internal notes.
+
+
+Business rule:
+
+
+    If billing basis is Person / Hour , booking availability is based on the number of
+
+    available player seats.
+
+    If billing basis is Court / Hour , any booking blocks the whole court, even if only
+
+    two players are entered.
+
+
+
+4.2 Dashboard Booking Experience
+The dashboard should provide:
+
+
+    Date selection using Today, Tomorrow, and custom date picker.
+
+    Preview time and duration selection.
+
+    Court cards with seat availability.
+
+    Fixed-size seat cards for consistent layout.
+
+    A View Times action to show available and booked hours for the selected
+
+    court/day.
+
+    Time slot cards showing available, full, partial, or past status.
+
+    X close control for the time slot panel.
+
+    Bookable future slots only.
+
+    Court-level status such as available, partial, full, and in use.
+
+
+
+4.3 Booking Creation
+
+Users should be able to:
+
+
+    Select a court.
+
+    Select an available time slot.
+
+    Select one or more players.
+
+    Add ball machine rental if required.
+
+    Add booking notes.
+
+
+System validations:
+
+
+    Past date/time bookings are not allowed.
+
+    End time must be after start time.
+
+    Selected players must not exceed court capacity.
+
+    Court/hour bookings block the entire court.
+
+    Person/hour bookings only consume selected player seats.
+    Existing overlapping bookings must be considered before confirming availability.
+
+
+
+4.4 Booking Lifecycle
+
+Booking states:
+
+
+    Draft
+
+    Reserved
+
+    In Use
+
+    Completed
+
+    Invoiced
+
+    No Show
+
+    Cancelled
+
+
+Expected flow:
+
+
+ 1. Booking is created in Draft or Reserved.
+
+ 2. Reserved booking can be started only within allowed time window.
+
+ 3. Start Play records actual start time and moves booking to In Use.
+
+ 4. End Play records actual stop time and moves booking to Completed.
+
+ 5. Create Invoice creates a draft customer invoice and moves booking to Invoiced.
+
+ 6. Cancelled and No Show states remain available for exception handling.
+
+
+
+4.5 Start and End Play Rules
+
+Start Play:
+
+
+    Only reserved bookings can be started.
+
+    Booking cannot start after scheduled end time.
+
+    Players may start only within 15 minutes before scheduled start time.
+     If the player arrives earlier than the 15-minute buffer, the system must show a
+
+     validation error.
+
+     Start Play records actual start time for audit purposes.
+
+
+End Play:
+
+
+     Only in-use bookings can be ended.
+
+     Actual stop time must be after actual start time.
+
+     End Play records actual stop time.
+
+     Actual play time is for internal audit only and must not change billing.
+
+
+Billing rule:
+
+
+     Billing is based on scheduled booking hours, not consumed or actual play hours.
+
+
+
+4.6 No-Show and Operational Attention
+
+The system should identify:
+
+
+     Reserved bookings where start time has passed.
+
+     Reserved bookings where end time has passed.
+
+     In-use bookings where scheduled end time has passed but play was not ended.
+
+     Bookings starting within the next 30 minutes.
+
+
+Operational indicators:
+
+
+     Potential No Show
+
+     Past Start
+
+     Starts Soon
+
+     End Overdue
+
+
+Automated reminders:
+    Activity reminder for bookings starting within the next 30 minutes.
+
+    Activity reminder for in-use bookings not ended after scheduled end time.
+
+
+
+4.7 Cancellation
+
+Cancellation should:
+
+
+    Require a cancellation reason.
+
+    Store cancelled by user.
+
+    Store cancellation date/time.
+
+    Not allow cancellation where a linked invoice exists unless the draft invoice is
+
+    deleted first.
+
+
+
+4.8 Booking Invoicing
+
+Invoice should include:
+
+
+    Court/person or court/hour charge based on court billing policy.
+
+    Non-member entry fee where applicable.
+
+    Ball machine rental line where selected.
+
+
+Invoice behavior:
+
+
+    Draft invoice is linked to booking.
+
+    Invoice smart button opens the linked invoice.
+
+    If draft invoice is deleted, booking invoice link should clear and operational
+
+    buttons should become available again.
+
+    Cancelled and no-show bookings should not be invoiceable.
+
+
+
+
+5. Membership Requirements
+5.1 Membership Plan
+
+The club should be able to create named membership plans with:
+
+
+    Plan name.
+
+    Description.
+
+    Duration days.
+
+    Price.
+
+    Proration option.
+
+    Active/inactive status.
+
+
+Business decision:
+
+
+    No separate family/adult membership type is required for the demo.
+
+    Membership identification is handled through the plan name.
+
+    Family eligibility is handled operationally outside ERP for this demo.
+
+
+
+5.2 Membership Product Handling
+
+Membership plans require invoice products only for accounting invoice lines.
+
+
+System behavior:
+
+
+    The system should create and maintain the linked service product automatically.
+
+    Product should be configured as service.
+
+    Product should be saleable.
+
+    Product should not be purchaseable.
+
+    Customer taxes should be empty unless the business later decides otherwise.
+
+    Product form should not be part of the membership creation workflow.
+
+
+
+5.3 Membership Year
+The system should support:
+
+
+    Membership year name.
+
+    Start and end dates.
+
+    Non-member booking limit per membership year.
+
+
+Default period:
+
+
+    September 1 to August 31.
+
+
+
+5.4 Membership Sale / Invoice
+
+Users should be able to invoice membership directly from:
+
+
+    Contact form.
+
+    Members list.
+
+    Non-members list.
+
+
+The wizard should:
+
+
+    Select contact.
+
+    Select membership plan.
+
+    Select membership year.
+
+    Compute start date, end date, duration, annual price, and prorated price.
+
+    Create a draft customer invoice.
+
+    Create the membership line linked to the invoice.
+
+
+
+5.5 Membership Status
+
+A contact can have only one active membership covering the same period.
+
+
+Membership statuses:
+
+
+    Active Member
+    Expired Member
+
+    Non-member
+
+
+Menus:
+
+
+    Members: contacts with active membership.
+
+    Non-members: contacts without active membership.
+
+
+Booking usage:
+
+
+    Member/non-member status is used during booking pricing.
+
+    Non-members may be charged entry fees.
+
+    Non-member booking limits may apply within a membership year.
+
+
+
+
+6. Retail Inventory Requirements
+
+The club sells and stocks retail items such as:
+
+
+    Racquets
+
+    Strings
+
+    Tennis balls
+
+    Hats
+
+    Overgrips
+
+    Dampeners
+
+    Wristbands
+
+    Socks
+
+    Other pro-shop accessories
+
+
+
+6.1 Product Master
+
+Products should support:
+    Product name.
+
+    Internal reference/SKU.
+
+    Product category.
+
+    Sales price.
+
+    Cost.
+
+    Sale enabled.
+
+    Purchase enabled.
+
+    Storable goods configuration.
+
+    Barcode where applicable.
+
+    Vendor information where applicable.
+
+
+Recommended categories:
+
+
+    Racquets
+
+    Strings
+
+    Balls
+
+    Apparel
+
+    Accessories
+
+    Services
+
+    Memberships
+
+
+
+6.2 Initial Demo Stock
+
+Demo stock should include:
+
+
+  Product Type               Example
+
+
+  Racquets                   Recreational, performance, junior racquets
+
+
+  Strings                    Synthetic gut, polyester string sets
+  Product Type               Example
+
+
+  Balls                      Single cans and case packs
+
+
+  Accessories                Overgrips, dampeners, wristbands
+
+
+  Apparel                    Hats and socks
+
+
+
+Inventory should be available in the main stock location for sales/POS demonstration.
+
+
+
+6.3 Inventory Operations
+
+Inventory scope:
+
+
+    On-hand quantity tracking.
+
+    Receipts from vendors.
+
+    Internal adjustments.
+
+    Reordering rules for common retail products.
+
+    Inventory valuation based on cost configuration.
+
+    Product category reporting.
+
+    Stock availability review for POS and sales.
+
+
+
+
+7. Sales Module Scope
+
+Sales should support:
+
+
+    Quotations and sales orders for club retail products.
+
+    Customer invoices from confirmed sales orders.
+
+    Product pricing based on sales price.
+
+    Customer-level order history.
+
+    Optional quote flow for events, group court rentals, or corporate programs.
+Sales usage examples:
+
+
+    Retail customer buys racquet and accessories through sales order.
+
+    Corporate customer requests group court booking quote.
+
+    Club sells membership package through customer invoice.
+
+
+Integration:
+
+
+    Products shared with Inventory and POS.
+
+    Invoices posted to Accounting.
+
+    Customer data shared with Contacts and CRM.
+
+
+
+
+8. Point of Sale Scope
+
+POS should support front-desk/pro-shop transactions.
+
+
+POS requirements:
+
+
+    Sell racquets, strings, balls, hats, accessories, and other club retail items.
+
+    Search products by name, category, or barcode.
+
+    Accept customer selection where needed.
+
+    Process payment at counter.
+
+    Reduce inventory on sale.
+
+    Create accounting entries based on POS closing/session.
+
+
+Recommended POS categories:
+
+
+    Racquets
+
+    Balls
+
+    Strings
+
+    Accessories
+    Apparel
+
+    Services
+
+
+POS considerations:
+
+
+    Membership invoicing can remain in contact workflow rather than POS for the
+
+    demo.
+
+    Court booking invoices can remain in the booking workflow rather than POS for
+
+    the demo.
+
+    Later enhancement may allow POS payment collection for court invoices.
+
+
+
+
+9. Purchase Module Scope
+
+Purchase should support replenishment of pro-shop inventory.
+
+
+Purchase requirements:
+
+
+    Vendor master setup.
+
+    Vendor pricelists.
+
+    Purchase RFQ and purchase order flow.
+
+    Product receipt into inventory.
+
+    Vendor bills posted to Accounting.
+
+    Reordering rules for fast-moving items such as tennis balls, grips, and strings.
+
+
+Purchase flow:
+
+
+ 1. Create RFQ to vendor.
+
+ 2. Confirm purchase order.
+
+ 3. Receive products into stock.
+
+ 4. Create vendor bill.
+
+ 5. Post bill and pay through Accounting.
+10. Accounting Module Scope
+
+Accounting should support:
+
+
+    Customer invoices for court bookings.
+
+    Customer invoices for memberships.
+
+    Customer invoices for sales orders.
+
+    POS accounting entries.
+
+    Vendor bills from purchases.
+
+    Customer payments.
+
+    Vendor payments.
+
+    Accounts receivable and payable.
+
+    Revenue reporting by income category.
+
+    Tax configuration where required.
+
+    Bank reconciliation.
+
+
+Revenue streams:
+
+
+    Court rental revenue.
+
+    Non-member entry fees.
+
+    Ball machine rentals.
+
+    Membership revenue.
+
+    Retail sales revenue.
+
+    Event/group booking revenue if later implemented.
+
+
+Key accounting controls:
+
+
+    Invoice must link back to booking where generated from booking.
+
+    Membership invoices must create membership coverage.
+    Draft invoice deletion should release related booking state where applicable.
+
+    Posted invoice cancellation should follow accounting controls.
+
+
+
+
+11. Barcode Scope
+
+Barcode should support:
+
+
+    Product barcode setup.
+
+    Barcode scanning in POS.
+
+    Barcode scanning during inventory receipts.
+
+    Barcode scanning during inventory adjustments.
+
+    Barcode scanning during internal operations where applicable.
+
+
+Barcode data requirements:
+
+
+    Barcode field on each stockable product.
+
+    Printed product labels where required.
+
+    Consistent barcode policy for club-created/private-label products.
+
+
+Recommended barcode usage:
+
+
+    Tennis balls and packaged accessories.
+
+    Hats and apparel.
+
+    Racquets and string packs.
+
+    POS checkout scanning.
+
+    Receiving purchase shipments.
+
+
+
+
+12. CRM Scope
+
+CRM should track sales and membership opportunities.
+CRM use cases:
+
+
+    New membership inquiries.
+
+    Trial visit follow-up.
+
+    Corporate/group booking opportunities.
+
+    Event leads.
+
+    League/program interest.
+
+    Lessons or coaching inquiry handoff.
+
+
+CRM stages:
+
+
+    New Inquiry
+
+    Contacted
+
+    Trial / Visit Scheduled
+
+    Proposal / Quote
+
+    Won
+
+    Lost
+
+
+CRM integration:
+
+
+    Convert won leads into customers/contacts.
+
+    Create quotation where required.
+
+    Trigger membership invoice workflow from contact when appropriate.
+
+    Track source/campaign for marketing analysis.
+
+
+
+
+13. Reporting Requirements
+
+13.1 Booking Analysis
+
+Booking report should support pivot, graph, and list analysis by:
+   Booking date.
+
+   Court.
+
+   Booking state.
+
+   Billing basis.
+
+   Payment state.
+
+   Ball machine rental.
+
+
+Measures:
+
+
+   Booking count.
+
+   Player count.
+
+   Member player count.
+
+   Non-member player count.
+
+   Scheduled hours.
+
+   Booked seat hours.
+
+   Court revenue.
+
+   Entry fee revenue.
+
+   Ball machine revenue.
+
+   Estimated total revenue.
+
+   Member revenue.
+
+   Non-member revenue.
+
+
+
+13.2 Operational Dashboard
+
+Dashboard should show:
+
+
+   Court availability.
+
+   Time slots.
+
+   Current and future booking context.
+    Starts soon queue.
+
+    End overdue queue.
+
+    Potential no-show queue.
+
+    Daily booking and revenue summary.
+
+
+
+13.3 Accounting and Sales Reporting
+
+Reports should include:
+
+
+    Revenue by stream.
+
+    Open invoices.
+
+    Paid/unpaid court bookings.
+
+    Membership revenue.
+
+    POS sales.
+
+    Product sales by category.
+
+    Inventory valuation.
+
+    Purchase spend by vendor.
+
+
+
+
+14. User Roles
+
+  Role               Responsibilities
+
+
+  Front Desk         Book courts, start/end play, mark no-show, invoice court
+
+  User               bookings, sell retail items.
+
+
+                     Configure courts, rates, membership plans, review reports,
+  Club Manager
+                     monitor operations.
+
+
+                     Manage invoices, payments, vendor bills, reconciliation,
+  Accountant
+                     financial reporting.
+  Role               Responsibilities
+
+
+  Inventory
+                     Receive stock, adjust inventory, review product availability.
+  User
+
+
+                     Create RFQs, confirm purchase orders, manage vendor
+  Purchase User
+                     replenishment.
+
+
+  POS User           Process retail sales and counter payments.
+
+
+  CRM User           Track leads, membership inquiries, events, and follow-ups.
+
+
+  System Admin       Manage configuration, access rights, and module settings.
+
+
+
+
+15. Detailed Scope of Work
+
+Phase 1 - Discovery and Confirmation
+
+Activities:
+
+
+    Confirm final court list and capacities.
+
+    Confirm billing basis per court.
+
+    Confirm operating hours.
+
+    Confirm membership plans and prices.
+
+    Confirm membership year dates.
+
+    Confirm non-member entry fee policy.
+
+    Confirm ball machine rental rate.
+
+    Confirm retail product categories.
+
+    Confirm POS payment methods.
+
+    Confirm accounting chart/account mappings.
+Deliverables:
+
+
+    Approved configuration workbook.
+
+    Confirmed business process maps.
+
+    Finalized demo data list.
+
+
+
+Phase 2 - Custom Court Booking Configuration
+
+Activities:
+
+
+    Configure courts.
+
+    Configure court seat capacity.
+
+    Configure person/hour or court/hour billing basis.
+
+    Configure hourly rates.
+
+    Configure season rates.
+
+    Configure non-member entry fee.
+
+    Configure ball machine hourly rate.
+
+    Validate dashboard availability logic.
+
+    Validate booking conflict logic.
+
+    Validate past booking prevention.
+
+    Validate start and end play rules.
+
+
+Deliverables:
+
+
+    Court configuration.
+
+    Dashboard-ready booking flow.
+
+    Validated booking state transitions.
+
+
+
+Phase 3 - Membership Configuration
+
+Activities:
+    Configure membership years.
+
+    Configure membership plans.
+
+    Validate automatic product creation for membership invoicing.
+
+    Validate membership invoice wizard.
+
+    Validate one-active-membership rule.
+
+    Validate members and non-members menus.
+
+    Validate member/non-member behavior inside booking.
+
+
+Deliverables:
+
+
+    Membership plan master.
+
+    Membership invoicing process.
+
+    Contact membership status flow.
+
+
+
+Phase 4 - Booking Billing and Accounting Integration
+
+Activities:
+
+
+    Configure income accounts.
+
+    Validate court booking invoices.
+
+    Validate non-member entry fee line.
+
+    Validate ball machine rental invoice line.
+
+    Validate draft invoice delete behavior.
+
+    Validate posted invoice control behavior.
+
+    Confirm scheduled-hours billing.
+
+    Confirm actual-time audit fields.
+
+
+Deliverables:
+
+
+    Booking-to-invoice flow.
+    Accounting posting readiness.
+
+    Invoice linkage and audit validation.
+
+
+
+Phase 5 - Inventory and Product Setup
+
+Activities:
+
+
+    Configure retail product categories.
+
+    Create retail products.
+
+    Add costs and sales prices.
+
+    Configure stockable goods.
+
+    Add initial quantities.
+
+    Configure reorder rules for high-volume items.
+
+    Configure vendors where available.
+
+
+Deliverables:
+
+
+    Product master.
+
+    Initial stock quantities.
+
+    Inventory demo flow.
+
+
+
+Phase 6 - Purchase Setup
+
+Activities:
+
+
+    Configure vendors.
+
+    Configure vendor prices.
+
+    Create sample RFQs and purchase orders.
+
+    Receive stock into inventory.
+
+    Create vendor bills.
+
+    Validate purchase-to-accounting flow.
+Deliverables:
+
+
+    Purchase replenishment process.
+
+    Vendor bill workflow.
+
+
+
+Phase 7 - Sales Setup
+
+Activities:
+
+
+    Configure sales quotation flow.
+
+    Validate sales order for retail products.
+
+    Validate invoice from sales order.
+
+    Validate customer sales history.
+
+    Configure optional quotation templates for group/corporate use.
+
+
+Deliverables:
+
+
+    Retail and customer sales flow.
+
+    Sales-to-invoice process.
+
+
+
+Phase 8 - POS Setup
+
+Activities:
+
+
+    Configure POS shop/session.
+
+    Configure POS product categories.
+
+    Add retail products to POS.
+
+    Configure payment methods.
+
+    Validate POS sale.
+
+    Validate inventory deduction.
+
+    Validate accounting entry generation.
+Deliverables:
+
+
+    Front desk POS process.
+
+    POS retail checkout demo.
+
+
+
+Phase 9 - Barcode Setup
+
+Activities:
+
+
+    Confirm barcode format policy.
+
+    Add barcodes to products.
+
+    Validate product scanning in POS.
+
+    Validate scanning during inventory receipt.
+
+    Validate barcode label needs.
+
+
+Deliverables:
+
+
+    Barcode-ready product master.
+
+    Barcode scan demo flow.
+
+
+
+Phase 10 - CRM Setup
+
+Activities:
+
+
+    Configure CRM stages.
+
+    Configure lead sources.
+
+    Create sample opportunities.
+
+    Validate lead-to-contact/customer conversion.
+
+    Validate quote or membership follow-up process.
+
+
+Deliverables:
+
+
+    CRM pipeline.
+    Membership and sales inquiry flow.
+
+
+
+Phase 11 - Reports and Dashboards
+
+Activities:
+
+
+    Validate booking analysis pivot.
+
+    Validate booking analysis graph.
+
+    Validate list view report.
+
+    Validate dashboard operational queues.
+
+    Validate accounting and sales reports.
+
+    Validate inventory and POS reports.
+
+
+Deliverables:
+
+
+    Reporting pack for demo.
+
+    Operational dashboard review.
+
+
+
+Phase 12 - Testing and User Acceptance
+
+Test scenarios:
+
+
+    Book person/hour court seat.
+
+    Book court/hour full court.
+
+    Attempt overlapping booking.
+
+    Attempt past booking.
+
+    Attempt early start before 15-minute buffer.
+
+    Start play within allowed buffer.
+
+    End play.
+
+    Mark no-show.
+
+    Cancel with reason.
+    Create booking invoice.
+
+    Delete draft invoice and confirm buttons return.
+
+    Create membership invoice from contact.
+
+    Confirm one active membership rule.
+
+    Sell retail product through POS.
+
+    Create sales order and invoice.
+
+    Create purchase order and receive stock.
+
+    Scan barcode in POS or inventory flow.
+
+    Create and progress CRM opportunity.
+
+
+Deliverables:
+
+
+    UAT checklist.
+
+    Issue log.
+
+    Sign-off document.
+
+
+
+Phase 13 - Training and Handover
+
+Training topics:
+
+
+    Court dashboard usage.
+
+    Booking lifecycle.
+
+    Membership invoicing.
+
+    Retail sales and POS.
+
+    Inventory receipts and adjustments.
+
+    Purchase order processing.
+
+    Accounting invoice/payment flow.
+
+    CRM lead management.
+
+    Reports and dashboard review.
+Deliverables:
+
+
+    User training session.
+
+    Admin handover.
+
+    Basic user guide.
+
+
+
+
+16. Out of Scope for Current Demo
+
+The following are not included in the current demo scope unless separately approved:
+
+
+    Family member eligibility automation.
+
+    Online portal booking.
+
+    Website checkout for bookings or memberships.
+
+    Payment gateway integration.
+
+    Automated recurring membership billing.
+
+    Court lighting/access-control integration.
+
+    Advanced coaching/lesson scheduling.
+
+    League/tournament management.
+
+    Payroll.
+
+    Advanced multi-location inventory.
+
+    Complex barcode label printing templates.
+
+    Custom mobile app.
+
+
+
+
+17. Assumptions
+
+    The club will provide final court list, product list, pricing, vendors, and accounting
+
+    mappings.
+
+    Membership naming will be enough for staff to identify member type/benefits.
+    Family member handling will remain outside ERP for the demo.
+
+    Billing is based on scheduled booking duration.
+
+    Actual play time is stored for internal audit only.
+
+    Court/hour bookings reserve the whole court.
+
+    Person/hour bookings reserve only selected player seats.
+
+    POS will initially be used for retail products.
+
+    Court and membership invoicing will remain in their respective workflows for the
+
+    demo.
+
+
+
+
+18. Acceptance Criteria
+
+The implementation is acceptable when:
+
+
+    Users can book courts through the dashboard without overbooking.
+
+    Users can clearly see available and booked time slots.
+
+    Court/hour policy blocks the whole court.
+
+    Person/hour policy allows seat-level booking.
+
+    Invalid past bookings are blocked with clear validation.
+
+    Start Play respects the 15-minute early-arrival buffer.
+
+    End Play records actual stop time.
+
+    No-show and overdue states are visible operationally.
+
+    Booking invoices are accurate and linked to bookings.
+
+    Membership plans can be created without manually opening product forms.
+
+    Membership invoices can be created from contact screens.
+
+    Contacts correctly appear under Members or Non-members.
+
+    Retail products have cost, sale price, and inventory quantities.
+
+    POS can sell stocked retail products.
+   Purchase can replenish retail stock.
+
+   Accounting can manage invoices, payments, and vendor bills.
+
+   CRM can track new club opportunities.
+
+   Booking Analysis report opens as pivot/graph/list and shows meaningful
+
+   measures.
+
+
+
+
+19. Risks and Controls
+
+ Risk                                        Control
+
+
+                                             Court configuration review before
+ Incorrect billing policy on court
+                                             go-live.
+
+
+ Staff starts booking too early              15-minute buffer validation.
+
+
+                                             Operational dashboard and
+ No-show bookings remain unattended
+                                             reminders.
+
+
+ Draft invoices deleted but booking not
+                                             Invoice deletion reset behavior.
+ released
+
+
+ Membership duplicated for same
+                                             One-active-membership validation.
+ contact/period
+
+
+                                             Inventory adjustment and receipt
+ Product stock inaccurate
+                                             process.
+
+
+ POS sales not reducing stock                POS inventory integration testing.
+
+
+ Wrong revenue account                       Accounting mapping review.
+ Risk                                         Control
+
+
+                                              Barcode data validation before label
+ Barcode mismatch
+                                              use.
+
+
+
+
+20. Recommended Next Steps
+
+1. Review and approve this BRD/SOW.
+
+2. Confirm standard module installation and access rights.
+
+3. Finalize master data for courts, rates, memberships, products, vendors, and POS.
+
+4. Complete configuration and remaining standard app setup.
+
+5. Run end-to-end UAT using the scenarios listed above.
+
+6. Prepare demo script for front desk, manager, inventory, POS, purchase, CRM, and
+
+  accounting flows.
+
