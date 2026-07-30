@@ -17,7 +17,7 @@
                            string="Lead Type" select="multi"/>
                     <field name="x_erp_system_id" icon="fa-cogs" enable_counters="1"
                            string="ERP" select="multi"/>
-                    <field name="x_contact_type_id" icon="fa-address-card" enable_counters="1"
+                    <field name="tag_ids" icon="fa-tags" enable_counters="1"
                            string="Contact Type" select="multi"/>
                 </searchpanel>
             </xpath>
@@ -27,7 +27,7 @@
                 <field name="country_id" string="Country"/>
                 <field name="x_lead_level" string="Lead Level"/>
                 <field name="x_erp_system_id" string="ERP"/>
-                <field name="x_contact_type_id" string="Contact Type"/>
+                <field name="tag_ids" string="Contact Type"/>
             </xpath>
 
             <!-- Add Lead Type filters -->
@@ -69,7 +69,7 @@
                 <filter string="ERP" name="groupby_erp_system"
                         context="{'group_by': 'x_erp_system_id'}"/>
                 <filter string="Contact Type" name="groupby_contact_type"
-                        context="{'group_by': 'x_contact_type_id'}"/>
+                        context="{'group_by': 'tag_ids'}"/>
                 <filter string="Next Follow-up" name="groupby_followup"
                         context="{'group_by': 'x_next_followup_date'}"/>
                 <filter string="Country" name="groupby_country"
@@ -101,7 +101,7 @@
                            string="Lead Type" select="multi"/>
                     <field name="x_erp_system_id" icon="fa-cogs" enable_counters="1"
                            string="ERP" select="multi"/>
-                    <field name="x_contact_type_id" icon="fa-address-card" enable_counters="1"
+                    <field name="tag_ids" icon="fa-tags" enable_counters="1"
                            string="Contact Type" select="multi"/>
                 </searchpanel>
             </xpath>
@@ -110,7 +110,7 @@
                 <field name="country_id" string="Country"/>
                 <field name="x_lead_level" string="Lead Level"/>
                 <field name="x_erp_system_id" string="ERP"/>
-                <field name="x_contact_type_id" string="Contact Type"/>
+                <field name="tag_ids" string="Contact Type"/>
             </xpath>
             <xpath expr="//filter[@name='assigned_to_me']" position="before">
                 <separator/>
@@ -135,7 +135,7 @@
                 <filter string="ERP" name="groupby_erp_system"
                         context="{'group_by': 'x_erp_system_id'}"/>
                 <filter string="Contact Type" name="groupby_contact_type"
-                        context="{'group_by': 'x_contact_type_id'}"/>
+                        context="{'group_by': 'tag_ids'}"/>
                 <filter string="Next Follow-up" name="groupby_followup"
                         context="{'group_by': 'x_next_followup_date'}"/>
                 <filter string="Country" name="groupby_country"

@@ -20,7 +20,7 @@
                        decoration-info="x_lead_type == 'cold'"
                        optional="show"/>
                 <field name="x_erp_system_id" optional="show"/>
-                <field name="x_contact_type_id" optional="show"/>
+                <field name="tag_ids" string="Contact Type" widget="many2many_tags" optional="show"/>
             </xpath>
 
             <xpath expr="//field[@name='priority']" position="after">
@@ -72,7 +72,7 @@
                        decoration-info="x_lead_type == 'cold'"
                        optional="show"/>
                 <field name="x_erp_system_id" optional="show"/>
-                <field name="x_contact_type_id" optional="show"/>
+                <field name="tag_ids" string="Contact Type" widget="many2many_tags" optional="show"/>
             </xpath>
 
             <xpath expr="//field[@name='priority']" position="after">

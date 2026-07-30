@@ -1,6 +1,6 @@
 {
     'name': 'CRM Lead Management',
-    'version': '19.0.1.4.1',
+    'version': '19.0.1.4.2',
     'summary': 'Enhanced CRM lead management with custom pipeline stages, lead classification, and advanced tracking',
     'description': """
         CRM Lead Management

@@ -9,7 +9,7 @@
                               beforeOpen="() => this.onBeforeOpen(filter)"
                               onStateChanged="(isOpen) => this.onDropdownStateChanged(filter, isOpen)">
                         <button class="btn d-flex align-items-center gap-1"
-                                t-att-class="state.selectedIds[filter.key] ? 'btn-primary' : 'btn-outline-primary'">
+                                t-att-class="this.hasSelection(filter) ? 'btn-primary' : 'btn-outline-primary'">
                             <i t-attf-class="fa {{ filter.icon }}"/>
                             <span t-esc="state.labels[filter.key]"/>
                             <i t-attf-class="fa o_lead_filter_dropdown_arrow {{ state.open[filter.key] ? 'fa-chevron-down' : 'fa-chevron-right' }}"/>
@@ -23,15 +23,15 @@
                             </DropdownItem>
                             <div class="dropdown-divider" role="separator"/>
                             <t t-foreach="state.options[filter.key]" t-as="option" t-key="option.value">
-                                <DropdownItem onSelected="() => this.selectOption(filter, option)">
+                                <DropdownItem onSelected="() => this.toggleOption(filter, option)">
                                     <div class="d-flex justify-content-between align-items-center w-100">
                                         <div class="d-flex align-items-center gap-2">
-                                            <i t-attf-class="fa {{ filter.optionIcon }} {{ state.selectedIds[filter.key] === option.value ? 'text-primary' : 'text-muted' }}"/>
-                                            <span t-att-class="state.selectedIds[filter.key] === option.value ? 'fw-bold text-primary' : ''"
+                                            <i t-attf-class="fa {{ this.isSelected(filter, option) ? 'fa-check' : filter.optionIcon }} {{ this.isSelected(filter, option) ? 'text-primary' : 'text-muted' }}"/>
+                                            <span t-att-class="this.isSelected(filter, option) ? 'fw-bold text-primary' : ''"
                                                   t-esc="option.name"/>
                                         </div>
                                         <span class="badge rounded-pill ms-2"
-                                              t-att-class="state.selectedIds[filter.key] === option.value ? 'bg-primary' : 'bg-secondary'"
+                                              t-att-class="this.isSelected(filter, option) ? 'bg-primary' : 'bg-secondary'"
                                               t-esc="option.count"/>
                                     </div>
                                 </DropdownItem>
