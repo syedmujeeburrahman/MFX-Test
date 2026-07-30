@@ -76,9 +76,7 @@
             </xpath>
 
             <xpath expr="//field[@name='priority']" position="after">
-<<<<<<< HEAD
                 <field name="stage_id" string="Lead Status" optional="show"/>
-=======
                 <field name="x_lead_level"
                        string="Lead Level"
                        widget="badge"
@@ -86,7 +84,6 @@
                        decoration-danger="x_lead_level == '1'"
                        decoration-warning="x_lead_level in ('2', '3')"
                        decoration-muted="x_lead_level in ('4', '5')"/>
->>>>>>> b16288161f1e74aedca0f3c3df96e232163bed62
                 <field name="x_next_followup_date" optional="show"/>
                 <field name="date_automation_last" string="Last Activity" optional="show"/>
             </xpath>
